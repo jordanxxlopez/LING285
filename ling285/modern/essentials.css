@@ -1,0 +1,40 @@
+/* Exam 2 essentials: tier tags, version pickers and lab sections. */
+.ess-focus{display:inline-flex;gap:.5rem;align-items:center;margin:.25rem 0 .75rem;font-weight:600;flex-wrap:wrap}
+.ess-focus select{max-width:100%}
+.ess-tier-certain{background:#fde2ec;color:#8a1240;border-color:#e9a3bd}
+.ess-tier-likely{background:#fff1d6;color:#7a4a00;border-color:#f0c97a}
+.ess-tier-possible{background:#e8eef5;color:#33475b;border-color:#b9c7d6}
+.ess-topic h3,.ess-lab h3{margin:1rem 0 .4rem;font-size:1rem}
+.ess-questions .tag{font-size:.75rem;margin-right:.35rem}
+.ess-focus .fit-selection{display:none}
+
+.ess-questions summary .ess-figure{display:block;max-width:min(100%,640px);height:auto;margin:12px 0 4px;border-radius:8px;background:#fff}
+.ess-questions .modern-answer > .ess-figure{display:block;max-width:min(100%,640px);height:auto;margin:12px 0;border-radius:8px;background:#fff}
+.ess-qfig{margin:12px 0}.ess-qfig img{display:block;max-width:min(100%,640px);height:auto;border-radius:8px;background:#fff}.ess-qfig figcaption{margin-top:4px}
+#content .ess-split{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr)!important;gap:24px;align-items:start;width:100%}
+#content .ess-split>*{min-width:0;max-width:100%}
+#content .ess-media{margin:4px 0 0;position:sticky;top:84px;min-width:0;overflow:hidden}
+#content .ess-media *{max-width:100%;box-sizing:border-box}
+#content .ess-media :is(.row,.media-controls,[class*="control"]){flex-wrap:wrap}
+#content .ess-media img,#content .ess-media video{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain;border-radius:10px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+#content .ess-media figcaption{margin-top:6px}
+@media (max-width:900px){#content .ess-split{grid-template-columns:minmax(0,1fr)!important}#content .ess-media{position:static}}
+#content .ess-jump{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}#content .ess-jump a{text-decoration:none}
+#content .ess-ov{position:relative;width:100%;border-radius:10px;overflow:hidden;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+#content .ess-ov>img.ess-ov-base{display:block;width:100%;height:auto;max-height:none;border-radius:0;box-shadow:none}
+#content .ess-ov>.ess-ov-video{position:absolute;z-index:1;overflow:hidden}
+#content .ess-ov>.ess-ov-video :is(.fit-player,.fit-video-stage){width:100%!important;height:100%!important;max-width:none!important;margin:0!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;aspect-ratio:auto!important}
+#content .ess-ov>.ess-ov-video .fit-player-controls{display:none!important}
+#content .ess-ov>.ess-ov-video video{display:block;width:100%!important;height:100%!important;max-height:none!important;object-fit:contain;border-radius:0!important;box-shadow:none!important;background:transparent!important}
+#content .ess-ov>img.ess-ov-top{position:absolute;inset:0;width:100%;height:100%;max-height:none;z-index:2;pointer-events:none;border-radius:0;box-shadow:none;background:transparent;opacity:0}
+#content .ess-ov.is-revealed>img.ess-ov-top{opacity:1}
+#content .ess-ov-links{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px}
+#content .ess-block-split.is-wide .ess-split{grid-template-columns:minmax(0,1fr)!important}
+#content .ess-block-split.is-wide .ess-media{position:static;order:-1}
+#content .ess-ov>img.ess-ov-top.is-always{opacity:1}
+
+/* My notes box under each block (Study this first, slides with videos version) */
+.ess-note{margin:.4rem 0 .9rem}
+.ess-note label{display:block;margin-bottom:.2rem}
+.ess-note textarea{width:100%;box-sizing:border-box;min-height:2.6rem;resize:vertical;font:inherit;font-size:.92rem;line-height:1.4;padding:.45rem .6rem;border-radius:8px;border:1px solid color-mix(in srgb,currentColor 25%,transparent);background:color-mix(in srgb,currentColor 5%,transparent);color:inherit}
+.ess-note textarea:focus{outline:2px solid color-mix(in srgb,currentColor 45%,transparent);outline-offset:1px}

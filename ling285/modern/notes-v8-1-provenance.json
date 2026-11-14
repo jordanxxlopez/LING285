@@ -1,0 +1,5896 @@
+{
+  "edition": "notes-v8-1",
+  "label": "Version 8.1 · Your PDF notes with cloze and year-ago",
+  "authoringFiles": {
+    "authoring/notes-v8.1/01.md": "556c0c8a75bbd48b2fe4a6ec35d3a72132afe8dfefe931d60b992604956844d6",
+    "authoring/notes-v8.1/02.md": "a5f09c5a1f37b13e8df0a84180cca56e7ef9e8d9be4b4dbf0df9053d0c7e3acf",
+    "authoring/notes-v8.1/03.md": "51e54363be276c0ee57880bfa590d65e2c828eed2f226e5156aef664ecad4654",
+    "authoring/notes-v8.1/04.md": "abecbc5fe74d6fe91e1b2e8f046a863698bbd2e0ef795de10217396acf83b972",
+    "authoring/notes-v8.1/05-06.md": "6c5a8a6d979ea4d9bb1dc754a5218c00ce2c4aec252d010bb19f0e5b45854cc2",
+    "authoring/notes-v8.1/07.md": "b5bf2b8b81a7a5d98cf697dad37b57f8007f9f215dbb5984ad4758720d1a440c",
+    "authoring/notes-v8.1/08.md": "6767e608729d93aa16f5505a8bfd43d67f110418bdb340f6fdc5e45a176be0f8",
+    "authoring/notes-v8.1/09.md": "2b18e382390c34a46dcd9674e106a57eedec0c6bcf2b4eae569e6e556d54c0a5",
+    "authoring/notes-v8.1/10.md": "619f855a5a90ff35293997a96ddb1ad9d967330d0c36d05d102289bf7c1f7b95",
+    "authoring/notes-v8.1/11.md": "4f28e40639f3070842a41709bea8e2a3db34546106396fd59d0852ef868bb4e3",
+    "authoring/notes-v8.1/12.md": "bc74bd5f4b0f838cbc26704ded9850fd8b841fa8303f44b9096dbde9f28cabb2",
+    "authoring/notes-v8.1/13.md": "1a24468cdf29c67f6d501ab5f5e0e594ce6524d66ff6d8682ced95149ba20dda",
+    "authoring/notes-v8.1/14.md": "936fc2d0cc28d30e97b0044ebbe6f50a75ebad47b232798ec965d909666a8c0c",
+    "authoring/notes-v8.1/15.md": "b61aa3ff6216c5901e1bd810c92af726341dad7b80b4f960d85b4c2540dfc5d6",
+    "authoring/notes-v8.1/16.md": "a6eba32763f0b89a50b3c8c167d8211647b6582ea2001076745c8271fe516ab2",
+    "authoring/notes-v8.1/17.md": "f531c17fa590b0da26815058fc458131a8ee1fcbb9b0bd970cad387af1bfe350",
+    "authoring/notes-v8.1/18.md": "d10fa112c2f3d69cf11f553fe3fdf773363c4d270bef62d56faca0b2e6d4ec05"
+  },
+  "pdf": "sources/notes-v8-1-all-lectures-11-18.pdf",
+  "pdfSha256": "6d755ccbfa6e6099fc5ada3ed0e7522ca1f3e023b90799eabfc1575db173b520",
+  "baseLayout": "modern/transcripts-notes-v7.json",
+  "baseLayoutSha256": "cc35511d1de685b38443eb440062e1c60b8cf2f6fa9788a90f5016d71f0e6564",
+  "bullets": 651,
+  "assignments": [
+    {
+      "lecture": "01",
+      "noteSection": 1,
+      "sectionTitle": "Watching the Vocal Tract During Speech",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 1,
+      "sectionTitle": "Watching the Vocal Tract During Speech",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 2,
+      "sectionTitle": "How Speech Is Learned and What the Course Covers",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 2,
+      "sectionTitle": "How Speech Is Learned and What the Course Covers",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 2,
+      "sectionTitle": "How Speech Is Learned and What the Course Covers",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 3,
+      "sectionTitle": "The Vocal Tract as a Vibrating Tube of Air",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 3,
+      "sectionTitle": "The Vocal Tract as a Vibrating Tube of Air",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 3,
+      "sectionTitle": "The Vocal Tract as a Vibrating Tube of Air",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 4,
+      "sectionTitle": "Harms, Benefits, and the Problem of Understanding AI",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 4,
+      "sectionTitle": "Harms, Benefits, and the Problem of Understanding AI",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 4,
+      "sectionTitle": "Harms, Benefits, and the Problem of Understanding AI",
+      "bullet": 3,
+      "sourceSlide": 5,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 5,
+      "sectionTitle": "Goals of the Course",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 5,
+      "sectionTitle": "Goals of the Course",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 6,
+      "sectionTitle": "Diotima's Ladder and What Is Valued in 2026",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 6,
+      "sectionTitle": "Diotima's Ladder and What Is Valued in 2026",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 6,
+      "sectionTitle": "Diotima's Ladder and What Is Valued in 2026",
+      "bullet": 3,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 6,
+      "sectionTitle": "Diotima's Ladder and What Is Valued in 2026",
+      "bullet": 4,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 6,
+      "sectionTitle": "Diotima's Ladder and What Is Valued in 2026",
+      "bullet": 5,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 7,
+      "sectionTitle": "Learning Speech by Doing: Voice and Place of Articulation",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 7,
+      "sectionTitle": "Learning Speech by Doing: Voice and Place of Articulation",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 7,
+      "sectionTitle": "Learning Speech by Doing: Voice and Place of Articulation",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 7,
+      "sectionTitle": "Learning Speech by Doing: Voice and Place of Articulation",
+      "bullet": 4,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 8,
+      "sectionTitle": "Fricatives",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 8,
+      "sectionTitle": "Fricatives",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 8,
+      "sectionTitle": "Fricatives",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 9,
+      "sectionTitle": "Stops",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 9,
+      "sectionTitle": "Stops",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "01",
+      "noteSection": 9,
+      "sectionTitle": "Stops",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 1,
+      "sectionTitle": "Watching Speech Inside the Vocal Tract",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 1,
+      "sectionTitle": "Watching Speech Inside the Vocal Tract",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 2,
+      "sectionTitle": "Fricatives",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 2,
+      "sectionTitle": "Fricatives",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 2,
+      "sectionTitle": "Fricatives",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 2,
+      "sectionTitle": "Fricatives",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 3,
+      "sectionTitle": "Stops",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 3,
+      "sectionTitle": "Stops",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 3,
+      "sectionTitle": "Stops",
+      "bullet": 3,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 4,
+      "sectionTitle": "The Structure of English Consonants",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 4,
+      "sectionTitle": "The Structure of English Consonants",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 4,
+      "sectionTitle": "The Structure of English Consonants",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 5,
+      "sectionTitle": "What AI Is",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 5,
+      "sectionTitle": "What AI Is",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 6,
+      "sectionTitle": "Knowing and Taylor's Cloze Procedure",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 6,
+      "sectionTitle": "Knowing and Taylor's Cloze Procedure",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 7,
+      "sectionTitle": "Taylor's Tool and the Idea of Closure",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 7,
+      "sectionTitle": "Taylor's Tool and the Idea of Closure",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 7,
+      "sectionTitle": "Taylor's Tool and the Idea of Closure",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 8,
+      "sectionTitle": "The Cloze Unit and How AI Knows",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 8,
+      "sectionTitle": "The Cloze Unit and How AI Knows",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 8,
+      "sectionTitle": "The Cloze Unit and How AI Knows",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 8,
+      "sectionTitle": "The Cloze Unit and How AI Knows",
+      "bullet": 4,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 9,
+      "sectionTitle": "How GPT Represents Words",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 9,
+      "sectionTitle": "How GPT Represents Words",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 9,
+      "sectionTitle": "How GPT Represents Words",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 10,
+      "sectionTitle": "How GPT Transforms Inputs into Predictions",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 10,
+      "sectionTitle": "How GPT Transforms Inputs into Predictions",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 10,
+      "sectionTitle": "How GPT Transforms Inputs into Predictions",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 11,
+      "sectionTitle": "Weights and Synapses",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 11,
+      "sectionTitle": "Weights and Synapses",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 12,
+      "sectionTitle": "Knowledge as Completion, or Prediction",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 12,
+      "sectionTitle": "Knowledge as Completion, or Prediction",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 12,
+      "sectionTitle": "Knowledge as Completion, or Prediction",
+      "bullet": 3,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 13,
+      "sectionTitle": "Learning by Making Mistakes",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 13,
+      "sectionTitle": "Learning by Making Mistakes",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 14,
+      "sectionTitle": "Averaging as Learning",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 14,
+      "sectionTitle": "Averaging as Learning",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 14,
+      "sectionTitle": "Averaging as Learning",
+      "bullet": 3,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 15,
+      "sectionTitle": "Stochastic Gradient Descent, Step by Step",
+      "bullet": 1,
+      "sourceSlide": 17,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 15,
+      "sectionTitle": "Stochastic Gradient Descent, Step by Step",
+      "bullet": 2,
+      "sourceSlide": 17,
+      "subBullets": 5,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 15,
+      "sectionTitle": "Stochastic Gradient Descent, Step by Step",
+      "bullet": 3,
+      "sourceSlide": 17,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 15,
+      "sectionTitle": "Stochastic Gradient Descent, Step by Step",
+      "bullet": 4,
+      "sourceSlide": 17,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 16,
+      "sectionTitle": "The Effect of the Learning Rate",
+      "bullet": 1,
+      "sourceSlide": 18,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 16,
+      "sectionTitle": "The Effect of the Learning Rate",
+      "bullet": 2,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 16,
+      "sectionTitle": "The Effect of the Learning Rate",
+      "bullet": 3,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 16,
+      "sectionTitle": "The Effect of the Learning Rate",
+      "bullet": 4,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 16,
+      "sectionTitle": "The Effect of the Learning Rate",
+      "bullet": 5,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 17,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 1,
+      "sourceSlide": 19,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 17,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 2,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "02",
+      "noteSection": 17,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 3,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 1,
+      "sectionTitle": "What a Dynamical System Is",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 1,
+      "sectionTitle": "What a Dynamical System Is",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 2,
+      "sectionTitle": "The Octopus as a Dynamical System",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 2,
+      "sectionTitle": "The Octopus as a Dynamical System",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 2,
+      "sectionTitle": "The Octopus as a Dynamical System",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 3,
+      "sectionTitle": "The Speech System as a Dynamical System",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 3,
+      "sectionTitle": "The Speech System as a Dynamical System",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 3,
+      "sectionTitle": "The Speech System as a Dynamical System",
+      "bullet": 3,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 4,
+      "sectionTitle": "Dynamical Systems Throughout the Body",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 4,
+      "sectionTitle": "Dynamical Systems Throughout the Body",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 5,
+      "sectionTitle": "The Octopus Arm Slap Study",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 5,
+      "sectionTitle": "The Octopus Arm Slap Study",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 5,
+      "sectionTitle": "The Octopus Arm Slap Study",
+      "bullet": 3,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 5,
+      "sectionTitle": "The Octopus Arm Slap Study",
+      "bullet": 4,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 5,
+      "sectionTitle": "The Octopus Arm Slap Study",
+      "bullet": 5,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 6,
+      "sectionTitle": "AI as a Model of Animal Psychological Skills",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 6,
+      "sectionTitle": "AI as a Model of Animal Psychological Skills",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 7,
+      "sectionTitle": "How GPT Predicts the Next Word",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 7,
+      "sectionTitle": "How GPT Predicts the Next Word",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 7,
+      "sectionTitle": "How GPT Predicts the Next Word",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 7,
+      "sectionTitle": "How GPT Predicts the Next Word",
+      "bullet": 4,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 7,
+      "sectionTitle": "How GPT Predicts the Next Word",
+      "bullet": 5,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 8,
+      "sectionTitle": "Where the Weights Come From",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 5,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 8,
+      "sectionTitle": "Where the Weights Come From",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 9,
+      "sectionTitle": "Two Tricks of AI Learning",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 10,
+      "sectionTitle": "Averaging as a Learning Problem",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 10,
+      "sectionTitle": "Averaging as a Learning Problem",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 10,
+      "sectionTitle": "Averaging as a Learning Problem",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 11,
+      "sectionTitle": "Starting With a Wild Guess",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 11,
+      "sectionTitle": "Starting With a Wild Guess",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 11,
+      "sectionTitle": "Starting With a Wild Guess",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 12,
+      "sectionTitle": "One Observation Creates Error",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 12,
+      "sectionTitle": "One Observation Creates Error",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 13,
+      "sectionTitle": "Moving 25 Percent of the Error",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 13,
+      "sectionTitle": "Moving 25 Percent of the Error",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 14,
+      "sectionTitle": "Repeating the Correction, Update 2",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 14,
+      "sectionTitle": "Repeating the Correction, Update 2",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 15,
+      "sectionTitle": "Repeating the Correction, Update 3",
+      "bullet": 1,
+      "sourceSlide": 17,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 16,
+      "sectionTitle": "Repeating the Correction, Update 4",
+      "bullet": 1,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 16,
+      "sectionTitle": "Repeating the Correction, Update 4",
+      "bullet": 2,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 17,
+      "sectionTitle": "A High Datum Pulls x Upward",
+      "bullet": 1,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 17,
+      "sectionTitle": "A High Datum Pulls x Upward",
+      "bullet": 2,
+      "sourceSlide": 19,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 18,
+      "sectionTitle": "Repeating the Correction, Update 6",
+      "bullet": 1,
+      "sourceSlide": 20,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 19,
+      "sectionTitle": "Repeating the Correction, Update 7",
+      "bullet": 1,
+      "sourceSlide": 21,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 20,
+      "sectionTitle": "Repeating the Correction, Update 8",
+      "bullet": 1,
+      "sourceSlide": 22,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 20,
+      "sectionTitle": "Repeating the Correction, Update 8",
+      "bullet": 2,
+      "sourceSlide": 22,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 21,
+      "sectionTitle": "A High Datum Pulls x Upward Again",
+      "bullet": 1,
+      "sourceSlide": 23,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 21,
+      "sectionTitle": "A High Datum Pulls x Upward Again",
+      "bullet": 2,
+      "sourceSlide": 23,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 22,
+      "sectionTitle": "Repeating the Correction, Update 10",
+      "bullet": 1,
+      "sourceSlide": 24,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 23,
+      "sectionTitle": "Repeating the Correction, Update 11",
+      "bullet": 1,
+      "sourceSlide": 25,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 24,
+      "sectionTitle": "The Final Correction and the Whole Path",
+      "bullet": 1,
+      "sourceSlide": 26,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 24,
+      "sectionTitle": "The Final Correction and the Whole Path",
+      "bullet": 2,
+      "sourceSlide": 26,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 25,
+      "sectionTitle": "What SGD Is",
+      "bullet": 1,
+      "sourceSlide": 27,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 25,
+      "sectionTitle": "What SGD Is",
+      "bullet": 2,
+      "sourceSlide": 27,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 25,
+      "sectionTitle": "What SGD Is",
+      "bullet": 3,
+      "sourceSlide": 27,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 26,
+      "sectionTitle": "As the Estimate Decreases, the Loss Decreases",
+      "bullet": 1,
+      "sourceSlide": 28,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 26,
+      "sectionTitle": "As the Estimate Decreases, the Loss Decreases",
+      "bullet": 2,
+      "sourceSlide": 28,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 26,
+      "sectionTitle": "As the Estimate Decreases, the Loss Decreases",
+      "bullet": 3,
+      "sourceSlide": 28,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 26,
+      "sectionTitle": "As the Estimate Decreases, the Loss Decreases",
+      "bullet": 4,
+      "sourceSlide": 28,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 27,
+      "sectionTitle": "The Estimate Increases While the Loss Decreases",
+      "bullet": 1,
+      "sourceSlide": 29,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 27,
+      "sectionTitle": "The Estimate Increases While the Loss Decreases",
+      "bullet": 2,
+      "sourceSlide": 29,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 27,
+      "sectionTitle": "The Estimate Increases While the Loss Decreases",
+      "bullet": 3,
+      "sourceSlide": 29,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 27,
+      "sectionTitle": "The Estimate Increases While the Loss Decreases",
+      "bullet": 4,
+      "sourceSlide": 29,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 28,
+      "sectionTitle": "Learning Rate and Initial Conditions",
+      "bullet": 1,
+      "sourceSlide": 30,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 28,
+      "sectionTitle": "Learning Rate and Initial Conditions",
+      "bullet": 2,
+      "sourceSlide": 30,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 29,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 1,
+      "sourceSlide": 31,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 29,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 2,
+      "sourceSlide": 31,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "03",
+      "noteSection": 29,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 3,
+      "sourceSlide": 31,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 1,
+      "sectionTitle": "The Shortest Path Problem",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 1,
+      "sectionTitle": "The Shortest Path Problem",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 1,
+      "sectionTitle": "The Shortest Path Problem",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 2,
+      "sectionTitle": "The Greedy Algorithm",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 2,
+      "sectionTitle": "The Greedy Algorithm",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 2,
+      "sectionTitle": "The Greedy Algorithm",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 3,
+      "sectionTitle": "The Exhaustive Algorithm",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 3,
+      "sectionTitle": "The Exhaustive Algorithm",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 4,
+      "sectionTitle": "Bellman's Idea, Imagining the Values",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 4,
+      "sectionTitle": "Bellman's Idea, Imagining the Values",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 5,
+      "sectionTitle": "Decomposing the Problem into Subproblems",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 5,
+      "sectionTitle": "Decomposing the Problem into Subproblems",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 6,
+      "sectionTitle": "Breaking the Problem Down Stage by Stage",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 6,
+      "sectionTitle": "Breaking the Problem Down Stage by Stage",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 6,
+      "sectionTitle": "Breaking the Problem Down Stage by Stage",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 7,
+      "sectionTitle": "Calculating the Values, Then Going Greedy",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 7,
+      "sectionTitle": "Calculating the Values, Then Going Greedy",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 7,
+      "sectionTitle": "Calculating the Values, Then Going Greedy",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 7,
+      "sectionTitle": "Calculating the Values, Then Going Greedy",
+      "bullet": 4,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 8,
+      "sectionTitle": "Dynamic Programming Is Foresight",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 8,
+      "sectionTitle": "Dynamic Programming Is Foresight",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 8,
+      "sectionTitle": "Dynamic Programming Is Foresight",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 9,
+      "sectionTitle": "Decomposition into Trivial Problems",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 9,
+      "sectionTitle": "Decomposition into Trivial Problems",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 10,
+      "sectionTitle": "Propagating Values Backward with Bellman's Rule",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 10,
+      "sectionTitle": "Propagating Values Backward with Bellman's Rule",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 10,
+      "sectionTitle": "Propagating Values Backward with Bellman's Rule",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 11,
+      "sectionTitle": "Going Through the Bad 12",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 11,
+      "sectionTitle": "Going Through the Bad 12",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 12,
+      "sectionTitle": "Decision-Making Is Like Physics",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 12,
+      "sectionTitle": "Decision-Making Is Like Physics",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 13,
+      "sectionTitle": "Figuring Out the Best Route",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 13,
+      "sectionTitle": "Figuring Out the Best Route",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 14,
+      "sectionTitle": "Pop Quiz, Systems That Settle to the Same Value",
+      "bullet": 1,
+      "sourceSlide": 18,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 14,
+      "sectionTitle": "Pop Quiz, Systems That Settle to the Same Value",
+      "bullet": 2,
+      "sourceSlide": 18,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "04",
+      "noteSection": 14,
+      "sectionTitle": "Pop Quiz, Systems That Settle to the Same Value",
+      "bullet": 3,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 1,
+      "sectionTitle": "The Elements and the Two Rules of the Harmonic Oscillator",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 1,
+      "sectionTitle": "The Elements and the Two Rules of the Harmonic Oscillator",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 1,
+      "sectionTitle": "The Elements and the Two Rules of the Harmonic Oscillator",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 1,
+      "sectionTitle": "The Elements and the Two Rules of the Harmonic Oscillator",
+      "bullet": 4,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 2,
+      "sectionTitle": "A Worked Example with x and v",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 2,
+      "sectionTitle": "A Worked Example with x and v",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 2,
+      "sectionTitle": "A Worked Example with x and v",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 3,
+      "sectionTitle": "Two Sign Relationships and the Restoring Loop",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 3,
+      "sectionTitle": "Two Sign Relationships and the Restoring Loop",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 4,
+      "sectionTitle": "The x-v System Traced Through Time",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 6,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 4,
+      "sectionTitle": "The x-v System Traced Through Time",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 5,
+      "sectionTitle": "The Oscillation and Vibration Dynamical System",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 5,
+      "sectionTitle": "The Oscillation and Vibration Dynamical System",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 6,
+      "sectionTitle": "Everything's a Harmonic Oscillator, If You're Brave Enough",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 6,
+      "sectionTitle": "Everything's a Harmonic Oscillator, If You're Brave Enough",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 7,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 7,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 7,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 8,
+      "sectionTitle": "There's a Cosine in Your Mouth",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 8,
+      "sectionTitle": "There's a Cosine in Your Mouth",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 8,
+      "sectionTitle": "There's a Cosine in Your Mouth",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and the Shape of the Vocal Tract",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and the Shape of the Vocal Tract",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and the Shape of the Vocal Tract",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 10,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 10,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 10,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 10,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 4,
+      "sourceSlide": 13,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 10,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 5,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 11,
+      "sectionTitle": "Praat Demonstration",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 11,
+      "sectionTitle": "Praat Demonstration",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 12,
+      "sectionTitle": "Two Things Are Vibrating, the Vocal Tract Air and the Vocal Folds",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 12,
+      "sectionTitle": "Two Things Are Vibrating, the Vocal Tract Air and the Vocal Folds",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 12,
+      "sectionTitle": "Two Things Are Vibrating, the Vocal Tract Air and the Vocal Folds",
+      "bullet": 3,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 13,
+      "sectionTitle": "The Harmonic Oscillator in Economics",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 13,
+      "sectionTitle": "The Harmonic Oscillator in Economics",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 14,
+      "sectionTitle": "Music and Harmonic Oscillators",
+      "bullet": 1,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 14,
+      "sectionTitle": "Music and Harmonic Oscillators",
+      "bullet": 2,
+      "sourceSlide": 18,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 15,
+      "sectionTitle": "Matter and the Quantum Harmonic Oscillator",
+      "bullet": 1,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 15,
+      "sectionTitle": "Matter and the Quantum Harmonic Oscillator",
+      "bullet": 2,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 15,
+      "sectionTitle": "Matter and the Quantum Harmonic Oscillator",
+      "bullet": 3,
+      "sourceSlide": 19,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 15,
+      "sectionTitle": "Matter and the Quantum Harmonic Oscillator",
+      "bullet": 4,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 16,
+      "sectionTitle": "The x-v System in Python",
+      "bullet": 1,
+      "sourceSlide": 20,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 16,
+      "sectionTitle": "The x-v System in Python",
+      "bullet": 2,
+      "sourceSlide": 20,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "05-06",
+      "noteSection": 16,
+      "sectionTitle": "The x-v System in Python",
+      "bullet": 3,
+      "sourceSlide": 20,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 1,
+      "sectionTitle": "The Harmonic Oscillator",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 1,
+      "sectionTitle": "The Harmonic Oscillator",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 1,
+      "sectionTitle": "The Harmonic Oscillator",
+      "bullet": 3,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 1,
+      "sectionTitle": "The Harmonic Oscillator",
+      "bullet": 4,
+      "sourceSlide": 2,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 1,
+      "sectionTitle": "The Harmonic Oscillator",
+      "bullet": 5,
+      "sourceSlide": 2,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 2,
+      "sectionTitle": "The Oscillation and Vibration Dynamical System",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 2,
+      "sectionTitle": "The Oscillation and Vibration Dynamical System",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 3,
+      "sectionTitle": "Vibration Needs Two Physical Effects",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 3,
+      "sectionTitle": "Vibration Needs Two Physical Effects",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 3,
+      "sectionTitle": "Vibration Needs Two Physical Effects",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 3,
+      "sectionTitle": "Vibration Needs Two Physical Effects",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 4,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 4,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 4,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 3,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 4,
+      "sectionTitle": "A Slice of Air in the Vocal Tract",
+      "bullet": 4,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 5,
+      "sectionTitle": "The Viscous Spring and Negative or Balancing Feedback",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 5,
+      "sectionTitle": "The Viscous Spring and Negative or Balancing Feedback",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 5,
+      "sectionTitle": "The Viscous Spring and Negative or Balancing Feedback",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 5,
+      "sectionTitle": "The Viscous Spring and Negative or Balancing Feedback",
+      "bullet": 4,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 5,
+      "sectionTitle": "The Viscous Spring and Negative or Balancing Feedback",
+      "bullet": 5,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 6,
+      "sectionTitle": "Mass and Persistent Motion",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 6,
+      "sectionTitle": "Mass and Persistent Motion",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 6,
+      "sectionTitle": "Mass and Persistent Motion",
+      "bullet": 3,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 7,
+      "sectionTitle": "A Spring Stops at a Place, a Mass Stops After a Process",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 7,
+      "sectionTitle": "A Spring Stops at a Place, a Mass Stops After a Process",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 7,
+      "sectionTitle": "A Spring Stops at a Place, a Mass Stops After a Process",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 7,
+      "sectionTitle": "A Spring Stops at a Place, a Mass Stops After a Process",
+      "bullet": 4,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 7,
+      "sectionTitle": "A Spring Stops at a Place, a Mass Stops After a Process",
+      "bullet": 5,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 8,
+      "sectionTitle": "A Cosine in the Vocal Tract",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 8,
+      "sectionTitle": "A Cosine in the Vocal Tract",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 8,
+      "sectionTitle": "A Cosine in the Vocal Tract",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and Tongue Position",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and Tongue Position",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and Tongue Position",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 9,
+      "sectionTitle": "Vowels and Tongue Position",
+      "bullet": 4,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 10,
+      "sectionTitle": "One Time Interval, Three Frequencies",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 10,
+      "sectionTitle": "One Time Interval, Three Frequencies",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 10,
+      "sectionTitle": "One Time Interval, Three Frequencies",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 10,
+      "sectionTitle": "One Time Interval, Three Frequencies",
+      "bullet": 4,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 10,
+      "sectionTitle": "One Time Interval, Three Frequencies",
+      "bullet": 5,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 11,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 11,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 11,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 11,
+      "sectionTitle": "Vowels as Combined Vibrations",
+      "bullet": 4,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 12,
+      "sectionTitle": "Perturbation Theory",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 12,
+      "sectionTitle": "Perturbation Theory",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 12,
+      "sectionTitle": "Perturbation Theory",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 12,
+      "sectionTitle": "Perturbation Theory",
+      "bullet": 4,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 13,
+      "sectionTitle": "Hearing Explained",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 13,
+      "sectionTitle": "Hearing Explained",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 13,
+      "sectionTitle": "Hearing Explained",
+      "bullet": 3,
+      "sourceSlide": 14,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 13,
+      "sectionTitle": "Hearing Explained",
+      "bullet": 4,
+      "sourceSlide": 14,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 14,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 14,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 14,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 3,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "07",
+      "noteSection": 14,
+      "sectionTitle": "The Fundamental Learning Tradeoff",
+      "bullet": 4,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 1,
+      "sectionTitle": "A Spring Alone Versus a Mass-Spring System",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 1,
+      "sectionTitle": "A Spring Alone Versus a Mass-Spring System",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 1,
+      "sectionTitle": "A Spring Alone Versus a Mass-Spring System",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 1,
+      "sectionTitle": "A Spring Alone Versus a Mass-Spring System",
+      "bullet": 4,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 2,
+      "sectionTitle": "Perturbation Theory and Speech as Changing Mass and Stiffness of Air",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 2,
+      "sectionTitle": "Perturbation Theory and Speech as Changing Mass and Stiffness of Air",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 2,
+      "sectionTitle": "Perturbation Theory and Speech as Changing Mass and Stiffness of Air",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 2,
+      "sectionTitle": "Perturbation Theory and Speech as Changing Mass and Stiffness of Air",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 3,
+      "sectionTitle": "How We Hear and the Cochlea",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 3,
+      "sectionTitle": "How We Hear and the Cochlea",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 3,
+      "sectionTitle": "How We Hear and the Cochlea",
+      "bullet": 3,
+      "sourceSlide": 5,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 4,
+      "sectionTitle": "The Basilar Membrane",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 4,
+      "sectionTitle": "The Basilar Membrane",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 5,
+      "sectionTitle": "How the Basilar Membrane Separates Frequencies",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 5,
+      "sectionTitle": "How the Basilar Membrane Separates Frequencies",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 5,
+      "sectionTitle": "How the Basilar Membrane Separates Frequencies",
+      "bullet": 3,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 5,
+      "sectionTitle": "How the Basilar Membrane Separates Frequencies",
+      "bullet": 4,
+      "sourceSlide": 7,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 6,
+      "sectionTitle": "Vocal Folds and How They Vibrate",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 6,
+      "sectionTitle": "Vocal Folds and How They Vibrate",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 6,
+      "sectionTitle": "Vocal Folds and How They Vibrate",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 6,
+      "sectionTitle": "Vocal Folds and How They Vibrate",
+      "bullet": 4,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 7,
+      "sectionTitle": "The Harmonic Oscillator Equations, Stepping Through Time",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 7,
+      "sectionTitle": "The Harmonic Oscillator Equations, Stepping Through Time",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 7,
+      "sectionTitle": "The Harmonic Oscillator Equations, Stepping Through Time",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 7,
+      "sectionTitle": "The Harmonic Oscillator Equations, Stepping Through Time",
+      "bullet": 4,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 7,
+      "sectionTitle": "The Harmonic Oscillator Equations, Stepping Through Time",
+      "bullet": 5,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 7,
+      "sectionTitle": "The Harmonic Oscillator Equations, Stepping Through Time",
+      "bullet": 6,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 8,
+      "sectionTitle": "Explicit Euler",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 8,
+      "sectionTitle": "Explicit Euler",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 8,
+      "sectionTitle": "Explicit Euler",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 8,
+      "sectionTitle": "Explicit Euler",
+      "bullet": 4,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 8,
+      "sectionTitle": "Explicit Euler",
+      "bullet": 5,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 9,
+      "sectionTitle": "Solving Differential Equations with Arithmetic, Python, and Software 1.0",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 9,
+      "sectionTitle": "Solving Differential Equations with Arithmetic, Python, and Software 1.0",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "08",
+      "noteSection": 9,
+      "sectionTitle": "Solving Differential Equations with Arithmetic, Python, and Software 1.0",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 1,
+      "sectionTitle": "Differential Equations and Dynamical Systems",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 1,
+      "sectionTitle": "Differential Equations and Dynamical Systems",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 1,
+      "sectionTitle": "Differential Equations and Dynamical Systems",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 1,
+      "sectionTitle": "Differential Equations and Dynamical Systems",
+      "bullet": 4,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 1,
+      "sectionTitle": "Differential Equations and Dynamical Systems",
+      "bullet": 5,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 2,
+      "sectionTitle": "The Viscous Spring, Negative Feedback and Euler's Method",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 2,
+      "sectionTitle": "The Viscous Spring, Negative Feedback and Euler's Method",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 2,
+      "sectionTitle": "The Viscous Spring, Negative Feedback and Euler's Method",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 2,
+      "sectionTitle": "The Viscous Spring, Negative Feedback and Euler's Method",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 2,
+      "sectionTitle": "The Viscous Spring, Negative Feedback and Euler's Method",
+      "bullet": 5,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 2,
+      "sectionTitle": "The Viscous Spring, Negative Feedback and Euler's Method",
+      "bullet": 6,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 3,
+      "sectionTitle": "Euler's Method in Python",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 3,
+      "sectionTitle": "Euler's Method in Python",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 4,
+      "sectionTitle": "Software 1.0",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 4,
+      "sectionTitle": "Software 1.0",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 5,
+      "sectionTitle": "What a Neural Network Does",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 5,
+      "sectionTitle": "What a Neural Network Does",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 5,
+      "sectionTitle": "What a Neural Network Does",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 6,
+      "sectionTitle": "Inputs, Weights, and Learning by SGD",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 6,
+      "sectionTitle": "Inputs, Weights, and Learning by SGD",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 6,
+      "sectionTitle": "Inputs, Weights, and Learning by SGD",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 6,
+      "sectionTitle": "Inputs, Weights, and Learning by SGD",
+      "bullet": 4,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 6,
+      "sectionTitle": "Inputs, Weights, and Learning by SGD",
+      "bullet": 5,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 7,
+      "sectionTitle": "Templatic Perception and Hierarchical Perception",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 7,
+      "sectionTitle": "Templatic Perception and Hierarchical Perception",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 7,
+      "sectionTitle": "Templatic Perception and Hierarchical Perception",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 8,
+      "sectionTitle": "Templatic Perception",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 8,
+      "sectionTitle": "Templatic Perception",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 8,
+      "sectionTitle": "Templatic Perception",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 9,
+      "sectionTitle": "Hierarchical Perception",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 9,
+      "sectionTitle": "Hierarchical Perception",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 9,
+      "sectionTitle": "Hierarchical Perception",
+      "bullet": 3,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 10,
+      "sectionTitle": "Neural Networks as Templatic Hierarchical Perceivers",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 10,
+      "sectionTitle": "Neural Networks as Templatic Hierarchical Perceivers",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 10,
+      "sectionTitle": "Neural Networks as Templatic Hierarchical Perceivers",
+      "bullet": 3,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 10,
+      "sectionTitle": "Neural Networks as Templatic Hierarchical Perceivers",
+      "bullet": 4,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 10,
+      "sectionTitle": "Neural Networks as Templatic Hierarchical Perceivers",
+      "bullet": 5,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 11,
+      "sectionTitle": "Inference and Learning in Neural Networks",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 11,
+      "sectionTitle": "Inference and Learning in Neural Networks",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "09",
+      "noteSection": 11,
+      "sectionTitle": "Inference and Learning in Neural Networks",
+      "bullet": 3,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 1,
+      "sectionTitle": "The Job of a Neural Network",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 1,
+      "sectionTitle": "The Job of a Neural Network",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 1,
+      "sectionTitle": "The Job of a Neural Network",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 2,
+      "sectionTitle": "Inputs, Weights, and How the Network Learns",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 2,
+      "sectionTitle": "Inputs, Weights, and How the Network Learns",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 2,
+      "sectionTitle": "Inputs, Weights, and How the Network Learns",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 2,
+      "sectionTitle": "Inputs, Weights, and How the Network Learns",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 2,
+      "sectionTitle": "Inputs, Weights, and How the Network Learns",
+      "bullet": 5,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 3,
+      "sectionTitle": "Two Huge Questions, Learning and Inference",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 3,
+      "sectionTitle": "Two Huge Questions, Learning and Inference",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 4,
+      "sectionTitle": "Neurons, Activity, and Synaptic Weights",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 4,
+      "sectionTitle": "Neurons, Activity, and Synaptic Weights",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 4,
+      "sectionTitle": "Neurons, Activity, and Synaptic Weights",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 4,
+      "sectionTitle": "Neurons, Activity, and Synaptic Weights",
+      "bullet": 4,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 5,
+      "sectionTitle": "From Brain Chemistry and Electronics to Arithmetic",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 5,
+      "sectionTitle": "From Brain Chemistry and Electronics to Arithmetic",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 6,
+      "sectionTitle": "Two Beliefs About AI and the Brain",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 7,
+      "sectionTitle": "A Multilayer Perceptron",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 7,
+      "sectionTitle": "A Multilayer Perceptron",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 7,
+      "sectionTitle": "A Multilayer Perceptron",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 7,
+      "sectionTitle": "A Multilayer Perceptron",
+      "bullet": 4,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 8,
+      "sectionTitle": "Pop Quiz, The Activation on Hidden 1, Neuron 2",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 8,
+      "sectionTitle": "Pop Quiz, The Activation on Hidden 1, Neuron 2",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 9,
+      "sectionTitle": "Learning by FITYMI, Backpropagation",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 9,
+      "sectionTitle": "Learning by FITYMI, Backpropagation",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 9,
+      "sectionTitle": "Learning by FITYMI, Backpropagation",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 9,
+      "sectionTitle": "Learning by FITYMI, Backpropagation",
+      "bullet": 4,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 10,
+      "sectionTitle": "Python SGD for an Average",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 10,
+      "sectionTitle": "Python SGD for an Average",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": "10",
+      "noteSection": 10,
+      "sectionTitle": "Python SGD for an Average",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 1,
+      "sectionTitle": "One Mass, Two Directions",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 1,
+      "sectionTitle": "One Mass, Two Directions",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 1,
+      "sectionTitle": "One Mass, Two Directions",
+      "bullet": 3,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 2,
+      "sectionTitle": "Mass and Stiffness Change the Rate",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 2,
+      "sectionTitle": "Mass and Stiffness Change the Rate",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 2,
+      "sectionTitle": "Mass and Stiffness Change the Rate",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 2,
+      "sectionTitle": "Mass and Stiffness Change the Rate",
+      "bullet": 4,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 3,
+      "sectionTitle": "Two Masses, Two Modes",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 3,
+      "sectionTitle": "Two Masses, Two Modes",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 3,
+      "sectionTitle": "Two Masses, Two Modes",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 4,
+      "sectionTitle": "Why the Second Mode Vibrates Faster",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 4,
+      "sectionTitle": "Why the Second Mode Vibrates Faster",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 4,
+      "sectionTitle": "Why the Second Mode Vibrates Faster",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 4,
+      "sectionTitle": "Why the Second Mode Vibrates Faster",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 5,
+      "sectionTitle": "Three Masses, Three Modes",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 5,
+      "sectionTitle": "Three Masses, Three Modes",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 5,
+      "sectionTitle": "Three Masses, Three Modes",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 5,
+      "sectionTitle": "Three Masses, Three Modes",
+      "bullet": 4,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 6,
+      "sectionTitle": "One More Mass, One More Mode",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 6,
+      "sectionTitle": "One More Mass, One More Mode",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 6,
+      "sectionTitle": "One More Mass, One More Mode",
+      "bullet": 3,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 7,
+      "sectionTitle": "A String's Modes and Its Spectrum",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 7,
+      "sectionTitle": "A String's Modes and Its Spectrum",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 7,
+      "sectionTitle": "A String's Modes and Its Spectrum",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 7,
+      "sectionTitle": "A String's Modes and Its Spectrum",
+      "bullet": 4,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 8,
+      "sectionTitle": "The Vocal Folds as a Membrane",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 8,
+      "sectionTitle": "The Vocal Folds as a Membrane",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 9,
+      "sectionTitle": "Theory, Prediction and Experiment",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 9,
+      "sectionTitle": "Theory, Prediction and Experiment",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 9,
+      "sectionTitle": "Theory, Prediction and Experiment",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 9,
+      "sectionTitle": "Theory, Prediction and Experiment",
+      "bullet": 4,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 9,
+      "sectionTitle": "Theory, Prediction and Experiment",
+      "bullet": 5,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 10,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 10,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 10,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 11,
+      "noteSection": 10,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 4,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 1,
+      "sectionTitle": "Dynamic Systems in the Economy",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 1,
+      "sectionTitle": "Dynamic Systems in the Economy",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 1,
+      "sectionTitle": "Dynamic Systems in the Economy",
+      "bullet": 3,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 2,
+      "sectionTitle": "Masses, Springs and Their Modes",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 2,
+      "sectionTitle": "Masses, Springs and Their Modes",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 2,
+      "sectionTitle": "Masses, Springs and Their Modes",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 3,
+      "sectionTitle": "More Masses and the String",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 3,
+      "sectionTitle": "More Masses and the String",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of a String Fixed at Both Ends",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of a String Fixed at Both Ends",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of a String Fixed at Both Ends",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of a String Fixed at Both Ends",
+      "bullet": 4,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of a String Fixed at Both Ends",
+      "bullet": 5,
+      "sourceSlide": 8,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of a String Fixed at Both Ends",
+      "bullet": 6,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 5,
+      "sectionTitle": "Principles of Mass-Spring Systems",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 7,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 6,
+      "sectionTitle": "A Local Change Affects Two Modes Differently",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 6,
+      "sectionTitle": "A Local Change Affects Two Modes Differently",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 7,
+      "sectionTitle": "The Vocal Folds as a Membrane",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 7,
+      "sectionTitle": "The Vocal Folds as a Membrane",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 7,
+      "sectionTitle": "The Vocal Folds as a Membrane",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 8,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 1,
+      "sourceSlide": 14,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 8,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 8,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 3,
+      "sourceSlide": 14,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 9,
+      "sectionTitle": "Air in a Fixed-Free Tube",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 9,
+      "sectionTitle": "Air in a Fixed-Free Tube",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 10,
+      "sectionTitle": "Vowel Shapes and Constrictions",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 5,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 11,
+      "sectionTitle": "What a Constriction Does to the Air",
+      "bullet": 1,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 11,
+      "sectionTitle": "What a Constriction Does to the Air",
+      "bullet": 2,
+      "sourceSlide": 18,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 12,
+      "sectionTitle": "/u/ Loads the Moving Lip End",
+      "bullet": 1,
+      "sourceSlide": 19,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 12,
+      "sectionTitle": "/u/ Loads the Moving Lip End",
+      "bullet": 2,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 13,
+      "sectionTitle": "/i/ Has Opposite Effects on F1 and F2",
+      "bullet": 1,
+      "sourceSlide": 20,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 13,
+      "sectionTitle": "/i/ Has Opposite Effects on F1 and F2",
+      "bullet": 2,
+      "sourceSlide": 20,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 14,
+      "sectionTitle": "/a/ Reverses the Two Effects",
+      "bullet": 1,
+      "sourceSlide": 21,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 14,
+      "sectionTitle": "/a/ Reverses the Two Effects",
+      "bullet": 2,
+      "sourceSlide": 21,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 15,
+      "sectionTitle": "The Principles Applied to Air",
+      "bullet": 1,
+      "sourceSlide": 22,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 16,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 1,
+      "sourceSlide": 23,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 16,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 2,
+      "sourceSlide": 23,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 16,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 3,
+      "sourceSlide": 23,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 17,
+      "sectionTitle": "Where Were You a Year Ago?",
+      "bullet": 1,
+      "sourceSlide": 24,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 12,
+      "noteSection": 17,
+      "sectionTitle": "Where Were You a Year Ago?",
+      "bullet": 2,
+      "sourceSlide": 24,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 1,
+      "sectionTitle": "Principles of Mass-Spring Systems",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 6,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 1,
+      "sectionTitle": "Principles of Mass-Spring Systems",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 2,
+      "sectionTitle": "More Masses, More Modes",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 3,
+      "sectionTitle": "Why Fixed-Fixed Frequencies Are Whole-Number Multiples",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 3,
+      "sectionTitle": "Why Fixed-Fixed Frequencies Are Whole-Number Multiples",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of Strings and Membranes",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 4,
+      "sectionTitle": "Harmonics of Strings and Membranes",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 5,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 5,
+      "sectionTitle": "One Fixed End and One Free End",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 6,
+      "sectionTitle": "Why Fixed-Free Frequencies Are Odd Multiples",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 6,
+      "sectionTitle": "Why Fixed-Free Frequencies Are Odd Multiples",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 6,
+      "sectionTitle": "Why Fixed-Free Frequencies Are Odd Multiples",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 7,
+      "sectionTitle": "Counting Quarter-Waves",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 8,
+      "sectionTitle": "The Air in the Vocal Tract Is a Fixed-Free System",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 9,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 9,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 9,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 9,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 4,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 9,
+      "sectionTitle": "Compression and Motion Alternate in an Air Column",
+      "bullet": 5,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 10,
+      "sectionTitle": "Vowel Shapes Locate Constrictions",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 5,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 11,
+      "sectionTitle": "Why a Constriction Can Raise One Formant and Lower Another",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 11,
+      "sectionTitle": "Why a Constriction Can Raise One Formant and Lower Another",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 11,
+      "sectionTitle": "Why a Constriction Can Raise One Formant and Lower Another",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 12,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 12,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 2,
+      "sourceSlide": 17,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 12,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 3,
+      "sourceSlide": 18,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 12,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 4,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 12,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 5,
+      "sourceSlide": 19,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 13,
+      "sectionTitle": "The Source Supplies Harmonics and the Filter Shapes Their Heights",
+      "bullet": 1,
+      "sourceSlide": 20,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 13,
+      "sectionTitle": "The Source Supplies Harmonics and the Filter Shapes Their Heights",
+      "bullet": 2,
+      "sourceSlide": 20,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 14,
+      "sectionTitle": "The /i/ and /a/ Filters",
+      "bullet": 1,
+      "sourceSlide": 21,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 14,
+      "sectionTitle": "The /i/ and /a/ Filters",
+      "bullet": 2,
+      "sourceSlide": 22,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 14,
+      "sectionTitle": "The /i/ and /a/ Filters",
+      "bullet": 3,
+      "sourceSlide": 22,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 15,
+      "sectionTitle": "A Spectrogram Places Successive Spectra in Time",
+      "bullet": 1,
+      "sourceSlide": 23,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 15,
+      "sectionTitle": "A Spectrogram Places Successive Spectra in Time",
+      "bullet": 2,
+      "sourceSlide": 23,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 15,
+      "sectionTitle": "A Spectrogram Places Successive Spectra in Time",
+      "bullet": 3,
+      "sourceSlide": 23,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 16,
+      "sectionTitle": "A Sentence Over Time",
+      "bullet": 1,
+      "sourceSlide": 24,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 16,
+      "sectionTitle": "A Sentence Over Time",
+      "bullet": 2,
+      "sourceSlide": 24,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 17,
+      "sectionTitle": "Wide Harmonic Spacing Makes Formants Harder to Identify",
+      "bullet": 1,
+      "sourceSlide": 25,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 17,
+      "sectionTitle": "Wide Harmonic Spacing Makes Formants Harder to Identify",
+      "bullet": 2,
+      "sourceSlide": 25,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 13,
+      "noteSection": 17,
+      "sectionTitle": "Wide Harmonic Spacing Makes Formants Harder to Identify",
+      "bullet": 3,
+      "sourceSlide": 25,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 1,
+      "sectionTitle": "The Vocal Folds as the First Vibrating System",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 2,
+      "sectionTitle": "The Air in the Vocal Tract as the Second Vibrating System",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 2,
+      "sectionTitle": "The Air in the Vocal Tract as the Second Vibrating System",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 3,
+      "sectionTitle": "Reasoning About a Constriction in One Mode",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 3,
+      "sectionTitle": "Reasoning About a Constriction in One Mode",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 4,
+      "sectionTitle": "Vowels Squeeze the Air in Different Places",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 5,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 4,
+      "sectionTitle": "Vowels Squeeze the Air in Different Places",
+      "bullet": 2,
+      "sourceSlide": 9,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 5,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 5,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 5,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 5,
+      "sectionTitle": "/u/, /i/ and /a/",
+      "bullet": 4,
+      "sourceSlide": 14,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 6,
+      "sectionTitle": "The Source Sets the Harmonic Spacing",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 6,
+      "sectionTitle": "The Source Sets the Harmonic Spacing",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 6,
+      "sectionTitle": "The Source Sets the Harmonic Spacing",
+      "bullet": 3,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 7,
+      "sectionTitle": "The Filter Selects the Formants",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 7,
+      "sectionTitle": "The Filter Selects the Formants",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 8,
+      "sectionTitle": "One Filter Can Look Different at Different Pitches",
+      "bullet": 1,
+      "sourceSlide": 17,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 8,
+      "sectionTitle": "One Filter Can Look Different at Different Pitches",
+      "bullet": 2,
+      "sourceSlide": 17,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 9,
+      "sectionTitle": "Spectrograms of Real Speech",
+      "bullet": 1,
+      "sourceSlide": 18,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 9,
+      "sectionTitle": "Spectrograms of Real Speech",
+      "bullet": 2,
+      "sourceSlide": 19,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 9,
+      "sectionTitle": "Spectrograms of Real Speech",
+      "bullet": 3,
+      "sourceSlide": 19,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 10,
+      "sectionTitle": "Speech Perception Integrates Over Time",
+      "bullet": 1,
+      "sourceSlide": 20,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 10,
+      "sectionTitle": "Speech Perception Integrates Over Time",
+      "bullet": 2,
+      "sourceSlide": 20,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 10,
+      "sectionTitle": "Speech Perception Integrates Over Time",
+      "bullet": 3,
+      "sourceSlide": 20,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 11,
+      "sectionTitle": "Formants as Input to a Vowel Recognizer",
+      "bullet": 1,
+      "sourceSlide": 21,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 11,
+      "sectionTitle": "Formants as Input to a Vowel Recognizer",
+      "bullet": 2,
+      "sourceSlide": 22,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 11,
+      "sectionTitle": "Formants as Input to a Vowel Recognizer",
+      "bullet": 3,
+      "sourceSlide": 22,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 12,
+      "sectionTitle": "Random Weights Give Signed Contributions",
+      "bullet": 1,
+      "sourceSlide": 23,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 12,
+      "sectionTitle": "Random Weights Give Signed Contributions",
+      "bullet": 2,
+      "sourceSlide": 23,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 13,
+      "sectionTitle": "Forward Flow and the Output Distribution",
+      "bullet": 1,
+      "sourceSlide": 24,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 13,
+      "sectionTitle": "Forward Flow and the Output Distribution",
+      "bullet": 2,
+      "sourceSlide": 24,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 14,
+      "sectionTitle": "The Same Network in PyTorch",
+      "bullet": 1,
+      "sourceSlide": 25,
+      "subBullets": 3,
+      "codeStatements": 3
+    },
+    {
+      "lecture": 14,
+      "noteSection": 14,
+      "sectionTitle": "The Same Network in PyTorch",
+      "bullet": 2,
+      "sourceSlide": 25,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 14,
+      "sectionTitle": "The Same Network in PyTorch",
+      "bullet": 3,
+      "sourceSlide": 25,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 14,
+      "sectionTitle": "The Same Network in PyTorch",
+      "bullet": 4,
+      "sourceSlide": 25,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 14,
+      "noteSection": 14,
+      "sectionTitle": "The Same Network in PyTorch",
+      "bullet": 5,
+      "sourceSlide": 25,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 1,
+      "sectionTitle": "Two Formants Feed a Fully Connected Network",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 1,
+      "sectionTitle": "Two Formants Feed a Fully Connected Network",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 2,
+      "sectionTitle": "Forward Propagation Combines Weighted Inputs",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 2,
+      "sectionTitle": "Forward Propagation Combines Weighted Inputs",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 2,
+      "sectionTitle": "Forward Propagation Combines Weighted Inputs",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 3,
+      "sectionTitle": "Raising an Activation or a Weight",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 3,
+      "sectionTitle": "Raising an Activation or a Weight",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 4,
+      "sectionTitle": "Backpropagation Uses the Difference Between Prediction and Target",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 4,
+      "sectionTitle": "Backpropagation Uses the Difference Between Prediction and Target",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 4,
+      "sectionTitle": "Backpropagation Uses the Difference Between Prediction and Target",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 5,
+      "sectionTitle": "Predicting How a Weight Changes the Error",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 5,
+      "sectionTitle": "Predicting How a Weight Changes the Error",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 6,
+      "sectionTitle": "Why Backpropagation Starts at the End",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 6,
+      "sectionTitle": "Why Backpropagation Starts at the End",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 6,
+      "sectionTitle": "Why Backpropagation Starts at the End",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 7,
+      "sectionTitle": "Pairing Each Recording with Its Target",
+      "bullet": 1,
+      "sourceSlide": 9,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 8,
+      "sectionTitle": "One Training Step in PyTorch",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 10,
+      "codeStatements": 10
+    },
+    {
+      "lecture": 15,
+      "noteSection": 8,
+      "sectionTitle": "One Training Step in PyTorch",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 8,
+      "sectionTitle": "One Training Step in PyTorch",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 8,
+      "sectionTitle": "One Training Step in PyTorch",
+      "bullet": 4,
+      "sourceSlide": 10,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 9,
+      "sectionTitle": "The Sigmoid Activation Function",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 9,
+      "sectionTitle": "The Sigmoid Activation Function",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 9,
+      "sectionTitle": "The Sigmoid Activation Function",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 10,
+      "sectionTitle": "Applying the Sigmoid One Neuron at a Time",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 10,
+      "sectionTitle": "Applying the Sigmoid One Neuron at a Time",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 11,
+      "sectionTitle": "The Same Program with the Sigmoid",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 1,
+      "codeStatements": 1
+    },
+    {
+      "lecture": 15,
+      "noteSection": 11,
+      "sectionTitle": "The Same Program with the Sigmoid",
+      "bullet": 2,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 15,
+      "noteSection": 11,
+      "sectionTitle": "The Same Program with the Sigmoid",
+      "bullet": 3,
+      "sourceSlide": 13,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 1,
+      "sectionTitle": "A Network That Recognizes Vowels",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 1,
+      "sectionTitle": "A Network That Recognizes Vowels",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 2,
+      "sectionTitle": "Forward Propagation and the Network's Decision",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 2,
+      "sectionTitle": "Forward Propagation and the Network's Decision",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 3,
+      "sectionTitle": "Why the Last Weights Are the Easiest to Change",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 3,
+      "sectionTitle": "Why the Last Weights Are the Easiest to Change",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 3,
+      "sectionTitle": "Why the Last Weights Are the Easiest to Change",
+      "bullet": 3,
+      "sourceSlide": 9,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 4,
+      "sectionTitle": "Real Vowel Data Overlaps",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 4,
+      "sectionTitle": "Real Vowel Data Overlaps",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 5,
+      "sectionTitle": "Learning Happens Only Through Errors",
+      "bullet": 1,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 5,
+      "sectionTitle": "Learning Happens Only Through Errors",
+      "bullet": 2,
+      "sourceSlide": 10,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 5,
+      "sectionTitle": "Learning Happens Only Through Errors",
+      "bullet": 3,
+      "sourceSlide": 10,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 6,
+      "sectionTitle": "Reading the PyTorch Program",
+      "bullet": 1,
+      "sourceSlide": 11,
+      "subBullets": 7,
+      "codeStatements": 7
+    },
+    {
+      "lecture": 16,
+      "noteSection": 6,
+      "sectionTitle": "Reading the PyTorch Program",
+      "bullet": 2,
+      "sourceSlide": 11,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 6,
+      "sectionTitle": "Reading the PyTorch Program",
+      "bullet": 3,
+      "sourceSlide": 11,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 6,
+      "sectionTitle": "Reading the PyTorch Program",
+      "bullet": 4,
+      "sourceSlide": 11,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 7,
+      "sectionTitle": "The Sigmoid Makes Neurons Nearly Digital",
+      "bullet": 1,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 7,
+      "sectionTitle": "The Sigmoid Makes Neurons Nearly Digital",
+      "bullet": 2,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 7,
+      "sectionTitle": "The Sigmoid Makes Neurons Nearly Digital",
+      "bullet": 3,
+      "sourceSlide": 12,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 7,
+      "sectionTitle": "The Sigmoid Makes Neurons Nearly Digital",
+      "bullet": 4,
+      "sourceSlide": 12,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 8,
+      "sectionTitle": "Applying the Sigmoid in the Network",
+      "bullet": 1,
+      "sourceSlide": 13,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 8,
+      "sectionTitle": "Applying the Sigmoid in the Network",
+      "bullet": 2,
+      "sourceSlide": 14,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 9,
+      "sectionTitle": "Training the Network from One Starting Point",
+      "bullet": 1,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 9,
+      "sectionTitle": "Training the Network from One Starting Point",
+      "bullet": 2,
+      "sourceSlide": 15,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 9,
+      "sectionTitle": "Training the Network from One Starting Point",
+      "bullet": 3,
+      "sourceSlide": 15,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 10,
+      "sectionTitle": "Ten Starting Points, the Same Final Accuracy",
+      "bullet": 1,
+      "sourceSlide": 16,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 10,
+      "sectionTitle": "Ten Starting Points, the Same Final Accuracy",
+      "bullet": 2,
+      "sourceSlide": 16,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 16,
+      "noteSection": 10,
+      "sectionTitle": "Ten Starting Points, the Same Final Accuracy",
+      "bullet": 3,
+      "sourceSlide": 16,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 1,
+      "sectionTitle": "Neural Networks from 1943 to 1986",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 1,
+      "sectionTitle": "Neural Networks from 1943 to 1986",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 1,
+      "sectionTitle": "Neural Networks from 1943 to 1986",
+      "bullet": 3,
+      "sourceSlide": 2,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 2,
+      "sectionTitle": "Jordan's Recurrent Network for Speech Production",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 2,
+      "sectionTitle": "Jordan's Recurrent Network for Speech Production",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 2,
+      "sectionTitle": "Jordan's Recurrent Network for Speech Production",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 4,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 5,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 6,
+      "sourceSlide": 4,
+      "subBullets": 5,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 7,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 3,
+      "sectionTitle": "From One Neuron to Agentic Systems",
+      "bullet": 8,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 4,
+      "sectionTitle": "Fifteen Vectors of Anything",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 4,
+      "sectionTitle": "Fifteen Vectors of Anything",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 4,
+      "sectionTitle": "Fifteen Vectors of Anything",
+      "bullet": 3,
+      "sourceSlide": 5,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 4,
+      "sectionTitle": "Fifteen Vectors of Anything",
+      "bullet": 4,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 4,
+      "sectionTitle": "Fifteen Vectors of Anything",
+      "bullet": 5,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 4,
+      "sectionTitle": "Fifteen Vectors of Anything",
+      "bullet": 6,
+      "sourceSlide": 5,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 4,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 6,
+      "sectionTitle": "Guessing the Next Letter",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 6,
+      "sectionTitle": "Guessing the Next Letter",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 6,
+      "sectionTitle": "Guessing the Next Letter",
+      "bullet": 3,
+      "sourceSlide": 7,
+      "subBullets": 6,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 6,
+      "sectionTitle": "Guessing the Next Letter",
+      "bullet": 4,
+      "sourceSlide": 7,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM Together",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 17,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM Together",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 1,
+      "sectionTitle": "From a Neuron to Agents That Communicate",
+      "bullet": 1,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 1,
+      "sectionTitle": "From a Neuron to Agents That Communicate",
+      "bullet": 2,
+      "sourceSlide": 2,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 1,
+      "sectionTitle": "From a Neuron to Agents That Communicate",
+      "bullet": 3,
+      "sourceSlide": 2,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 1,
+      "sectionTitle": "From a Neuron to Agents That Communicate",
+      "bullet": 4,
+      "sourceSlide": 2,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 1,
+      "sectionTitle": "From a Neuron to Agents That Communicate",
+      "bullet": 5,
+      "sourceSlide": 2,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 2,
+      "sectionTitle": "Parallel Heads and Successive Layers",
+      "bullet": 1,
+      "sourceSlide": 3,
+      "subBullets": 1,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 2,
+      "sectionTitle": "Parallel Heads and Successive Layers",
+      "bullet": 2,
+      "sourceSlide": 3,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 2,
+      "sectionTitle": "Parallel Heads and Successive Layers",
+      "bullet": 3,
+      "sourceSlide": 3,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 3,
+      "sectionTitle": "A Dynamical Rule Across Time and Depth",
+      "bullet": 1,
+      "sourceSlide": 4,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 3,
+      "sectionTitle": "A Dynamical Rule Across Time and Depth",
+      "bullet": 2,
+      "sourceSlide": 4,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 3,
+      "sectionTitle": "A Dynamical Rule Across Time and Depth",
+      "bullet": 3,
+      "sourceSlide": 4,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 4,
+      "sectionTitle": "One Prediction Task for Different Sequences",
+      "bullet": 1,
+      "sourceSlide": 5,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 4,
+      "sectionTitle": "One Prediction Task for Different Sequences",
+      "bullet": 2,
+      "sourceSlide": 5,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 1,
+      "sourceSlide": 6,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 2,
+      "sourceSlide": 6,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 5,
+      "sectionTitle": "Which Sequences Can Be English Words?",
+      "bullet": 3,
+      "sourceSlide": 6,
+      "subBullets": 4,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 6,
+      "sectionTitle": "Guessing the Next Letter",
+      "bullet": 1,
+      "sourceSlide": 7,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 6,
+      "sectionTitle": "Guessing the Next Letter",
+      "bullet": 2,
+      "sourceSlide": 7,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM with an Agentic System",
+      "bullet": 1,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM with an Agentic System",
+      "bullet": 2,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM with an Agentic System",
+      "bullet": 3,
+      "sourceSlide": 8,
+      "subBullets": 0,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM with an Agentic System",
+      "bullet": 4,
+      "sourceSlide": 8,
+      "subBullets": 3,
+      "codeStatements": 0
+    },
+    {
+      "lecture": 18,
+      "noteSection": 7,
+      "sectionTitle": "Building an LLM with an Agentic System",
+      "bullet": 5,
+      "sourceSlide": 8,
+      "subBullets": 2,
+      "codeStatements": 0
+    }
+  ],
+  "preservation": {
+    "wordsUnchanged": true,
+    "eachBulletPlacedOnce": true,
+    "omitted": "The four course header lines and the section headings, which the reader replaces with the original slide titles.",
+    "code": "Each fenced code block is shown as sub-bullets of the bullet that introduces it, one complete statement per sub-bullet."
+  },
+  "otherEditionsChanged": false
+}

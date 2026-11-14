@@ -1,0 +1,574 @@
+{
+ "id": "module2-code-figures",
+ "title": "Code blocks and figures",
+ "module": "module2",
+ "lectures": "Lectures 11 to 18",
+ "note": "Covers every Module II page whose figure or code is readable from the extracted text or the slide image. Excluded on purpose: Lecture 13 pages 4 and 8 and Lecture 14 page 4 are build animations of numbered boxes with no caption, so there is no content to teach from them. Lecture 14 page 18 uses the same spectrogram as Lecture 13 page 23. Lectures 11, 12, 17 and 18 have no code blocks in their extracted text. Lecture 18 page 4 is covered by the oscillator item.",
+ "codeBlocks": [
+  {
+   "id": "code-l14-p25",
+   "lecture": "Lecture 14",
+   "page": 25,
+   "title": "The same network in PyTorch",
+   "code": "import torch\nimport torch.nn as nn\n\n# purely linear: 2 → 3 → 2 → 4 → 5\nnet = nn.Sequential(\n    nn.Linear(2, 3, bias=False),  # 2 in → 3 out\n    nn.Linear(3, 2, bias=False),  # 3 in → 2 out\n    nn.Linear(2, 4, bias=False),  # 2 in → 4 out\n    nn.Linear(4, 5, bias=False),  # 4 in → 5 out\n)",
+   "transcript": [
+    "**nn.Sequential** stacks layers in the order information passes through them, and each **nn.Linear** layer produces weighted sums of its inputs. The network is a stack of four linear layers, stored under the name **net**.",
+    "The two numbers in each Linear call give its input and output sizes. The first layer takes 2 values and produces 3, the second turns those 3 into 2, the third turns 2 into 4, and the last turns 4 into 5. Each output count matches the next layer’s input count, so values pass through the whole sequence, and the final 5 values are the scores for the five vowel labels.",
+    "**bias=False** removes the extra constant that would be added to each weighted sum. Every connection still keeps its weight. No activation layers appear between the Linear layers, so the whole network stays **purely linear**.",
+    "The input layer has 2 values and the output layer has 5. The three layers in between, with 3, 2 and 4 units, are **hidden layers**, so four Linear calls produce a network with **three hidden layers**.",
+    "This code only declares the network. It does not train it, because training needs examples and a way to change the weights."
+   ],
+   "exam": [
+    {
+     "text": "Review question 20: How many hidden layers does this NN have? (same network as this code)",
+     "why": "This is the exam format. Count the Linear calls, subtract the input and output layers, and the rest are hidden."
+    },
+    {
+     "text": "What does bias=False remove from a Linear layer?",
+     "id": "v2-l14-mcq-024"
+    },
+    {
+     "text": "What does nn.Linear(2, 3, bias=False) specify?",
+     "id": "v2-l14-mcq-025"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 14",
+     "page": 25,
+     "image": "assets/slides/lecture14/025.webp",
+     "originalTitle": "Declare the layer sequence in PyTorch",
+     "originalTranscript": [
+      "The code imports **torch** and its neural-network tools as **nn**, then assigns the model to **net**. **nn.Sequential** puts its layers in the order information passes through them. Each **nn.Linear** produces weighted sums from incoming values.",
+      "In **nn.Linear(2, 3, bias=False)**, two inputs feed three receiving neurons. The remaining layers change three values to two, two to four, and four to five. Each output count matches the next layer’s input count, allowing information to pass through the sequence. The final five values correspond to the five candidate labels.",
+      "Every incoming connection keeps its weight. **bias=False** removes an extra constant added to a weighted sum, rather than removing weights or preventing learning. No activation layers appear, so the sequence remains linear. Declaring this structure does not train it or compute the illustrated probability bars; training would require examples and a process for changing weights."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "code-l16-p11",
+   "lecture": "Lecture 16",
+   "page": 11,
+   "title": "The same network in PyTorch, one gradient step",
+   "code": "import torch\nfrom torch import nn\n\n# Sizes: X = 110x2, Y = 110x5\nX = torch.load(\"Formant_Inputs.pt\").float()\nY = torch.load(\"TrueVowel_Outputs.pt\").float()\nnet = nn.Sequential(\n    nn.Linear(2, 3),\n    nn.Linear(3, 2),\n    nn.Linear(2, 4),\n    nn.Linear(4, 5)\n)\nsgd = torch.optim.SGD(net.parameters(), lr=0.1)\nsgd.zero_grad()\nloss = nn.CrossEntropyLoss()(net(X), Y)\nloss.backward()\nsgd.step()",
+   "transcript": [
+    "**X** holds the two formant values for each of 110 recordings, and **Y** holds the five-position target for each one. **torch.load** reads these saved tensor files, and **.float()** turns the values into floating-point numbers.",
+    "The model keeps the same layer sizes, 2, 3, 2, 4 and 5, but these Linear calls leave out bias=False, so each layer keeps PyTorch’s default bias. No sigmoid appears between the layers.",
+    "**SGD** receives the network’s weights and a **learning rate of 0.1**. **zero_grad** clears old gradients, **net(X)** runs the forward pass, and **CrossEntropyLoss** compares the five output scores with Y. **loss.backward** computes how each weight should change, and **sgd.step** is the call that actually changes the weights.",
+    "All **110 rows** feed this single update, and there is no training loop. The code starts from PyTorch’s own random weights, so it matches the layer sizes of the hand-worked network without reproducing its numbers."
+   ],
+   "exam": [
+    {
+     "text": "Which call applies the parameter update, loss.backward or sgd.step?",
+     "id": "v2-l15-mcq-019"
+    },
+    {
+     "text": "What produced the accuracy curve shown with the PyTorch code?",
+     "id": "v2-l16-mcq-012"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 16",
+     "page": 11,
+     "image": "assets/slides/lecture16/011.webp",
+     "originalTitle": "Read one full-batch training step in PyTorch",
+     "originalTranscript": [
+      "**X** contains the two formant values for each of the 110 recordings, and **Y** contains the five-position targets for the same recordings. **torch.load** loads the saved tensor files, and **.float()** supplies floating-point values. The program assumes these files already exist with the stated shapes. It does not create the recordings or their labels.",
+      "**nn.Sequential** connects the layers in their written order. **nn.Linear(2, 3)** maps each pair of inputs into three values. The later layers map three to two, two to four, and four to five. These dimensions preserve the **2 → 3 → 2 → 4 → 5** arrangement. There is no sigmoid declared between these hidden layers.",
+      "**SGD** is given the network’s parameters and a **learning rate of 0.1**. **zero_grad()** clears previously stored gradients. **net(X)** performs the forward calculation, and **CrossEntropyLoss** compares the final scores with Y. This loss handles the softmax-related calculation internally, so the final linear layer supplies logits rather than a separately declared softmax output. **loss.backward()** computes the gradients of the loss with respect to the parameters. **sgd.step()** then changes those parameters using the gradients. These are separate operations. Computing how a weight affects the error does not by itself change that weight, and clearing gradients does not erase the learned parameter values.",
+      "All **110 rows** contribute to this one gradient step. The code has no repeated training loop. It also uses PyTorch’s default linear-layer initialization and bias options, whereas the numerical drawing uses hand-selected weights with no biases. The code specifies the same layer sizes, but it does not automatically reproduce the displayed numbers."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "code-l16-p15",
+   "lecture": "Lecture 16",
+   "page": 15,
+   "title": "One initialization, the full training loop",
+   "code": "import torch  # Tensors\nfrom torch import nn  # Layers and loss\nimport matplotlib.pyplot as plt  # Plotting\ntorch.manual_seed(0)  # Initialization\nX = Formant_Inputs / 1000  # Hz to kHz\ny = TrueVowel_Outputs.argmax(1)  # Correct classes\nmodel = nn.Sequential(  # The supplied widths\n    nn.Linear(2, 3, bias=False),  # No bias\n    nn.Linear(3, 2, bias=False),  # No bias\n    nn.Linear(2, 4, bias=False),  # No bias\n    nn.Linear(4, 5, bias=False),  # Five scores\n)  # No activations\nloss_fn = nn.CrossEntropyLoss()  # One-hot cross-entropy\nopt = torch.optim.SGD(model.parameters(), lr=0.1)  # Plain SGD\naccuracy = []  # Percent correct\nfor epoch in range(2000):  # Full-batch updates\n    opt.zero_grad()  # Clear old gradients\n    loss = loss_fn(model(X), TrueVowel_Outputs)  # Forward + loss\n    loss.backward()  # Backpropagate\n    opt.step()  # Update weights\n    with torch.no_grad():  # Accuracy only\n        pred = model(X).argmax(1)  # Largest score wins\n        correct = (pred == y).float().mean().item()  # Fraction correct\n        accuracy.append(100 * correct)  # Save percent correct\nplt.plot(range(1, 2001), accuracy)  # Accuracy curve\nplt.ylim(0, 100)  # Full percent scale\nplt.xlabel('Epoch')  # Epoch axis\nplt.ylabel('Accuracy (%)')  # Accuracy axis\nplt.show()  # Display the curve",
+   "transcript": [
+    "This loop trains the same 2, 3, 2, 4, 5 network with **bias=False** in every layer and no activations. **torch.manual_seed(0)** fixes the random starting weights, so the run begins from one particular **initialization**. The formants are divided by 1000, which turns hertz into kilohertz.",
+    "The loss is **CrossEntropyLoss** and the optimizer is plain **SGD** with a **learning rate of 0.1**. Each of the **2,000 epochs** clears old gradients, computes the loss on all 525 tokens at once, backpropagates, and takes one step, so every epoch is exactly one weight update.",
+    "After each update, the accuracy check runs inside **torch.no_grad**, so measuring does not change any weights. For each token, the largest of the five scores is the network’s answer, and accuracy is the percentage of tokens answered correctly. These are the same 525 tokens the network learns from, so this is **training accuracy**.",
+    "PyTorch was not available where the curve was made, so the plotted run comes from an equivalent **NumPy** version of the same network, loss, scaling, learning rate and number of updates. The run ends at **44.95 percent** training accuracy."
+   ],
+   "exam": [
+    {
+     "text": "What does with torch.no_grad() mean for the accuracy check?",
+     "id": "v2-l16-mcq-013"
+    },
+    {
+     "text": "Why was the curve made with NumPy, and what does that mean for reading it?",
+     "id": "v2-l16-written-011"
+    },
+    {
+     "text": "What does “equal seed numbers do not imply equal PyTorch weights” mean?",
+     "id": "v2-l16-mcq-017"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 16",
+     "page": 15,
+     "image": "assets/slides/lecture16/015.webp",
+     "originalTitle": "One initialization · training the linear network for 2,000 updates",
+     "originalTranscript": [
+      "The code trains the same **2 → 3 → 2 → 4 → 5** network on the vowel data. Every layer is **nn.Linear with bias=False**, and there are no activations between them, so the network is the all-linear one from the earlier forward-propagation example. **torch.manual_seed(0)** fixes the random starting weights, so the run starts from one particular **initialization**. The formants are divided by 1000, converting hertz to kilohertz, which keeps the input numbers small.",
+      "The targets are one-hot rows, and **argmax(1)** turns each row into the number of its correct class for checking accuracy. The loss is **CrossEntropyLoss**, and the optimizer is plain **SGD** with a **learning rate of 0.1**. The loop runs **2,000 epochs**. In each one it clears old gradients, computes the loss for all the examples at once, backpropagates, and takes one step, so every epoch is one **full-batch update**.",
+      "After each update, the code measures accuracy without computing gradients. For each token the largest of the five scores is the network’s answer, and accuracy is the percentage of tokens where that answer matches the correct class. These are the same **525 training examples** the network learns from, so this is **training accuracy**, not a test on new recordings. The curve starts at about **20%**, which is what labeling everything as one of five equally common vowels would give. It stays flat for about the first 200 updates, then climbs quickly into the 40s. Near update 390 it drops sharply back toward 20% for a moment, then recovers and settles near 45%. After about 450 updates it barely changes. The final training accuracy is **44.95%**, which is 236 of the 525 tokens.",
+      "The note under the code explains where the curve comes from. PyTorch was not available where the plot was made, so the plotted run comes from an equivalent **NumPy** implementation of the same network, loss, scaling, learning rate and number of updates. The code shows the PyTorch version of the procedure, and the curve shows what that procedure did when it was run."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "code-l16-p16",
+   "lecture": "Lecture 16",
+   "page": 16,
+   "title": "Ten initializations, the same training block",
+   "code": null,
+   "transcript": [
+    "The same training block runs ten times, with **seeds 0 through 9**. Each run builds a fresh model and a fresh SGD optimizer, so only the **initialization**, the random starting weights, changes between runs. The data, scaling, loss, learning rate and 2,000 updates stay identical.",
+    "All ten runs finish at **44.95 percent** training accuracy. The curves are NumPy reference runs, and the same seed number in NumPy and PyTorch does not give the same starting weights, so a PyTorch run would not trace exactly the same line."
+   ],
+   "exam": [
+    {
+     "text": "What does “equal seed numbers do not imply equal PyTorch weights” mean?",
+     "id": "v2-l16-mcq-017"
+    }
+   ],
+   "note": "The slide says this training block repeats for seeds 0 through 9, with a fresh model and SGD optimizer for each seed. The code is the same as the previous code slide.",
+   "slides": [
+    {
+     "lecture": "Lecture 16",
+     "page": 16,
+     "image": "assets/slides/lecture16/016.webp",
+     "originalTitle": "Ten initializations · different paths, the same final accuracy",
+     "originalTranscript": [
+      "The same training procedure is run ten times with **seeds 0 through 9**. Each run builds a fresh model and a fresh SGD optimizer, so the only thing that changes from run to run is the **initialization**, the random starting weights. The data, the scaling, the loss, the learning rate and the 2,000 full-batch updates are identical.",
+      "Each colored line is one seed. All ten start near **20%** training accuracy. They differ in when they leave that starting level, some climbing within the first 100 updates and others staying flat for 200 or more. They also differ in their early ups and downs, including short drops back toward 20%, and in the highest accuracy they reach along the way, which is close to 47% for some runs.",
+      "Some runs settle within about 350 updates, while the slowest take about 1,000. After that the lines come together and overlap. **All ten finish at 44.95%** training accuracy. Different starting weights send the network down different paths, but every path ends at the same level of performance on these data. The shared final value says that starting the network from a different place did not change how well it could do. Running more seeds or picking the best one would not raise the final accuracy here. The limit comes from the network and the data it is given, the same overlapping vowel clouds, rather than from bad luck in the starting weights.",
+      "The note at the bottom repeats that the curves are executed **NumPy** reference runs. Matching seed numbers in NumPy and PyTorch do not produce the same starting weights, so a PyTorch run with seed 3 would not trace exactly the same line as the plotted seed 3. The overall pattern, varied early paths and a common end point, is what the runs show."
+     ]
+    }
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "fig-l13-p16",
+   "lecture": "Lecture 13",
+   "page": 16,
+   "title": "/u/ as free-end loading",
+   "transcript": [
+    "The **/u/ model** adds loading near the open lips, which is the **free end** of the air column. The added load means greater **effective mass** in the air that moves there, not heavier air molecules.",
+    "Both the first and second modes have strong motion near the lips, so motion dominates there in both. More moving mass is harder to speed up and reverse, so each cycle takes longer and the frequency falls. **F1 and F2 both go down** compared with the uniform tube.",
+    "The shared direction comes from where the load sits. It is not a rule that every constriction lowers every resonance."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 13",
+     "page": 16,
+     "image": "assets/slides/lecture13/016.webp",
+     "originalTitle": "/u/ loads the moving lip end",
+     "originalTranscript": [
+      "The **/u/ model** adds loading near the open lips, the free end of the air column. Both the F1-like and F2-like patterns have substantial movement there. The enlarged elements represent greater **effective mass**, not heavier individual air molecules.",
+      "More moving mass is harder to speed up and reverse. Where this effect dominates, each cycle takes longer and frequency falls. Because both modes move strongly near the lips, the result is **F1 down and F2 down** relative to the uniform reference.",
+      "The two rows make it possible to compare the same lip location across different resonance patterns. Both have strong movement there, even though their internal arrangements differ. Increasing the load therefore slows both without requiring that their shapes or frequencies become identical. F1 remains the lower resonance and F2 the next one. The important comparison is the direction of each change relative to its own uniform reference, not whether the two frequencies have become equal or whether all parts of the tract move equally.",
+      "The shared direction follows from the changed location’s role in both patterns. It is not a rule that every constriction lowers every resonance. The air continues moving back and forth around its usual positions; the larger elements identify the load involved in that movement."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l13-p20",
+   "lecture": "Lecture 13",
+   "page": 20,
+   "title": "Source and filter for schwa",
+   "transcript": [
+    "**Source-filter theory** separates the vibration of the vocal folds, the **source**, from the shaping done by the vocal tract, the **filter**. The source repeats at a fundamental frequency, **F0**, and produces **harmonics** at whole-number multiples of F0. Here the harmonics are 100 Hz apart up to 4000 Hz, all at the same height.",
+    "The filter strengthens harmonics near its resonances, the **formants**, and weakens the rest. The harmonics stay at the same frequencies, and only their heights change. The outline of those heights is the **spectral envelope**, and that envelope is the vowel.",
+    "For schwa, the formants sit at **500, 1500, 2500 and 3500 Hz**. Frequency runs along the horizontal axis and amplitude up the vertical axis, so a taller line is stronger, not higher in frequency."
+   ],
+   "exam": [
+    {
+     "text": "What sets the spacing between consecutive source harmonics?",
+     "id": "v2-l13-mcq-019"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 13",
+     "page": 20,
+     "image": "assets/slides/lecture13/020.webp",
+     "originalTitle": "The source supplies harmonics and the filter shapes their heights",
+     "originalTranscript": [
+      "**Source–filter theory** separates vocal-fold vibration from the vocal tract’s shaping of that sound. The repeating source has a fundamental frequency, **F0**, and harmonics at whole-number multiples. F0 sets the spacing between the source lines. The harmonics are 100 Hz apart and extend to 4000 Hz; their equal heights simplify the example.",
+      "The tract acts as a **filter**, strengthening harmonics near its resonances, or **formants**, and weakening others. In this comparison, the source frequency positions stay fixed while their relative heights change. The broad pattern of strengths is the **spectral envelope**. The schwa example labels four resonance regions, F1–F4, with its strongest group at low frequency.",
+      "Frequency runs horizontally and amplitude vertically. A taller line is stronger, not necessarily higher in frequency. **F0 is source repetition; F1 is the lowest tract resonance**. The vowel still contains many harmonics, rather than just four tones. The illustrated resonance values describe this comparison, not fixed values for every speaker."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l13-p21",
+   "lecture": "Lecture 13",
+   "page": 21,
+   "title": "Source and filter for /i/",
+   "transcript": [
+    "The **/i/ filter** has a low first formant and a high second formant, with **F1 at 300 Hz** and **F2 at 2300 Hz**. F3 and F4 sit at 3000 and 3600 Hz.",
+    "The source harmonics stay in the same places, 100 Hz apart, and only their strengths change. The strongest group sits near 300 Hz, the next group is far to the right near 2300 Hz, and the region between them is weak."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 13",
+     "page": 21,
+     "image": "assets/slides/lecture13/021.webp",
+     "originalTitle": "The /i/ filter keeps F1 low and F2 high",
+     "originalTranscript": [
+      "The **/i/ filter** has a low first formant and a high second formant. Its first strong harmonic group is near the low-frequency end; the next is much farther right, with a weak region between them. Further groups occur around F3 and F4.",
+      "The regularly spaced source harmonics stay in the same positions. Changing the tract changes their strengths, making the filter’s effect visible separately from source repetition. The front-constriction account connects this low-F1, high-F2 pattern with the different roles of movement and compression in the two modes.",
+      "A line’s horizontal position gives **frequency**, while its height gives **amplitude**. A tall low-frequency line remains low in frequency even if a higher-frequency line is weaker. The narrow harmonic lines sample the broad formant regions. These illustrated values describe one /i/ comparison, rather than an identical numerical pattern for every speaker."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l13-p22",
+   "lecture": "Lecture 13",
+   "page": 22,
+   "title": "Source and filter for /a/",
+   "transcript": [
+    "Compared with /i/, the **/a/ filter raises F1 and lowers F2**. F1 sits at 750 Hz and F2 at 1200 Hz, so the first two formants come close together. F3 and F4 stay higher, at 2600 and 3500 Hz.",
+    "A formant can fall **between two harmonics**. The 750 Hz target lies between the source lines at 700 and 800 Hz, so those nearby harmonics get stronger without any new line appearing at exactly 750 Hz."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 13",
+     "page": 22,
+     "image": "assets/slides/lecture13/022.webp",
+     "originalTitle": "The /a/ filter raises F1 and lowers F2",
+     "originalTranscript": [
+      "Compared with /i/, the **/a/ filter raises F1 and lowers F2**, bringing the first two resonance regions closer together. Groups around F3 and F4 remain higher in frequency. The same regularly spaced source can therefore produce a different vowel pattern when the tract changes.",
+      "The filter changes the broad pattern of harmonic **strengths**. Moving a formant changes the favored frequency region horizontally; changing a harmonic’s amplitude changes its height. Those are different changes to read in the spectrum.",
+      "A formant can lie **between two source harmonics**. For example, the marked 750 Hz target lies between lines at 700 and 800 Hz. Nearby supplied harmonics can become stronger without creating a new source line exactly at the target. A formant names the tract’s resonance region; a harmonic names a component of the repeating source. The drawing’s values are specific to this simplified comparison."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l13-p23",
+   "lecture": "Lecture 13",
+   "page": 23,
+   "title": "Spectrum and spectrogram for /ia/",
+   "transcript": [
+    "A **spectrum** gives the frequency components in one short slice of sound. A **spectrogram** lines up many of these slices in time, with time running left to right and frequency running upward from 0 to 4000 Hz.",
+    "Spectrum height becomes darkness. **Black means high amplitude, gray medium and white low**, so a darkening band is getting stronger, while a rising band is moving to a higher frequency.",
+    "During the change from /i/ to /a/, **F1 rises and F2 falls**. The lowest band climbs from near 300 Hz to about 750 Hz, and the second band drops from near 2300 Hz to about 1200 Hz, so the two come closer together."
+   ],
+   "exam": [
+    {
+     "text": "How do a rising band and a darkening band differ on this spectrogram?",
+     "id": "v2-l13-written-023"
+    },
+    {
+     "text": "A band gets darker at the same spectrogram height. What changes?",
+     "id": "v2-l14-mcq-016"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 13",
+     "page": 23,
+     "image": "assets/slides/lecture13/023.webp",
+     "originalTitle": "A spectrogram places successive spectra in time",
+     "originalTranscript": [
+      "A **spectrum** describes frequency components during one short slice of sound. The successive spectra follow /i/ and then /a/. In each spectrum, frequency runs horizontally and amplitude vertically.",
+      "A **spectrogram** places these slices in time from left to right, with frequency running upward. A peak near the right of a spectrum therefore becomes a mark higher in its spectrogram strip. Moving right in the spectrogram means a later time, rather than a higher frequency.",
+      "In this grayscale display, **black means high amplitude, gray medium, and white low**. Peak height becomes darkness, while vertical position gives frequency. A darkening band grows stronger; a rising band moves to a higher frequency. During the /i/ to /a/ transition, **F1 rises and F2 falls**, bringing them closer together. Higher bands remain above them with smaller changes. The display follows changing tract resonances through time."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l14-p15",
+   "lecture": "Lecture 14",
+   "page": 15,
+   "title": "Membrane modes and harmonic spacing",
+   "transcript": [
+    "The vocal folds supply the voiced **source**. Its repetition rate, **F0**, sets the spacing between the harmonics, which are whole-number multiples of F0.",
+    "With F0 at **100 Hz**, harmonics fall at 100, 200, 300 and so on, giving many closely spaced lines. At **250 Hz** they fall at 250, 500 and 750, and at **350 Hz** at 350, 700 and 1050. In the same 0 to 4000 Hz window, a lower F0 gives denser sampling and a higher F0 gives sparser sampling.",
+    "Big, loose vocal folds go with the low 100 Hz F0, and tighter, lighter folds go with the higher values. Heavier folds resist changes in movement, so they repeat more slowly.",
+    "The membrane panels give modes 1 to 5 at 100, 200, 300, 400 and 500 Hz, and the last panel sums all five. These frequencies are assigned for this example, not a general result for all membranes."
+   ],
+   "exam": [
+    {
+     "text": "What sets the spacing between consecutive source harmonics?",
+     "id": "v2-l13-mcq-019"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 14",
+     "page": 15,
+     "image": "assets/slides/lecture14/015.webp",
+     "originalTitle": "The vocal-fold source sets harmonic spacing",
+     "originalTranscript": [
+      "The vocal folds supply the voiced **source**. **F0** is its repetition rate and sets the spacing between harmonic components. The 100, 250, and 350 Hz examples spread the harmonic lines progressively farther apart, leaving fewer components in the same frequency window.",
+      "The comparison links heavier, looser folds with slower repetition and lighter, tighter folds with faster repetition. Mass resists changes in movement, while restoring action brings the folds back. The membrane illustration separates patterns and combines their movements; its harmonic frequencies are assigned, rather than a general result about all natural membranes.",
+      "A voiced vowel contains **multiple frequencies**. Source repetition determines the available harmonics. The vocal tract then strengthens some regions and weakens others. Changing pitch therefore changes source spacing, while changing vowel shape changes the tract’s favored regions. These are distinct contributions to the same sound."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l14-p16",
+   "lecture": "Lecture 14",
+   "page": 16,
+   "title": "Fixed-free filter and vowel formants",
+   "transcript": [
+    "The vocal tract is a **fixed-free** tube, closed at one end and open at the other, and it acts as a **filter** on the harmonics from the source. Its resonances, the **formants**, depend on the shape of the tongue and lips.",
+    "A formant makes the closest harmonics audible, and harmonics far from it are muted. The voiced source supplies the harmonics, and the filter chooses which of them survive.",
+    "Schwa has formants at **500 and 1500 Hz**. /u/ places them lower, at **300 and 1000 Hz**, and adds one at 2000 Hz. /i/ or /I/ has a low F1 at **300 Hz** and a much higher F2 at **2200 Hz**. /a/ has its first two formants close together, at **800 and 900 Hz**.",
+    "A formant target can sit between two harmonics and still strengthen the ones nearby. Harmonic spacing comes from the source, while the formant pattern comes from the filter."
+   ],
+   "exam": [
+    {
+     "text": "What sets the spacing between consecutive source harmonics?",
+     "id": "v2-l13-mcq-019"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 14",
+     "page": 16,
+     "image": "assets/slides/lecture14/016.webp",
+     "originalTitle": "The vocal-tract filter favors nearby harmonics",
+     "originalTranscript": [
+      "The **vocal-tract filter** changes the relative strengths of harmonics supplied by the source. Its resonances, or **formants**, favor nearby components. Changing the tongue and lips changes these favored frequency regions.",
+      "Schwa has separated first and second resonances. The /u/ filter places both lower and also marks a third. The front /i/ or /I/ example has low F1 and much higher F2. The /a/ drawing places its first two targets close together at **800 and 900 Hz**. Those values belong to this particular illustration.",
+      "A formant target identifies a tract resonance; a harmonic line identifies a source component. The target can lie between source lines and still strengthen nearby harmonics. Filtering changes their heights without requiring a new component exactly at each target. Source spacing and the filter’s pattern are therefore different properties."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l14-p17",
+   "lecture": "Lecture 14",
+   "page": 17,
+   "title": "Source and filter together",
+   "transcript": [
+    "Each column keeps one **vowel filter** fixed while F0 changes from row to row, at **100, 250 and 350 Hz**. Each row keeps the harmonic spacing fixed while the vowel changes, so the grid separates the effect of the source from the effect of the filter.",
+    "At low F0, many harmonics fall near each formant, and their heights trace the filter’s **envelope** well. At high F0 the gaps widen, so a strong harmonic may sit beside a formant target rather than on it, even though the target has not moved.",
+    "The two close /a/ formants can then look like a single region. Sparse harmonics make a formant harder to read, but the formant has not disappeared."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 14",
+     "page": 17,
+     "image": "assets/slides/lecture14/017.webp",
+     "originalTitle": "One filter can look different at different pitches",
+     "originalTranscript": [
+      "Within a **vowel column**, the filter stays fixed while F0 changes. Across a row, harmonic spacing stays fixed while the vowel filter changes. These comparisons separate effects of the source from effects of tract shape.",
+      "Low F0 puts many harmonics near each resonance. Their heights describe the filter’s **envelope**, the smooth pattern of favored strengths. Higher F0 leaves wider gaps and fewer samples. A strong line may lie beside a formant target rather than exactly on it, even though the target has not moved.",
+      "The nearby /a/ targets can consequently look like one grouped region. Closer harmonics provide more information without guaranteeing two visibly separate peaks. Difficulty reading them does not establish that a resonance disappeared. A line’s horizontal position gives frequency and its height gives strength; unchanged targets with wider-spaced lines indicate a source change."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l16-p5",
+   "lecture": "Lecture 16",
+   "page": 5,
+   "title": "Vowel formants, 525 observations",
+   "transcript": [
+    "Each dot is one recorded vowel, placed by its **F1** along the horizontal axis and its **F2** along the vertical axis, both in hertz. The data has **525 observations**, **105 tokens of each vowel**, and these two formant numbers are exactly what the network receives as input.",
+    "The five vowels match the network’s five outputs. Each vowel forms a cloud rather than a single point, because the same vowel comes out with different formants from token to token.",
+    "Some vowels are easy to separate. The i tokens of dean sit high on F2, mostly above about 2000 Hz, and the ae tokens of Dan spread to high F1, past about 800 Hz. The u, a and schwa tokens overlap heavily.",
+    "A classifier sees only F1 and F2, so tokens in the same spot look identical to it. This **overlap** limits how many tokens any rule based on these two numbers can label correctly, which helps explain why the trained networks stay far from perfect accuracy."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 16",
+     "page": 5,
+     "image": "assets/slides/lecture16/005.webp",
+     "originalTitle": "Vowel formants overlap across five categories",
+     "originalTranscript": [
+      "The scatterplot shows every measurement in the vowel data, **525 observations** with **105 tokens of each vowel**. Each dot is one recorded vowel. **F1** runs along the horizontal axis and **F2** along the vertical axis, both in hertz. The color says which word the recording belongs to, so the plot shows the same kind of input the network receives, two formant numbers, together with the correct answer for each one.",
+      "The five categories match the network’s five outputs. Red is **i (dean)**, magenta is **ae (Dan)**, blue is **u (dune)**, cyan is **a (Don)**, and green is **schwa (done)**. Each category forms a cloud rather than a single point, because the same vowel comes out with different formants from token to token. Nothing was removed from the data, so the occasional dot far from its cloud stays in the plot.",
+      "Some vowels are easy to pick out. The red **i** tokens sit high on the F2 axis, mostly above about 2000 Hz, with a low F1. The magenta **ae** tokens spread toward high F1 values, out past 800 Hz. Those two clouds are separated from most of the others by where they fall on one or both axes. The other three overlap heavily. The blue **u**, cyan **a**, and green **schwa** tokens crowd into the lower middle of the plot, roughly between 300 and 800 Hz in F1 and between 800 and 1600 Hz in F2. A point in that region could belong to any of the three. Two formant numbers alone do not separate these vowels cleanly.",
+      "This overlap matters for every network trained on these data. A classifier sees only F1 and F2, so tokens that sit in the same place on the plot look the same to it, whatever their true label. The overlap sets a limit on how many tokens any decision rule based on these two numbers can label correctly, which helps explain why networks trained on these data do not come close to perfect accuracy."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l16-p15",
+   "lecture": "Lecture 16",
+   "page": 15,
+   "title": "Accuracy across one training run",
+   "transcript": [
+    "Training accuracy runs up the vertical axis, from 0 to 100 percent, and the update number, from 1 to 2,000, runs along the horizontal axis. Each epoch is one full-batch update on the same 525 tokens.",
+    "The curve starts at about **20 percent** and ends at **44.95 percent** training accuracy. PyTorch was not available where the curve was made, so it comes from an equivalent **NumPy** run of the same procedure."
+   ],
+   "exam": [
+    {
+     "text": "Why was the curve made with NumPy, and what does that mean for reading it?",
+     "id": "v2-l16-written-011"
+    },
+    {
+     "text": "What produced the accuracy curve shown with the PyTorch code?",
+     "id": "v2-l16-mcq-012"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 16",
+     "page": 15,
+     "image": "assets/slides/lecture16/015.webp",
+     "originalTitle": "One initialization · training the linear network for 2,000 updates",
+     "originalTranscript": [
+      "The code trains the same **2 → 3 → 2 → 4 → 5** network on the vowel data. Every layer is **nn.Linear with bias=False**, and there are no activations between them, so the network is the all-linear one from the earlier forward-propagation example. **torch.manual_seed(0)** fixes the random starting weights, so the run starts from one particular **initialization**. The formants are divided by 1000, converting hertz to kilohertz, which keeps the input numbers small.",
+      "The targets are one-hot rows, and **argmax(1)** turns each row into the number of its correct class for checking accuracy. The loss is **CrossEntropyLoss**, and the optimizer is plain **SGD** with a **learning rate of 0.1**. The loop runs **2,000 epochs**. In each one it clears old gradients, computes the loss for all the examples at once, backpropagates, and takes one step, so every epoch is one **full-batch update**.",
+      "After each update, the code measures accuracy without computing gradients. For each token the largest of the five scores is the network’s answer, and accuracy is the percentage of tokens where that answer matches the correct class. These are the same **525 training examples** the network learns from, so this is **training accuracy**, not a test on new recordings. The curve starts at about **20%**, which is what labeling everything as one of five equally common vowels would give. It stays flat for about the first 200 updates, then climbs quickly into the 40s. Near update 390 it drops sharply back toward 20% for a moment, then recovers and settles near 45%. After about 450 updates it barely changes. The final training accuracy is **44.95%**, which is 236 of the 525 tokens.",
+      "The note under the code explains where the curve comes from. PyTorch was not available where the plot was made, so the plotted run comes from an equivalent **NumPy** implementation of the same network, loss, scaling, learning rate and number of updates. The code shows the PyTorch version of the procedure, and the curve shows what that procedure did when it was run."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l16-p16",
+   "lecture": "Lecture 16",
+   "page": 16,
+   "title": "Ten initializations",
+   "transcript": [
+    "Each colored line is one seed, 0 through 9. All ten start near **20 percent**, but they leave that level at different times, some within the first 100 updates and others staying flat for 200 or more, and some reach close to 47 percent along the way.",
+    "The runs settle between about 350 and about 1,000 updates, and then the lines overlap. **All ten finish at 44.95 percent**, so different starting weights take different paths but reach the same final accuracy on these data.",
+    "These are NumPy reference runs, and the same seed number in PyTorch would not give the same starting weights or the exact same line."
+   ],
+   "exam": [
+    {
+     "text": "What does “equal seed numbers do not imply equal PyTorch weights” mean?",
+     "id": "v2-l16-mcq-017"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 16",
+     "page": 16,
+     "image": "assets/slides/lecture16/016.webp",
+     "originalTitle": "Ten initializations · different paths, the same final accuracy",
+     "originalTranscript": [
+      "The same training procedure is run ten times with **seeds 0 through 9**. Each run builds a fresh model and a fresh SGD optimizer, so the only thing that changes from run to run is the **initialization**, the random starting weights. The data, the scaling, the loss, the learning rate and the 2,000 full-batch updates are identical.",
+      "Each colored line is one seed. All ten start near **20%** training accuracy. They differ in when they leave that starting level, some climbing within the first 100 updates and others staying flat for 200 or more. They also differ in their early ups and downs, including short drops back toward 20%, and in the highest accuracy they reach along the way, which is close to 47% for some runs.",
+      "Some runs settle within about 350 updates, while the slowest take about 1,000. After that the lines come together and overlap. **All ten finish at 44.95%** training accuracy. Different starting weights send the network down different paths, but every path ends at the same level of performance on these data. The shared final value says that starting the network from a different place did not change how well it could do. Running more seeds or picking the best one would not raise the final accuracy here. The limit comes from the network and the data it is given, the same overlapping vowel clouds, rather than from bad luck in the starting weights.",
+      "The note at the bottom repeats that the curves are executed **NumPy** reference runs. Matching seed numbers in NumPy and PyTorch do not produce the same starting weights, so a PyTorch run with seed 3 would not trace exactly the same line as the plotted seed 3. The overall pattern, varied early paths and a common end point, is what the runs show."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l17-p5",
+   "lecture": "Lecture 17 and Lecture 18 (same page)",
+   "page": 5,
+   "title": "Fifteen vectors, predicting the next word",
+   "transcript": [
+    "The arrangement holds **15 vectors, x1 to x15**, and an empty slot for **x16**. An LLM receives a sequence of vectors and predicts the next one.",
+    "In the first example, a sentence is cut into **15 words**, “The cat that the dog chased ran up the old tree and sat on the,” and x16 is the missing word. Predicting it means using words far back in the sentence, because it is the cat that sat.",
+    "The same slots then hold a **spectrogram cut into 15 frames**, where x16 is the next frame of sound, and an **image cut into 16 patches**, where x16 is the missing bottom-right patch.",
+    "**The LLM only ever sees vectors.** Words, sounds, pixels and molecules all become sequences of vectors, so one machine answers one question, what is x16."
+   ],
+   "exam": [
+    {
+     "text": "What are the vectors in the spectrogram and image examples?",
+     "id": "v2-l17-written-014"
+    }
+   ],
+   "slides": [
+    {
+     "lecture": "Lecture 17",
+     "page": 5,
+     "image": "assets/slides/lecture17/005.webp",
+     "originalTitle": "Fifteen vectors · the same next-item question for any sequence",
+     "originalTranscript": [
+      "The page starts with **15 vectors, x₁ to x₁₅**, and an empty slot for **x₁₆**, and asks **vectors of what?** An LLM receives a sequence of vectors and predicts the next one. The four reveals show four different kinds of sequence fed into the same arrangement.",
+      "First, a **sentence cut into 15 words**. “The cat that the dog chased ran up the old tree and sat on the ___.” Each vector stands for one word, and **x₁₆ is the missing word**. Predicting it requires using words far back in the sentence, since it is the cat that sat on something.",
+      "Next, the words disappear and a **spectrogram is cut into 15 frames**, from 0 to 5 kHz along the vertical axis with time running to the right. Each vector is now one slice of sound, and **x₁₆ is the next frame**. Then an **image of a house, a tree and the sun is cut into 16 patches**, read row by row. Fifteen patches are vectors, and **x₁₆ is the missing bottom-right patch**. The last example is a **protein, the insulin B chain**, read as **15 amino acids**, F V N Q H L C G S H L V E A L, drawn folding into a helix. Each amino acid is a vector, and **x₁₆ is the next residue**, which is **Y**. The same sixteenth slot sits at the end of every sequence.",
+      "The takeaway states the point of the four examples. **The LLM only ever sees vectors.** Words, sounds, pixels and molecules all become sequences of vectors, so **one machine asks one question, what is x₁₆?** Whatever the source, learning to predict the next vector in a sequence is the task the model is built for."
+     ]
+    },
+    {
+     "lecture": "Lecture 18",
+     "page": 5,
+     "image": "assets/slides/lecture18/005.webp",
+     "originalTitle": "One prediction task for different sequences",
+     "originalTranscript": [
+      "The page starts with **15 vectors, x₁ to x₁₅**, and an empty slot for **x₁₆**, and asks **vectors of what?** An LLM receives a sequence of vectors and predicts the next one. The four reveals show four different kinds of sequence fed into the same arrangement.",
+      "First, a **sentence cut into 15 words**. “The cat that the dog chased ran up the old tree and sat on the ___.” Each vector stands for one word, and **x₁₆ is the missing word**. Predicting it requires using words far back in the sentence, since it is the cat that sat on something.",
+      "Next, the words disappear and a **spectrogram is cut into 15 frames**, from 0 to 5 kHz along the vertical axis with time running to the right. Each vector is now one slice of sound, and **x₁₆ is the next frame**. Then an **image of a house, a tree and the sun is cut into 16 patches**, read row by row. Fifteen patches are vectors, and **x₁₆ is the missing bottom-right patch**. The last example is a **protein, the insulin B chain**, read as **15 amino acids**, F V N Q H L C G S H L V E A L, drawn folding into a helix. Each amino acid is a vector, and **x₁₆ is the next residue**, which is **Y**. The same sixteenth slot sits at the end of every sequence.",
+      "The takeaway states the point of the four examples. **The LLM only ever sees vectors.** Words, sounds, pixels and molecules all become sequences of vectors, so **one machine asks one question, what is x₁₆?** Whatever the source, learning to predict the next vector in a sequence is the task the model is built for."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l18-p2",
+   "lecture": "Lecture 18",
+   "page": 2,
+   "title": "One neuron, many weights",
+   "transcript": [
+    "**A neuron takes a vector in and gives one number out.** Each input is multiplied by its own weight, W1, W2 and W3, and the products are added together. This weighted sum is an **inner product**.",
+    "A neural network joins many of these weighted sums into layers. One input vector then becomes a **decision vector**, with one response for each possible answer."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 18",
+     "page": 2,
+     "image": "assets/slides/lecture18/002.webp",
+     "originalTitle": "From a neuron to agents that communicate",
+     "originalTranscript": [
+      "**A neuron takes a vector and returns one number.** Each input is multiplied by its weight, and the products are added to give the output. This weighted sum is an **inner product**. A neural network joins many such operations into layers, so one input vector becomes a **decision vector**, with a response for each possible answer.",
+      "**A large language model takes many vectors and predicts what comes next.** Fifteen token vectors pass through five layers in the example. Each layer changes their representations through its weights, and the final output is the sixteenth vector, a **probability distribution** over the next token. The values express which continuations the model treats as more or less likely.",
+      "**An agentic system connects several LLMs into a graph.** The Outline model develops a plan, the Write model produces a draft, the Critic model evaluates it, the Revise model changes it, and the Final model produces the answer. The connection between Critic and Revise forms a loop, allowing a revision to be evaluated again. The agents communicate through **language**. One model’s written output becomes information another model can use, so the graph coordinates whole language models rather than individual neurons. The agents can speak to each other in English, while the models can also work in other human languages and computer languages.",
+      "**Inference uses inner products, and learning uses SGD with dynamic programming.** Inference processes the current inputs with the learned weights. **Stochastic gradient descent**, or SGD, changes weights to reduce prediction error, while backpropagation uses **dynamic programming** to organize the backward calculation. These operations support the small network as well as the language models joined into the agentic graph."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fig-l18-p4",
+   "lecture": "Lecture 18",
+   "page": 4,
+   "title": "A dynamical system, the harmonic oscillator",
+   "transcript": [
+    "**A dynamical system takes a state, applies a rule, and feeds the result back in as the next state.** In the harmonic oscillator, the state is a position **x** and a velocity **v**, starting at position 1.00 and velocity 0.00.",
+    "Position and velocity take turns. The new position uses the old velocity, then the new velocity uses that new position, and the step size **h** sets how far each update moves. Repeating this rule step by step traces a cosine.",
+    "**Jordan’s recurrent network** feeds its output back the same way. The output is copied into state units, which feed the hidden layer again along with plan units, so recent outputs shape the next one in a sequence of speech movements."
+   ],
+   "exam": [],
+   "slides": [
+    {
+     "lecture": "Lecture 18",
+     "page": 4,
+     "image": "assets/slides/lecture18/004.webp",
+     "originalTitle": "A dynamical rule across time and depth",
+     "originalTranscript": [
+      "**A dynamical system takes a state, applies a rule, and uses the resulting state as input again.** In the oscillator example, the state contains position **x** and velocity **v**. It begins with position one and velocity zero, and repeatedly updating those two quantities produces the changing motion.",
+      "**Position and velocity take turns being updated.** The new position uses the old velocity, and the new velocity then uses that new position. The step size **h** determines how far the calculation advances at each update. Position traces a cosine-like oscillation while velocity follows a shifted oscillation, so a simple repeated rule builds an entire changing trajectory.",
+      "**Jordan’s recurrent network also feeds its output back into its input.** Plan units and state units feed a hidden layer, which produces an output. That output is copied into the state units, and their small self-loops preserve a fading trace of earlier states. The weights are reused at each time step, allowing recent outputs to influence the next output in a sequence of speech movements. **In the LLM comparison, depth plays the role of time.** Fifteen vectors enter the first layer and are transformed by its weights. The resulting vectors enter the next layer, where another transformation takes place. Following one number upward through the layers gives a sequence of changing values, which can be drawn as a curve even though it is not the oscillator’s cosine.",
+      "**The rules are organized differently in these systems.** The oscillator and Jordan network apply the same rule repeatedly as time advances. The LLM uses a separate set of weights at each layer, so its successive transformations follow the depth of the network. What connects the examples is the dependence of each new state on the state produced just before it. The small stock-return graph traces Small, Medium and Large series over the same period. They fluctuate, rise and fall over the years, giving another example of quantities changing over time."
+     ]
+    }
+   ]
+  }
+ ]
+}
