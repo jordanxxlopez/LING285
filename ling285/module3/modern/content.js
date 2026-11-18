@@ -3844,5 +3844,32 @@
   if (Array.isArray(value)) pack[key] = [...(pack[key] || []), ...value];
   else pack[key] = {...(pack[key] || {}), ...value};
  }
+ // Lectures 17 and 18 stay in Module II and are also part of Module III. Their workspace entries are copied for
+ // Module III under new ids, in the plain wording where one exists, so each module keeps its own practice record.
+ const kept = new Set(['lecture17', 'lecture18']), plain = window.LING285_PLAIN || {};
+ const copy = item => ({...JSON.parse(JSON.stringify(item)), id: item.id + '-m3', moduleId: 'module3'});
+ const reword = (item, wording, fields) => { if (wording) for (const f of fields) if (wording[f] != null) item[f] = wording[f]; return item; };
+ const fromModule2 = item => item.moduleId === 'module2';
+ const extra = {qa: [], guides: [], asked: [], cards: [], contrasts: [], hard: [], connections: [], figures: [], questions: [], writing: []};
+ for (const q of pack.qa) if (fromModule2(q) && kept.has(q.lectureId)) {
+  const c = copy(q), w = q.kind === 'slides' ? plain.concepts?.[q.concept]?.['q' + q.id.split('-').pop()] : plain.connectionQs?.[q.id];
+  if (w) { c.question = w.question; c.answer = [w.answer]; }
+  extra.qa.push(c);
+ }
+ for (const g of pack.guides) if (fromModule2(g) && g.points.every(p => kept.has(p.collection))) extra.guides.push(copy(g));
+ for (const a of pack.asked) if (fromModule2(a) && kept.has(a.collection)) extra.asked.push(reword({...copy(a), id: undefined}, plain.asked?.[a.concept], ['title', 'items']));
+ for (const c of pack.cards) if (fromModule2(c) && kept.has(c.collection)) extra.cards.push(reword(copy(c), plain.cards?.[c.id], ['title', 'explain', 'outcome', 'interpret']));
+ for (const h of pack.hard) if (fromModule2(h) && kept.has(h.collection)) extra.hard.push(reword(copy(h), plain.hard?.[h.id], ['title', 'paragraphs', 'question', 'answer']));
+ for (const f of pack.figures) if (fromModule2(f) && kept.has(f.collection)) extra.figures.push(reword(copy(f), plain.figures?.[f.id], ['title', 'takeaway']));
+ for (const c of pack.connections) if (fromModule2(c) && c.sources.every(s => kept.has(s.collection))) extra.connections.push(reword(copy(c), plain.connections?.[c.id], ['title', 'paragraphs', 'question', 'answer']));
+ for (const c of pack.contrasts) if (fromModule2(c) && kept.has(c.collection)) {
+  const k = copy(c), w = plain.contrasts?.[c.id];
+  if (w) { k.title = w.title; k.paragraphs = w.paragraphs; if (w.left) k.left = {...k.left, text: w.left.text}; if (w.right) k.right = {...k.right, text: w.right.text}; }
+  extra.contrasts.push(k);
+ }
+ for (const q of pack.questions) if (fromModule2(q) && kept.has(q.lectureId)) extra.questions.push({...copy(q), bankKey: q.bankKey + '-m3'});
+ for (const w of pack.writing) if (fromModule2(w) && kept.has(w.lectureId)) extra.writing.push(copy(w));
+ // Kept lectures come first in each Module III list, then the Lecture 19 entries added above.
+ for (const [key, items] of Object.entries(extra)) pack[key] = [...pack[key].filter(x => x.moduleId !== 'module3'), ...items, ...pack[key].filter(x => x.moduleId === 'module3')];
  pack.module3Merged = true;
 })();

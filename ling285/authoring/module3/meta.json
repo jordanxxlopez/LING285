@@ -1,21 +1,22 @@
 {
  "moduleId": "module3",
  "title": "Module III",
- "range": "Lecture 19",
+ "range": "Lectures 17 to 19",
  "study": {
   "title": "Study this first · Module III",
-  "lead": "If you study only one page of Module III, study this one. Lecture 19 is the first lecture after Exam 2. The new material comes first, then the Lecture 18 slides that Lecture 19 repeats, each with what to know, the slide beside the notes, and questions with their answers.",
-  "askLead": "Questions on Lecture 19 in the way he asks them, with answers. The questions marked Predicted are written from the slides. They are predictions, not confirmed exam questions.",
+  "lead": "If you study only one page of Module III, study this one. It covers the LLM part of the course in order. Lectures 17 and 18 come first, because he said the LLM part is kept for the final. Lecture 19, the first lecture after Exam 2, comes next. Each topic has what to know, the slide beside the notes, and questions with their answers.",
+  "askLead": "Questions on Lectures 17 to 19 in the way he asks them, with answers. His own Lab 9 questions are marked. The questions marked Predicted are written from the slides. They are predictions, not confirmed exam questions.",
   "focusLabel": "Module III focus (predicted questions, with answers)"
  },
  "scope": {
   "label": "On the final",
-  "covers": "Module III is everything after Exam 2. So far that is Lecture 19, from November 17. The final exam is cumulative, so Modules I and II come back too.",
+  "covers": "Module III is the LLM part of the course. It holds Lectures 17 and 18, which also stay in Module II, and Lecture 19 from November 17, the first lecture after Exam 2. The final exam is cumulative, so Modules I and II come back too.",
   "final": "",
-  "evidence": "Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. On November 10 he said the LLM part is kept for the final, so the repeated slides matter again. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions."
+  "evidence": "On November 10 he said the review and homework questions go up to right before LLMs, and that the LLM part is kept for the final. That part is Lectures 17 and 18. Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions."
  },
  "flags": [
-  "The notes for the new slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.",
+  "The notes for Lectures 17 and 18 are the same notes as on the Module II study page, shown here again and not rewritten.",
+  "The notes for the new Lecture 19 slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.",
   "The speech in the three cute puppies example was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person.",
   "The slides call the visual input the picture. These notes say image and image patch.",
   "The last slide lists a schedule that protects what was already learned, and it does not explain the schedule. These notes repeat the item and add nothing from outside the slides."
@@ -23,19 +24,19 @@
  "versions": [
   {
    "key": "module3-v1",
-   "label": "Module III · Study this first (Lecture 19, notes with the slides beside them)",
+   "label": "Module III · Study this first (Lectures 17–19, notes with the slides beside them)",
    "overlay": false,
    "notes": true
   },
   {
    "key": "module3-v2",
-   "label": "Module III · Study this first (Lecture 19, with a My notes box under each block)",
+   "label": "Module III · Study this first (Lectures 17–19, with a My notes box under each block)",
    "overlay": true,
    "notes": true
   }
  ],
  "bytopic": {
-  "title": "Notes by topic · Lecture 19",
-  "lead": "Each topic brings together every slide that teaches it, said once. Read the notes with their slide beside them, then answer the questions."
+  "title": "Notes by topic · Lectures 17–19",
+  "lead": "Each topic brings together every slide that teaches it, from Lectures 17, 18 and 19, said once. Read the notes with their slide beside them, then answer the questions."
  }
 }

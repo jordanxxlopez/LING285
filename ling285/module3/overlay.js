@@ -27,6 +27,18 @@
     }
     for (const question of layer.questions || []) if (!has(data.questions, question.id)) data.questions.push(question);
     for (const entry of layer.guide || []) if (!data.guide.some(item => item.title === entry.title)) data.guide.push(entry);
+    // Lectures kept for the final stay in Module II and are also listed by Module III. Their questions and
+    // guide entries are copied for Module III under new ids, so each module keeps its own practice record.
+    const kept = new Set((layer.modules || []).flatMap(module => module.carriedLectureIds || []));
+    for (const question of [...data.questions]) {
+      if (question.moduleId !== 'module2' || !kept.has(question.lectureId) || has(data.questions, question.id + '-m3')) continue;
+      data.questions.push({...question, id: question.id + '-m3', moduleId: 'module3'});
+    }
+    for (const entry of [...data.guide]) {
+      const refs = entry.refs || [];
+      if ((entry.moduleIds || []).includes('module3') || !refs.length || !refs.every(ref => kept.has(ref.collection))) continue;
+      if (!data.guide.some(item => item.title === entry.title && (item.moduleIds || []).includes('module3'))) data.guide.push({...entry, moduleIds: ['module3']});
+    }
     return data;
   }
   function mergeEdition(payload, layer) {

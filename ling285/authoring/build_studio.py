@@ -166,9 +166,10 @@ if module_three:
  final_lectures=[key for key in lecture_keys if key in module_three]
  first,last=[int(re.match(r'lecture(\d+)',k).group(1)) for k in (final_lectures[0],final_lectures[-1])]
  final_range=('Lecture '+str(first)) if first==last else 'Lectures '+str(first)+'–'+str(last)
- modules.append({'id':'module3','title':'Module III','subtitle':'Final exam','lectureIds':final_lectures,
-  'supplementIds':[],'meadowsIds':[],'lectureRange':final_range+' so far','description':'After Exam 2 · '+final_range+'. Later lectures will be added here.',
-  'futureNote':final_range+(' is' if first==last else ' are')+' available now. The final exam is cumulative, so Modules I and II stay available with their own study tools.'})
+ kept=['lecture17','lecture18']   # the LLM part, which he said is kept for the final; these stay in Module II as well
+ modules.append({'id':'module3','title':'Module III','subtitle':'Final exam','lectureIds':kept+final_lectures,'carriedLectureIds':kept,
+  'supplementIds':[],'meadowsIds':[],'lectureRange':'Lectures 17–'+str(last)+' so far','description':'The LLM part kept for the final · Lectures 17 and 18, then '+final_range+' from after Exam 2. Later lectures will be added here.',
+  'futureNote':'Lectures 17 and 18 also stay in Module II, unchanged. The final exam is cumulative, so Modules I and II keep their own study tools.'})
 for module in modules:
  module['questionCount']=sum(q['moduleId']==module['id'] for q in questions)
  module['mcqCount']=sum(q['moduleId']==module['id'] and q['type']=='mcq' for q in questions)

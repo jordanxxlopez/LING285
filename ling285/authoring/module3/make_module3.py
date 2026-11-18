@@ -15,7 +15,7 @@ from pathlib import Path
 import json
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1]
 
-NEW='New on November 17';OLD='Repeated from Lecture 18'
+NEW='New on November 17';OLD='Kept for the final'
 P='Predicted'
 def q(question,answer):return dict(source=P,q=question,a=answer)
 
@@ -150,54 +150,64 @@ dict(id='m3-talking-back',tier=NEW,lectures='Lecture 19',title='Talking back, wh
  ]),
 ]
 
-# The Module II topics whose slides Lecture 19 repeats, and the Lecture 19 page for each "Also know" block.
-CARRIED=[('llm-sequences',2),('heads-layers',3),('recurrent-dynamical',4),('phonotactics',6),('agentic',2)]
-REF_MAP={'Lecture 18 · p3':'Lecture 19 · p3','Lecture 17 · p5 · Lecture 18 · p5':'Lecture 19 · p5','Lecture 17 · p4 · Lecture 18 · p2':'Lecture 19 · p2',
-         'Lecture 18 · p4':'Lecture 19 · p4','Lecture 18 · p8':'Lecture 19 · p8','Lecture 17 · p6 · Lecture 18 · p6':'Lecture 19 · p6','Lecture 17 · p7 · Lecture 18 · p7':'Lecture 19 · p7'}
-ALSO={('phonotactics','**After pl'):7}
+# The Module II "Study this first" topics for Lectures 17 and 18, the LLM part that he said is kept for the final.
+# Their notes and questions are reused unchanged. A slide that Lecture 19 repeats also names its Lecture 19 page.
+CARRIED=['lead-up','llm-sequences','gestalt-cloze','heads-layers','recurrent-dynamical','phonotactics','agentic']
+# Blocks marked "Also know" in Module II have no slide of their own. Each is placed beside the slide it belongs with.
+ALSO={('lead-up','**Artificial neural networks began'):'Lecture 17 · p2',('lead-up','**GPT works the same way'):'Lecture 17 · p3',
+      ('heads-layers',''):'Lecture 18 · p3',('llm-sequences',''):'Lecture 17 · p4 · Lecture 18 · p2',('gestalt-cloze',''):'Lecture 17 · p5 · Lecture 18 · p5',
+      ('recurrent-dynamical',''):'Lecture 18 · p4',('agentic',''):'Lecture 17 · p4 · Lecture 18 · p2',
+      ('phonotactics','**After pl'):'Lecture 17 · p7 · Lecture 18 · p7',('phonotactics',''):'Lecture 17 · p6 · Lecture 18 · p6'}
+
+def with_lecture19(ref):
+    """Lecture 19 pages 2 to 8 are the Lecture 18 slides unchanged."""
+    import re
+    m=re.search(r'Lecture 18 · p(\d+)',ref)
+    return ref+f' · Lecture 19 · p{m.group(1)}' if m and 2<=int(m.group(1))<=8 else ref
 
 def carried_topics():
     raw=(ROOT/'modern/essentials.js').read_text();data=json.loads(raw[raw.index('{'):raw.rindex('}')+1])
     old={t['id']:t for t in data['versions']['exam2-v12']['topics']};out=[]
-    for tid,default in CARRIED:
+    for tid in CARRIED:
         t=old[tid];blocks=[]
         for b in t['blocks']:
             nb={k:v for k,v in b.items() if k not in('media','ref')}
-            if b['ref'] in REF_MAP:nb['ref']=REF_MAP[b['ref']]
-            else:
-                assert b['ref'].startswith('Also know'),b['ref']
-                page=next((p for (i,start),p in ALSO.items() if i==tid and b.get('main','').startswith(start)),default)
-                nb['ref']=f'Lecture 19 · p{page}'
+            if b['ref'].startswith('Also know'):
+                ref=next(r for (i,start),r in ALSO.items() if i==tid and b.get('main','').startswith(start))
+            else:ref=b['ref']
+            nb['ref']=with_lecture19(ref)
             blocks.append({k:v for k,v in nb.items() if v not in('',[],None) or k=='ref'})
         questions=[dict(source=x['source'],q=x['q'],a=x['a'],**({'img':x['img'],'alt':x.get('alt','')} if x.get('img') else {})) for x in t['questions']]
-        out.append(dict(id='m3-'+tid,tier=OLD,lectures='Lecture 19 (same slides as Lecture 18)',title=t['title'],blocks=blocks,questions=questions))
+        repeated=any('Lecture 19' in b['ref'] for b in blocks)
+        out.append(dict(id='m3-'+tid,tier=OLD,lectures=t['lectures']+(' · repeated in Lecture 19' if repeated else ''),title=t['title'],blocks=blocks,questions=questions))
     return out
 
 META={
- 'moduleId':'module3','title':'Module III','range':'Lecture 19',
+ 'moduleId':'module3','title':'Module III','range':'Lectures 17 to 19',
  'study':{'title':'Study this first · Module III',
-  'lead':'If you study only one page of Module III, study this one. Lecture 19 is the first lecture after Exam 2. The new material comes first, then the Lecture 18 slides that Lecture 19 repeats, each with what to know, the slide beside the notes, and questions with their answers.',
-  'askLead':'Questions on Lecture 19 in the way he asks them, with answers. The questions marked Predicted are written from the slides. They are predictions, not confirmed exam questions.',
+  'lead':'If you study only one page of Module III, study this one. It covers the LLM part of the course in order. Lectures 17 and 18 come first, because he said the LLM part is kept for the final. Lecture 19, the first lecture after Exam 2, comes next. Each topic has what to know, the slide beside the notes, and questions with their answers.',
+  'askLead':'Questions on Lectures 17 to 19 in the way he asks them, with answers. His own Lab 9 questions are marked. The questions marked Predicted are written from the slides. They are predictions, not confirmed exam questions.',
   'focusLabel':'Module III focus (predicted questions, with answers)'},
  'scope':{'label':'On the final',
-  'covers':'Module III is everything after Exam 2. So far that is Lecture 19, from November 17. The final exam is cumulative, so Modules I and II come back too.',
+  'covers':'Module III is the LLM part of the course. It holds Lectures 17 and 18, which also stay in Module II, and Lecture 19 from November 17, the first lecture after Exam 2. The final exam is cumulative, so Modules I and II come back too.',
   'final':'',
-  'evidence':'Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. On November 10 he said the LLM part is kept for the final, so the repeated slides matter again. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions.'},
+  'evidence':'On November 10 he said the review and homework questions go up to right before LLMs, and that the LLM part is kept for the final. That part is Lectures 17 and 18. Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions.'},
  'flags':[
-  'The notes for the new slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.',
+  'The notes for Lectures 17 and 18 are the same notes as on the Module II study page, shown here again and not rewritten.',
+  'The notes for the new Lecture 19 slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.',
   'The speech in the three cute puppies example was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person.',
   'The slides call the visual input the picture. These notes say image and image patch.',
   'The last slide lists a schedule that protects what was already learned, and it does not explain the schedule. These notes repeat the item and add nothing from outside the slides.'],
  'versions':[
-  {'key':'module3-v1','label':'Module III · Study this first (Lecture 19, notes with the slides beside them)','overlay':False,'notes':True},
-  {'key':'module3-v2','label':'Module III · Study this first (Lecture 19, with a My notes box under each block)','overlay':True,'notes':True}],
- 'bytopic':{'title':'Notes by topic · Lecture 19','lead':'Each topic brings together every slide that teaches it, said once. Read the notes with their slide beside them, then answer the questions.'},
+  {'key':'module3-v1','label':'Module III · Study this first (Lectures 17–19, notes with the slides beside them)','overlay':False,'notes':True},
+  {'key':'module3-v2','label':'Module III · Study this first (Lectures 17–19, with a My notes box under each block)','overlay':True,'notes':True}],
+ 'bytopic':{'title':'Notes by topic · Lectures 17–19','lead':'Each topic brings together every slide that teaches it, from Lectures 17, 18 and 19, said once. Read the notes with their slide beside them, then answer the questions.'},
 }
 
 if __name__=='__main__':
     carried=carried_topics()
     new_items=[];his_items=[];old_items=[]
-    for topics in (TOPICS,carried):
+    for topics in (carried,TOPICS):
         for t in topics:
             ids=[]
             for x in t['questions']:
@@ -206,12 +216,12 @@ if __name__=='__main__':
                 bucket.append(dict(number=len(bucket)+1,question=x['q'],answer=x['a'],**({'img':x['img'],'alt':x.get('alt','')} if x.get('img') else {})));ids.append(f'{prefix}-{len(bucket)}')
             t['questions']=ids
     exam={'review':{'title':'Final exam review guide · Module III',
-      'lead':'Every question on Lecture 19 with its answer, written in plain steps, the answer first and then the reason. The new slides come first, then the slides kept from Lecture 18.',
-      'note':'No review sheet for the final has been handed out yet. The questions on the new slides are predictions written from the slides. The questions on the repeated slides are the ones from the Module II study page, including his Lab 9 questions.',
+      'lead':'Every question on Lectures 17 to 19 with its answer, written in plain steps, the answer first and then the reason.',
+      'note':'No review sheet for the final has been handed out yet. The questions on the new Lecture 19 slides are predictions written from the slides. The questions on Lectures 17 and 18 are the ones from the Module II study page, including his Lab 9 questions.',
       'sets':[
-       {'id':'new','title':f'Lecture 19 · new slides · {len(new_items)} predicted questions','about':'Written from Lecture 19 pages 9 to 19 in the way he asks questions. These are predictions, not confirmed exam questions.','prefix':'Predicted (new slide)','items':new_items},
-       {'id':'his','title':f'Slides repeated from Lecture 18 · {len(his_items)} of his questions','about':'His Lab 9 questions and the heads question he said is on the exam. The same slides are in Lecture 19, and on November 10 he said the LLM part is kept for the final.','prefix':'His question','items':his_items},
-       {'id':'kept','title':f'Slides repeated from Lecture 18 · {len(old_items)} predicted questions','about':'Predicted questions from the Module II study page for the slides that Lecture 19 repeats.','prefix':'Predicted (repeated slide)','items':old_items}]}}
+       {'id':'his','title':f'Lectures 17 and 18 · {len(his_items)} of his questions','about':'His Lab 9 questions and the heads question he said is on the exam. On November 10 he said the LLM part is kept for the final.','prefix':'His question','items':his_items},
+       {'id':'kept','title':f'Lectures 17 and 18 · {len(old_items)} predicted questions','about':'Predicted questions from the Module II study page for Lectures 17 and 18.','prefix':'Predicted (Lectures 17–18)','items':old_items},
+       {'id':'new','title':f'Lecture 19 · new slides · {len(new_items)} predicted questions','about':'Written from Lecture 19 pages 9 to 19 in the way he asks questions. These are predictions, not confirmed exam questions.','prefix':'Predicted (Lecture 19)','items':new_items}]}}
     dump=lambda name,value:(HERE/name).write_text(json.dumps(value,ensure_ascii=False,indent=1)+'\n')
-    dump('topics_1.json',TOPICS);dump('topics_2.json',carried);dump('exam.json',exam);dump('meta.json',META)
+    dump('topics_1.json',carried);dump('topics_2.json',TOPICS);dump('exam.json',exam);dump('meta.json',META)
     print('Module III inputs written:',len(TOPICS),'new topics,',len(carried),'repeated topics,',len(new_items),'+',len(his_items),'+',len(old_items),'questions')

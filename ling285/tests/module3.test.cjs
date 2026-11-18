@@ -22,7 +22,8 @@ test('Lecture 19 keeps all nineteen original pages, in order, with its source fi
 
 test('the locked course files still end at Lecture 18, and the layer adds Module III beside them',()=>{
  assert(!locked.collections.some(x=>x.id==='lecture19'));assert.deepEqual(locked.modules.map(m=>m.id),['module1','module2']);
- assert.deepEqual(layer.modules.map(m=>m.id),['module3']);assert.deepEqual(layer.modules[0].lectureIds,['lecture19']);
+ assert.deepEqual(layer.modules.map(m=>m.id),['module3']);assert.deepEqual(layer.modules[0].lectureIds,['lecture17','lecture18','lecture19']);assert.deepEqual(layer.modules[0].carriedLectureIds,['lecture17','lecture18']);
+ assert.equal(locked.collections.find(x=>x.id==='lecture17').moduleId,'module2','Lectures 17 and 18 stay in Module II');
  for(const v of ORIGINAL)assert(!read(`transcripts-${v}.json`).collections.lecture19,v);
  for(const v of MODERN)assert(!read(`modern/transcripts-${v}.json`).collections.lecture19,v);
 });
@@ -74,12 +75,14 @@ test('Lecture 19 has a complete quiz of 25 multiple-choice and 25 written questi
 test('the modern workspace gets Module III study pages and loads the layer before the app',()=>{
  const ctx={window:{}};require('node:vm').runInNewContext(text('modern/module3.js'),ctx);const m=ctx.window.LING285_MODULE3;
  assert.equal(m.moduleId,'module3');const v=Object.values(m.versions)[0];
- assert.equal(v.topics.length,11);assert(v.topics.every(t=>t.blocks.length&&t.questions.length));
- assert(v.topics.every(t=>t.blocks.every(b=>/Lecture 19 · p\d+/.test(b.ref)&&b.media&&fs.existsSync(path.join(root,b.media.image)))));
- assert.equal(m.review.sets.reduce((n,s)=>n+s.items.length,0),57);
+ assert.equal(v.topics.length,13);assert(v.topics.slice(0,7).every(t=>t.tier==='Kept for the final'));assert(v.topics.slice(7).every(t=>t.tier==='New on November 17'));assert(v.topics.every(t=>t.blocks.length&&t.questions.length));
+ assert(v.topics.every(t=>t.blocks.every(b=>/Lecture 1[789] · p\d+/.test(b.ref)&&b.media&&fs.existsSync(path.join(root,b.media.image||b.media.poster)))));
+ assert.equal(m.review.sets.reduce((n,s)=>n+s.items.length,0),67);
  for(const [file,app] of [['index.html','app.js'],['modern/index.html','modern/app.js']]){
   const html=text(file);assert(html.indexOf('module3/overlay.js')>0&&html.indexOf('module3/overlay.js')<html.indexOf(`src="${app}`),file);
  }
  const html=text('modern/index.html');assert(html.indexOf('modern/content.js')<html.indexOf('module3/modern/content.js')&&html.indexOf('module3/modern/content.js')<html.indexOf('src="modern/app.js'));
- assert(text('app.js').includes("'lecture18','lecture19']"));assert(text('modern/app.js').includes('module3:window.LING285_MODULE3'));
+ assert(text('app.js').includes("'lecture18','lecture19']"));
+ for(const f of ['app.js','modern/app.js'])assert(text(f).includes('const open=moduleMap?.get(state.activeModule);if(open && (open.lectureIds || []).includes(id))return open.id;'),f);
+ assert(text('module3/overlay.js').includes("id: question.id + '-m3'"));assert(text('module3/modern/content.js').includes("const kept = new Set(['lecture17', 'lecture18'])"));assert(text('modern/app.js').includes('module3:window.LING285_MODULE3'));
 });

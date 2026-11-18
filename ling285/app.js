@@ -52,6 +52,8 @@ function questionModule(q) {
   return refs.includes('module2')?'module2':'module1';
 }
 function moduleForCollection(id) {
+  // A lecture can be listed by more than one module (Lectures 17 and 18 are kept for the final in Module III).
+  const open=moduleMap?.get(state.activeModule);if(open && (open.lectureIds || []).includes(id))return open.id;
   const c=collections.get(id);if(moduleMap.has(c?.moduleId))return c.moduleId;
   return D.modules.find(m=>[...(m.lectureIds || []),...(m.supplementIds || []),...(m.meadowsIds || [])].includes(id))?.id || null;
 }

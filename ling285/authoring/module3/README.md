@@ -2,6 +2,15 @@
 
 Module III is everything after Exam 2. It starts with Lecture 19 (`Ling285_F26_L19.pptx`, November 17, 2026).
 
+## Lectures 17 and 18 are in Module III too
+
+On November 10 he said the LLM part is kept for the final. Lectures 17 and 18 therefore stay in Module II, unchanged,
+and are also listed by Module III (`lectureIds` and `carriedLectureIds` in `module3/data.json`).
+
+- **Individual collections.** The app treats a lecture as part of the open module when that module lists it, so Lectures 17 and 18 open inside Module III with every teaching version. Notes and read marks are saved per slide and are shared with Module II.
+- **Workspace panels and quizzes.** `module3/overlay.js` and `module3/modern/content.js` copy the Lecture 17 and 18 questions, Q&A, cards, contrasts, hard topics, connections and guide entries for Module III when the page loads, under ids ending in `-m3`. The copies use the plain wording where Module II has one. Practice progress is kept separately for each module.
+- **Study this first, Notes by topic and the review guide.** `make_module3.py` reuses the seven Module II Simpler v3 topics for Lectures 17 and 18 unchanged, then adds the six Lecture 19 topics. A slide that Lecture 19 repeats is shown once and names every lecture it appears in.
+
 ## Why Module III is a separate layer
 
 The studio files for Lectures 01 to 18 (`data.json`, every `transcripts-*.json`, `modern/content.js` and about

@@ -5,13 +5,19 @@
    "title": "Module III",
    "subtitle": "Final exam",
    "lectureIds": [
+    "lecture17",
+    "lecture18",
     "lecture19"
+   ],
+   "carriedLectureIds": [
+    "lecture17",
+    "lecture18"
    ],
    "supplementIds": [],
    "meadowsIds": [],
-   "lectureRange": "Lecture 19 so far",
-   "description": "After Exam 2 · Lecture 19. Later lectures will be added here.",
-   "futureNote": "Lecture 19 is available now. The final exam is cumulative, so Modules I and II stay available with their own study tools.",
+   "lectureRange": "Lectures 17–19 so far",
+   "description": "The LLM part kept for the final · Lectures 17 and 18, then Lecture 19 from after Exam 2. Later lectures will be added here.",
+   "futureNote": "Lectures 17 and 18 also stay in Module II, unchanged. The final exam is cumulative, so Modules I and II keep their own study tools.",
    "questionCount": 50,
    "mcqCount": 25,
    "writtenCount": 25

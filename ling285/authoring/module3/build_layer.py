@@ -19,7 +19,8 @@ def run(*args,cwd=REPO):
 
 def main():
     dirty=subprocess.run(['git','ls-files','-m','ling285'],capture_output=True,text=True,cwd=REPO).stdout.split()
-    assert not [f for f in dirty if f.endswith('.json') and f!='ling285/modern/build-manifest.json'],'commit or restore generated JSON files first'
+    own=('ling285/module3/','ling285/authoring/module3/')
+    assert not [f for f in dirty if f.endswith('.json') and f!='ling285/modern/build-manifest.json' and not f.startswith(own)],'commit or restore generated JSON files first'
     try:
         manifest_path=A/'upload-manifest.json';uploads=json.loads(manifest_path.read_text())
         if not any(u['key']=='lecture19' for u in uploads):manifest_path.write_text(json.dumps(uploads+[ENTRY],ensure_ascii=False,indent=2)+'\n')
@@ -37,6 +38,6 @@ def main():
         run(HERE/'extract_overlay.py','--restore')
     run(HERE/'make_module3.py');run(A/'module_template.py',A/'module3')
     left=subprocess.run(['git','ls-files','-m','ling285'],capture_output=True,text=True,cwd=REPO).stdout.split()
-    print('Module III layer rebuilt. Locked JSON files still modified:',[f for f in left if f.endswith('.json') and f!='ling285/modern/build-manifest.json'] or 'none')
+    print('Module III layer rebuilt. Locked JSON files still modified:',[f for f in left if f.endswith('.json') and f!='ling285/modern/build-manifest.json' and not f.startswith(('ling285/module3/','ling285/authoring/module3/'))] or 'none')
 
 if __name__=='__main__':main()
