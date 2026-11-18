@@ -1,0 +1,734 @@
+{
+ "id": "notes-v10-t2",
+ "base": "notes-v10",
+ "label": "Version 10 · v2 · Neurodivergent-friendly notes (with the Nov 17 class)",
+ "availableModules": [
+  "module3"
+ ],
+ "origin": "The original Lecture 19 text of this version with the class of November 17, 2026 added on each slide.",
+ "collections": {
+  "lecture19": {
+   "title": "Neuron, Neural Networks, LLMs and Agents",
+   "sections": [
+    {
+     "id": "lecture19-p001",
+     "page": 1,
+     "title": "Neuron, neural networks, LLMs and agents",
+     "kind": "title",
+     "teaching": []
+    },
+    {
+     "id": "lecture19-p002",
+     "page": 2,
+     "title": "From a neuron to agents that communicate",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**All of modern AI is built from one simple idea, the neuron.** A **neuron** takes information from other neurons, multiplies each input by its weight, and adds the results. This is the **inner product**, and it stands in for neurons communicating with chemicals and electricity. People who move science forward usually start from very simple ideas like this one and repeat them many times.",
+       "children": [
+        "A **neural network** repeats the inner product layer after layer. It takes a vector in and gives a **decision** out. Even something as complex as a person making a decision can be built from inner products and a function like the sigmoid, combined many times.",
+        "A network that makes one **static decision**, such as hearing one vowel from two formants, cannot capture thinking that **unfolds over time**."
+       ]
+      },
+      {
+       "text": "**Language depends on connections between words that are far apart.** In \"the dog that my parents, who I love very much, who live in a state far, far away,\" the next word is **barks**, not bark.",
+       "children": [
+        "**Barks** goes with the singular word **dog**, no matter how many words come in between, even plural words like parents.",
+        "Nobody teaches this rule directly. Speakers pick it up from the language around them. An LLM learns it the same way, from data, by doing inner products layer after layer until it predicts barks.",
+        "English sentence structure, called **syntax**, is so complicated that many linguists spend their careers studying it. That is why an LLM needs so many layers."
+       ]
+      },
+      {
+       "text": "**LLMs can work across many languages and across many kinds of input.** The first use of LLMs, in 2017, was **translation** between languages. Translation is now nearly solved for hundreds of languages.",
+       "children": [
+        "A system trained on several languages, such as English, Dutch and Japanese, learns how words go together in general. So it also gets good at very different languages, such as Navajo.",
+        "A **multimodal** system connects different kinds of input, such as text, speech and images. A multimodal system can write a caption for a photo or create an image from a spoken description."
+       ]
+      },
+      {
+       "text": "**Nobody fully understands what all the weights are doing.** The designs were not planned from the start. Over about 75 years, people changed something that worked a little so it worked a little better, again and again. Dogs were bred into today's breeds in a similar way over a few hundred years. Researchers are now trying to figure out what the weights do, partly so that smaller and less wasteful systems can be built.",
+       "children": []
+      },
+      {
+       "text": "**An agentic system is a team of LLMs that talk to each other in English.**",
+       "children": [
+        "An outline LLM plans the answer, and a writing LLM writes it.",
+        "A critic LLM checks whether each statement follows from the one before. A revision LLM works back and forth with the critic.",
+        "Sometimes a **controller** agent passes the work from one LLM to the next.",
+        "The agents also know **computer languages**, such as Python and database languages, because they were trained to predict whole programs too."
+       ]
+      },
+      {
+       "text": "**Agents usually stop learning once they are trained, and they share a common memory.**",
+       "children": [
+        "Once each LLM is trained, its weights usually **do not change** while the agents work together. Some new systems are starting to learn their own connections, which makes them partly self-designing.",
+        "Agents share a **common memory**, where they can write and read information. The shared memory gives them a lot of their power, and it is also a source of danger, because it lets them coordinate in ways nobody planned.",
+        "The same tools can do good work. One agentic system acts as a patient teacher for a Native American language that is nearly lost, even though there is far too little text in that language to train an ordinary LLM."
+       ]
+      },
+      {
+       "text": "**A neural network makes one static decision. Language and speech flow in time.** A network gets one input and makes one decision. Real cognition keeps changing.",
+       "children": [
+        "Take \"The wolves that run around Catalina Island ___.\" The next word is \"are.\" The verb agrees with \"wolves,\" however far away that word is.",
+        "Speech works this way too. A speaker slows down near the end of a sentence. So a listener can tell the sentence is ending.",
+        "The **sigmoid** stands for two things. A neuron is either on or off. People also sort things into categories."
+       ]
+      },
+      {
+       "text": "**In an agentic system, each LLM has its own job.**",
+       "children": [
+        "The first LLM does not answer the question. It writes an outline.",
+        "The second LLM writes a first draft from the outline.",
+        "The third LLM is the critic. It looks for spelling errors, grammar errors and flaws. It can also search the web to check a reference.",
+        "The draft goes back and forth, usually up to 3 or 4 rounds. Then a final LLM writes the answer.",
+        "A **hallucination** is an answer that sounds right but is made up. Hallucination dropped enormously once LLMs checked each other. It has not completely gone away."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p003",
+     "page": 3,
+     "title": "Parallel heads and successive layers",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Predicting the next word is so hard that an LLM needs many layers, and many parallel heads inside each layer.** A **head** is one expert. In each layer, the knowledge from all the heads is combined to make **improved vectors**. Then the next layer does the same thing again.",
+       "children": [
+        "**This is a question for the exam.** **Layers go one after another from the input to the output. Heads sit side by side inside each layer.**"
+       ]
+      },
+      {
+       "text": "**A classroom comparison explains heads and layers.** Imagine trying to improve yourself by visiting a series of classes, one class after another.",
+       "children": [
+        "In each class, every student gives you their own opinion on how to improve. Each student is like a **head**.",
+        "You then **combine** all of those opinions into one improved version of yourself. Combining the heads' opinions is what a layer does.",
+        "Then you go to the next class and do the same thing again. **The classes are the layers.**",
+        "In plain terms, layers give an LLM depth, which is one round of improvement after another. Heads give it width, which is many experts asked at the same time within each round."
+       ]
+      },
+      {
+       "text": "**Each head is a set of weights, and every head learns.** An expert's knowledge is in its weights. Every head in every layer learns how to improve the vectors so that the last layer can predict the next word.",
+       "children": [
+        "Large systems have **a hundred or more layers** and about **a hundred heads** in each layer. That shows how complicated language, vision and the other tasks really are.",
+        "The heads and layers are trained like everything else. A sentence such as \"the dog that ... barks\" is taken from text, and the system predicts the next word. If the prediction is wrong, **every head in every layer** adjusts its weights with backpropagation so the next prediction is closer to barks.",
+        "Training at this size uses enormous resources. In some states, a large share of the water goes to the data centers that run this training."
+       ]
+      },
+      {
+       "text": "**Each head is its own neural network. Each layer has its own heads.** Imagine visiting five classes to improve yourself.",
+       "children": [
+        "In the first class, each student gives advice. Each student is a **head**.",
+        "The advice is combined. This gives a better representation of each vector.",
+        "The second class is the next **layer**, with its own heads. This continues until the next word can be predicted."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p004",
+     "page": 4,
+     "title": "A dynamical rule across time and depth",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**A dynamical system is a rule that is fed its own output again and again.** Numbers go in, the rule acts on them, and numbers come out. The output is then fed back in as the next input. The goal is to understand this general structure, not to memorize formulas.",
+       "children": [
+        "In the **harmonic oscillator**, the two numbers are the position x and the velocity v. If x starts at one and v starts at zero, the first step leaves x the same and makes v go down.",
+        "x and v **take turns**. First the new x is calculated from the old v. Then the new v is calculated from the new x. Step by step, the rule draws a **cosine** for x.",
+        "Fields as different as finance use the same idea with different rules. Stock prices are modeled with equations that feed back on themselves, although the real market never follows them exactly."
+       ]
+      },
+      {
+       "text": "**Jordan's network combined neural networks with dynamical systems.** Jordan built it because speech production changes over time.",
+       "children": [
+        "The network's **output is copied back into its state units**. The state units also keep a fading copy of their own previous values.",
+        "**Plan units** and **state units** feed the hidden layer, the hidden layer feeds the output, and the output loops back into the state units. The same weights are used at every step.",
+        "After more than **thirty years of improvements**, this idea became the **LLM**."
+       ]
+      },
+      {
+       "text": "**In an LLM, each layer is the rule, and the depth of the layers plays the role of time.** Each layer applies its weights to every vector, and the next layer works on the result. If you follow one number up through the layers, it traces a curve, similar to the oscillator's curve, though not an exact cosine.",
+       "children": [
+        "So an LLM is a recurrent network laid out layer by layer, the same way the spring's motion was laid out step by step when it was calculated on a computer.",
+        "The rule in each layer is the weights of its heads, and those weights are learned through backpropagation by predicting the next word.",
+        "Agentic systems also contain loops, such as the critic and revision loop. So dynamical systems appear at every level of AI.",
+        "The math of inner products that LLMs rely on was first studied deeply in **quantum mechanics**, about a hundred years ago. So physics and AI are closely connected in more than one way."
+       ]
+      },
+      {
+       "text": "**An LLM is a dynamical system, just like the oscillator.** In the oscillator, x gives the next v. Then v gives the next x.",
+       "children": [
+        "So the two numbers keep recreating each other.",
+        "An LLM does this with tens of thousands of numbers, many times over."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p005",
+     "page": 5,
+     "title": "One prediction task for different sequences",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**An LLM is given 15 vectors and asked to predict the 16th, and the vectors can come from anything.** The machine only ever sees lists of numbers.",
+       "children": [
+        "The vectors can be **15 words** of a sentence, such as \"The cat that the dog chased ran up the old tree and sat on the,\" with the next word missing.",
+        "The vectors can be **15 frames of a spectrogram**, with the next slice of speech missing.",
+        "The vectors can be **15 patches of an image**, read row by row, with the bottom-right patch missing.",
+        "The vectors can be **15 amino acids** in a protein. In the B chain of insulin, the amino acid after the first fifteen is the one written Y."
+       ]
+      },
+      {
+       "text": "**The same design and the same prediction game work for language, speech, images and proteins.** Whatever the vectors stand for, the job is always to predict what comes next in the sequence.",
+       "children": []
+      },
+      {
+       "text": "**The first LLMs worked on text.** Take \"The cat that the dog chased ran up the old tree and sat on the ___.\" A speaker expects \"branch\" or \"mat.\" A speaker never expects \"may,\" \"in\" or \"the.\"",
+       "children": [
+        "An LLM starts with random W's. So at first it predicts impossible words.",
+        "After each guess, the W's change. The prediction becomes more like the actual next word. This is repeated millions and billions of times."
+       ]
+      },
+      {
+       "text": "**The same design was then used for speech, images and proteins.** Only the meaning of the vectors changed.",
+       "children": [
+        "For **speech**, each vector is a small piece of a spectrogram. The model predicts the next piece.",
+        "For an **image**, each vector is a patch. Each patch is treated like a word. The model predicts patch 16.",
+        "For a **protein**, each vector is one of 20 kinds of amino acid. The sequence decides the 3D shape, and the shape decides what the protein does.",
+        "The layers and the heads stayed the same every time."
+       ]
+      },
+      {
+       "text": "**This supports the horizontal view of cognition.**",
+       "children": [
+        "A **verticalist** says vision, hearing and language are separate skills. Each one has its own part of the brain.",
+        "The **horizontal** view says every skill uses the same computations.",
+        "One technology solved language, speech, vision and protein folding. That fits the horizontal view."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p006",
+     "page": 6,
+     "title": "Which sequences can be English words?",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Speakers know a small system of sounds that decides how vowels and consonants can follow each other.** English has about 30,000 words, so training an LLM on words takes enormous data, money and energy. The sound system has **only a few dozen sounds**, so an LLM for it can be small enough to study closely.",
+       "children": []
+      },
+      {
+       "text": "**A simple English syllable is a consonant, then a vowel, then a consonant**, as in Don, sit, shave, cup, dog and fish. The pattern is about sounds, so the silent e of shave does not count.",
+       "children": [
+        "English also allows **clusters**, as in split, flat, black, glad, desk, help and milk. Only some clusters are allowed, so **sblit**, **lfat**, **desb** and **lapm** are impossible. A product called \"desb\" would sound un-English right away.",
+        "Long words are chains of syllables. **Atlantic** is fine because t and l are on opposite sides of a syllable break. **Tlantic** is impossible, because tl cannot start an English syllable."
+       ]
+      },
+      {
+       "text": "**Every language has its own sequence rules, and speakers learn them without being taught.**",
+       "children": [
+        "**Mandarin** allows only nasal sounds at the end of a syllable, so words like mat, sit and shave are impossible in Mandarin.",
+        "**Cantonese** also allows a final p, as in cup.",
+        "**Russian and Polish** allow clusters like zb or dl at the start of a word, which English never allows.",
+        "**Spanish** does not allow a word to start with s and t together, so Spanish speakers add an e at the start of a word like stadium, which keeps each syllable simple."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p007",
+     "page": 7,
+     "title": "Guessing the next letter reveals phonotactic knowledge",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Guessing the next letter of an English word shows what a speaker knows about sounds.** **After a vowel, almost any letter can come next.** **At the start of a word, the choices narrow sharply.**",
+       "children": [
+        "After **sp**, only l, r or a vowel can come. After **skr**, or after **m** at the start of a word, only a vowel can come.",
+        "After **k**, a vowel or n can come, as in knee. After **sh**, a vowel or r can come, as in shrimp."
+       ]
+      },
+      {
+       "text": "**Guessing the next letter is predicting the 16th vector.** A GPT that only plays this game learns English sounds and spelling. Its predicted probability distribution is **flat** after a vowel. After skr, the distribution is **sharply peaked**, because English allows almost nothing else there.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p008",
+     "page": 8,
+     "title": "Design an agentic system for English syllables",
+     "kind": "prompt",
+     "teaching": [
+      {
+       "text": "**An LLM that learns English syllables can be built by describing it in plain English to an agentic system.** The request specified **five layers**, **four heads in each layer**, and **input vectors that are 64 numbers long**.",
+       "children": [
+        "The request asked the system to pick **1000 English words at random** and train the LLM on them. Training meant taking each letter, trying to **predict the next letter**, and then improving the weights to predict better.",
+        "The request also asked the system to show **ten generated words after each step of training**, to reveal what the LLM knew about English at that point."
+       ]
+      },
+      {
+       "text": "**The agentic system translated the request into its own technical terms.** It built a small **character-level transformer**, which is another name for an LLM that works one letter at a time, with **attention heads**.",
+       "children": [
+        "**Attention** means a head looks over the rest of the sequence to decide which preceding items matter, the same way predicting barks requires paying attention to dog.",
+        "The system chose to train on **pronunciations** instead of spellings, so the silent e in shave would not mislead it. It also wrote the program in Python on its own."
+       ]
+      },
+      {
+       "text": "**The results show how hard the problem is.** After training on 1000 words, the generated words were **still mostly gibberish**, with perhaps a few vowels starting to appear in the right places. The suggested next step was to train on **10,000 words** for many more steps. Deciding which sounds can follow which seems easy for any speaker, but it is not easy even for an LLM.",
+       "children": []
+      },
+      {
+       "text": "**This way of working has a name.**",
+       "children": [
+        "**Software 1.0** is writing programs in a programming language such as Python or C.",
+        "**Software 2.0** is giving a neural network input data and output data, so the program becomes the network's **weights**.",
+        "**Software 3.0** is using an agentic system, a set of LLMs talking to each other and to the user, to build and run a program. Doing this with plain English instructions is called **vibe coding**. It means someone with a good idea no longer needs to hire a programmer to build it."
+       ]
+      },
+      {
+       "text": "**The first attempt at this kind of problem was Claude Shannon's 1948 paper, \"A Mathematical Theory of Communication.\"** Shannon worked by hand and produced letter sequences that came closer and closer to English. His sequences went from random strings of consonants, to strings with vowels, to strings with real short words.",
+       "children": [
+        "That paper started **information theory**, one of the most important fields in engineering. Information theory is still important for LLMs today.",
+        "**Viterbi**, one of the developers of dynamic programming, published his most famous work in an information theory journal. So the ideas behind backpropagation and LLMs share the same roots."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p009",
+     "page": 9,
+     "title": "What an LLM learns",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**An LLM learns by guessing a hidden word.** The sentence is \"The chef cracks the.\" The last word is hidden, and the model has to guess it.",
+       "children": [
+        "**Every word before the gap is a clue.** A chef who cracks something is probably cracking food. So a food word is likely.",
+        "These clue relationships have a name. They are called **interdependencies** (one part of a sequence helps predict another part)."
+       ]
+      },
+      {
+       "text": "**The model spreads its bets because it does not know the answer.** A bet is the probability the model gives to one word.",
+       "children": [
+        "The biggest bet is on \"egg.\" A smaller bet is on \"nut.\" The smallest bet is on \"code.\"",
+        "All three words could come next. The words before the gap make \"egg\" the most likely."
+       ]
+      },
+      {
+       "text": "**Learning means nudging the weights.** A nudge is a small change to a weight.",
+       "children": [
+        "First the true word is revealed. Then each weight changes a little. After that, the right word gets a bigger bet next time."
+       ]
+      },
+      {
+       "text": "**The same idea works for words, sounds and images.** The signal is the sequence the model reads, and it can hold all three.",
+       "children": [
+        "The model still guesses a hidden piece. It still nudges its weights. Only the content of the signal is different."
+       ]
+      },
+      {
+       "text": "**Guessing the next word is called the GPT task.** After \"The chef cracks the,\" the probability is big for \"egg.\" It is smaller for \"nut\" and \"code.\" There is hardly any chance for \"the.\"",
+       "children": [
+        "The weights are nudged by **backpropagation**. So the guesses get better and better.",
+        "**Multimodal systems** handle text, speech and images together. They are about two to three years old.",
+        "People are multimodal too. A listener hears the speech, follows the words and watches the gestures. All of it becomes one meaning."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p010",
+     "page": 10,
+     "title": "Text, speech and images in three different forms",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**An LLM can only read a row of vectors.** Text, speech and images arrive in three different forms. Two of them have to be converted first.",
+       "children": []
+      },
+      {
+       "text": "**Text is the easy case.** Text is already a row of pieces. \"Now crack the egg\" has the pieces \"Now,\" \"crack,\" \"the\" and \"egg.\"",
+       "children": [
+        "Each piece can become one vector. So text is ready for the model almost as it is."
+       ]
+      },
+      {
+       "text": "**Speech is air pressure changing in time.** The pressure goes up and down without a break.",
+       "children": [
+        "Nothing in the sound marks where a word starts or stops. So there are no words in the sound itself."
+       ]
+      },
+      {
+       "text": "**An image is a grid of light.** Each spot in the grid has its own brightness and colour.",
+       "children": [
+        "The image has no words in it. Its parts are not in a row."
+       ]
+      },
+      {
+       "text": "**So the first job is a conversion.** Speech has to become a row of vectors. An image has to become a row of vectors too.",
+       "children": [
+        "After that, one model can read text, speech and images together."
+       ]
+      },
+      {
+       "text": "**The three forms can be three versions of one message.**",
+       "children": [
+        "There are the words.",
+        "There is the speech signal of someone saying \"now crack the egg.\" It is the pressure variation in front of the mouth.",
+        "There is an image of an egg that has been cracked.",
+        "Before multimodal systems, each model was trained separately. A text model predicted the next word. A speech model predicted the next piece of speech. A vision model predicted a missing patch."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p011",
+     "page": 11,
+     "title": "Speech becomes a row of frame vectors",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Speech becomes a row of vectors in three steps.**",
+       "children": [
+        "First, the sound is cut into short slices of time. Each slice is called a **frame**, and it is about 20 milliseconds long.",
+        "Then the slices go through a **speech encoder**. A speech encoder is a neural network that was trained on a large amount of audio.",
+        "Last, one vector comes out for each slice. Different sounds give vectors with different numbers."
+       ]
+      },
+      {
+       "text": "**One second of speech becomes 50 vectors.** Each slice is about 20 milliseconds long. Fifty slices of that length fill one second. Each slice gives one vector, so one second gives 50 vectors.",
+       "children": []
+      },
+      {
+       "text": "**The vectors stay in time order.** The first slice gives the first vector, and the last slice gives the last vector.",
+       "children": [
+        "So speech is now a row, just like a sentence. The LLM can read it one vector after another."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p012",
+     "page": 12,
+     "title": "Images become a row of patch vectors",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**An image becomes a row of vectors in three steps.**",
+       "children": [
+        "First, a grid cuts the image into small squares. Each square is called a **patch**. The image of an egg in a pan is cut into 16 patches.",
+        "Then the patches are laid out in a row, in reading order. Reading order means left to right along the top, then left to right along the next line down.",
+        "Last, the patches go through a **vision encoder**. One vector comes out for each patch."
+       ]
+      },
+      {
+       "text": "**Reading order turns the image into a sequence.** The patches now have a first piece and a last piece, like the words of a sentence.",
+       "children": [
+        "The 16 patches give 16 vectors in the same order. So the LLM can read the image as a row."
+       ]
+      },
+      {
+       "text": "**Real systems use much smaller patches.** The example uses a 4 by 4 grid to stay simple. Real systems use patches of 14 to 16 pixels.",
+       "children": [
+        "Smaller patches mean more patches. So one image gives hundreds of vectors."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p013",
+     "page": 13,
+     "title": "One row with three senses",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**All three kinds of piece can go in one row.** The image patches come first. The speech frames come next. The words come last.",
+       "children": [
+        "The words are \"Now,\" \"crack\" and \"the.\" The word after them is hidden."
+       ]
+      },
+      {
+       "text": "**The words before the gap still give clues.** \"Now,\" \"crack\" and \"the\" each help the model guess the hidden word. This is the same as in a row of text.",
+       "children": []
+      },
+      {
+       "text": "**Clues also come from the other senses now.** A patch that contains an egg helps the model guess the word. The sound of cracking helps too.",
+       "children": [
+        "This kind of link has a name. It is a **cross-modal dependency** (a link between two different kinds of signal)."
+       ]
+      },
+      {
+       "text": "**The game is exactly the same as before.** The model guesses the hidden piece from the pieces it can read.",
+       "children": [
+        "Only one thing is new. Some of the clues now come from other senses."
+       ]
+      },
+      {
+       "text": "**The game inside one modality can be played across modalities.** This works because the same technology is used for all three.",
+       "children": [
+        "The image patches come first. The speech frames follow in the same sequence. The text vectors come last.",
+        "The model predicts the next word from all of these vectors. It does not use only the words before the gap.",
+        "**The W's are now about how the modalities relate.** They are not only about text, only about speech or only about vision.",
+        "After a great deal of training, the W's are truly multimodal. The system is still built from layers with heads."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p014",
+     "page": 14,
+     "title": "Three cute puppies as an image, speech and words",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**\"Three cute puppies\" is one event in three forms.** There is an image of three puppies. There is the phrase spoken aloud. There are the three written words.",
+       "children": []
+      },
+      {
+       "text": "**The image is cut into 18 patches.** The grid has 3 rows of 6 patches.",
+       "children": [
+        "The three puppies have different colours. The third puppy is dark."
+       ]
+      },
+      {
+       "text": "**The spoken phrase is displayed as a spectrogram.** A **spectrogram** lays out a sound in time.",
+       "children": [
+        "Time runs from left to right. A higher position means a higher frequency. A darker area means more energy.",
+        "Each thin column is one frame. Each word has its own stretch of time, with \"three\" first and \"puppies\" last.",
+        "The voice is a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person."
+       ]
+      },
+      {
+       "text": "**The three forms are three views of one event.** In training, all three go into one row.",
+       "children": [
+        "Then one piece of the row is hidden, and the model has to guess it."
+       ]
+      },
+      {
+       "text": "**The example comes from ordinary social media data.** Someone posts an image of three cute puppies. They write \"three cute puppies.\" They add a video where they say the words.",
+       "children": [
+        "So the same event is in all three modalities. A system can train on it.",
+        "The W's come from data that people produced. So some lawmakers say people should be paid for that data."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p015",
+     "page": 15,
+     "title": "Training example 1 predicts the next word",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Training example 1 hides a word.** The row holds the image, then the sound, then the words. The words are \"three\" and \"cute.\" The word after \"cute\" is hidden.",
+       "children": []
+      },
+      {
+       "text": "**With the words alone, the bets are spread out.** \"Kittens,\" \"puppies\" and \"babies\" all fit after \"three cute.\"",
+       "children": [
+        "The model cannot tell which one is right. So the three words get nearly equal bets."
+       ]
+      },
+      {
+       "text": "**With the image and the sound, the bet piles up on \"puppies.\"** The image contains puppies. The sound contains the spoken word \"puppies.\"",
+       "children": [
+        "So \"puppies\" gets almost the whole bet. \"Kittens\" and \"babies\" get very small bets."
+       ]
+      },
+      {
+       "text": "**Then the true word is revealed, and the model is graded.** The grade depends on how much the model bet on the true word.",
+       "children": [
+        "The true word is \"puppies.\" The model bet 0.85 on it.",
+        "That is a large bet on the truth, so the error is small. A small error moves the weights only a little.",
+        "A small bet on the truth would be a larger error. A larger error would move the weights more."
+       ]
+      },
+      {
+       "text": "**The same post can train the system in three ways. The first way hides a word.**",
+       "children": [
+        "The system gets a few of the words, such as \"three cute.\" It also gets all the speech frames and all the image patches.",
+        "It has to predict the next text word. Then its W's change so it predicts better."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p016",
+     "page": 16,
+     "title": "Training example 2 predicts a sound frame",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Training example 2 hides a frame of sound.** The row is reordered. The image comes first, then the words, then the sound.",
+       "children": [
+        "This is like teaching the model to speak a sentence it was given.",
+        "The sound is predicted one frame at a time, from left to right. The frames after the hidden one have not been heard yet."
+       ]
+      },
+      {
+       "text": "**Three clues help the model guess the frame.**",
+       "children": [
+        "The frames already heard are the first clue. The voice and the **formants** (frequency regions with strong energy) change smoothly. So the last few frames say a lot about the next one.",
+        "The words are the second clue. They say which sound should come next, and here it is the vowel in \"pup.\"",
+        "The image is the third clue. It contains puppies, so it backs up the words. It is a weaker clue here."
+       ]
+      },
+      {
+       "text": "**A frame is a column of numbers.** Each number is how much energy there is in one frequency band. There are 16 bands on display.",
+       "children": [
+        "The guess is close to the true frame, but it is not exact. The error is how far each guessed number is from the true number.",
+        "That error nudges the weights.",
+        "Some systems predict a code for each frame instead of the raw numbers."
+       ]
+      },
+      {
+       "text": "**The second way hides part of the speech.**",
+       "children": [
+        "The system gets the image patches, the words and half of the speech.",
+        "It has to predict the next bit of speech. It uses the speech frames, the words and the patches together."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p017",
+     "page": 17,
+     "title": "Training example 3 predicts an image patch",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Training example 3 hides a patch of the image.** The row is reordered again. The words come first, then the sound, then the image.",
+       "children": [
+        "This is like teaching the model to draw what it was told.",
+        "The patches are predicted in reading order. The patches after the hidden one are not drawn yet."
+       ]
+      },
+      {
+       "text": "**Three clues help the model guess the patch.**",
+       "children": [
+        "The patches already drawn are the first clue. Above the hidden patch is background. To its left are two puppies. So the model has seen what a puppy in this image looks like.",
+        "The words are the second clue. \"Three\" says a third puppy must appear, because only two are drawn. \"Puppies\" says to expect dog ears.",
+        "The sound is the third clue. It carries the same words, so it backs up the text."
+       ]
+      },
+      {
+       "text": "**The guess has the right content and the wrong colour.** The model guesses a blurry puppy ear. The ear has the average colour of the first two puppies. The true puppy is dark.",
+       "children": [
+        "So the biggest error is the colour. No clue said the third puppy would be dark.",
+        "That error nudges the weights."
+       ]
+      },
+      {
+       "text": "**Only some systems are trained this way.** Systems that also produce images are trained to predict patches. Systems that only read images usually skip this step.",
+       "children": []
+      },
+      {
+       "text": "**The third way hides a patch. The next patch is the third dog.**",
+       "children": [
+        "The system gets the words, all of the speech and some of the patches.",
+        "Two dogs alone could be followed by a kennel, a person or the sun.",
+        "But the words say \"three puppies.\" The speech says \"three puppies\" too.",
+        "So a person, a house or a kennel has a very low probability. A third puppy has the highest probability."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p018",
+     "page": 18,
+     "title": "Every piece can be the hidden one",
+     "kind": "comparison",
+     "teaching": [
+      {
+       "text": "**Any piece of the row can be the hidden one.** It can be a word, a sound frame or an image patch. Each sense gives a clue every time.",
+       "children": []
+      },
+      {
+       "text": "**For a hidden word, the three clues all point to \"puppies.\"**",
+       "children": [
+        "The words \"three cute\" call for a plural noun.",
+        "The sound helps because the word was just spoken.",
+        "The image helps because it contains puppies."
+       ]
+      },
+      {
+       "text": "**For a hidden frame, the three clues are about the next sound.**",
+       "children": [
+        "The words say which sound comes next.",
+        "The voice and the formants carry on from the frames already heard.",
+        "The image backs up which word is being said."
+       ]
+      },
+      {
+       "text": "**For a hidden patch, the three clues are about the next part of the image.**",
+       "children": [
+        "The word \"three\" says one more puppy is coming.",
+        "The sound gives the same words in heard form.",
+        "The fur and the background carry on from the patches already drawn."
+       ]
+      },
+      {
+       "text": "**The same sense says how the signal continues. The other senses say what the thing is.**",
+       "children": [
+        "Grammar, smooth formants, and fur and background are the same-sense clues. Each one carries on from what came before.",
+        "The other senses say what is being described. Here that is puppies, three of them.",
+        "So each sense fills gaps that the others leave. That is why training on all three together helps."
+       ]
+      },
+      {
+       "text": "**One situation can train the system in every direction.**",
+       "children": [
+        "It can go from speech and vision to text. It can go from text and vision to speech. It can go through all the other possibilities.",
+        "**W's are knowledge.** Here the knowledge is about the bond between speaking, hearing and seeing.",
+        "The idea is simple. The words were replaced with frames of speech, or with patches of an image."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p019",
+     "page": 19,
+     "title": "Talking back, and what is new",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**The model speaks in three steps.**",
+       "children": [
+        "First, sound is compressed into discrete codes. A code is a number that stands for a short piece of sound, such as 417, 82 or 903. Each code works like a new word in the vocabulary.",
+        "Then the model predicts the next code. It does this exactly as it predicts the next word.",
+        "Last, a **decoder** turns the codes back into a sound wave that can be heard."
+       ]
+      },
+      {
+       "text": "**Three things are new when a model learns from words, sounds and images.**",
+       "children": [
+        "The first is a **shared currency**. Everything becomes vectors in one row.",
+        "The second is **data where the senses appear together**.",
+        "The third is **a schedule that protects what was already learned**."
+       ]
+      },
+      {
+       "text": "**One thing stays the same.** The learning rule is still to find the dependencies in the signal.",
+       "children": [
+        "The model still guesses a hidden piece and nudges its weights. The signal has only become wider."
+       ]
+      },
+      {
+       "text": "**A modality is like a sense. Language counts as one too.**",
+       "children": [
+        "First there were LLMs for language alone. Then came LLMs for speech alone, vision alone and biology alone.",
+        "Over the last three or four years, systems have combined all of them.",
+        "**Biomedical multimodal LLMs** combine medical images, the doctor's notes, lab results and DNA or protein sequences. They have found tumors that doctors missed. They also make mistakes, as doctors do.",
+        "An ordinary chat system already works this way. Asked in Armenian, it answered in Armenian. Its W's know about a hundred languages."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,266 @@
+{
+ "m3-lead-up": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p2 · class of Nov 17",
+    "main": "**A neural network makes one static decision, but language and speech flow in time.** A network is given one input, such as the pixels of a face, and it makes one decision about it. Real cognition keeps changing from moment to moment.",
+    "sub": [
+     "Take \"The wolves that run around Catalina Island ___.\" The next word is \"are,\" because the verb agrees with \"wolves.\" This stays true however many words come between them, so knowing a language means knowing long-distance relationships.",
+     "Speech has these relationships too. A speaker slows down near the end of a sentence, so a listener can tell the sentence is about to end.",
+     "The **sigmoid** stands for two things. A neuron is either on or off. People also sort things into categories, so two physically different things can count as the same, and two very similar things can count as different."
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "source": "From class, Nov 17",
+    "q": "What word follows \"The wolves that run around Catalina Island ___,\" is or are? Why?",
+    "a": "The word is \"are.\" This is because the verb agrees with its subject, and the subject is \"wolves,\" which is plural. The verb agrees with \"wolves\" no matter how many words come between them. So knowing English includes knowing relationships between words that are far apart."
+   },
+   {
+    "source": "From class, Nov 17",
+    "q": "A neural network makes a static decision. Why is that not enough for language and speech?",
+    "a": "It is not enough because language and speech flow in time. A neural network is given one input and makes one decision about it. In language, one word comes after another, and a word can depend on a word far back in the sentence. So a system for language has to work on a sequence that is extended in time."
+   }
+  ]
+ },
+ "m3-llm-sequences": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p5 · class of Nov 17",
+    "main": "**The first LLMs worked on text, and they learned because their W's changed after every wrong guess.** Take \"The cat that the dog chased ran up the old tree and sat on the ___.\" A speaker of English expects \"branch\" or \"mat.\" A speaker never expects \"may,\" \"in\" or \"the.\"",
+    "sub": [
+     "An LLM starts with random W's, so at first it predicts impossible words. After each guess, the W's change so that the prediction becomes more like the actual next word.",
+     "This is repeated millions and billions of times. In the end, the model has the same grasp of English that a speaker has."
+    ]
+   },
+   {
+    "ref": "Lecture 19 · p5 · class of Nov 17",
+    "main": "**Within about two years, the same design was used for speech, images and proteins, and the only change was what the vectors stand for.**",
+    "sub": [
+     "For **speech**, each vector stands for a small piece of a spectrogram, and the model predicts the next piece. This works because a spectrogram is a sequence of vectors in time, just as a sentence is.",
+     "For an **image**, the image is cut into patch 1, patch 2, patch 3 and so on, because an image does not vary in time. Each patch is treated as if it were a word, and the model predicts patch 16.",
+     "For a **protein**, the sequence is made of 20 kinds of amino acid. The sequence decides how the protein folds into its 3D shape, and the shape decides what the protein does in the body. This work received the 2024 Nobel Prize in Chemistry.",
+     "The layers and the heads stayed the same in every case. So one technology solved language, speech, vision and protein folding."
+    ]
+   },
+   {
+    "ref": "Lecture 19 · p5 · class of Nov 17",
+    "main": "**One technology solving all of these problems supports the horizontal view of cognition.** A **verticalist** says that vision, hearing and language are separate skills, and each has its own part of the brain.",
+    "sub": [
+     "The **horizontal** view says that the same computations are used in every skill. It was proposed by the neural network researchers of the 1980s.",
+     "The brain areas for hearing and for vision are in different places. But their cells are organized in the same way, with the same feedback loops, which fits the horizontal view."
+    ]
+   },
+   {
+    "ref": "Lecture 19 · p2 · class of Nov 17",
+    "main": "**The same translation design is now used in medicine.** The first LLMs translated a sequence of English words into a sequence of German words. In one cancer treatment, the input sequence is the DNA from a tumor, and the output sequence is the antibody that should attack that tumor.",
+    "sub": [
+     "The systems have also grown. A small neural network has thousands of W's, the earliest LLMs had hundreds of millions, and the largest current systems are thought to have trillions."
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "source": "From class, Nov 17",
+    "q": "An LLM starts with random W's. What happens after it predicts an impossible next word?",
+    "a": "Its W's change so that the prediction becomes more like the actual next word. For example, after \"The cat that the dog chased ran up the old tree and sat on the,\" the actual word might be \"mat.\" If the model predicts an impossible word, the W's are changed toward \"mat.\" This is repeated millions and billions of times, until the model has the same grasp of English that a speaker has."
+   },
+   {
+    "source": "From class, Nov 17",
+    "q": "The same LLM design works for text, speech, images and proteins. What changes, and what stays the same?",
+    "a": "What changes is what the vectors stand for. They can stand for words, small pieces of a spectrogram, patches of an image or the amino acids of a protein.\n\nWhat stays the same is the technology. The layers, the heads and the task of predicting the next item are the same in every case."
+   },
+   {
+    "source": "From class, Nov 17",
+    "q": "What is the difference between the verticalist view and the horizontal view of cognition? Which one does the success of LLMs support?",
+    "a": "The verticalist view says that vision, hearing and language are separate skills, and each has its own part of the brain. The horizontal view says that the same computations are used in every skill.\n\nThe success of LLMs supports the horizontal view. This is because one technology of layers with heads solved language, speech, vision and protein folding."
+   }
+  ]
+ },
+ "m3-heads-layers": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p3 · class of Nov 17",
+    "main": "**Each head is its own neural network that makes a decision, and each layer has its own heads.** Imagine trying to improve yourself by visiting five classes. In the first class, each student gives advice, and each student is a **head**.",
+    "sub": [
+     "The advice from all the students is combined. This gives a better representation of each vector.",
+     "The second class is the next **layer**, with its own heads, and the same thing happens again. This continues until the representations are good enough to predict the next word."
+    ]
+   }
+  ],
+  "questions": []
+ },
+ "m3-recurrent-dynamical": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p4 · class of Nov 17",
+    "main": "**An LLM is a dynamical system, just like the oscillator.** In the oscillator, knowing x gives the next v, and knowing v gives the next x. So the two numbers keep recreating each other.",
+    "sub": [
+     "An LLM does the same thing with tens of thousands of numbers, many times over. Each layer takes the current vectors and produces new vectors.",
+     "So the oscillator and the LLM follow the same principle, which connects the physical systems and the AI systems."
+    ]
+   }
+  ],
+  "questions": []
+ },
+ "m3-agentic": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p2 · class of Nov 17",
+    "main": "**In an agentic system, each LLM has its own job, and the LLMs check each other.** The first LLM is told not to answer the question. Its job is to write an outline. The second LLM writes a first draft from the outline.",
+    "sub": [
+     "The third LLM is the critic. It looks for spelling errors, grammar errors and flaws, and it can search the web to check that a reference really exists.",
+     "The draft goes back and forth between the critic and the writer, usually up to a limit of 3 or 4 rounds. Then a final LLM writes the answer, which is why an answer can take a minute or two.",
+     "A **hallucination** is an answer that sounds right but is made up, such as a legal reference that does not exist. Hallucination dropped enormously once LLMs checked each other, because the critic catches made-up claims. It has not completely gone away."
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "source": "From class, Nov 17",
+    "q": "In the agentic system he described, what is the job of each LLM?",
+    "a": "The first LLM writes an outline, and it is told not to answer the question. The second LLM writes a first draft from the outline. The third LLM criticizes the draft, looking for spelling errors, grammar errors and flaws.\n\nThe draft can go back and forth between the critic and the writer, usually up to a limit of 3 or 4 rounds. Then a final LLM writes the answer."
+   },
+   {
+    "source": "From class, Nov 17",
+    "q": "Why did hallucination drop once LLMs were set up to talk to each other?",
+    "a": "Hallucination dropped because one LLM checks the work of another. A hallucination is an answer that sounds right but is made up, such as a reference that does not exist. The critic LLM can search the web to check that a reference really exists. So made-up claims are caught before the final answer is written. Hallucination has not completely gone away."
+   }
+  ]
+ },
+ "m3-hidden-word": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p9 · class of Nov 17",
+    "main": "**Guessing the next word is called the GPT task, and it is how these systems learn.** After \"The chef cracks the,\" there is a big probability for \"egg,\" smaller ones for \"nut\" and \"code,\" and hardly any chance for \"the.\"",
+    "sub": [
+     "The weights are nudged by **backpropagation** (the method that calculates how much each weight contributed to the error). So the guesses get better and better.",
+     "**Multimodal systems** handle text, speech and images together, and they are about two to three years old. People are multimodal too. A listener hears the speech, follows the words and watches the gestures, and combines them into one meaning."
+    ]
+   }
+  ],
+  "questions": []
+ },
+ "m3-conversion": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p10 · class of Nov 17",
+    "main": "**The three forms can be three versions of one message.** There are the words. There is the speech signal of someone saying \"now crack the egg,\" which is the pressure variation in front of the mouth. There is an image of an egg that has been cracked.",
+    "sub": [
+     "A multimodal agent understands how the sound, the words and the image relate to each other.",
+     "Before multimodal systems, each kind of model was trained separately. A text model predicted \"egg\" from \"now crack the.\" A speech model had a small piece of the signal taken out, and it predicted the next piece. A vision model had a patch taken out, and it predicted the missing patch."
+    ]
+   }
+  ],
+  "questions": []
+ },
+ "m3-one-row": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p13 · class of Nov 17",
+    "main": "**The game played inside one modality can be played across modalities, because the same technology is used for all three.** The patches of an image come first. The frames of speech follow in the same sequence, and the text vectors come after them.",
+    "sub": [
+     "The model is asked to predict the next word from all of these vectors, not only from the words before the gap.",
+     "**A system trained this way has W's that are about how the modalities relate.** Its W's are no longer only about text, only about speech or only about vision. They are about how the image patches of an egg relate to the speech about eggs, and how both relate to the words.",
+     "After training over and over on a great deal of speech, images and words, the W's become truly multimodal. So the system knows the relationship between spoken language, written language and what is seen.",
+     "The system is still built from layers with heads, and from W's doing inner products and sigmoids."
+    ]
+   },
+   {
+    "ref": "Lecture 19 · p14 · class of Nov 17",
+    "main": "**The example comes from ordinary social media data.** Someone posts an image of three cute puppies. They write \"three cute puppies\" under it. They also add a video in which they say the same words.",
+    "sub": [
+     "So the same event is present in all three modalities, and a system has something to train on.",
+     "The W's of these systems come from data like this, which people produced. That is why some lawmakers argue that people should be paid for the data the systems were trained on."
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "source": "From class, Nov 17",
+    "q": "Why can the guessing game be played across modalities?",
+    "a": "It can be played across modalities because the same technology is used for speech, for vision and for text. Each one is a sequence of vectors. So the image patches, the speech frames and the text vectors can be placed in one sequence, and the model can predict the next word from all of them."
+   },
+   {
+    "source": "From class, Nov 17",
+    "q": "In a multimodal system, what are the W's about?",
+    "a": "The W's are about how the modalities relate to each other. They are no longer only about text, only about speech or only about vision. For example, they are about how the image patches of an egg relate to the speech about eggs, and how both relate to the words. After enough training, the W's are truly multimodal."
+   }
+  ]
+ },
+ "m3-training": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p15 · class of Nov 17",
+    "main": "**The same post can train the system in three separate ways, and the first way hides a word.** The system is given a few of the words, such as \"three cute.\" It is also given all of the speech frames and all of the image patches.",
+    "sub": [
+     "It has to predict the next text word. Its W's then change so that it predicts that word better."
+    ]
+   },
+   {
+    "ref": "Lecture 19 · p16 · class of Nov 17",
+    "main": "**The second way hides part of the speech.** The system is given the patches of the image, the words and half of the speech.",
+    "sub": [
+     "It has to predict the next bit of speech. To do this, it uses the speech frames, the text words and the image patches together."
+    ]
+   },
+   {
+    "ref": "Lecture 19 · p17 · class of Nov 17",
+    "main": "**The third way hides a patch, and the words and the speech make the right guess the most likely one.** The system is given the words, all of the speech and some of the patches. The next patch is the third dog.",
+    "sub": [
+     "From two dogs in the image alone, the next patch could be a kennel, a person or the sun in the background.",
+     "But the text contains \"three\" and \"puppies,\" and the speech says \"three puppies.\" So the probability of a person, a house or a kennel is very low, and the highest probability is that a third puppy is there.",
+     "So the other modalities spell out what is in the image."
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "source": "From class, Nov 17",
+    "q": "What are the three ways to train a system on one post that has an image, speech and words?",
+    "a": "The first way gives the system a few of the words, all of the speech and all of the image patches, and asks for the next text word.\n\nThe second way gives it the patches, the words and half of the speech, and asks for the next bit of speech.\n\nThe third way gives it the words, all of the speech and some of the patches, and asks for the next patch."
+   },
+   {
+    "source": "From class, Nov 17",
+    "q": "The image has two puppies so far. Why is a third puppy the most likely next patch, and not a kennel or a person?",
+    "a": "A third puppy is the most likely because the words and the speech both say \"three puppies.\" From two dogs in the image alone, the next patch could be a kennel, a person or the sun in the background. But the other modalities spell out what is in the image. So the probability of a kennel or a person is very low, and the probability of a third puppy is the highest."
+   }
+  ]
+ },
+ "m3-clues": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p18 · class of Nov 17",
+    "main": "**One situation can train the system in every direction.** The same post is used to go from speech and vision to text, and from text and vision to speech, and through all the other possibilities.",
+    "sub": [
+     "This is repeated over many different posts, such as three factories with people standing in front of them.",
+     "**W's are knowledge.** After this training, the knowledge in the W's is about the bond between several skills, which are speaking, hearing and seeing.",
+     "The idea behind each step is simple. Someone who understood the text system replaced the words with frames of speech, or with patches of an image."
+    ]
+   }
+  ],
+  "questions": [
+   {
+    "source": "From class, Nov 17",
+    "q": "What does it mean that W's are knowledge in a multimodal system?",
+    "a": "It means that what the system knows is stored in its W's. In a multimodal system, the same post is used to train in every direction, such as from speech and vision to text, and from text and vision to speech. So the knowledge in the W's is about the bond between several skills, which are speaking, hearing and seeing."
+   }
+  ]
+ },
+ "m3-talking-back": {
+  "blocks": [
+   {
+    "ref": "Lecture 19 · p19 · class of Nov 17",
+    "main": "**A modality is like a sense, and language counts as one too.** At first there were LLMs for language alone, then for speech alone, for vision alone and for biology alone. Over the last three or four years, systems have combined all of them.",
+    "sub": [
+     "There are now **agentic multimodal systems**. Their LLMs specialize in different things and talk to each other.",
+     "**Biomedical multimodal LLMs** combine medical images such as MRI and ultrasound, the doctor's notes, lab results and DNA or protein sequences in one system. They have found tumors that doctors missed. They also make mistakes, as doctors do.",
+     "An ordinary chat system already works this way. Asked a question in Armenian, it answered in Armenian, because its W's know about a hundred languages. It also takes images and speech.",
+     "These systems need so many W's partly because their knowledge is far wider than one person's. It covers about a thousand topics and a hundred languages."
+    ]
+   }
+  ],
+  "questions": []
+ }
+}

@@ -126,12 +126,23 @@ def build(module_dir, out_path=None):
 
     versions = {}
     for v in meta["versions"]:
+        # A version may add blocks and questions to topics, from a file named in "add" ({topicId: {blocks, questions}}).
+        extra = json.load(open(module_dir / v["add"])) if v.get("add") else {}
+        for tid, more in extra.items():
+            for b in more.get("blocks", []):
+                for text in _texts(b):
+                    check_text(text, f"{tid} · {b.get('ref', '')} · {v['add']}", problems)
+            for q in more.get("questions", []):
+                check_text(q["a"], f"{tid} · {v['add']}", problems)
+        if problems:
+            raise SystemExit("Fix these before building:\n  " + "\n  ".join(problems))
         versions[v["key"]] = {
             "label": v["label"], "range": meta["range"], "split": True, "notes": bool(v.get("notes", True)),
             "howToAnswer": [], "scope": meta["scope"], "flags": meta.get("flags", []),
             "topics": [dict(id=t["id"], tier=t["tier"], lectures=t["lectures"], title=t["title"], note=t.get("note", ""),
-                            blocks=attach(t["blocks"], media_for, v.get("overlay", True)),
-                            questions=expand_questions(t, exam)) for t in topics],
+                            blocks=attach(t["blocks"] + extra.get(t["id"], {}).get("blocks", []), media_for, v.get("overlay", True)),
+                            questions=expand_questions(t, exam) + [dict(source=q.get("source", "Predicted"), q=q["q"], a=q["a"])
+                                                                   for q in extra.get(t["id"], {}).get("questions", [])]) for t in topics],
         }
     bytopic = {
         "title": meta["bytopic"]["title"], "lead": meta["bytopic"]["lead"],

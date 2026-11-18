@@ -36,6 +36,7 @@ def main():
         run(A/'lecture19_modern.py');run(HERE/'extract_overlay.py')
     finally:
         run(HERE/'extract_overlay.py','--restore')
+    run(A/'lecture19_v2.py')   # the v2 versions, which add the class of November 17
     run(HERE/'make_module3.py');run(A/'module_template.py',A/'module3')
     left=subprocess.run(['git','ls-files','-m','ling285'],capture_output=True,text=True,cwd=REPO).stdout.split()
     print('Module III layer rebuilt. Locked JSON files still modified:',[f for f in left if f.endswith('.json') and f!='ling285/modern/build-manifest.json' and not f.startswith(('ling285/module3/','ling285/authoring/module3/'))] or 'none')

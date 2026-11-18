@@ -41,3 +41,33 @@ that existing versions and saved study state are never changed.
 
 **Sign-off (Margaret).** The content follows the source order, every instructional page is taught in every version, and
 the rules above hold on the new pages. Signed off with the unresolved items listed.
+
+---
+
+# Board report · v2 versions with the class of November 17 (2026-11-17)
+
+**Goal (Margaret).** Keep every existing version and add a v2 of each that follows the same guidelines and includes
+what he said in class on November 17. Add the same to Study this first as a new version.
+
+| Member | Where | Problem | Fix |
+|---|---|---|---|
+| Gideon | All registers | Class material must not say "in class" or "he said" inside teaching text | Written as direct statements. The builder and the tests reject those phrases |
+| Gideon | Iskarous C and Original C | These versions allow no figures written as digits and no short bold labels | The PROF register was written to those rules and passes the same checks as Version 22 |
+| Vera | Page 2 | He listed the DNA bases as C, G, A and U. DNA has T, and U belongs to RNA | The notes say "the DNA from a tumor" and list no letters |
+| Vera | Page 2 | "ChatGPT6 has 6 trillion W's", then "nobody knows, probably 5 to 10 trillion" | Written as "the largest current systems are thought to have trillions" |
+| Vera | Page 2 | The story that one company fixed arithmetic within a year and a half, and the dates for Siri | Left out, because they could not be checked and are not needed for the idea |
+| Sage | Page 5 | "Based entirely on LLMs" for protein folding overstates it | Written as "the same game" and "this work received the 2024 Nobel Prize in Chemistry" |
+| Rook | Whole set | Versions that share a register get the same added blocks, so the v2 additions are not written 35 separate ways | Stated in the README. Each v2 still differs, because the added blocks sit on each version's own text |
+| Flint | Dropdown | 43 entries is long | v2 entries are shown in Module III only, after the originals |
+| Ada | Study this first | His exam cues should change what is studied first | Scope and flags now record the cumulative final, "at least half new LLM material", heads and layers as exam questions, and that agentic systems are "not covered in this course" |
+| Cato | Process | One writer played every role again | Flagged. The checks are automated in `lecture19_v2.py` and `tests/module3.test.cjs` |
+
+## For Jordan (kept out of the notes)
+
+1. **He said agentic systems are not covered in this course**, right before explaining them. They are still on the slides, and your Lab 9 questions ask about them, so I kept them and flagged it.
+2. **He called heads and layers "exam questions"** on November 17, as he did on November 5.
+3. **The final:** cumulative, at least half new LLM material. TA review in lab the Monday after Thanksgiving, plus a recorded review. Class and lab are unofficially canceled the week of November 24.
+4. **What he did not say.** He never mentioned the 20 millisecond frames, the 50 vectors, the 0.85 bet, the colour error, the table of clues or the sound codes. Those stay in the notes from the slides. His version of the third training example is about the third puppy against a kennel or a person, not about colour.
+5. **Thursday (Nov 19):** he said the class will train an LLM and speak to it.
+
+**Sign-off (Margaret).** Signed off with the notes above.

@@ -11,6 +11,16 @@ and are also listed by Module III (`lectureIds` and `carriedLectureIds` in `modu
 - **Workspace panels and quizzes.** `module3/overlay.js` and `module3/modern/content.js` copy the Lecture 17 and 18 questions, Q&A, cards, contrasts, hard topics, connections and guide entries for Module III when the page loads, under ids ending in `-m3`. The copies use the plain wording where Module II has one. Practice progress is kept separately for each module.
 - **Study this first, Notes by topic and the review guide.** `make_module3.py` reuses the seven Module II Simpler v3 topics for Lectures 17 and 18 unchanged, then adds the six Lecture 19 topics. A slide that Lecture 19 repeats is shown once and names every lecture it appears in.
 
+## The v2 versions (Lecture 19 with the class of November 17)
+
+The first Lecture 19 text was written before a class transcript existed. Every version keeps that text. Each version also
+has a second version, named with "· v2", that adds what was taught in class on November 17 to the slide it belongs to.
+
+- **Source.** `LING285_2026-11-17_transcript.txt`, read in full and mapped to the slides. Pages 2 to 5, 9, 10 and 13 to 19 have class material. Pages 6, 7 and 8 were skipped in class, and pages 11 and 12 were not gone through separately, so they keep the original text.
+- **Writing.** `authoring/lecture19_transcript.py` holds the class material once per writing register (FULL, SHORT, PROF, NOTES, ND). `authoring/lecture19_v2.py` adds the matching register to each version and writes `module3/transcripts-<id>-t2.json` and `module3/modern/transcripts-<id>-t2.json` (14 original-workspace and 21 modern versions). Versions that share a register get the same added blocks on top of their own text.
+- **Loading.** `module3/overlay.js` builds a v2 version from its base version plus the v2 Lecture 19 text. `module3/modern/editions-t2.js` lists the modern v2 versions, and `LECTURE19_V2` in `app.js` lists the original-workspace ones. They appear in Module III only, and in the original workspace on Lecture 19 only.
+- **Study this first.** A third version, "Study this first · v2", adds the class material and 12 questions marked "From class, Nov 17" to the topics (`class_nov17.json`, written by `make_module3.py`). The first two versions are unchanged.
+
 ## Why Module III is a separate layer
 
 The studio files for Lectures 01 to 18 (`data.json`, every `transcripts-*.json`, `modern/content.js` and about

@@ -46,8 +46,29 @@
     if (layer.availableModules) payload.availableModules = layer.availableModules;
     return payload;
   }
+  // A "v2" version (id ending in -t2) is its base version with the v2 Lecture 19 text put in place.
+  async function secondVersion(path, init) {
+    const basePath = path.replace('-t2.json', '.json'), second = await layerFor(path);
+    if (!second) return new Response('', {status: 404});
+    let payload;
+    if (second.base === 'v1') {
+      // Version 1 is the course data's own teaching.
+      const data = mergeData(await (await real('data.json', init)).json(), (await layerFor('data.json')) || {});
+      payload = {id: 'v1', collections: Object.fromEntries(data.collections.filter(c => c.role === 'lecture').map(c => [c.id,
+        {title: c.title, sections: c.sections.map(s => ({id: s.id, page: s.page, title: s.title, kind: s.kind, teaching: s.teaching}))}]))};
+    } else {
+      const [response, layer] = await Promise.all([real(basePath, init), layerFor(basePath)]);
+      if (!response.ok) return response;
+      payload = mergeEdition(await response.json(), layer || {});
+    }
+    payload = {...payload, id: second.id, label: second.label, availableModules: second.availableModules,
+      collections: {...payload.collections, ...second.collections}};
+    return new Response(JSON.stringify(payload), {status: 200, headers: {'Content-Type': 'application/json'}});
+  }
   window.fetch = async function (input, init) {
     const url = typeof input === 'string' ? input : input && input.url;
+    const second = typeof url === 'string' && !/module3\//.test(url) && url.split('?')[0].match(/^(?:\.\/)?((?:modern\/)?transcripts-[\w.-]+-t2\.json)$/);
+    if (second) return secondVersion(second[1], init);
     const match = typeof url === 'string' && !/module3\//.test(url) &&
       url.split('?')[0].match(/^(?:\.\/)?((?:modern\/)?transcripts-[\w.-]+\.json|data\.json)$/);
     if (!match) return real(input, init);

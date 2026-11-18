@@ -12,11 +12,14 @@
   "label": "On the final",
   "covers": "Module III is the LLM part of the course. It holds Lectures 17 and 18, which also stay in Module II, and Lecture 19 from November 17, the first lecture after Exam 2. The final exam is cumulative, so Modules I and II come back too.",
   "final": "",
-  "evidence": "On November 10 he said the review and homework questions go up to right before LLMs, and that the LLM part is kept for the final. That part is Lectures 17 and 18. Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions."
+  "evidence": "On November 10 he said the review and homework questions go up to right before LLMs, and that the LLM part is kept for the final. That part is Lectures 17 and 18. Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. No review sheet for the final has been handed out yet. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions."
  },
  "flags": [
   "The notes for Lectures 17 and 18 are the same notes as on the Module II study page, shown here again and not rewritten.",
-  "The notes for the new Lecture 19 slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.",
+  "On November 17 he said the final exam is cumulative, with material from all three exams, and that at least half of it will be the new LLM material. He called the basic structure of an LLM, which is heads and layers, exam questions.",
+  "He also said that agentic systems are not being covered in this course, although he described how they work. They are kept here because the slides teach them.",
+  "Class and lab are unofficially canceled the week of November 24. There will be a TA review in lab on the Monday after Thanksgiving and a recorded review from him, and the Tuesday and Thursday after Thanksgiving are new lectures.",
+  "The first two Study this first versions are written from the slides and their speaker notes. The version marked v2 adds what he said in class on November 17 to each topic, and keeps everything else the same.",
   "The speech in the three cute puppies example was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person.",
   "The slides call the visual input the picture. These notes say image and image patch.",
   "The last slide lists a schedule that protects what was already learned, and it does not explain the schedule. These notes repeat the item and add nothing from outside the slides."
@@ -33,6 +36,13 @@
    "label": "Module III · Study this first (Lectures 17–19, with a My notes box under each block)",
    "overlay": true,
    "notes": true
+  },
+  {
+   "key": "module3-v3",
+   "label": "Module III · Study this first · v2 (Lectures 17–19, with the Nov 17 class added)",
+   "overlay": true,
+   "notes": true,
+   "add": "class_nov17.json"
   }
  ],
  "bytopic": {

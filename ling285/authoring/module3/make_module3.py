@@ -12,7 +12,7 @@ Run: python3 ling285/authoring/module3/make_module3.py
      python3 ling285/authoring/module_template.py ling285/authoring/module3
 """
 from pathlib import Path
-import json
+import json,sys
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1]
 
 NEW='New on November 17';OLD='Kept for the final'
@@ -191,18 +191,58 @@ META={
  'scope':{'label':'On the final',
   'covers':'Module III is the LLM part of the course. It holds Lectures 17 and 18, which also stay in Module II, and Lecture 19 from November 17, the first lecture after Exam 2. The final exam is cumulative, so Modules I and II come back too.',
   'final':'',
-  'evidence':'On November 10 he said the review and homework questions go up to right before LLMs, and that the LLM part is kept for the final. That part is Lectures 17 and 18. Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions.'},
+  'evidence':'On November 10 he said the review and homework questions go up to right before LLMs, and that the LLM part is kept for the final. That part is Lectures 17 and 18. Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. No review sheet for the final has been handed out yet. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions.'},
  'flags':[
   'The notes for Lectures 17 and 18 are the same notes as on the Module II study page, shown here again and not rewritten.',
-  'The notes for the new Lecture 19 slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.',
+  'On November 17 he said the final exam is cumulative, with material from all three exams, and that at least half of it will be the new LLM material. He called the basic structure of an LLM, which is heads and layers, exam questions.',
+  'He also said that agentic systems are not being covered in this course, although he described how they work. They are kept here because the slides teach them.',
+  'Class and lab are unofficially canceled the week of November 24. There will be a TA review in lab on the Monday after Thanksgiving and a recorded review from him, and the Tuesday and Thursday after Thanksgiving are new lectures.',
+  'The first two Study this first versions are written from the slides and their speaker notes. The version marked v2 adds what he said in class on November 17 to each topic, and keeps everything else the same.',
   'The speech in the three cute puppies example was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person.',
   'The slides call the visual input the picture. These notes say image and image patch.',
   'The last slide lists a schedule that protects what was already learned, and it does not explain the schedule. These notes repeat the item and add nothing from outside the slides.'],
  'versions':[
   {'key':'module3-v1','label':'Module III · Study this first (Lectures 17–19, notes with the slides beside them)','overlay':False,'notes':True},
-  {'key':'module3-v2','label':'Module III · Study this first (Lectures 17–19, with a My notes box under each block)','overlay':True,'notes':True}],
+  {'key':'module3-v2','label':'Module III · Study this first (Lectures 17–19, with a My notes box under each block)','overlay':True,'notes':True},
+  {'key':'module3-v3','label':'Module III · Study this first · v2 (Lectures 17–19, with the Nov 17 class added)','overlay':True,'notes':True,'add':'class_nov17.json'}],
  'bytopic':{'title':'Notes by topic · Lectures 17–19','lead':'Each topic brings together every slide that teaches it, from Lectures 17, 18 and 19, said once. Read the notes with their slide beside them, then answer the questions.'},
 }
+
+CLASS_BLOCKS={  # topic -> [(Lecture 19 page, block number in lecture19_transcript.NOTES[page])]
+ 'm3-lead-up':[(2,0)],'m3-llm-sequences':[(5,0),(5,1),(5,2),(2,2)],'m3-heads-layers':[(3,0)],'m3-recurrent-dynamical':[(4,0)],'m3-agentic':[(2,1)],
+ 'm3-hidden-word':[(9,0)],'m3-conversion':[(10,0)],'m3-one-row':[(13,0),(14,0)],'m3-training':[(15,0),(16,0),(17,0)],'m3-clues':[(18,0)],'m3-talking-back':[(19,0)]}
+C='From class, Nov 17'
+CLASS_QUESTIONS={
+ 'm3-lead-up':[
+  dict(source=C,q='What word follows "The wolves that run around Catalina Island ___," is or are? Why?',a='The word is "are." This is because the verb agrees with its subject, and the subject is "wolves," which is plural. The verb agrees with "wolves" no matter how many words come between them. So knowing English includes knowing relationships between words that are far apart.'),
+  dict(source=C,q='A neural network makes a static decision. Why is that not enough for language and speech?',a='It is not enough because language and speech flow in time. A neural network is given one input and makes one decision about it. In language, one word comes after another, and a word can depend on a word far back in the sentence. So a system for language has to work on a sequence that is extended in time.')],
+ 'm3-agentic':[
+  dict(source=C,q='In the agentic system he described, what is the job of each LLM?',a='The first LLM writes an outline, and it is told not to answer the question. The second LLM writes a first draft from the outline. The third LLM criticizes the draft, looking for spelling errors, grammar errors and flaws.\n\nThe draft can go back and forth between the critic and the writer, usually up to a limit of 3 or 4 rounds. Then a final LLM writes the answer.'),
+  dict(source=C,q='Why did hallucination drop once LLMs were set up to talk to each other?',a='Hallucination dropped because one LLM checks the work of another. A hallucination is an answer that sounds right but is made up, such as a reference that does not exist. The critic LLM can search the web to check that a reference really exists. So made-up claims are caught before the final answer is written. Hallucination has not completely gone away.')],
+ 'm3-llm-sequences':[
+  dict(source=C,q='An LLM starts with random W\'s. What happens after it predicts an impossible next word?',a='Its W\'s change so that the prediction becomes more like the actual next word. For example, after "The cat that the dog chased ran up the old tree and sat on the," the actual word might be "mat." If the model predicts an impossible word, the W\'s are changed toward "mat." This is repeated millions and billions of times, until the model has the same grasp of English that a speaker has.'),
+  dict(source=C,q='The same LLM design works for text, speech, images and proteins. What changes, and what stays the same?',a='What changes is what the vectors stand for. They can stand for words, small pieces of a spectrogram, patches of an image or the amino acids of a protein.\n\nWhat stays the same is the technology. The layers, the heads and the task of predicting the next item are the same in every case.'),
+  dict(source=C,q='What is the difference between the verticalist view and the horizontal view of cognition? Which one does the success of LLMs support?',a='The verticalist view says that vision, hearing and language are separate skills, and each has its own part of the brain. The horizontal view says that the same computations are used in every skill.\n\nThe success of LLMs supports the horizontal view. This is because one technology of layers with heads solved language, speech, vision and protein folding.')],
+ 'm3-one-row':[
+  dict(source=C,q='Why can the guessing game be played across modalities?',a='It can be played across modalities because the same technology is used for speech, for vision and for text. Each one is a sequence of vectors. So the image patches, the speech frames and the text vectors can be placed in one sequence, and the model can predict the next word from all of them.'),
+  dict(source=C,q='In a multimodal system, what are the W\'s about?',a='The W\'s are about how the modalities relate to each other. They are no longer only about text, only about speech or only about vision. For example, they are about how the image patches of an egg relate to the speech about eggs, and how both relate to the words. After enough training, the W\'s are truly multimodal.')],
+ 'm3-training':[
+  dict(source=C,q='What are the three ways to train a system on one post that has an image, speech and words?',a='The first way gives the system a few of the words, all of the speech and all of the image patches, and asks for the next text word.\n\nThe second way gives it the patches, the words and half of the speech, and asks for the next bit of speech.\n\nThe third way gives it the words, all of the speech and some of the patches, and asks for the next patch.'),
+  dict(source=C,q='The image has two puppies so far. Why is a third puppy the most likely next patch, and not a kennel or a person?',a='A third puppy is the most likely because the words and the speech both say "three puppies." From two dogs in the image alone, the next patch could be a kennel, a person or the sun in the background. But the other modalities spell out what is in the image. So the probability of a kennel or a person is very low, and the probability of a third puppy is the highest.')],
+ 'm3-clues':[
+  dict(source=C,q='What does it mean that W\'s are knowledge in a multimodal system?',a='It means that what the system knows is stored in its W\'s. In a multimodal system, the same post is used to train in every direction, such as from speech and vision to text, and from text and vision to speech. So the knowledge in the W\'s is about the bond between several skills, which are speaking, hearing and seeing.')],
+}
+
+def class_additions():
+    sys.path.insert(0,str(HERE.parent))
+    import lecture19_transcript as T
+    out={}
+    for tid,refs in CLASS_BLOCKS.items():
+        blocks=[]
+        for page,i in refs:
+            b=T.NOTES[page][i];blocks.append(dict(ref=f'Lecture 19 · p{page} · class of Nov 17',main=b[0],sub=list(b[1:])))
+        out[tid]=dict(blocks=blocks,questions=CLASS_QUESTIONS.get(tid,[]))
+    return out
 
 if __name__=='__main__':
     carried=carried_topics()
@@ -223,5 +263,5 @@ if __name__=='__main__':
        {'id':'kept','title':f'Lectures 17 and 18 · {len(old_items)} predicted questions','about':'Predicted questions from the Module II study page for Lectures 17 and 18.','prefix':'Predicted (Lectures 17–18)','items':old_items},
        {'id':'new','title':f'Lecture 19 · new slides · {len(new_items)} predicted questions','about':'Written from Lecture 19 pages 9 to 19 in the way he asks questions. These are predictions, not confirmed exam questions.','prefix':'Predicted (Lecture 19)','items':new_items}]}}
     dump=lambda name,value:(HERE/name).write_text(json.dumps(value,ensure_ascii=False,indent=1)+'\n')
-    dump('topics_1.json',carried);dump('topics_2.json',TOPICS);dump('exam.json',exam);dump('meta.json',META)
+    dump('topics_1.json',carried);dump('topics_2.json',TOPICS);dump('class_nov17.json',class_additions());dump('exam.json',exam);dump('meta.json',META)
     print('Module III inputs written:',len(TOPICS),'new topics,',len(carried),'repeated topics,',len(new_items),'+',len(his_items),'+',len(old_items),'questions')

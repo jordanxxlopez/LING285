@@ -86,3 +86,29 @@ test('the modern workspace gets Module III study pages and loads the layer befor
  for(const f of ['app.js','modern/app.js'])assert(text(f).includes('const open=moduleMap?.get(state.activeModule);if(open && (open.lectureIds || []).includes(id))return open.id;'),f);
  assert(text('module3/overlay.js').includes("id: question.id + '-m3'"));assert(text('module3/modern/content.js').includes("const kept = new Set(['lecture17', 'lecture18'])"));assert(text('modern/app.js').includes('module3:window.LING285_MODULE3'));
 });
+
+test('each version has a v2 that keeps its Lecture 19 text and adds the class of November 17',()=>{
+ const listed=read('module3/editions-t2.json');
+ assert.equal(Object.keys(listed.original).length,14);assert.equal(Object.keys(listed.modern).length,21);
+ const banned=/\bneed not\b|\blawful\b|\b(?:slides?|the lecture|this lecture|the professor|in class|he said|this shows|shows that|illustrat\w*|demonstrat\w*|let.s|remember that)\b|\bpictur|[;→=]/i;
+ for(const [dir,ids] of [['',ORIGINAL.filter(v=>!['v24','vB'].includes(v)).concat('v1')],['modern/',MODERN.filter(v=>v!=='notes-v7')]])for(const v of ids){
+  const second=read(`module3/${dir}transcripts-${v}-t2.json`),first=v==='v1'?c.sections:read(`module3/${dir}transcripts-${v}.json`).collections.lecture19.sections;
+  assert.equal(second.id,v+'-t2');assert.equal(second.base,v);assert.deepEqual(second.availableModules,['module3']);assert.match(second.label,/ · v2 /);
+  assert.equal((dir?listed.modern:listed.original)[second.id],second.label);
+  const s2=second.collections.lecture19.sections;assert.equal(s2.length,19);
+  for(const [i,a] of first.entries()){
+   const b=s2[i],page=i+1;assert.equal(b.id,a.id);
+   // The original text stays first and unchanged; class material is only added after it.
+   assert.deepEqual(b.teaching.slice(0,a.teaching.length),a.teaching,`${dir}${v} p${page} keeps its text`);
+   const taught=[2,3,4,5,9,10,13,14,15,16,17,18,19].includes(page);
+   assert.equal(b.teaching.length>a.teaching.length,taught,`${dir}${v} p${page}`);
+   for(const line of flat(b.teaching.slice(a.teaching.length))){assert(!banned.test(line),`${dir}${v} p${page}: ${line.slice(0,70)}`);assert.equal((line.match(/\*\*/g)||[]).length%2,0);assert(!line.includes(':'),line.slice(0,60));}
+  }
+ }
+ const html=text('modern/index.html');assert(html.indexOf('module3/modern/content.js')<html.indexOf('module3/modern/editions-t2.js')&&html.indexOf('module3/modern/editions-t2.js')<html.indexOf('src="modern/app.js'));
+ assert(text('module3/overlay.js').includes('secondVersion'));assert(text('app.js').includes('const LECTURE19_V2='));
+ const ctx={window:{}};require('node:vm').runInNewContext(text('modern/module3.js'),ctx);const versions=ctx.window.LING285_MODULE3.versions;
+ assert.equal(Object.keys(versions).length,3);const [one,,three]=Object.values(versions);
+ for(const [i,t] of one.topics.entries()){const u=three.topics[i];assert.equal(JSON.stringify(u.blocks.slice(0,t.blocks.length).map(b=>b.main)),JSON.stringify(t.blocks.map(b=>b.main)));assert(u.blocks.length>=t.blocks.length&&u.questions.length>=t.questions.length);}
+ assert(three.topics.reduce((n,t)=>n+t.blocks.length,0)>one.topics.reduce((n,t)=>n+t.blocks.length,0));
+});
