@@ -1,0 +1,470 @@
+{
+ "id": "vB",
+ "collections": {
+  "lecture19": {
+   "title": "Neuron, Neural Networks, LLMs and Agents",
+   "sections": [
+    {
+     "id": "lecture19-p001",
+     "page": 1,
+     "title": "Neuron, neural networks, LLMs and agents",
+     "kind": "title",
+     "teaching": []
+    },
+    {
+     "id": "lecture19-p002",
+     "page": 2,
+     "title": "From a neuron to agents that communicate",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A neuron multiplies each input by a weight and adds the results into one response.** This inner product turns an input vector, a list of numbers, into an output that a later layer can use.",
+       "children": [
+        "The small network applies this operation through layers until its final vector gives a response for each possible answer. In a vowel recognizer, those responses support a choice among vowel categories.",
+        "**A language model applies the same general idea to a sequence.** It transforms the vectors for the words already supplied and predicts probabilities for the next item. The fifteen-to-sixteen example makes the prediction target explicit."
+       ]
+      },
+      {
+       "text": "**An agentic system links whole language models so they can handle different parts of a task.** An outline model plans, a writing model drafts, a critic evaluates, and a reviser responds to the critique before a final model completes the answer.",
+       "children": [
+        "The critic and reviser can form a loop, while a controller directs information between models. Shared memory can keep information available across their interactions.",
+        "This graph connects complete models. Attention heads, by contrast, are processing parts inside one model."
+       ]
+      },
+      {
+       "text": "**Inference uses learned weights to process an input; training changes the weights.** When a next-word prediction is wrong, backpropagation traces the error through earlier connections, and weight updates make a suitable continuation more likely.",
+       "children": [
+        "Stochastic gradient descent uses these error signals to adjust weights. Running an already trained model is therefore different from training it."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p003",
+     "page": 3,
+     "title": "Parallel heads and successive layers",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A language model uses layers to build representations that help predict what comes next.** Each layer transforms the vectors it receives, and later layers work with those changed representations.",
+       "children": [
+        "A useful representation carries information that supports the prediction. Its values do not become useful simply by getting larger."
+       ]
+      },
+      {
+       "text": "**Several attention heads contribute in parallel within one layer.** Each head learns weights that let it contribute a different view of the sequence, and the layer combines those contributions before passing the result onward.",
+       "children": [
+        "Think of several experts contributing to one group decision. The experts correspond to heads, and the group corresponds to a layer.",
+        "An exam answer should distinguish parallel contributions by heads from successive transformations by layers."
+       ]
+      },
+      {
+       "text": "**Attention helps connect words whose relationship matters even when other words intervene.** In “the dog that my parents ... barks,” the verb agrees with dog, not the nearer plural parents.",
+       "children": [
+        "The relevant information must remain available across the intervening words. The combined head contributions help form a representation that supports this dependency."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p004",
+     "page": 4,
+     "title": "A dynamical rule across time and depth",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**A dynamical system applies a rule to its current state to calculate a new state.** In the oscillator, position changes using velocity, then velocity changes using the new position.",
+       "children": [
+        "With initial position one and velocity zero, position first stays still. The positive position makes velocity negative; that negative velocity then carries position downward. Repeating the updates produces the trajectory."
+       ]
+      },
+      {
+       "text": "**A recurrent network carries information forward through feedback.** Plan and state units feed a hidden layer, whose output returns to the state units.",
+       "children": [
+        "Self-connections preserve a fading trace of the earlier state. The same weights are reused at each moment, so recent output can affect what comes next."
+       ]
+      },
+      {
+       "text": "**Depth plays the role of successive moments in the language-model comparison.** Each layer transforms the representation from the layer before it, so values develop along a path through the network.",
+       "children": [
+        "The oscillator and recurrent network reuse one rule over time. Different language-model layers can have different weights, even though each stage depends on the state produced before it."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p005",
+     "page": 5,
+     "title": "One prediction task for different sequences",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A model can predict the next item in different kinds of sequences.** Fifteen input vectors can stand for fifteen words, sound frames, picture patches or amino acids; the model then predicts item sixteen.",
+       "children": [
+        "In “The cat that the dog chased ran up the old tree and sat on the ___,” the sentence’s relationships indicate that the cat is the one that sat.",
+        "A spectrogram represents successive sound frames, with the next frame predicted after the supplied sequence. A four-by-four picture has sixteen patches; after fifteen are supplied, the missing patch is at bottom right.",
+        "The insulin B-chain example supplies fifteen amino acids and predicts Y as the following residue."
+       ]
+      },
+      {
+       "text": "**The input format is shared, but the vectors represent different information.** Sound frames unfold over time, picture patches follow a reading order, and amino acids follow positions in a chain.",
+       "children": [
+        "Using vectors gives the model a numerical sequence to process. It does not make sound, images, words and proteins the same kind of data."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p006",
+     "page": 6,
+     "title": "Which sequences can be English words?",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Phonotactics is knowledge of which sound sequences a language permits.** An English syllable can follow a consonant-vowel-consonant pattern, as in mat or fish.",
+       "children": [
+        "The pattern concerns sounds rather than letters. The final e in shave is silent, while two letters can spell one consonant sound, as in ship."
+       ]
+      },
+      {
+       "text": "**English consonant clusters have restrictions on their order.** A cluster before the vowel is an onset, as in split; a cluster after it is a coda, as in help.",
+       "children": [
+        "Flat places l next to the vowel, while the starred form *lfat reverses the onset order. Help places l next to the vowel before p; *hepl reverses the coda order.",
+        "Other languages allow different sequences. Russian permits initial clusters such as zb, while Spanish may place a vowel before an initial s-plus-consonant sequence."
+       ]
+      },
+      {
+       "text": "**Syllable boundaries affect which sound sequences are possible.** The t and l in At-lan-tic can occur across a syllable break, while *tlantic begins with a cluster English does not allow.",
+       "children": [
+        "Likewise, ng can end a syllable, as in ring, but it cannot start one in the English examples. A sequence’s position in the word matters."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p007",
+     "page": 7,
+     "title": "Guessing the next letter reveals phonotactic knowledge",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A next-letter prediction task can test whether a model learns sound and spelling patterns.** A beginning such as ra allows many continuations, while the start skr permits only a vowel in the examples.",
+       "children": [
+        "After sp, l, r or a vowel can follow, but *spn does not fit. After k, a vowel or n can follow, as in knee; after sh, a vowel or r can follow, as in shrimp.",
+        "The probabilities form a distribution over possible next letters. A broad set of plausible continuations spreads probability, while a restricted onset concentrates it."
+       ]
+      },
+      {
+       "text": "**A small language model can be trained to predict the next letter from English word patterns.** The described design uses four heads in each of five layers, 64 numbers per token vector, and 1,000 randomly selected English words.",
+       "children": [
+        "The model predicts from the letters already supplied and updates its weights after an error. Ten generated examples after each step provide samples of its current output.",
+        "A pronunciation lexicon can guide learning toward word sounds rather than treating every written letter as a separate sound."
+       ]
+      },
+      {
+       "text": "**The initial output remained largely gibberish, so the run did not establish successful syllable learning.** Some vowel-like forms were only a tentative observation.",
+       "children": [
+        "Training on 10,000 words and running more iterations were proposed extensions. They are possible next steps, not evidence of a successful result.",
+        "An agentic system can use an English instruction to build and run the smaller model. NumPy and a pronunciation resource were reported as implementation components; the larger system’s abilities do not mean the new model already knows English.",
+        "Shannon’s earlier statistical examples show how adding constraints makes letter sequences more English-like. They illustrate sequence structure, not modern attention-based architecture."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p008",
+     "page": 8,
+     "title": "Design an agentic system for English syllables",
+     "kind": "prompt",
+     "teaching": []
+    },
+    {
+     "id": "lecture19-p009",
+     "page": 9,
+     "title": "What an LLM learns",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**An LLM learns by guessing a hidden word from the words before it.** In “The chef cracks the,” each earlier word is a clue about the word that follows.",
+       "children": [
+        "The relationships between the clue words and the hidden word are **interdependencies**."
+       ]
+      },
+      {
+       "text": "**The model spreads its bets because it does not know the answer.** It bets most on “egg,” less on “nut” and least on “code.”",
+       "children": [
+        "Learning nudges the weights so that the right word gets a bigger bet next time."
+       ]
+      },
+      {
+       "text": "**The same learning applies when the signal holds sounds and images.** The model still guesses a hidden piece from the other pieces.",
+       "children": [
+        "Only the content of the signal is different."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p010",
+     "page": 10,
+     "title": "Text, speech and images in three different forms",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Text already comes as a row of pieces, so each piece can become a vector.** That makes text easy for the model to read.",
+       "children": [
+        "Speech is air pressure changing in time, and an image is a grid of light."
+       ]
+      },
+      {
+       "text": "**Speech and images contain no words.** They are not rows of pieces when they arrive.",
+       "children": [
+        "An LLM can read only a row of vectors."
+       ]
+      },
+      {
+       "text": "**Speech and images therefore have to be converted into rows of vectors.** The conversion is the first job.",
+       "children": [
+        "After it, all three forms can be read by one model."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p011",
+     "page": 11,
+     "title": "Speech becomes a row of frame vectors",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Speech is cut into slices of about 20 milliseconds, and each slice is a frame.** The slices follow one another in time.",
+       "children": [
+        "A speech encoder, which is a network trained on a large amount of audio, changes each slice into a vector."
+       ]
+      },
+      {
+       "text": "**One vector comes out for each slice.** Different sounds give different numbers in the vector.",
+       "children": [
+        "The vectors stay in time order."
+       ]
+      },
+      {
+       "text": "**One second of speech becomes 50 vectors.** The speech is now a row, just like a sentence.",
+       "children": [
+        "The LLM can read that row one vector after another."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p012",
+     "page": 12,
+     "title": "Images become a row of patch vectors",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**An image is cut into small squares called patches.** The egg image is cut into 16 patches.",
+       "children": [
+        "The patches are laid out in a row in reading order, so the image becomes a sequence."
+       ]
+      },
+      {
+       "text": "**A vision encoder gives one vector for each patch.** The 16 patches become 16 vectors in the same order.",
+       "children": [
+        "The image is now a row that the LLM can read."
+       ]
+      },
+      {
+       "text": "**Real systems use much smaller patches of 14 to 16 pixels.** One image then gives hundreds of vectors.",
+       "children": [
+        "Smaller patches mean more patches for the same image."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p013",
+     "page": 13,
+     "title": "One row with three senses",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Image patches, speech frames and words are placed in one row.** The last word after “Now crack the” is hidden.",
+       "children": [
+        "The earlier words still give clues about the hidden word."
+       ]
+      },
+      {
+       "text": "**A patch containing an egg and the sound of cracking also give clues.** A clue that crosses from one sense to another is a **cross-modal dependency**.",
+       "children": [
+        "These clues are added to the clues from the words."
+       ]
+      },
+      {
+       "text": "**The game is the same as with text alone.** The model guesses the hidden piece from the other pieces.",
+       "children": [
+        "The difference is that some clues now come from other senses."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p014",
+     "page": 14,
+     "title": "Three cute puppies as an image, speech and words",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**“Three cute puppies” appears as an image, as speech and as written words.** The image is cut into 18 patches.",
+       "children": [
+        "The speech is a spectrogram, where time runs left to right, higher means higher frequency and darker means more energy."
+       ]
+      },
+      {
+       "text": "**Each thin column of the spectrogram is one frame.** The three words follow one another in time.",
+       "children": [
+        "The written words are the third form of the same phrase."
+       ]
+      },
+      {
+       "text": "**The three forms are three views of one event.** Training places all three in one row.",
+       "children": [
+        "The model then guesses whichever piece of the row is hidden."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p015",
+     "page": 15,
+     "title": "Training example 1 predicts the next word",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**With the words “three cute” alone, the model’s bets are spread out.** “Kittens,” “puppies” and “babies” all fit.",
+       "children": [
+        "No single word is far ahead of the others."
+       ]
+      },
+      {
+       "text": "**With the image and the sound, the bet piles up on “puppies.”** The image contains puppies, and the sound contains the spoken word.",
+       "children": [
+        "These are clues from the other senses."
+       ]
+      },
+      {
+       "text": "**The model bet 0.85 on the true word, so the error is small.** A small error gives a small nudge to the weights.",
+       "children": [
+        "A large bet on the truth leaves little to correct."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p016",
+     "page": 16,
+     "title": "Training example 2 predicts a sound frame",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**The model can be trained to predict a hidden frame of sound.** The sound is predicted frame by frame from left to right.",
+       "children": [
+        "The earlier frames help because the voice and the formants change smoothly."
+       ]
+      },
+      {
+       "text": "**The words say which sound comes next, and here it is the vowel in “pup.”** The image contains puppies, so it backs up the words.",
+       "children": [
+        "The image is the weaker clue in this case."
+       ]
+      },
+      {
+       "text": "**A frame is a column of numbers for the energy in each frequency band.** The error is how far the guessed numbers are from the true numbers.",
+       "children": [
+        "That error nudges the weights."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p017",
+     "page": 17,
+     "title": "Training example 3 predicts an image patch",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**The model can be trained to predict a hidden patch of the image.** The patches are predicted in reading order.",
+       "children": [
+        "The earlier patches give background above and two puppies to the left."
+       ]
+      },
+      {
+       "text": "**“Three” says a third puppy must appear, and “puppies” says to expect dog ears.** The sound carries the same words as a backup.",
+       "children": [
+        "These clues give the content of the patch."
+       ]
+      },
+      {
+       "text": "**The guess is a puppy ear in the average colour of the first two puppies, but the true puppy is dark.** The biggest error is the colour, because no clue gave it.",
+       "children": [
+        "Only systems that also produce images are trained this way."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p018",
+     "page": 18,
+     "title": "Every piece can be the hidden one",
+     "kind": "comparison",
+     "teaching": [
+      {
+       "text": "**A hidden word, a hidden frame and a hidden patch each get a clue from every sense.** For a hidden word, the clues are a plural noun, the word just spoken, and puppies in the image.",
+       "children": [
+        "The other two cases work the same way with their own clues."
+       ]
+      },
+      {
+       "text": "**A clue from the same sense says how the signal continues.** Grammar, smooth formants, and fur and background are the three examples.",
+       "children": [
+        "Each one carries on from what came before in its own sense."
+       ]
+      },
+      {
+       "text": "**Clues from the other senses say what the thing is.** Here the thing is puppies, three of them.",
+       "children": [
+        "Training on all three senses together helps because each sense fills gaps the others leave."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p019",
+     "page": 19,
+     "title": "Talking back, and what is new",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**To speak, the model predicts codes for sound.** Sound is compressed into discrete codes that work like new words in the vocabulary.",
+       "children": [
+        "The next code is predicted like the next word."
+       ]
+      },
+      {
+       "text": "**A decoder changes the codes back into sound.** The result is a sound wave that can be heard.",
+       "children": [
+        "The model predicts the codes, and the decoder makes the sound."
+       ]
+      },
+      {
+       "text": "**Three things are new, which are a shared currency of vectors in one row, data where the senses appear together, and a schedule that protects what was already learned.** These make training on three senses possible.",
+       "children": [
+        "What stays the same is finding the dependencies in the signal."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

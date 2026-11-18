@@ -12,22 +12,29 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 manifest=read('source-manifest.json');inventory={(p['source'],p['page']):p for p in read('page-inventory.json')}
 media={a['sha256']:a for a in read('unique-embedded.json')}
 authored={}
-for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json','teaching-lecture15.json','teaching-lecture16.json','teaching-lecture17.json','teaching-lecture18.json']:
+# Lecture 19 onward (Module III) is published from ling285/module3/. Its teaching file joins this build only
+# while the Module III layer is being generated, when the source manifest lists the lecture (see module3/README.md).
+for name in ['teaching-early.json','teaching-middle.json','teaching-later.json','teaching-readings.json','teaching-lecture14.json','teaching-lecture15.json','teaching-lecture16.json','teaching-lecture17.json','teaching-lecture18.json']+[f'teaching-{k}.json' for k in sorted(manifest) if k.startswith('lecture') and k[7:9].isdigit() and int(k[7:9])>=19]:
  for key,value in read(name).items():
   assert key not in authored,key
   authored[key]=value
 practice=read('practice-guide.json');authored.update(practice['examReviewCollections'])
+# Module III readiness entries and core pages are authored beside the Module III layer.
+if any(k.startswith('lecture') and k[7:9].isdigit() and int(k[7:9])>=19 for k in manifest):
+ extra=read('module3/practice-guide.json');practice['guide']=practice['guide']+extra['guide'];practice['coreReview']=practice['coreReview']+extra['coreReview']
 mcq=read('practice-mcq.json');assessment_model=read('assessment-model.json')
-module_two={key for key,entry in manifest.items() if entry['role']=='lecture' and int(re.match(r'lecture(\d+)',key).group(1))>=11}
+# Module II is Lectures 11 to 18 (Exam 2). Lectures after Exam 2 belong to Module III.
+module_three={key for key,entry in manifest.items() if entry['role']=='lecture' and int(re.match(r'lecture(\d+)',key).group(1))>=19}
+module_two={key for key,entry in manifest.items() if entry['role']=='lecture' and 11<=int(re.match(r'lecture(\d+)',key).group(1))<=18}
 meadows=['notes-08-25-1','notes-08-25-2','notes-09-01','notes-09-03','notes-09-15','notes-09-17']
-def required_module(refs):return 'module2' if any(ref['collection'] in module_two for ref in refs) else 'module1'
+def required_module(refs):return 'module3' if any(ref['collection'] in module_three for ref in refs) else 'module2' if any(ref['collection'] in module_two for ref in refs) else 'module1'
 questions=[dict(q,type='written',edition=REVISION) for q in practice['questions']]+[dict(q,edition=REVISION) for q in mcq['questions']]
 question_index={q['id']:q for q in questions}
 retained_module_two={q['id'] for q in questions if required_module(q['sources'])=='module2'}
 expanded_banks=[];claimed_ids=set()
-for bank_path in sorted(A.glob('module2-lecture*-practice.json')):
+for bank_path in sorted(A.glob('module2-lecture*-practice.json'))+[p for p in sorted(A.glob('module3-lecture*-practice.json')) if json.loads(p.read_text())['lectureId'] in module_three]:
  bank=json.loads(bank_path.read_text());owner=bank['lectureId']
- assert owner in module_two,('No supplied lecture source for bank',owner)
+ assert owner in (module_three if bank_path.name.startswith('module3') else module_two),('No supplied lecture source for bank',owner)
  assert len(bank['questions'])==50,(owner,'Lecture quizzes require50 questions')
  assert Counter(q['type'] for q in bank['questions'])=={'mcq':25,'written':25},owner
  assert len({q['id'] for q in bank['questions']})==50,owner
@@ -42,17 +49,17 @@ for bank_path in sorted(A.glob('module2-lecture*-practice.json')):
     assert original.get(field)==question.get(field),(question['id'],'Existing content changed',field)
   question_index[question['id']]=dict(question,edition=REVISION)
  expanded_banks.append(owner)
-assert set(expanded_banks)==module_two,('Supply a complete50-question bank for every Module II lecture',module_two-set(expanded_banks))
+assert set(expanded_banks)==module_two|module_three,('Supply a complete50-question bank for every Module II and Module III lecture',(module_two|module_three)-set(expanded_banks))
 assert retained_module_two<=claimed_ids,('Existing Module II questions missing from lecture banks',retained_module_two-claimed_ids)
 questions=list(question_index.values())
 for q in questions:
  q['moduleId']=required_module(q['sources'])
- q['lectureId']=q.get('lectureId') or next((ref['collection'] for ref in q['sources'] if ref['collection'] in module_two),None) or next((ref['collection'] for ref in q['sources'] if ref['collection'].startswith('lecture')),None)
+ q['lectureId']=q.get('lectureId') or next((ref['collection'] for ref in q['sources'] if ref['collection'] in module_three),None) or next((ref['collection'] for ref in q['sources'] if ref['collection'] in module_two),None) or next((ref['collection'] for ref in q['sources'] if ref['collection'].startswith('lecture')),None)
  if q['type']=='mcq':
   assert len(q['options'])==4 and len({o['id'] for o in q['options']})==4,q['id']
   assert q['correctOption'] in {o['id'] for o in q['options']},q['id']
   assert all(o['text'].strip() and o['feedback'].strip() for o in q['options']),q['id']
-for owner in module_two:
+for owner in module_two|module_three:
  assert Counter(q['type'] for q in questions if q['lectureId']==owner)=={'mcq':25,'written':25},owner
 rankings=rank_questions(questions,assessment_model)
 for q,r in zip(questions,rankings):q['priority']=r['priority']
@@ -80,7 +87,7 @@ for key in lecture_keys+other_keys:
   raw=p.get('native',{});shape_text='\n'.join(s.get('text','') if 'text' in s else '\n'.join(' | '.join(row) for row in s.get('rows',[])) for s in raw.get('shapes',[]))
   # Preserve exact extracted wording separately from authored teaching.
   original_text=p['text'].strip() or p['ocr'].strip() or shape_text.strip()
-  if key in ['lecture14','lecture15','lecture16','lecture17','lecture18']:
+  if key in ['lecture14','lecture15','lecture16','lecture17','lecture18','lecture19']:
    # PDF text can omit labels retained as native PowerPoint text. Keep the
    # complete new-slide wording without changing earlier released sections.
    native_text='\n'.join(s.get('text','') for s in raw.get('shapes',[]) if s.get('type')=='text').strip()
@@ -113,7 +120,7 @@ for key in lecture_keys+other_keys:
   if key=='lecture15' and page==12:
    for stage in read('extracted/lecture15-animation-stages.json'):
     assets.append({'file':stage['file'],'type':'image','label':'Original reveal stage '+str(stage['stage'])+' · '+stage['caption'],'sourceDerived':True,'sourcePage':12,'sourceStage':stage['stage'],'animated':False,'originalFilename':'slide12.xml · stage '+str(stage['stage'])})
-  if key in ['lecture17','lecture18']:
+  if key in ['lecture17','lecture18','lecture19']:
    # Click states exported from the original shapes and timing; page 5's static export overlaps its reveals.
    for stage in [s for s in read(f'extracted/{key}-animation-stages.json') if s['page']==page]:
     assets.append({'file':stage['file'],'type':'image','label':'Original click state '+str(stage['stage'])+' · '+stage['caption'],'sourceDerived':True,'sourcePage':page,'sourceStage':stage['stage'],'animated':False,'originalFilename':f'slide{page}.xml · click state '+str(stage['stage'])})
@@ -129,9 +136,9 @@ for key in lecture_keys+other_keys:
  issues=[]
  if key=='lecture05-06':issues.append('The uploaded filename identifies Lectures 05–06; its internal title says Lecture 4+5. Both original labels are retained.')
  if key=='exam-review-seagull':issues.append('Uploaded answer companion with unverified authorship. Teaching resolves its inconsistencies against the primary lecture sources.')
- if key in module_two and any(a['type']=='video' for section in sections for a in section['assets']):issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
+ if key in module_two|module_three and any(a['type']=='video' for section in sections for a in section['assets']):issues.append('Embedded videos supply content that can appear blank in the static PDF. Play the original demonstrations on the relevant pages.')
  label=f'Lecture {number}' if number else 'Uploaded review' if entry['role']=='review' else 'Course syllabus' if key=='syllabus' else 'Supporting reading'
- collections.append({'id':key,'title':author['title'],'number':number,'label':label,'role':entry['role'],'sourceFile':entry['file'],'pdfFile':entry['rendered_pdf'],'originalFilename':entry['original'],'issues':issues,'sections':sections,'moduleId':None if key=='syllabus' else 'module2' if key in module_two else 'module1','workspaceGroup':'meadows' if key in meadows else 'lectures' if entry['role']=='lecture' else 'sources'})
+ collections.append({'id':key,'title':author['title'],'number':number,'label':label,'role':entry['role'],'sourceFile':entry['file'],'pdfFile':entry['rendered_pdf'],'originalFilename':entry['original'],'issues':issues,'sections':sections,'moduleId':None if key=='syllabus' else 'module3' if key in module_three else 'module2' if key in module_two else 'module1','workspaceGroup':'meadows' if key in meadows else 'lectures' if entry['role']=='lecture' else 'sources'})
 all_sections={s['id']:s for c in collections for s in c['sections']}
 def check_ref(ref):assert f'{ref["collection"]}-p{ref["page"]:03}' in all_sections,ref
 for q in questions:
@@ -147,7 +154,7 @@ limitations=sorted({limit for item in audit for limit in item['review'].get('lim
 late_lectures=[key for key in lecture_keys if key in module_two]
 late_range='Lectures '+str(int(re.match(r'lecture(\d+)',late_lectures[0]).group(1)))+'–'+str(int(re.match(r'lecture(\d+)',late_lectures[-1]).group(1)))
 modules=[
- {'id':'module1','title':'Module I','subtitle':'Midterm 1','lectureIds':[key for key in lecture_keys if key not in module_two],
+ {'id':'module1','title':'Module I','subtitle':'Midterm 1','lectureIds':[key for key in lecture_keys if key not in module_two|module_three],
   'supplementIds':['notes-lecture07','notes-lecture08','notes-lecture09','notes-lecture10'],'meadowsIds':meadows,
   'lectureRange':'Lectures 01–10','description':'First-midterm material · Lectures 01–10.','futureNote':'First-midterm material remains available with its own notes, review tools, and practice.'},
  {'id':'module2','title':'Module II','subtitle':'Midterm 2','lectureIds':[key for key in lecture_keys if key in module_two],
@@ -155,6 +162,13 @@ modules=[
   'assessmentPolicy':{'lectureQuizSize':50,'currentTestSize':100,'mcqShare':.5},
   'futureNote':late_range+' are available now. New lectures will extend this module and its cumulative practice as the professor posts them.'}
 ]
+if module_three:
+ final_lectures=[key for key in lecture_keys if key in module_three]
+ first,last=[int(re.match(r'lecture(\d+)',k).group(1)) for k in (final_lectures[0],final_lectures[-1])]
+ final_range=('Lecture '+str(first)) if first==last else 'Lectures '+str(first)+'–'+str(last)
+ modules.append({'id':'module3','title':'Module III','subtitle':'Final exam','lectureIds':final_lectures,
+  'supplementIds':[],'meadowsIds':[],'lectureRange':final_range+' so far','description':'After Exam 2 · '+final_range+'. Later lectures will be added here.',
+  'futureNote':final_range+(' is' if first==last else ' are')+' available now. The final exam is cumulative, so Modules I and II stay available with their own study tools.'})
 for module in modules:
  module['questionCount']=sum(q['moduleId']==module['id'] for q in questions)
  module['mcqCount']=sum(q['moduleId']==module['id'] and q['type']=='mcq' for q in questions)

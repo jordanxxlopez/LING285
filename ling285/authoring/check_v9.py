@@ -5,10 +5,12 @@ ROOT=Path(__file__).resolve().parents[1]
 BANNED=re.compile(r"\b(slides?|the lecture|in this lecture|the professor|he said|she said|this shows|shows that|illustrat\w*|demonstrat\w*|let.s|remember that|need not|lawful|the key (?:point|finding|comparison)|makes? this concrete|the (?:real )?question is|on this plot|defined below|connects back|in class|earlier|later in|next we|as you can see|turns to|we now|moving on|takeaway|note that|this means|pictured|pictures|picturing|(?:the|a|this|their|that)\s+(?:\w+\s+)?picture)\b",re.I)
 # Lecture keys match the authoring file stems and the collection ids (lecture01 ... lecture05-06 ... lecture18).
 LECTURES=['01','02','03','04','05-06','07','08','09','10','11','12','13','14','15','16','17','18']
-MODULE={k:('module1' if int(k[:2])<=10 else 'module2') for k in LECTURES}
+# Module III lectures are published from ling285/module3/ and are linted here, but the locked editions do not hold them.
+MODULE3_LECTURES=['19']
+MODULE={k:('module1' if int(k[:2])<=10 else 'module2' if int(k[:2])<=18 else 'module3') for k in LECTURES+MODULE3_LECTURES}
 # Pages that may stay empty: title, blank, exam-logistics and prompt-only pages.
 EMPTY_OK={'01':{1},'02':{1,2},'03':{1,2},'04':{1,2,5,17},'05-06':{1,2,8,9,14,17,20},'07':{1},'08':{1,2,12,13},'09':{1,2,5,6,7,8,9},'10':{1,2,11},
-          '11':{1},'12':{1,17},'13':{1,26},'14':{1},'15':{1,5},'16':{1,6},'17':{1},'18':{1}}
+          '11':{1},'12':{1,17},'13':{1,26},'14':{1},'15':{1,5},'16':{1,6},'17':{1},'18':{1},'19':{1}}
 for _k in list(EMPTY_OK):
   if _k.isdigit() and int(_k)>=11:EMPTY_OK[int(_k)]=EMPTY_OK[_k]  # older builders index by int
 def parse(path):
@@ -23,7 +25,9 @@ def parse(path):
     else:raise AssertionError((path.name,ln))
   return pages
 if __name__=='__main__':
-  data=json.load(open(ROOT/'data.json'))
+  sys.path.insert(0,str(Path(__file__).resolve().parent))
+  from studio_data import load
+  data=load()
   LABELS='--labels' in sys.argv
   LABEL=re.compile(r"^[A-Za-z0-9/' ().,-]{1,48}: (?=[A-Z0-9/\"])")
   for f in [a for a in sys.argv[1:] if not a.startswith('--')]:

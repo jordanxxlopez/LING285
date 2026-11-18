@@ -1,0 +1,41 @@
+{
+ "moduleId": "module3",
+ "title": "Module III",
+ "range": "Lecture 19",
+ "study": {
+  "title": "Study this first · Module III",
+  "lead": "If you study only one page of Module III, study this one. Lecture 19 is the first lecture after Exam 2. The new material comes first, then the Lecture 18 slides that Lecture 19 repeats, each with what to know, the slide beside the notes, and questions with their answers.",
+  "askLead": "Questions on Lecture 19 in the way he asks them, with answers. The questions marked Predicted are written from the slides. They are predictions, not confirmed exam questions.",
+  "focusLabel": "Module III focus (predicted questions, with answers)"
+ },
+ "scope": {
+  "label": "On the final",
+  "covers": "Module III is everything after Exam 2. So far that is Lecture 19, from November 17. The final exam is cumulative, so Modules I and II come back too.",
+  "final": "",
+  "evidence": "Lecture 19 repeats seven Lecture 18 slides and then adds eleven new slides on training an LLM with words, sounds and images. On November 10 he said the LLM part is kept for the final, so the repeated slides matter again. No review sheet for the final has been handed out yet, and there is no class transcript for November 17. Every question on the new slides is marked Predicted. They are predictions, not confirmed exam questions."
+ },
+ "flags": [
+  "The notes for the new slides come from the slides and their speaker notes only. There is no class transcript for November 17, so anything he added out loud is not here.",
+  "The speech in the three cute puppies example was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person.",
+  "The slides call the visual input the picture. These notes say image and image patch.",
+  "The last slide lists a schedule that protects what was already learned, and it does not explain the schedule. These notes repeat the item and add nothing from outside the slides."
+ ],
+ "versions": [
+  {
+   "key": "module3-v1",
+   "label": "Module III · Study this first (Lecture 19, notes with the slides beside them)",
+   "overlay": false,
+   "notes": true
+  },
+  {
+   "key": "module3-v2",
+   "label": "Module III · Study this first (Lecture 19, with a My notes box under each block)",
+   "overlay": true,
+   "notes": true
+  }
+ ],
+ "bytopic": {
+  "title": "Notes by topic · Lecture 19",
+  "lead": "Each topic brings together every slide that teaches it, said once. Read the notes with their slide beside them, then answer the questions."
+ }
+}

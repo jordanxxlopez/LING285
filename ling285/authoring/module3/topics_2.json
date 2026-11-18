@@ -1,0 +1,233 @@
+[
+ {
+  "id": "m3-llm-sequences",
+  "tier": "Repeated from Lecture 18",
+  "lectures": "Lecture 19 (same slides as Lecture 18)",
+  "title": "From the vowel network to an LLM: many vectors in, the next item out",
+  "blocks": [
+   {
+    "main": "**An LLM (large language model) is given a sequence of vectors (lists of numbers) and predicts the next one.** For example, it is given 15 vectors and predicts the sixteenth. The sixteenth is a probability distribution (a list of how likely each option is) over what could come next, such as each of about 30,000 English words.",
+    "sub": [
+     "The vectors can be words, frames of a spectrogram (short time slices of a display of a sound's frequencies), patches of an image or the amino acids of a protein.",
+     "The LLM only ever works with lists of numbers, so the same design works for all of them."
+    ],
+    "ref": "Lecture 19 · p5"
+   },
+   {
+    "main": "**Language depends on connections between words that are far apart.** In \"the dog that my parents, who I love very much, ...\", the next word is **barks**. Barks goes with the singular word dog, no matter how many words come in between.",
+    "sub": [
+     "An LLM learns this from data, not from a rule someone teaches it."
+    ],
+    "ref": "Lecture 19 · p2"
+   },
+   {
+    "main": "**An LLM learns by predicting the next word, such as mat after \"the cat sat on the\".** When the prediction is wrong, backpropagation adjusts the weights. This is repeated with a huge number of sentences.",
+    "sub": [
+     "Underneath everything, **inference** (using the network to make a prediction) is done with inner products. Learning is done with stochastic gradient descent plus **dynamic programming** (reusing calculations already done, which is how backpropagation works backward through the layers).",
+     "An LLM predicts from past data. So when something is not covered by its data, it can make things up, which is called **hallucination**."
+    ],
+    "ref": "Lecture 19 · p2"
+   }
+  ],
+  "questions": [
+   "his-1",
+   "kept-1",
+   "kept-2",
+   "kept-3",
+   "kept-4"
+  ]
+ },
+ {
+  "id": "m3-heads-layers",
+  "tier": "Repeated from Lecture 18",
+  "lectures": "Lecture 19 (same slides as Lecture 18)",
+  "title": "Heads and layers",
+  "blocks": [
+   {
+    "main": "**An LLM (large language model) is built from layers, and each layer contains heads.** A **layer** is one round of improving the vectors (the lists of numbers that represent the words). The layers come one after another from the input to the output. A **head** is one expert, and it is a set of weights. The heads sit side by side inside each layer.",
+    "sub": [
+     "Each head gives its own opinion on how to improve the vectors.",
+     "The layer combines the opinions of all its heads into improved vectors. Then the next layer does the same thing again with those improved vectors."
+    ],
+    "ref": "Lecture 19 · p3"
+   },
+   {
+    "main": "**Heads and layers work like visiting a series of classes to improve yourself.** The classes you visit one after another are the **layers**. The students in each class, who each give you an opinion, are the **heads**.",
+    "sub": [
+     "Layers give an LLM **depth**, which means one round of improvement after another.",
+     "Heads give an LLM **width**, which means many experts are asked at the same time in each round."
+    ],
+    "ref": "Lecture 19 · p3"
+   },
+   {
+    "main": "**Predicting the next word is so hard that large systems have a hundred or more layers, with about a hundred heads in each layer.** Every one of those heads learns.",
+    "sub": [
+     "If the predicted next word is wrong, every head in every layer adjusts its weights using backpropagation (the method that calculates how much each weight contributed to the error). This makes the next prediction closer to the right word."
+    ],
+    "ref": "Lecture 19 · p3"
+   }
+  ],
+  "questions": [
+   "his-2",
+   "kept-5",
+   "kept-6",
+   "kept-7",
+   "kept-8",
+   "kept-9"
+  ]
+ },
+ {
+  "id": "m3-recurrent-dynamical",
+  "tier": "Repeated from Lecture 18",
+  "lectures": "Lecture 19 (same slides as Lecture 18)",
+  "title": "The LLM as a dynamical system",
+  "blocks": [
+   {
+    "main": "**A dynamical system is a rule that is given its own output as input again and again.** Numbers go in, the rule changes them, and new numbers come out. The output then becomes the next input.",
+    "sub": [
+     "In the **harmonic oscillator** (a mass on a spring moving back and forth), the two numbers are position and velocity (speed and direction). They take turns updating.",
+     "When the rule is repeated step by step, the position traces out a **cosine** shape."
+    ],
+    "ref": "Lecture 19 · p4"
+   },
+   {
+    "main": "**An LLM (large language model) can be treated as a dynamical system.** Each layer is the rule, and the depth of the layers plays the role of time. The input vectors are the **initial conditions** (the starting numbers).",
+    "sub": [
+     "Each layer turns the vectors into better vectors, until the last layer can predict the next word.",
+     "Each layer has its own learned weights. So each step passes its output to the next step, but each step uses different weights."
+    ],
+    "end": "So in both systems, the output of one step is the input to the next step.",
+    "ref": "Lecture 19 · p4"
+   }
+  ],
+  "questions": [
+   "kept-10",
+   "kept-11"
+  ]
+ },
+ {
+  "id": "m3-phonotactics",
+  "tier": "Repeated from Lecture 18",
+  "lectures": "Lecture 19 (same slides as Lecture 18)",
+  "title": "Phonotactics and guessing the next letter",
+  "blocks": [
+   {
+    "main": "**Phonotactics are the rules for which sounds can follow which in a language.** Every speaker knows them without being taught. A simple English syllable is a consonant, a vowel and a consonant, as in **Don** or **cup**.",
+    "sub": [
+     "Mat, sit, dog, fish and shave are also consonant, vowel, consonant.",
+     "The pattern is about sounds, not letters. So the silent e at the end of shave does not count, because it makes no sound.",
+     "Ship, chin and bath also count. This is because sh, ch and th are each one sound, even though each is spelled with two letters."
+    ],
+    "ref": "Lecture 19 · p6"
+   },
+   {
+    "main": "**Consonants can also form clusters (groups of consonants in a row) before or after the vowel.** A cluster before the vowel is an **onset**, as in split, flat, black and glad. A cluster after the vowel is a **coda**, as in desk, help, milk and lamp.",
+    "sub": [
+     "The order of the consonants is a mirror image around the vowel. For example, l sits right next to the vowel in both flat and help. So flat is a word, and lfat is impossible.",
+     "Each real word has an impossible version that puts the wrong consonant next to the vowel, such as help and hepl, or lamp and lapm.",
+     "Sblit and desb are impossible too. That is why a product called desb would sound un-English."
+    ],
+    "ref": "Lecture 19 · p6"
+   },
+   {
+    "main": "**A pair of consonants can be fine across a syllable break but impossible at the start of a syllable.** Atlantic is a word because t and l are on opposite sides of a syllable break (At-lan-tic). Tlantic is impossible because tl cannot start an English syllable.",
+    "sub": [
+     "The sound ng can end a syllable, but it can never start one."
+    ],
+    "ref": "Lecture 19 · p6"
+   },
+   {
+    "main": "**Each language has its own phonotactics.** Mandarin allows only nasal sounds (sounds made with air going out through the nose, like n and ng) at the end of a syllable. Russian and Polish allow clusters like zb or dl at the start of a word.",
+    "sub": [
+     "Spanish speakers add an e before st at the start of a word, as in estadio."
+    ],
+    "ref": "Lecture 19 · p6"
+   },
+   {
+    "main": "**Guessing the next letter of a word depends on phonotactics, and each guess is a probability distribution.** After a vowel, almost any letter can come next, so the distribution is **flat** (the probability is spread out over many letters). At the start of a word, the choices narrow down to what an English onset allows.",
+    "sub": [
+     "After ra, almost any letter can come next, such as t, n, r or l, so the distribution is flat.",
+     "After skr, the distribution is **sharply peaked** (most of the probability goes to a few vowels)."
+    ],
+    "end": "So a GPT trained only on this guessing game learns English syllable structure. This is because guessing the next letter is the same task as an LLM predicting the sixteenth item from the first fifteen.",
+    "ref": "Lecture 19 · p7"
+   },
+   {
+    "main": "**At the start of a word, each first letter or cluster allows only a few next letters.** After sp, only l, r or a vowel can come next, never n. After k, a vowel or n can come next, as in knee, but never t.",
+    "sub": [
+     "After b or f, only r, l or a vowel can come next, never n.",
+     "After sh, only a vowel or r can come next, as in shrimp.",
+     "After skr, or after m at the start of a word, only a vowel can come next."
+    ],
+    "ref": "Lecture 19 · p7"
+   },
+   {
+    "main": "**Inside a word, the letters so far can make one next letter almost certain.** After bram, the next letter is almost certainly b, as in bramble.",
+    "sub": [
+     "A new syllable could also start there, so b is not the only possible next letter."
+    ],
+    "ref": "Lecture 19 · p7"
+   },
+   {
+    "main": "**After pl, st and th at the start of a word, the next letter is limited too.** After pl, only a vowel can come next, as in play. After st, a vowel or r can come next, as in star and street, but not l or k.",
+    "sub": [
+     "After th, r, w or a vowel can come next, as in three, thwart and thin, but not l or n."
+    ],
+    "ref": "Lecture 19 · p7"
+   }
+  ],
+  "questions": [
+   "his-3",
+   "his-4",
+   "kept-12",
+   "kept-13",
+   "kept-14",
+   "kept-15",
+   "kept-16",
+   "kept-17",
+   "kept-18",
+   "kept-19",
+   "kept-20",
+   "kept-21",
+   "kept-22"
+  ]
+ },
+ {
+  "id": "m3-agentic",
+  "tier": "Repeated from Lecture 18",
+  "lectures": "Lecture 19 (same slides as Lecture 18)",
+  "title": "Agentic systems and Software 3.0",
+  "blocks": [
+   {
+    "main": "**An agentic system is a group of LLMs (large language models) connected so that one LLM's output becomes the next LLM's input.** In AI today, an **agent** is just an LLM. In one example, an outline LLM plans the answer, and a writing LLM writes it.",
+    "sub": [
+     "A critic LLM checks the draft, and a revision LLM works back and forth with the critic.",
+     "A final LLM produces the answer that the user sees."
+    ],
+    "ref": "Lecture 19 · p2"
+   },
+   {
+    "main": "**The critic loop sends the draft back and forth between the critic and the reviser.** The loop continues until the critic is satisfied or a limit is reached. This loop greatly reduced **hallucination** (when an LLM makes up false statements).",
+    "sub": [
+     "Once each LLM is trained, its weights usually do not change.",
+     "The agents share a common memory, where they write and read information."
+    ],
+    "ref": "Lecture 19 · p2"
+   },
+   {
+    "main": "**Software 1.0, 2.0 and 3.0 are three ways to build a program.** **Software 1.0** is writing a program in a programming language such as Python. **Software 2.0** is training a neural network on input and output data, so the program is the network's weights.",
+    "sub": [
+     "**Software 3.0** is having an agentic system build and run the program from instructions written in plain English.",
+     "Building a program this way is called **vibe coding**."
+    ],
+    "ref": "Lecture 19 · p8"
+   }
+  ],
+  "questions": [
+   "his-5",
+   "his-6",
+   "kept-23",
+   "kept-24"
+  ]
+ }
+]

@@ -1,0 +1,3314 @@
+{
+ "modules": [
+  {
+   "id": "module3",
+   "title": "Module III",
+   "subtitle": "Final exam",
+   "lectureIds": [
+    "lecture19"
+   ],
+   "supplementIds": [],
+   "meadowsIds": [],
+   "lectureRange": "Lecture 19 so far",
+   "description": "After Exam 2 · Lecture 19. Later lectures will be added here.",
+   "futureNote": "Lecture 19 is available now. The final exam is cumulative, so Modules I and II stay available with their own study tools.",
+   "questionCount": 50,
+   "mcqCount": 25,
+   "writtenCount": 25
+  }
+ ],
+ "collections": [
+  {
+   "id": "lecture19",
+   "title": "Neuron, Neural Networks, LLMs and Agents",
+   "number": "19",
+   "label": "Lecture 19",
+   "role": "lecture",
+   "sourceFile": "sources/lecture19.pptx",
+   "pdfFile": "sources/lecture19.pdf",
+   "originalFilename": "Ling285_F26_L19.pptx",
+   "issues": [],
+   "sections": [
+    {
+     "id": "lecture19-p001",
+     "page": 1,
+     "title": "Neuron, neural networks, LLMs and agents",
+     "kind": "title",
+     "teaching": [],
+     "image": "assets/slides/lecture19/001.webp",
+     "assets": [],
+     "sourceText": "Ling 285\n Human Language and Technology\n             Lecture 19\n\nNeuron  NNs  LLMs  Agents!!!!\n\n\n                 Khalil Iskarous\n         Department of Linguistics\n       University of Southern California",
+     "speakerNotes": "",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p002",
+     "page": 2,
+     "title": "From a neuron to agents that communicate",
+     "kind": "concept",
+     "teaching": [
+      "A **single neuron** multiplies its inputs by weights and adds the products into one number. A **neural network** combines these operations into layers, turning one input vector into a decision vector.",
+      "An **LLM** processes fifteen vectors through successive layers and predicts a sixteenth vector, a probability distribution over the next token. An **agentic system** joins whole LLMs into a graph that outlines, writes, criticizes, revises and finalizes the response.",
+      "The critic and reviser form a loop so a revised draft can be evaluated again. The agents communicate in English and can work in other human languages and computer languages.",
+      "**Inference uses inner products**, while learning uses **SGD and dynamic programming**. Inference processes current inputs with learned weights, while learning changes the weights to reduce error."
+     ],
+     "image": "assets/slides/lecture19/002.webp",
+     "assets": [
+      {
+       "file": "assets/slides/lecture19/stages/p002-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 2,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide2.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p002-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows Column 1 - one neuron",
+       "sourceDerived": true,
+       "sourcePage": 2,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide2.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p002-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows Column 2 - network",
+       "sourceDerived": true,
+       "sourcePage": 2,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide2.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p002-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows Column 3 - LLM",
+       "sourceDerived": true,
+       "sourcePage": 2,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide2.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p002-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows Column 4 - agents",
+       "sourceDerived": true,
+       "sourcePage": 2,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide2.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p002-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows Bottom lines",
+       "sourceDerived": true,
+       "sourcePage": 2,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide2.xml · click state 5"
+      }
+     ],
+     "sourceText": "Outline LLM\nx\n                      W₁    W₂   W₃            W  W  W  W  W  W  W  W  W  W  W  W    16\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W    PDF\n      w                                                                                                  Write LLM\n\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n\n                     y                                                                                                              Critic LLM\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W            Σ                                                                                                                                                                                   layers\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n                                          5                                                                                                       loop\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W                Revise LLM\n\n                                                                       W  W  W  W  W  W  W  W  W  W  W  W\n\n\n\n\n\n                                                                       W                                                                          W                                                                            W                                                                               W                                                                                  W                                                                                    W                                                                                       W                                                                                          W                                                                                            W                                                                                               W                                                                                                  W                                                                                                    W\n\n                                                                       W                                                                          W                                                                            W                                                                               W                                                                                  W                                                                                    W                                                                                       W                                                                                          W                                                                                            W                                                                                               W                                                                                                  W                                                                                                    W                   Final LLM\n\n\n\n\n                                                                                                                           vectors 1 … 15 in\n\n       Vector in,                      Vector in,                 LLM: dynamical system with                Agentic system:\n     1 number out               Decision vector out        many vectors in, 1 decision vector out         a graph of LLMs\n\n                                                                                        The agents (LLMs) speak to\n                                Inference: inner products                 each other in English, but they\n                                  Learning: SGD + DP                       are multilingual in human and\n                                                                                          computer languages!!!!!!!\n\nNative slide text:\nΣ\n\ny\nw\nx\nVector in,\n1 number out\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nW₁\nW₂\nW₃\nVector in,\nDecision vector out\n\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\n\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\n\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\n\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\n\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\nW\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n5 layers\nvectors 1 … 15 in\n\n\n\n\n\n\n\n\n\n\n\n\n\n16\nPDF\nLLM: dynamical system with\nmany vectors in, 1 decision vector out\n\n\n\n\n\n\n\nloop\nOutline LLM\nWrite LLM\nCritic LLM\nRevise LLM\nFinal LLM\nAgentic system:\na graph of LLMs\n\nThe agents (LLMs) speak to each other in English, but they are multilingual in human and computer languages!!!!!!!\nInference: inner products\nLearning: SGD + DP",
+     "speakerNotes": "Click 1: one neuron — a vector comes in, one number comes out (an inner product).\nClick 2: a small network, layers 4-3-4-5 — each W turns a vector into a vector; the last layer is a decision vector.\nClick 3: an LLM — 15 token vectors go in at the bottom, pass up through 5 layers of W's (6 colours = 6 kinds of W), and the top yields vector 16: a probability distribution over the next token.\nClick 4: agentic systems — several LLMs wired into a graph, with a critic/revise loop.\nClick 5: the two operations under everything: inference is inner products; learning is SGD plus dynamic programming (backprop).",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p003",
+     "page": 3,
+     "title": "Parallel heads and successive layers",
+     "kind": "concept",
+     "teaching": [
+      "**Predicting the next word is difficult**, so an LLM uses many layers to develop its input representations. Each layer transforms the vectors produced by the preceding layer.",
+      "Within a layer, **heads work in parallel as different experts**. Their contributions are combined into new representations, and the next layer repeats the process with those representations. Heads contribute within one stage, while layers provide successive stages."
+     ],
+     "image": "assets/slides/lecture19/003.webp",
+     "assets": [
+      {
+       "file": "assets/original/4ca533428958a074de04.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image1.png"
+      }
+     ],
+     "sourceText": "An LLM’s task, the prediction of the\n next word is diffic ult. So diffic ult that\n     it need many many layers of its\ndynamical system. But it also needs, in\n each layer, many pallel heads, where\n each head is a diffe rent expert, and in\n  each layer, all the knowledge from\n    diffe rent heads/experts is brought\n                                                                                                heads\n    together to generate improved\n   representations x. The n the same\n  things is done yet again in the next\n                   layer.\n\nNative slide text:\nAn LLM’s task, the prediction of the next word is difficult. So difficult that it need many many layers of its dynamical system. But it also needs, in each layer, many pallel heads, where each head is a different expert, and in each layer, all the knowledge from different heads/experts is brought together to generate improved representations x. Then the same things is done yet again in the next layer.   \nheads",
+     "speakerNotes": "",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p004",
+     "page": 4,
+     "title": "A dynamical rule across time and depth",
+     "kind": "mechanism",
+     "teaching": [
+      "A **dynamical system** applies a rule to its state and feeds the resulting state back in. In the oscillator, position is updated using the old velocity, then velocity is updated using that new position. Repeating the rule produces oscillation.",
+      "In **Jordan’s recurrent network**, plan and state units feed a hidden layer, output returns to state units, and self-connections preserve a fading trace. The weights are reused over time, so recent outputs affect the next output.",
+      "An **LLM** transforms vectors through successive layers, so depth plays the role of time. Following one number through the layers gives a changing curve. Each layer has its own weights, unlike the same rule reused across time in the oscillator and recurrent network.",
+      "The small stock-return graph traces Small, Medium and Large series fluctuating over the same period, another example of quantities changing over time."
+     ],
+     "image": "assets/slides/lecture19/004.webp",
+     "assets": [
+      {
+       "file": "assets/original/7e633a497674ff0f8597.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image2.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows Machine",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows Oscillator - frame, ox0, ov0, ox1, ov1, ox2, ov2, ox3, ov3, ox4, ov4, ox5, ov5, ox6, ov6, ox7, ov7, ox8, ov8, ox9, ov9, ox10, ov10, ox11, ov11, ox12, ov12, ox13, ov13, ox14, ov14, ox15, ov15, ox16, ov16, ox17, ov17, ox18, ov18, ox19, ov19, ox20, ov20",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows Picture 555",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows Jordan network",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows LLM stack",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 5"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p004-stage-06.webp",
+       "type": "image",
+       "label": "Original click state 6 · Click 6 · shows lb0, lb1, lb2, lb3, lb4, lb5",
+       "sourceDerived": true,
+       "sourcePage": 4,
+       "sourceStage": 6,
+       "animated": false,
+       "originalFilename": "slide4.xml · click state 6"
+      }
+     ],
+     "sourceText": "Dynamical System: A rule for data, fed back to itself\n\n                                                                            LLM: the layer is the rule\n           1.00, 0.00        RULE               1.00, −0.39                                                                           follow one number up\n\n               numbers in                                                 numbers out\n                                                                    W5                     layer 5\n                                              fed back in, again and again\n\nHarmonic oscillator                         Jordan network (1986)\n                                                                    W4                     layer 4\n          xn+1 = xn + h·vn    vn+1 = vn − h·xn+1\n                                                         output\n   x0      x1\n                        W                           W3                     layer 3\n x                                                       hidden                                                                                    copy\n\n                                                                    W2                     layer 2\n                       W\n\n\n   v0\n                                                                    W1                     layer 1 v                                                              plan\n\n         v1                                                                                      state\n\n                                               n →                                                                            15 vectors in\nx and v take turns. Step by step, the rule draws a cosine.   Based on time variation in speech production,        Each layer applies its W's to every vector. Depth plays the\n                                                     Jordan proposed a marriage of NNs and Dynamical     role of time: one number, followed up the layers, is a curve,\n                                                   sysyems that after 30+ years of tinkering became       just not a cosine.\n                                                       the LLM ☺️\n\nNative slide text:\nDynamical System: A rule for data, fed back to itself\n1.00,  0.00\nnumbers in\n\nRULE\n\n1.00, −0.39\nnumbers out\n\nfed back in, again and again\nHarmonic oscillator\nxn+1 = xn + h·vn      vn+1 = vn − h·xn+1\n\n\nx\n\n\nv\nn →\nx and v take turns. Step by step, the rule draws a cosine.\n\nx0\n\nv0\n\n\n\nx1\n\n\n\nv1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJordan network (1986)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncopy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\noutput\nhidden\nplan\nstate\nW\nW\nBased on time variation in speech production, Jordan proposed a marriage of NNs and Dynamical sysyems that after 30+ years of tinkering became the LLM ☺️\nLLM: the layer is the rule\nlayer 1\nlayer 2\nlayer 3\nlayer 4\nlayer 5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n15 vectors in\n\nfollow one number up\nEach layer applies its W's to every vector. Depth plays the role of time: one number, followed up the layers, is a curve, just not a cosine.\n\n\n\n\n\nW1\n\n\n\n\n\n\n\n\n\nW2\n\n\n\n\n\n\n\n\n\nW3\n\n\n\n\n\n\n\n\n\nW4\n\n\n\n\n\n\n\n\n\nW5",
+     "speakerNotes": "Click 1: the machine. Numbers go in, a rule acts, numbers come out, and the output is fed back in as the next input. The numbers shown are the oscillator's first step (x0 = 1, v0 = 0, h = 2π/16).\nClick 2: the harmonic oscillator, played automatically. x and v take turns: x(n+1) uses v(n); then v(n+1) uses the new x(n+1). The orange arrows show this interleaving for the first two steps. The dots trace a cosine (x) and a minus-sine (v). (This interleaved update is the symplectic Euler rule, which is why the curve does not spiral out.)\nClick 3: Jordan's 1986 network. Plan and state units feed the hidden layer, which feeds the output; the output is copied back into the state units, which also keep a decaying copy of themselves (the small loops). Same W's every step.\nClick 4: an LLM drawn as layers only, with the 15 vectors between them.\nClick 5, played automatically: the rule is applied layer by layer (W1 ... W5). Follow one number in each vector up through the stack and you get a curve, built point by point as in the oscillator, but not sinusoidal. Depth is the LLM's time. One difference to point out: in the oscillator and the Jordan net the same rule is reused every step; in an LLM each layer has its own W.",
+     "issues": [
+      "This deck dates the Jordan network to 1986, while Lecture17 used 1985. The notes prioritize the mechanism and retain the source discrepancy here.",
+      "An embedded Small/Medium/Large stock-return graph appears near the oscillator. It is described only as time-varying trajectories, because the deck supplies no market mechanism or numerical argument."
+     ],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p005",
+     "page": 5,
+     "title": "One prediction task for different sequences",
+     "kind": "concept",
+     "teaching": [
+      "An **LLM** receives fifteen vectors and predicts the following one. The vectors can represent words in a sentence, frames of a spectrogram, patches of a picture, or amino acids in the **insulin B chain**.",
+      "The picture is divided into sixteen patches, with fifteen given and the bottom-right patch left to predict. In the protein example the next residue is Y. The original materials differ, but all are represented as **sequences of vectors**."
+     ],
+     "image": "assets/slides/lecture19/005.webp",
+     "assets": [
+      {
+       "file": "assets/original/c0c83b8d56de0feb4318.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image21.png"
+      },
+      {
+       "file": "assets/original/720182d232b8b83fc2a9.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image36.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p005-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 5,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide5.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p005-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows Words",
+       "sourceDerived": true,
+       "sourcePage": 5,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide5.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p005-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows Spectrogram · hides Words",
+       "sourceDerived": true,
+       "sourcePage": 5,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide5.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p005-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows Image · hides Spectrogram",
+       "sourceDerived": true,
+       "sourcePage": 5,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide5.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p005-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows Protein · hides Image",
+       "sourceDerived": true,
+       "sourcePage": 5,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide5.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p005-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows Takeaway",
+       "sourceDerived": true,
+       "sourcePage": 5,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide5.xml · click state 5"
+      }
+     ],
+     "sourceText": "15 vectors. Vectors of what?\n\n              x₁        x₂        x₃        x₄        x₅        x₆        x₇        x₈        x₉        x₁₀          x₁₁         x₁₂         x₁₃        x₁₄         x₁₅         x₁₆\n\n                                                                                             ?\n\n\n\n\n        TheF       catV      thatN      theQ     dogH    chasedL       ranC      upG      theS       oldH      treeL     andV       satE      onA      theL      ???\n                                                                                                                     ?\n\n\n\n\n                                                                                                                            helix\n\n                                              5 kHz                                1       2      3       4\n                                                ?      A      V      H\n                                                                                        5       6      7       8\n         The cat that the dog chasedL  ranE up theL  oldS tree and ?sat on the ____\n\n                                                                                        9       10      11      12\n                                                           a sentence, cut into 15 words    G\n                                                 0\n                                                                                        13      14      15   ?                                                        time →\n                                                                                  C\n                                                         a spectrogram, cut into 15 frames                                        N    F        N        H\n                                                    an image,V cut into 16 patches,Q      read rowL  by row\n\n                                                  a protein (insulin, B chain), read as 15 amino acids\n\n  The LLM only ever sees vectors. Words, sounds, pixels, molecules: one machine, one question: what is x₁₆?\n\nNative slide text:\n15 vectors. Vectors of what?\n\n\n\n\n\nx₁\n\n\n\n\n\nx₂\n\n\n\n\n\nx₃\n\n\n\n\n\nx₄\n\n\n\n\n\nx₅\n\n\n\n\n\nx₆\n\n\n\n\n\nx₇\n\n\n\n\n\nx₈\n\n\n\n\n\nx₉\n\n\n\n\n\nx₁₀\n\n\n\n\n\nx₁₁\n\n\n\n\n\nx₁₂\n\n\n\n\n\nx₁₃\n\n\n\n\n\nx₁₄\n\n\n\n\n\nx₁₅\n\n?\nx₁₆\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe\ncat\nthat\nthe\ndog\nchased\nran\nup\nthe\nold\ntree\nand\nsat\non\nthe\n\n?\nThe cat that the dog chased ran up the old tree and sat on the ____\na sentence, cut into 15 words\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n?\n5 kHz\n0\ntime →\na spectrogram, cut into 15 frames\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n?\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n?\nan image, cut into 16 patches, read row by row\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nV\nN\nQ\nH\nL\nC\nG\nS\nH\nL\nV\nE\nA\nL\n\n?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nF\nV\nN\nQ\nH\nL\nC\nG\nS\nH\nL\nV\nE\nA\nL\n\n?\nN\nhelix\na protein (insulin, B chain), read as 15 amino acids\nThe LLM only ever sees vectors. Words, sounds, pixels, molecules: one machine, one question: what is x₁₆?",
+     "speakerNotes": "Start: just 15 vectors and an empty 16th slot. Ask: vectors of what?\nClick 1: a sentence, cut into 15 words; each x_i points at one word. x_16 is the missing word.\nClick 2: the words go; now a spectrogram, cut into 15 frames. Same x_i, now pointing at frames. x_16 is the next frame.\nClick 3: now an image cut into 16 patches, read row by row. x_16 is the missing bottom-right patch.\nClick 4: now a folded protein (insulin B chain, FVNQHLCGSHLVEAL) read as a sequence of amino acids. x_16 is the next residue (it is Y).\nClick 5: the takeaway: the machine only sees vectors; the sequence can come from anywhere.",
+     "issues": [
+      "The N beside the folded protein marks its amino end, not an answer in the missing slot. The speaker notes identify the next residue as Y."
+     ],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p006",
+     "page": 6,
+     "title": "Which sequences can be English words?",
+     "kind": "concept",
+     "teaching": [
+      "One-syllable words like Don, mat and fish follow a **consonant, vowel, consonant** pattern. Clusters are allowed **before and after the vowel** only in certain orders, so split, flat, desk and help are words while *sblit, *lfat, *desb and *hepl are impossible, with the order mirroring around the vowel.",
+      "A **long word is a chain of syllables**, each obeying the same rules. t·l is fine across a break in At·lan·tic, but **tl cannot start a syllable**, so *tlantic is impossible, and ng can end a syllable but never start one."
+     ],
+     "image": "assets/slides/lecture19/006.webp",
+     "assets": [
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows Row 1 - CVC words",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows Text 1",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows Row 2 - clusters",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows Text 2",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows Row 3 - many syllables",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 5"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p006-stage-06.webp",
+       "type": "image",
+       "label": "Original click state 6 · Click 6 · shows Text 3",
+       "sourceDerived": true,
+       "sourcePage": 6,
+       "sourceStage": 6,
+       "animated": false,
+       "originalFilename": "slide6.xml · click state 6"
+      }
+     ],
+     "sourceText": "Which sequences can be English words?\n\n\n            Don     mat          sit      shave     cup      dog      pen        fish      bed       ship\n1 syllable,\nsingle C V C\n                  kite      rope     bath      chin     wet     gum      tub       ring         lick      van\n\n                A simple syllable in English can have a consonant then a vowel then a consonant\n\n\n                                                     onsets →                                                                codas →\n\n                    split         flat      black      glad      stop      desk      box      help      milk     lamp\n1 syllable,\nclusters\n                  *sblit       *lfat    *bnack    *dlad     *tsop    *desb    *bokp    *hepl     *mikl    *lapm\n\n                       Only certain sequences are allowed before the vowel and after the vowel\n\n\n\n               ba·na·na    win·dow    pump·kin     nap·kin      At·lan·tic     ath·lete      ad·mit     spa·ghet·ti\nmany\nsyllables\n             *bnanana                            *ngapkin      *tlantic      *thlete      *dmit     *sbaghetti\n\n         A long word is a chain of syllables: t·l is fine across a break (At·lan·tic), but tl cannot start a syllable\n\n\n\n                                 · syllable break    * impossible in English\n\nNative slide text:\nWhich sequences can be English words?\n1 syllable,\nsingle C V C\nDon\nmat\nsit\nshave\ncup\ndog\npen\nfish\nbed\nship\nkite\nrope\nbath\nchin\nwet\ngum\ntub\nring\nlick\nvan\nA simple syllable in English can have a consonant then a vowel then a consonant\n1 syllable,\nclusters\nonsets  →\ncodas  →\n\nsplit\n*sblit\nflat\n*lfat\nblack\n*bnack\nglad\n*dlad\nstop\n*tsop\ndesk\n*desb\nbox\n*bokp\nhelp\n*hepl\nmilk\n*mikl\nlamp\n*lapm\nOnly certain sequences are allowed before the vowel and after the vowel\nmany\nsyllables\nba·na·na\n*bnanana\nwin·dow\npump·kin\nnap·kin\n*ngapkin\nAt·lan·tic\n*tlantic\nath·lete\n*thlete\nad·mit\n*dmit\nspa·ghet·ti\n*sbaghetti\nA long word is a chain of syllables: t·l is fine across a break (At·lan·tic), but tl cannot start a syllable\n·  syllable break        *  impossible in English",
+     "speakerNotes": "Click 1: twenty one-syllable words, each a single consonant, a single vowel, a single consonant (consonants dark, vowel red, silent e grey).\nClick 2: the CVC rule.\nClick 3: clusters. Top: real words with clusters (blue). Bottom: an impossible twin (red, starred). Many twins use the same letters in the other order (flat/*lfat, help/*hepl, lamp/*lapm): order matters, and it mirrors around the vowel.\nClick 4: only certain sequences are allowed before and after the vowel.\nClick 5: many-syllable words. Atlantic, athlete, admit contain t-l, th-l, d-m, which are impossible as onsets (*tlantic, *thlete, *dmit) but fine across a syllable break. ng can end a syllable (ring) but never start one (*ngapkin).\nClick 6: a word is a chain of syllables, each obeying the same rules.",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p007",
+     "page": 7,
+     "title": "Guessing the next letter reveals phonotactic knowledge",
+     "kind": "concept",
+     "teaching": [
+      "Guessing the **next letter** of a word start shows **phonotactic knowledge**. After a vowel, as in **ra_**, almost anything can follow. At the start of a word the choices narrow, to **l, r or a vowel** after sp_, b_ and f_, and to **only a vowel** after skr_ and m_.",
+      "Each item also has an impossible continuation, such as *spn, *kt, *skrl or *mb. **Guessing the next letter is predicting x₁₆**, so a **GPT** trained only on this game learns English sounds and spelling, with a broad distribution after ra_ and a sharply peaked one after skr_."
+     ],
+     "image": "assets/slides/lecture19/007.webp",
+     "assets": [
+      {
+       "file": "assets/slides/lecture19/stages/p007-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 7,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide7.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p007-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows Answers",
+       "sourceDerived": true,
+       "sourcePage": 7,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide7.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p007-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows Takeaway",
+       "sourceDerived": true,
+       "sourcePage": 7,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide7.xml · click state 2"
+      }
+     ],
+     "sourceText": "Pop Quiz!\nHow phonotactic knowledge can be revealed through GPT learning\n\nEach is the start of an English word. Guess the next letter.\n\n\n\n  1                               2                               3                               4                               5\n    ra _       sp _       k _        skr _    m _\n\n         t n r l                      l r a e i o                     i e a n            a e i u           a e i o u\n\n    after a vowel, almost anything               l, r or a vowel  never *spn      a vowel, or n (knee)  never *kt        only a vowel  never *skrl           only a vowel  never *mb\n\n\n\n\n                   6                               7                               8                               9\n       bram _     b _            f _        sh _\n\n               b                r l a e i o u           r l a e i o u        a e i o u r\n\n                     bramble, or a new syllable                  r, l or a vowel  never *bn                  r, l or a vowel  never *fn      a vowel, or r (shrimp)  never *shb\n\n\n\n    Guessing the next letter is predicting x₁₆. A GPT trained only on this game learns English sounds and spelling.\n\nNative slide text:\nPop Quiz!\nHow phonotactic knowledge can be revealed through GPT learning\nEach is the start of an English word. Guess the next letter.\nra _\n1\nt n r l\nafter a vowel, almost anything\nl r a e i o\nl, r or a vowel    never *spn\ni e a n\na vowel, or n (knee)    never *kt\na e i u\nonly a vowel    never *skrl\na e i o u\nonly a vowel    never *mb\nb\nbramble, or a new syllable\nr l a e i o u\nr, l or a vowel    never *bn\nr l a e i o u\nr, l or a vowel    never *fn\na e i o u r\na vowel, or r (shrimp)    never *shb\nsp _\n2\nk _\n3\nskr _\n4\nm _\n5\nbram _\n6\nb _\n7\nf _\n8\nsh _\n9\nGuessing the next letter is predicting x₁₆. A GPT trained only on this game learns English sounds and spelling.",
+     "speakerNotes": "Let students guess first. Notice how fast they agree, and how the agreement changes from item to item.\nClick 1: likely next letters (green), the rule, and one impossible continuation (red).\n  The contrast to draw out: after a vowel (fa_) almost anything can follow; at the start of a word the choices narrow sharply (sp_, b_, f_: r, l or a vowel), and after skr_ or m_ only a vowel is possible.\n  bram_ almost forces b (bramble), but a new syllable could also start there.\nClick 2: guessing the next letter is exactly the next-token game. A GPT that only ever plays it learns these patterns: its predicted distribution is flat after fa_ and sharply peaked after skr_.",
+     "issues": [
+      "The visible example is ra_ but the speaker notes discuss fa_. Both illustrate the source’s broad post-vowel choices."
+     ],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p008",
+     "page": 8,
+     "title": "Design an agentic system for English syllables",
+     "kind": "prompt",
+     "teaching": [],
+     "image": "assets/slides/lecture19/008.webp",
+     "assets": [],
+     "sourceText": "Now we will build an LLM together by designing\n       an agentic system that learns the\nknowledge of English syllables that you have!!!!",
+     "speakerNotes": "",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p009",
+     "page": 9,
+     "title": "What an LLM learns",
+     "kind": "concept",
+     "teaching": [
+      "An LLM learns by guessing a **hidden word**. In “The chef cracks the,” each earlier word gives a clue about the last word, and these links are **interdependencies**. The model spreads its bets over “egg,” “nut” and “code,” with the largest bet on “egg.”",
+      "**Learning is nudging the weights** so the right word gets a bigger bet next time. The same idea holds when the signal contains words, sounds and images."
+     ],
+     "image": "assets/slides/lecture19/009.webp",
+     "assets": [
+      {
+       "file": "assets/slides/lecture19/stages/p009-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 9,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide9.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p009-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_1, s1_2, s1_3, s1_4, s1_5",
+       "sourceDerived": true,
+       "sourcePage": 9,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide9.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p009-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_6, s2_7, s2_8, s2_9",
+       "sourceDerived": true,
+       "sourcePage": 9,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide9.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p009-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_11, s3_12, s3_13, s3_14, s3_15, s3_16",
+       "sourceDerived": true,
+       "sourcePage": 9,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide9.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p009-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_10",
+       "sourceDerived": true,
+       "sourcePage": 9,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide9.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p009-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows s5_17",
+       "sourceDerived": true,
+       "sourcePage": 9,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide9.xml · click state 5"
+      }
+     ],
+     "sourceText": "what an LLM learns\n\n\n\n\n\n       The        chef      cracks       the         ?\n\n  Learning = nudging the weights so these           egg\n  guesses get bette  r.                                     nut\n\n                                                           code\n\n  Today: the same idea, but the signal holds words, sounds and pictures.\n\n\nMultimodal training, step by step                                                                                                            9\n\nNative slide text:\nwhat an LLM learns\nThe\nchef\ncracks\nthe\n?\n\n\n\n\nLearning = nudging the weights so these guesses get better.\negg\n\nnut\n\ncode\n\nToday: the same idea, but the signal holds words, sounds and pictures.\n9",
+     "speakerNotes": "Click 1: Here is a sentence the model is reading. The last word is hidden.\nClick 2: Each earlier word gives a clue about the hidden word. These arcs are the interdependencies you already know about.\nClick 3: The model doesn't know the answer. It spreads its bets: egg, nut, code.\nClick 4: Learning just means nudging the weights, so that next time the right word gets a bigger bet.\nClick 5: Today nothing about this changes. The only change is that the signal now holds sounds and pictures too.",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p010",
+     "page": 10,
+     "title": "Text, speech and images in three different forms",
+     "kind": "concept",
+     "teaching": [
+      "Text is **already a row of pieces**, so each piece can become a vector. Speech is **air pressure changing in time**, and an image is **a grid of light**. Neither one contains words.",
+      "An LLM can only read a row of vectors. Speech and images therefore have to be **converted into rows of vectors** before the model can read them with text."
+     ],
+     "image": "assets/slides/lecture19/010.webp",
+     "assets": [
+      {
+       "file": "assets/original/e6ad1590cdc68d892f43.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image34.png"
+      },
+      {
+       "file": "assets/original/da2261690543210b373b.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image35.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p010-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 10,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide10.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p010-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_18, s1_19, s1_20, s1_21, s1_22, s1_23, s1_24",
+       "sourceDerived": true,
+       "sourcePage": 10,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide10.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p010-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_25, s2_26, s2_27, s2_28",
+       "sourceDerived": true,
+       "sourcePage": 10,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide10.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p010-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_29, s3_30, s3_31, s3_32",
+       "sourceDerived": true,
+       "sourcePage": 10,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide10.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p010-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_33",
+       "sourceDerived": true,
+       "sourcePage": 10,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide10.xml · click state 4"
+      }
+     ],
+     "sourceText": "The problem: not everything comes in words\n\n Text                 Speech              Image\n\n    Now      crack\n\n      the       egg\n\n\n  Already a row of pieces            Air pressure changing in       A grid of light\n                                   time\n\n       Question: how do we turn all three into rows of vectors?\n\n\n\nMultimodal training, step by step                                                                                                           10\n\nNative slide text:\nThe problem: not everything comes in words\n\nText\nNow\ncrack\nthe\negg\nAlready a row of pieces\n\nSpeech\nAir pressure changing in time\n\nImage\nA grid of light\nQuestion: how do we turn all three into rows of vectors?\n10",
+     "speakerNotes": "Click 1: Text is easy. It already comes as a row of pieces, so each piece can become a vector.\nClick 2: Speech is different. It is air pressure going up and down in time. There are no words in it.\nClick 3: An image is a grid of light. Again, no words.\nClick 4: So the first job is a conversion. Everything has to become a row of vectors, because that is all the LLM can read.",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p011",
+     "page": 11,
+     "title": "Speech becomes a row of frame vectors",
+     "kind": "mechanism",
+     "teaching": [
+      "Speech is cut into short slices called **frames**, each about 20 milliseconds long. A **speech encoder**, a network trained on a large amount of audio, turns each slice into a vector.",
+      "One second of speech becomes **50 vectors in time order**. The speech is then a row, just like a sentence."
+     ],
+     "image": "assets/slides/lecture19/011.webp",
+     "assets": [
+      {
+       "file": "assets/original/1e124aa0446dc4305126.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image36.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p011-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 11,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide11.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p011-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_35, s1_36, s1_37, s1_38, s1_39, s1_40, s1_41, s1_42, s1_43, s1_44, s1_45, s1_46",
+       "sourceDerived": true,
+       "sourcePage": 11,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide11.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p011-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_47",
+       "sourceDerived": true,
+       "sourcePage": 11,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide11.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p011-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_48, s3_49, s3_50, s3_51, s3_52, s3_53, s3_54, s3_55, s3_56, s3_57, s3_58, s3_59, s3_60, s3_61, s3_62, s3_63, s3_64, s3_65, s3_66, s3_67, s3_68, s3_69, s3_70, s3_71, s3_72, s3_73, s3_74, s3_75, s3_76, s3_77, s3_78, s3_79, s3_80, s3_81, s3_82, s3_83, s3_84, s3_85, s3_86, s3_87",
+       "sourceDerived": true,
+       "sourcePage": 11,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide11.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p011-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_88",
+       "sourceDerived": true,
+       "sourcePage": 11,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide11.xml · click state 4"
+      }
+     ],
+     "sourceText": "Speech: slice time into short frames\n\n\n\n\n\n  Each slice is about 20 milliseconds\n\n                              Speech encoder\n\n\n\n\n  One second of speech becomes 50 vectors, in a row, in time order.\n\n\nMultimodal training, step by step                                                                                                           11\n\nNative slide text:\nSpeech: slice time into short frames\n\n\n\n\n\n\n\n\n\n\n\nEach slice is about 20 milliseconds\nSpeech encoder\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne second of speech becomes 50 vectors, in a row, in time order.\n11",
+     "speakerNotes": "This is a small piece of speech.\nClick 1: We cut it into short slices. Each slice is about 20 milliseconds long.\nClick 2: The slices go through a speech encoder. It is a network that was trained on lots of audio.\nClick 3: Out comes one vector per slice. The shading just suggests different numbers.\nClick 4: So one second of speech becomes 50 vectors in time order. That is a row, just like a sentence.",
+     "issues": [
+      "The slide draws ten slices and ten vectors as a sample. The 50 vectors per second come from the slide text, not from counting the drawn slices."
+     ],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p012",
+     "page": 12,
+     "title": "Images become a row of patch vectors",
+     "kind": "mechanism",
+     "teaching": [
+      "An image is cut into small squares called **patches**. The 16 patches of the egg image are laid out in a row in reading order, so the image becomes a sequence.",
+      "A **vision encoder** gives one vector per patch. Real systems use patches of 14 to 16 pixels, so one image gives hundreds of vectors."
+     ],
+     "image": "assets/slides/lecture19/012.webp",
+     "assets": [
+      {
+       "file": "assets/original/da2261690543210b373b.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image35.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p012-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 12,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide12.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p012-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_90, s1_91, s1_92, s1_93, s1_94, s1_95",
+       "sourceDerived": true,
+       "sourcePage": 12,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide12.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p012-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_96, s2_97, s2_98, s2_99, s2_100, s2_101, s2_102, s2_103, s2_104, s2_105, s2_106, s2_107, s2_108, s2_109, s2_110, s2_111, s2_112",
+       "sourceDerived": true,
+       "sourcePage": 12,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide12.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p012-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_113",
+       "sourceDerived": true,
+       "sourcePage": 12,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide12.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p012-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_114, s4_115, s4_116, s4_117, s4_118, s4_119, s4_120, s4_121, s4_122, s4_123, s4_124, s4_125, s4_126, s4_127, s4_128, s4_129, s4_130, s4_131, s4_132, s4_133, s4_134, s4_135, s4_136, s4_137, s4_138, s4_139, s4_140, s4_141, s4_142, s4_143, s4_144, s4_145, s4_146, s4_147, s4_148, s4_149, s4_150, s4_151, s4_152, s4_153, s4_154, s4_155, s4_156, s4_157, s4_158, s4_159, s4_160, s4_161, s4_162, s4_163, s4_164, s4_165, s4_166, s4_167, s4_168, s4_169, s4_170, s4_171, s4_172, s4_173, s4_174, s4_175, s4_176, s4_177",
+       "sourceDerived": true,
+       "sourcePage": 12,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide12.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p012-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows s5_178",
+       "sourceDerived": true,
+       "sourcePage": 12,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide12.xml · click state 5"
+      }
+     ],
+     "sourceText": "Images: cut the picture into patches\n\n                                                    The 16 patches, in reading order\n\n\n\n                                                   Vision encoder\n\n\n\n                          One vector per patch.\n                                    Real systems use patches of 14 to 16 pixels, so one image\n                                      gives hundreds of vectors.\n\n\n\n\n\nMultimodal training, step by step                                                                                                           12\n\nNative slide text:\nImages: cut the picture into patches\n\n\n\n\n\n\nThe 16 patches, in reading order\nVision encoder\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOne vector per patch.\nReal systems use patches of 14 to 16 pixels, so one image gives hundreds of vectors.\n12",
+     "speakerNotes": "Here is our picture: an egg in a pan.\nClick 1: We cut it into a grid of small squares. They are called patches.\nClick 2: We lay the patches out in a row, in reading order. Now the picture is a sequence, like a sentence.\nClick 3: The patches go through a vision encoder.\nClick 4: Out comes one vector per patch.\nClick 5: Our grid is 4 by 4 to keep it simple. Real systems use tiny patches, so one image gives hundreds of vectors.",
+     "issues": [
+      "The slide and speaker notes call the image “the picture.” The teaching uses image and image patch for the model’s visual input, following the course wording rule."
+     ],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p013",
+     "page": 13,
+     "title": "One row with three senses",
+     "kind": "concept",
+     "teaching": [
+      "Image patches, speech frames and words go into **one row**, with the last word hidden. The earlier words still give clues about the hidden word.",
+      "A patch containing an egg and the sound of cracking also help. These links between senses are **cross-modal dependencies**. The game is the same, and some clues now come from other senses."
+     ],
+     "image": "assets/slides/lecture19/013.webp",
+     "assets": [
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_205, s1_206, s1_207, s1_208, s1_209",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_210, s2_211, s2_212, s2_213, s2_214",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_215, s3_216, s3_217, s3_218, s3_219",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_220, s4_221, s4_222",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows s5_223, s5_224, s5_225",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 5"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p013-stage-06.webp",
+       "type": "image",
+       "label": "Original click state 6 · Click 6 · shows s6_226",
+       "sourceDerived": true,
+       "sourcePage": 13,
+       "sourceStage": 6,
+       "animated": false,
+       "originalFilename": "slide13.xml · click state 6"
+      }
+     ],
+     "sourceText": "One row, three senses\n\n\n\n\nClues from\nother senses\n\n\n\n                                     Now    crack     the      ?\n\n       image patches                speech frames                         words\n\n\n Same game as before. Now some of the clues come from other senses.\n\n\n\nMultimodal training, step by step                                                                                                           13\n\nNative slide text:\nOne row, three senses\n\n\n\n\nimage patches\n\n\n\n\nspeech frames\nNow\ncrack\nthe\n?\nwords\n\n\n\n\n\nClues from other senses\nSame game as before. Now some of the clues come from other senses.\n13",
+     "speakerNotes": "Now we put everything in one row.\nClick 1: First the image patches.\nClick 2: Then the speech slices.\nClick 3: Then the words, with the last one hidden.\nClick 4: The old clues are still there: earlier words help guess the hidden word.\nClick 5: The new thing. A patch showing an egg, and the sound of cracking, also help. These are cross-modal dependencies.\nClick 6: The game is exactly the same as before. Guess the hidden piece. Some of the clues now come from other senses.",
+     "issues": [],
+     "core": true,
+     "coreReason": "Explain cross-modal dependencies and why the guessing game is unchanged when three senses share one row."
+    },
+    {
+     "id": "lecture19-p014",
+     "page": 14,
+     "title": "Three cute puppies as an image, speech and words",
+     "kind": "concept",
+     "teaching": [
+      "“Three cute puppies” is given as an image cut into **18 patches**, as a **spectrogram** of the spoken phrase, and as three written words. In the spectrogram, time runs left to right, higher means higher frequency and darker means more energy.",
+      "These are **three views of one event**. Training puts all three into one row and hides one piece for the model to guess."
+     ],
+     "image": "assets/slides/lecture19/014.webp",
+     "assets": [
+      {
+       "file": "assets/original/331fe58f9c99c7616750.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image54.png"
+      },
+      {
+       "file": "assets/original/ea2af1238bb30536bee5.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image55.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_306, s1_307",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_308, s2_309, s2_310, s2_311, s2_312, s2_313, s2_314, s2_315",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_316, s3_317",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_318, s4_319, s4_320, s4_321, s4_322",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows s5_323, s5_324, s5_325, s5_326",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 5"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p014-stage-06.webp",
+       "type": "image",
+       "label": "Original click state 6 · Click 6 · shows s6_327",
+       "sourceDerived": true,
+       "sourcePage": 14,
+       "sourceStage": 6,
+       "animated": false,
+       "originalFilename": "slide14.xml · click state 6"
+      }
+     ],
+     "sourceText": "A new example: three cute puppies\n\n\n\n\n\nA picture                cut into 18 patches         three            cute            puppies\n                                                         The  phrase, spoken. Time runs left to right; frequency goes up.\n\nThe words        three      cute      puppies\n\nThr ee views of one event. Training puts them in one row.\n\n\nMultimodal training, step by step                                                                                                           14\n\nNative slide text:\nA new example: three cute puppies\nA picture\n\n\n\n\n\n\n\ncut into 18 patches\nThe phrase, spoken. Time runs left to right; frequency goes up.\n\n\nthree\ncute\npuppies\nThe words\nthree\ncute\npuppies\nThree views of one event. Training puts them in one row.\n14",
+     "speakerNotes": "A new example, which we will use for the rest of the training story.\nClick 1: A picture of three puppies.\nClick 2: As before, it is cut into patches: 3 rows of 6, so 18 patches.\nClick 3: The same phrase, spoken. This is a spectrogram. Time runs left to right. Higher up means higher frequency. Darker means more energy.\nClick 4: Here is where each word sits in time. Each thin column of the spectrogram is a frame.\nClick 5: And the words themselves, as text.\nClick 6: Three views of one event. In training, all three go into one row, and the model plays the hide-and-guess game on it.\n(The speech was made with a speech synthesizer, an MBROLA diphone voice.)",
+     "issues": [
+      "The speaker notes state that the speech was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person."
+     ],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p015",
+     "page": 15,
+     "title": "Training example 1 predicts the next word",
+     "kind": "mechanism",
+     "teaching": [
+      "The row holds the image, the sound and the words “three cute,” and the last word is hidden. With the words alone, the bets are spread over “kittens,” “puppies” and “babies.”",
+      "With the image and the sound, the bet piles up on **“puppies.”** The model bet 0.85 on the true word, so the error is small and **the nudge to the weights is small**."
+     ],
+     "image": "assets/slides/lecture19/015.webp",
+     "assets": [
+      {
+       "file": "assets/original/331fe58f9c99c7616750.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image54.png"
+      },
+      {
+       "file": "assets/original/ea2af1238bb30536bee5.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image55.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p015-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 15,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide15.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p015-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_328, s1_329, s1_330, s1_331, s1_332, s1_333, s1_334, s1_335, s1_336, s1_337, s1_338, s1_339, s1_340, s1_341, s1_342",
+       "sourceDerived": true,
+       "sourcePage": 15,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide15.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p015-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_343, s2_344, s2_345, s2_346, s2_347, s2_348, s2_349, s2_350, s2_351",
+       "sourceDerived": true,
+       "sourcePage": 15,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide15.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p015-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_352, s3_353, s3_354, s3_355, s3_356, s3_357, s3_358, s3_359, s3_360",
+       "sourceDerived": true,
+       "sourcePage": 15,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide15.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p015-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_361, s4_362",
+       "sourceDerived": true,
+       "sourcePage": 15,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide15.xml · click state 4"
+      }
+     ],
+     "sourceText": "Training example 1: predict the next word\n\n\n\n\n\n                                                            three      cute     puppies?\n\n\n\n          picture                              sound                                      words\n\nText alone                      With picture and sound            Truth: puppies.\n                                                                                              The model bet 0.85 on it, so the\nkitte ns                              puppies                                                                  nudge to the weights is small.\npuppies                                                kitte ns\nbabies                                 babies\n\nMultimodal training, step by step                                                                                                           15\n\nNative slide text:\nTraining example 1: predict the next word\n\n\n\n\n\n\n\nthree\ncute\n?\npicture\nsound\nwords\n\n\nText alone\nkittens\n\npuppies\n\nbabies\n\n\n\nWith picture and sound\npuppies\n\nkittens\n\nbabies\n\npuppies\nTruth: puppies.\nThe model bet 0.85 on it, so the nudge to the weights is small.\n15",
+     "speakerNotes": "This is the game from the start of the lecture, now on a three-sense row.\nClick 1: The row. First the picture, then the sound, then the words. The last word is hidden.\nClick 2: Suppose the model only had the words \"three cute\". Many endings fit: kittens, puppies, babies. Its bets are spread out.\nClick 3: Now add the clues from the other senses. The picture shows puppies. The sound contains the spoken word \"puppies\". The bet piles up on \"puppies\".\nClick 4: The true word is revealed. The model is graded on how much it bet on the truth. It bet a lot, so the error is small, and the weights move only a little.",
+     "issues": [
+      "The bar lengths are read from the slide. Only the 0.85 bet on “puppies” is printed as a number."
+     ],
+     "core": true,
+     "coreReason": "Compare the bets from text alone with the bets after the image and sound are added, and link the bet on the truth to the size of the nudge."
+    },
+    {
+     "id": "lecture19-p016",
+     "page": 16,
+     "title": "Training example 2 predicts a sound frame",
+     "kind": "mechanism",
+     "teaching": [
+      "The hidden piece is a **sound frame**, and the row holds the image, the words and the sound heard so far. The earlier frames help because the voice and the formants change smoothly. The words say the next sound is the vowel in “pup,” and the image backs up the words.",
+      "A frame is a column of numbers giving the energy in each frequency band. The guess is close but not exact, and **the error nudges the weights**."
+     ],
+     "image": "assets/slides/lecture19/016.webp",
+     "assets": [
+      {
+       "file": "assets/original/331fe58f9c99c7616750.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image54.png"
+      },
+      {
+       "file": "assets/original/ea2af1238bb30536bee5.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image55.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_363, s1_364, s1_365, s1_366, s1_367, s1_368, s1_369, s1_370, s1_371, s1_372, s1_373, s1_374, s1_375, s1_376, s1_377, s1_378, s1_379",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_380, s2_381, s2_382, s2_383, s2_384",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_385, s3_386, s3_387",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_388, s4_389, s4_390",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows s5_391, s5_392, s5_393, s5_394, s5_395, s5_396",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 5"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p016-stage-06.webp",
+       "type": "image",
+       "label": "Original click state 6 · Click 6 · shows s6_397",
+       "sourceDerived": true,
+       "sourcePage": 16,
+       "sourceStage": 6,
+       "animated": false,
+       "originalFilename": "slide16.xml · click state 6"
+      }
+     ],
+     "sourceText": "Training example 2: predict a sound frame\n\n\n\n\n\n                 three    cute   puppies\n\n\n\n       picture                      words                                        sound, heard so far\n\n     Earlier frames: the voice and the formants carry on.\n\n    Words: the next sound is the vowel of “pup”.\n\n     Picture: puppies, which backs up the words.\n   The error nudges the weights.                                       guess         truth         error\n\nMultimodal training, step by step                                                                                                           16\n\nNative slide text:\nTraining example 2: predict a sound frame\n\n\n\n\n\n\n\nthree\ncute\npuppies\n\n\npicture\nwords\nsound, heard so far\n\n\n\n\nEarlier frames: the voice and the formants carry on.\n\n\nWords: the next sound is the vowel of “pup”.\n\n\nPicture: puppies, which backs up the words.\nguess\ntruth\nerror\nThe error nudges the weights.\n16",
+     "speakerNotes": "Now the hidden piece is a piece of sound.\nClick 1: The row is reordered: picture, then words, then sound. This is like teaching the model to speak a sentence it was given. The sound is predicted frame by frame, left to right. The frames to the right are not heard yet. The orange frame is the one to guess.\nClick 2: The first clue comes from earlier frames. The speaker's voice and the formants change smoothly, so the last few frames say a lot about the next one.\nClick 3: The words say which sound should come next. Here it is the vowel in \"pup\".\nClick 4: The picture shows puppies. It backs up the words. It is a weaker clue here.\nClick 5: A frame is a column of numbers: how much energy there is in each frequency band. We show 16 bands. The model's guess is close but not exact. The error is how far apart each number is.\nClick 6: That error is what nudges the weights.\nNote: some systems predict a code for each frame instead of the raw numbers. That is the \"talking back\" idea at the end.",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p017",
+     "page": 17,
+     "title": "Training example 3 predicts an image patch",
+     "kind": "mechanism",
+     "teaching": [
+      "The hidden piece is an **image patch**, and the row holds the words, the sound and the patches drawn so far. The earlier patches give background and two puppies. “Three” says one more puppy must appear, and “puppies” says to expect dog ears.",
+      "The guess is a blurry ear in the average colour of the first two puppies, while the true puppy is dark. **The biggest error is the colour**, because no clue said the third puppy is dark."
+     ],
+     "image": "assets/slides/lecture19/017.webp",
+     "assets": [
+      {
+       "file": "assets/original/ea2af1238bb30536bee5.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image55.png"
+      },
+      {
+       "file": "assets/original/331fe58f9c99c7616750.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image54.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_398, s1_399, s1_400, s1_401, s1_402, s1_403, s1_404, s1_405, s1_406, s1_407, s1_408, s1_409, s1_410, s1_411, s1_412, s1_413, s1_414, s1_415",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_416, s2_417, s2_418, s2_419, s2_420, s2_421",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_422, s3_423, s3_424, s3_425",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_426, s4_427, s4_428",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 4"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-05.webp",
+       "type": "image",
+       "label": "Original click state 5 · Click 5 · shows s5_429, s5_430, s5_431, s5_432, s5_433, s5_434",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 5,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 5"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p017-stage-06.webp",
+       "type": "image",
+       "label": "Original click state 6 · Click 6 · shows s6_435",
+       "sourceDerived": true,
+       "sourcePage": 17,
+       "sourceStage": 6,
+       "animated": false,
+       "originalFilename": "slide17.xml · click state 6"
+      }
+     ],
+     "sourceText": "Training example 3: predict a picture patch\n\n\n\n\n three    cute   puppies                                     ?\n\n              words\n                                               sound\n\n                                                                                                       picture, seen so far\n\n     Earlier patches: background above, two puppies to the left.\n\n    Words: “three” = one more puppy; “puppies” = dog ears.\n\n    Sound: the same words, heard.\n    Biggest error: the colour. No clue said the third puppy is          guess           truth           error\n    dark.\nMultimodal training, step by step                                                                                                           17\n\nNative slide text:\nTraining example 3: predict a picture patch\nthree\ncute\npuppies\n\n\n\n\n\n\n\n\n\n?\nwords\nsound\npicture, seen so far\n\n\n\n\n\nEarlier patches: background above, two puppies to the left.\n\n\n\nWords: “three” = one more puppy; “puppies” = dog ears.\n\n\nSound: the same words, heard.\nguess\ntruth\nerror\nBiggest error: the colour. No clue said the third puppy is dark.\n17",
+     "speakerNotes": "Last, the hidden piece is a piece of the picture.\nClick 1: The row is reordered again: words, then sound, then the picture. This is like teaching the model to draw what it was told. The patches are predicted in reading order. The patches not yet drawn are faded. The gray patch is the one to guess.\nClick 2: Earlier patches give the first clue. Above is background. To the left are two puppies, so the model has seen what a puppy here looks like.\nClick 3: The words help in a different way. \"Three\" says a third puppy must appear, and only two have been drawn. \"Puppies\" says to expect dog ears.\nClick 4: The sound carries the same words. It is a backup for the text.\nClick 5: The guess is a blurry puppy ear, in the average colour of the first two puppies. The truth is a dark puppy.\nClick 6: So the biggest error is the colour. Nothing in the words, the sound or the earlier patches said the third puppy would be dark. That error nudges the weights.\nNote: only systems that also produce pictures are trained this way. Systems that only read pictures usually skip this step.",
+     "issues": [],
+     "core": false,
+     "coreReason": ""
+    },
+    {
+     "id": "lecture19-p018",
+     "page": 18,
+     "title": "Every piece can be the hidden one",
+     "kind": "comparison",
+     "teaching": [
+      "A hidden word, a hidden frame or a hidden patch each receives clues from the words, the sound and the image. For a hidden word, “three cute” calls for a plural noun, the word was just spoken, and the image contains puppies.",
+      "A clue from **the same sense** says how the signal continues. Clues from **the other senses** say what the thing is. Each sense fills gaps the others leave."
+     ],
+     "image": "assets/slides/lecture19/018.webp",
+     "assets": [
+      {
+       "file": "assets/slides/lecture19/stages/p018-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 18,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide18.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p018-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_436, s1_437, s1_438, s1_439, s1_440, s1_441, s1_442",
+       "sourceDerived": true,
+       "sourcePage": 18,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide18.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p018-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_443, s2_444, s2_445, s2_446",
+       "sourceDerived": true,
+       "sourcePage": 18,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide18.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p018-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_447, s3_448, s3_449, s3_450",
+       "sourceDerived": true,
+       "sourcePage": 18,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide18.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p018-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_451, s4_452, s4_453, s4_454",
+       "sourceDerived": true,
+       "sourcePage": 18,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide18.xml · click state 4"
+      }
+     ],
+     "sourceText": "Every piece can be the hidden one\n\n                     Clues from words      Clues from sound    Clues from the picture\n\n\n                            “three cute” wants a            The word was just             The  picture showsHidden word                                  plural noun                 spoken                    puppies\n\n\n                     Which sound comes         Voice and formants       Backs up which word isHidden frame                                 next                      carry on                        said\n\n\n                                                                              Fur and backgroundHidden patch          “three”: one more puppy       The same words, heard                                                                                         carry on\n\nOutlined: the same sense. It says how the signal continues.\nThe other senses say what the thing is.\n\nMultimodal training, step by step                                                                                                           18\n\nNative slide text:\nEvery piece can be the hidden one\nClues from words\nClues from sound\nClues from the picture\nHidden word\n“three cute” wants a plural noun\nThe word was just spoken\nThe picture shows puppies\nHidden frame\nWhich sound comes next\nVoice and formants carry on\nBacks up which word is said\nHidden patch\n“three”: one more puppy\nThe same words, heard\nFur and background carry on\n\n\n\nOutlined: the same sense. It says how the signal continues.\nThe other senses say what the thing is.\n18",
+     "speakerNotes": "A summary of the three training examples.\nClicks 1 to 3: One row per kind of hidden piece. Each cell is the clue that one sense gives.\nClick 4: Look at the outlined diagonal. Clues from the same sense mostly say how the signal continues: grammar, smooth formants, fur and background. Clues from the other senses mostly say what the thing is: puppies, three of them.\nThat is why training on all three senses together helps. Each sense fills gaps the others leave.",
+     "issues": [],
+     "core": true,
+     "coreReason": "Distinguish clues from the same sense from clues from the other senses for each kind of hidden piece."
+    },
+    {
+     "id": "lecture19-p019",
+     "page": 19,
+     "title": "Talking back, and what is new",
+     "kind": "concept",
+     "teaching": [
+      "To speak, sound is compressed into **discrete codes** that work like new words in the vocabulary. The model predicts the next code like the next word, and a **decoder** turns the codes back into sound.",
+      "Three things are new, which are a shared currency of vectors in one row, data where the senses appear together, and a schedule that protects what was already learned. What stays the same is **finding the dependencies in the signal**."
+     ],
+     "image": "assets/slides/lecture19/019.webp",
+     "assets": [
+      {
+       "file": "assets/original/0dde4ce7c524d286e7cc.png",
+       "type": "image",
+       "label": "Original figure detail",
+       "animated": false,
+       "originalFilename": "image62.png"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p019-stage-00.webp",
+       "type": "image",
+       "label": "Original click state 0 · Starting state",
+       "sourceDerived": true,
+       "sourcePage": 19,
+       "sourceStage": 0,
+       "animated": false,
+       "originalFilename": "slide19.xml · click state 0"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p019-stage-01.webp",
+       "type": "image",
+       "label": "Original click state 1 · Click 1 · shows s1_478, s1_479, s1_480, s1_481, s1_482",
+       "sourceDerived": true,
+       "sourcePage": 19,
+       "sourceStage": 1,
+       "animated": false,
+       "originalFilename": "slide19.xml · click state 1"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p019-stage-02.webp",
+       "type": "image",
+       "label": "Original click state 2 · Click 2 · shows s2_483, s2_484, s2_485, s2_486",
+       "sourceDerived": true,
+       "sourcePage": 19,
+       "sourceStage": 2,
+       "animated": false,
+       "originalFilename": "slide19.xml · click state 2"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p019-stage-03.webp",
+       "type": "image",
+       "label": "Original click state 3 · Click 3 · shows s3_487, s3_488, s3_489, s3_490, s3_491",
+       "sourceDerived": true,
+       "sourcePage": 19,
+       "sourceStage": 3,
+       "animated": false,
+       "originalFilename": "slide19.xml · click state 3"
+      },
+      {
+       "file": "assets/slides/lecture19/stages/p019-stage-04.webp",
+       "type": "image",
+       "label": "Original click state 4 · Click 4 · shows s4_492",
+       "sourceDerived": true,
+       "sourcePage": 19,
+       "sourceStage": 4,
+       "animated": false,
+       "originalFilename": "slide19.xml · click state 4"
+      }
+     ],
+     "sourceText": "Talking back, and the big picture\n\n\n\n  417   82   903    ?            Decoder\n\n Sound compressed into codes: new   The model predicts the                                                                 Codes turned back into sound\n “words” in the vocabulary           next code, like the next\n                                word.\n\n What is new\n  1. A shared currency: everything becomes vectors in one row\n  2. Data where the senses appear together\n  3. A schedule that protects what was already learned\n What stays the same:   fin d the dependencies in the signal.\n\n\nMultimodal training, step by step                                                                                                           19\n\nNative slide text:\nTalking back, and the big picture\n417\n82\n903\n?\nSound compressed into codes: new “words” in the vocabulary\n\n\n\nThe model predicts the next code, like the next word.\n\nDecoder\n\nCodes turned back into sound\nWhat is new\n1.  A shared currency: everything becomes vectors in one row\n2.  Data where the senses appear together\n3.  A schedule that protects what was already learned\nWhat stays the same:  find the dependencies in the signal.\n19",
+     "speakerNotes": "So far the model only reads pictures and sound. How does it speak?\nClick 1: Sound is compressed into discrete codes. Each code is like a new word added to the vocabulary.\nClick 2: The model predicts the next code exactly as it predicts the next word. Same game again.\nClick 3: A decoder turns the codes back into a sound wave.\nClick 4: The big picture. Three things are new: a shared currency of vectors, data where the senses appear together, and a schedule that protects what was learned. The learning rule is unchanged: find the dependencies in the signal. The signal just got wider.",
+     "issues": [
+      "The slide lists “a schedule that protects what was already learned” without explaining the schedule. The teaching repeats the item and adds no outside explanation."
+     ],
+     "core": true,
+     "coreReason": "Explain how sound codes and a decoder let the model speak, and state what is new and what stays the same."
+    }
+   ],
+   "moduleId": "module3",
+   "workspaceGroup": "lectures"
+  }
+ ],
+ "questions": [
+  {
+   "id": "ling285-l19-mcq-001",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "In “The chef cracks the ?”, what does the model do when it does not know the hidden word?",
+   "answer": "It spreads its bets, giving “egg” the largest probability and “nut” and “code” smaller ones.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    }
+   ],
+   "topic": "Spreading bets",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "It spreads its bets, giving “egg” the largest probability and “nut” and “code” smaller ones.",
+     "feedback": "It spreads its bets, giving “egg” the largest probability and “nut” and “code” smaller ones.",
+     "id": "a"
+    },
+    {
+     "text": "It gives “egg,” “nut” and “code” exactly equal probabilities.",
+     "feedback": "The bets are unequal. The earlier words make “egg” the most likely, so it gets the largest bet.",
+     "id": "b"
+    },
+    {
+     "text": "It leaves the slot empty until the true word is revealed.",
+     "feedback": "The model always makes a guess. It gives each possible word a probability before the truth is revealed.",
+     "id": "c"
+    },
+    {
+     "text": "It picks one word and gives every other word a probability of zero.",
+     "feedback": "The model spreads its bets over several words. “Nut” and “code” still receive smaller bets.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.335511
+  },
+  {
+   "id": "ling285-l19-mcq-002",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What does learning change so that the guesses get better?",
+   "answer": "The weights are nudged, so the right word gets a bigger bet next time.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    }
+   ],
+   "topic": "Learning",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The weights are nudged, so the right word gets a bigger bet next time.",
+     "feedback": "The weights are nudged, so the right word gets a bigger bet next time.",
+     "id": "a"
+    },
+    {
+     "text": "The sentence is rewritten so the hidden word is easier.",
+     "feedback": "The training sentence stays the same. The weights are what change.",
+     "id": "b"
+    },
+    {
+     "text": "The earlier words are removed one at a time.",
+     "feedback": "The earlier words stay because they are the clues. Learning changes the weights.",
+     "id": "c"
+    },
+    {
+     "text": "The hidden word is replaced with the model’s own guess.",
+     "feedback": "The true word is revealed and kept. The model changes its weights to bet more on that true word.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.560964
+  },
+  {
+   "id": "ling285-l19-mcq-003",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What do the links from “The,” “chef,” “cracks” and “the” to the hidden slot stand for?",
+   "answer": "Each earlier word gives a clue about the hidden word.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    }
+   ],
+   "topic": "Interdependencies",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The hidden word changes the earlier words.",
+     "feedback": "The clues run from the earlier words to the hidden word, because the model reads the earlier words first.",
+     "id": "a"
+    },
+    {
+     "text": "Each earlier word gives a clue about the hidden word.",
+     "feedback": "Each earlier word gives a clue about the hidden word.",
+     "id": "b"
+    },
+    {
+     "text": "Only the word right before the slot matters.",
+     "feedback": "All four earlier words are linked to the slot, so each one gives a clue.",
+     "id": "c"
+    },
+    {
+     "text": "Each earlier word is copied into the hidden slot.",
+     "feedback": "The words are not copied. Each one helps predict which word comes next.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "b",
+   "edition": "2026-10-20-v4",
+   "priority": 1.3
+  },
+  {
+   "id": "ling285-l19-mcq-004",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why is text the easy case for an LLM?",
+   "answer": "Text already comes as a row of pieces, and each piece can become a vector.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 10
+    }
+   ],
+   "topic": "Text",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "Text does not have to become vectors at all.",
+     "feedback": "Text still becomes vectors. It is easy because each piece is already separate and in order.",
+     "id": "a"
+    },
+    {
+     "text": "Text is a grid of light.",
+     "feedback": "A grid of light describes an image. Text is a row of pieces.",
+     "id": "b"
+    },
+    {
+     "text": "Text already comes as a row of pieces, and each piece can become a vector.",
+     "feedback": "Text already comes as a row of pieces, and each piece can become a vector.",
+     "id": "c"
+    },
+    {
+     "text": "Text contains more information than speech or an image.",
+     "feedback": "The amount of information is not the reason. Text is easy because it is already a row of pieces.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "c",
+   "edition": "2026-10-20-v4",
+   "priority": 1.574088
+  },
+  {
+   "id": "ling285-l19-mcq-005",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is speech before it is converted for an LLM?",
+   "answer": "Air pressure changing in time, with no words in it.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 10
+    }
+   ],
+   "topic": "Speech",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "A row of separate words with gaps between them.",
+     "feedback": "The sound has no marked words. It is air pressure going up and down in time.",
+     "id": "a"
+    },
+    {
+     "text": "Air pressure changing in time, with no words in it.",
+     "feedback": "Air pressure changing in time, with no words in it.",
+     "id": "b"
+    },
+    {
+     "text": "A row of vectors that the LLM can already read.",
+     "feedback": "Speech becomes a row of vectors only after it is sliced and passed through a speech encoder.",
+     "id": "c"
+    },
+    {
+     "text": "A grid of light.",
+     "feedback": "A grid of light describes an image. Speech is air pressure changing in time.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "b",
+   "edition": "2026-10-20-v4",
+   "priority": 1.430292
+  },
+  {
+   "id": "ling285-l19-mcq-006",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "About how long is each slice when speech is cut into frames?",
+   "answer": "About 20 milliseconds.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 11
+    }
+   ],
+   "topic": "Frames",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "One whole word.",
+     "feedback": "The slices are cut by time, not by words. Each one is about 20 milliseconds.",
+     "id": "a"
+    },
+    {
+     "text": "About one second.",
+     "feedback": "One second holds about 50 slices. Each slice is about 20 milliseconds.",
+     "id": "b"
+    },
+    {
+     "text": "About 50 milliseconds.",
+     "feedback": "The number 50 is how many vectors one second gives. Each slice is about 20 milliseconds.",
+     "id": "c"
+    },
+    {
+     "text": "About 20 milliseconds.",
+     "feedback": "About 20 milliseconds.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "d",
+   "edition": "2026-10-20-v4",
+   "priority": 1.3
+  },
+  {
+   "id": "ling285-l19-mcq-007",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "How many vectors does one second of speech become?",
+   "answer": "50 vectors, in time order.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 11
+    }
+   ],
+   "topic": "Vectors per second",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "One vector.",
+     "feedback": "Each slice gets its own vector, and one second holds about 50 slices.",
+     "id": "a"
+    },
+    {
+     "text": "50 vectors, in time order.",
+     "feedback": "50 vectors, in time order.",
+     "id": "b"
+    },
+    {
+     "text": "16 vectors.",
+     "feedback": "The number 16 belongs to the image example, which has 16 patches. One second of speech gives 50 vectors.",
+     "id": "c"
+    },
+    {
+     "text": "20 vectors.",
+     "feedback": "The number 20 is the length of a slice in milliseconds. One second gives 50 vectors.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "b",
+   "edition": "2026-10-20-v4",
+   "priority": 1.31596
+  },
+  {
+   "id": "ling285-l19-mcq-008",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "If each slice were longer than 20 milliseconds, what would happen to the number of vectors for one second of speech?",
+   "answer": "It would go down, because fewer slices fit in one second.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 11
+    }
+   ],
+   "topic": "Longer slices",
+   "pattern": "prediction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "It would drop to zero, because the encoder needs 20 milliseconds exactly.",
+     "feedback": "Nothing says the encoder stops working. There would be fewer slices, so fewer vectors.",
+     "id": "a"
+    },
+    {
+     "text": "It would stay at 50, because the encoder always gives 50.",
+     "feedback": "The 50 comes from how many slices of about 20 milliseconds fit in one second. Longer slices change that count.",
+     "id": "b"
+    },
+    {
+     "text": "It would go down, because fewer slices fit in one second.",
+     "feedback": "It would go down, because fewer slices fit in one second.",
+     "id": "c"
+    },
+    {
+     "text": "It would go up, because longer slices hold more sound.",
+     "feedback": "Each slice still gives one vector. Longer slices mean fewer slices in a second, so fewer vectors.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "c",
+   "edition": "2026-10-20-v4",
+   "priority": 1.308767
+  },
+  {
+   "id": "ling285-l19-mcq-009",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is a patch?",
+   "answer": "One small square of the image.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "topic": "Patches",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The whole image turned into a single vector.",
+     "feedback": "The image is cut into many patches, and each patch gets its own vector.",
+     "id": "a"
+    },
+    {
+     "text": "One slice of sound about 20 milliseconds long.",
+     "feedback": "That describes a frame of speech. A patch is a small square of an image.",
+     "id": "b"
+    },
+    {
+     "text": "One word of a sentence.",
+     "feedback": "A word is a piece of text. A patch is a small square of an image.",
+     "id": "c"
+    },
+    {
+     "text": "One small square of the image.",
+     "feedback": "One small square of the image.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "d",
+   "edition": "2026-10-20-v4",
+   "priority": 1.322419
+  },
+  {
+   "id": "ling285-l19-mcq-010",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why are the patches laid out in reading order?",
+   "answer": "It turns the image into a sequence with a fixed order, like a sentence.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "topic": "Reading order",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "It sorts the patches from darkest to lightest.",
+     "feedback": "The order follows position in the image, left to right and then down, not brightness.",
+     "id": "a"
+    },
+    {
+     "text": "It turns the image into a sequence with a fixed order, like a sentence.",
+     "feedback": "It turns the image into a sequence with a fixed order, like a sentence.",
+     "id": "b"
+    },
+    {
+     "text": "It makes the image smaller.",
+     "feedback": "The image keeps all its patches. Reading order arranges them as a row.",
+     "id": "c"
+    },
+    {
+     "text": "It removes the background patches.",
+     "feedback": "No patch is removed. All 16 patches are placed in the row.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "b",
+   "edition": "2026-10-20-v4",
+   "priority": 1.596308
+  },
+  {
+   "id": "ling285-l19-mcq-011",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why does one image give hundreds of vectors in real systems?",
+   "answer": "Real systems use small patches of 14 to 16 pixels, so one image is cut into many more patches.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "topic": "Real systems",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "Real systems use small patches of 14 to 16 pixels, so one image is cut into many more patches.",
+     "feedback": "Real systems use small patches of 14 to 16 pixels, so one image is cut into many more patches.",
+     "id": "a"
+    },
+    {
+     "text": "Real systems read each image hundreds of times.",
+     "feedback": "The image is read once. It is cut into many small patches.",
+     "id": "b"
+    },
+    {
+     "text": "Real systems give each patch hundreds of vectors.",
+     "feedback": "Each patch still gives one vector. There are more vectors because there are more patches.",
+     "id": "c"
+    },
+    {
+     "text": "Real systems use larger patches than the example.",
+     "feedback": "Larger patches would give fewer vectors. Real systems use small patches of 14 to 16 pixels.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.573894
+  },
+  {
+   "id": "ling285-l19-mcq-012",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is a cross-modal dependency?",
+   "answer": "A link in which a piece from one sense, such as an image patch containing an egg, helps predict a piece from another sense, such as a word.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 13
+    }
+   ],
+   "topic": "Cross-modal dependencies",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "A link in which a piece from one sense, such as an image patch containing an egg, helps predict a piece from another sense, such as a word.",
+     "feedback": "A link in which a piece from one sense, such as an image patch containing an egg, helps predict a piece from another sense, such as a word.",
+     "id": "a"
+    },
+    {
+     "text": "A link between two words in the same sentence.",
+     "feedback": "A link between two words stays inside one sense. Cross-modal means the clue comes from a different sense.",
+     "id": "b"
+    },
+    {
+     "text": "A rule that keeps images and words in separate rows.",
+     "feedback": "The image patches, speech frames and words are placed in one row, which is what lets one sense help predict another.",
+     "id": "c"
+    },
+    {
+     "text": "A link between two layers of the model.",
+     "feedback": "Layers are parts of the model. A cross-modal dependency is a link between pieces of the signal from different senses.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.309959
+  },
+  {
+   "id": "ling285-l19-mcq-013",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "When image patches and speech frames join the words in one row, what stays the same?",
+   "answer": "The game stays the same. The model still guesses the hidden piece from the other pieces.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 13
+    }
+   ],
+   "topic": "Same game",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "Every clue still comes from a word.",
+     "feedback": "Some clues now come from image patches and speech frames.",
+     "id": "a"
+    },
+    {
+     "text": "The model stops using the earlier words.",
+     "feedback": "The earlier words still give clues. The other senses add more clues.",
+     "id": "b"
+    },
+    {
+     "text": "The row holds only words, as before.",
+     "feedback": "The row now also holds image patches and speech frames. The guessing game is what stays the same.",
+     "id": "c"
+    },
+    {
+     "text": "The game stays the same. The model still guesses the hidden piece from the other pieces.",
+     "feedback": "The game stays the same. The model still guesses the hidden piece from the other pieces.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "d",
+   "edition": "2026-10-20-v4",
+   "priority": 1.541372
+  },
+  {
+   "id": "ling285-l19-mcq-014",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "In the spectrogram of “three cute puppies,” what does a darker area mean?",
+   "answer": "More energy at that time and frequency.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 14
+    }
+   ],
+   "topic": "Spectrogram",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "A silent stretch.",
+     "feedback": "A silent stretch has little energy, so it is light, not dark.",
+     "id": "a"
+    },
+    {
+     "text": "A higher frequency.",
+     "feedback": "Frequency is given by height. Darkness gives the amount of energy.",
+     "id": "b"
+    },
+    {
+     "text": "A later time.",
+     "feedback": "Time runs from left to right. Darkness gives the amount of energy.",
+     "id": "c"
+    },
+    {
+     "text": "More energy at that time and frequency.",
+     "feedback": "More energy at that time and frequency.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "d",
+   "edition": "2026-10-20-v4",
+   "priority": 1.357768
+  },
+  {
+   "id": "ling285-l19-mcq-015",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "How many patches is the puppy image cut into?",
+   "answer": "18 patches.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 14
+    }
+   ],
+   "topic": "Patch count",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "16 patches.",
+     "feedback": "The egg image has 16 patches. The puppy image has 3 rows of 6, which is 18.",
+     "id": "a"
+    },
+    {
+     "text": "3 patches, one for each puppy.",
+     "feedback": "The grid does not follow the puppies. It cuts the image into 3 rows of 6 squares.",
+     "id": "b"
+    },
+    {
+     "text": "18 patches.",
+     "feedback": "18 patches.",
+     "id": "c"
+    },
+    {
+     "text": "50 patches.",
+     "feedback": "The number 50 is the count of speech vectors in one second. The puppy image has 18 patches.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "c",
+   "edition": "2026-10-20-v4",
+   "priority": 1.3
+  },
+  {
+   "id": "ling285-l19-mcq-016",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "With only the words “three cute,” how does the model bet on the next word?",
+   "answer": "The bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    }
+   ],
+   "topic": "Text alone",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "Almost the whole bet is on “puppies.”",
+     "feedback": "That happens only after the image and the sound are added. With text alone the bets are spread out.",
+     "id": "a"
+    },
+    {
+     "text": "The model cannot bet without the image.",
+     "feedback": "The model can bet from the words alone. The bets are just spread over several endings.",
+     "id": "b"
+    },
+    {
+     "text": "The bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit.",
+     "feedback": "The bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit.",
+     "id": "c"
+    },
+    {
+     "text": "The whole bet is on “kittens.”",
+     "feedback": "“Kittens” is only slightly ahead. “Puppies” and “babies” get similar bets.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "c",
+   "edition": "2026-10-20-v4",
+   "priority": 1.339417
+  },
+  {
+   "id": "ling285-l19-mcq-017",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why is the nudge to the weights small in the first training example?",
+   "answer": "The model bet 0.85 on the true word, so the error is small.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    }
+   ],
+   "topic": "Small nudge",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The model bet 0.85 on the true word, so the error is small.",
+     "feedback": "The model bet 0.85 on the true word, so the error is small.",
+     "id": "a"
+    },
+    {
+     "text": "The image and the sound were ignored.",
+     "feedback": "The image and the sound are the reason the bet piled up on “puppies.”",
+     "id": "b"
+    },
+    {
+     "text": "The weights never change when the hidden piece is a word.",
+     "feedback": "The weights do change. They change only a little here because the error is small.",
+     "id": "c"
+    },
+    {
+     "text": "The model bet 0.85 on the wrong word.",
+     "feedback": "The 0.85 was on “puppies,” which is the true word. That is why the error is small.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.604498
+  },
+  {
+   "id": "ling285-l19-mcq-018",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "If the model had bet only a little on “puppies,” how would the nudge to the weights change?",
+   "answer": "The error would be larger, so the nudge to the weights would be larger.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    }
+   ],
+   "topic": "Low bet",
+   "pattern": "prediction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The nudge would stay the same, because the truth is still “puppies.”",
+     "feedback": "The nudge depends on how much the model bet on the truth. A smaller bet gives a larger error.",
+     "id": "a"
+    },
+    {
+     "text": "The nudge would be smaller, because the bet was smaller.",
+     "feedback": "A small bet on the truth is a large error. A larger error moves the weights more.",
+     "id": "b"
+    },
+    {
+     "text": "The error would be larger, so the nudge to the weights would be larger.",
+     "feedback": "The error would be larger, so the nudge to the weights would be larger.",
+     "id": "c"
+    },
+    {
+     "text": "There would be no nudge, because the model was wrong.",
+     "feedback": "Being wrong is when the weights most need to change. The larger error gives a larger nudge.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "c",
+   "edition": "2026-10-20-v4",
+   "priority": 1.222919
+  },
+  {
+   "id": "ling285-l19-mcq-019",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why do the last few frames say a lot about the next sound frame?",
+   "answer": "The speaker’s voice and the formants change smoothly from one frame to the next.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 16
+    }
+   ],
+   "topic": "Earlier frames",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The earlier frames contain the written words.",
+     "feedback": "The written words are a separate clue. The earlier frames help because the sound changes smoothly.",
+     "id": "a"
+    },
+    {
+     "text": "The earlier frames come from the image.",
+     "feedback": "The earlier frames are sound. The image is a separate and weaker clue here.",
+     "id": "b"
+    },
+    {
+     "text": "Every frame of speech is identical.",
+     "feedback": "The frames differ. They change smoothly, which is why recent frames predict the next one well.",
+     "id": "c"
+    },
+    {
+     "text": "The speaker’s voice and the formants change smoothly from one frame to the next.",
+     "feedback": "The speaker’s voice and the formants change smoothly from one frame to the next.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "d",
+   "edition": "2026-10-20-v4",
+   "priority": 1.561373
+  },
+  {
+   "id": "ling285-l19-mcq-020",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is a sound frame made of when the model predicts it?",
+   "answer": "A column of numbers giving how much energy is in each frequency band.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 16
+    }
+   ],
+   "topic": "Frame as numbers",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "One probability for each word in the vocabulary.",
+     "feedback": "That describes a guess for a hidden word. A frame is a column of energy values, one per frequency band.",
+     "id": "a"
+    },
+    {
+     "text": "A small square of the image.",
+     "feedback": "That is a patch. A frame is a column of numbers for the energy in each frequency band.",
+     "id": "b"
+    },
+    {
+     "text": "A column of numbers giving how much energy is in each frequency band.",
+     "feedback": "A column of numbers giving how much energy is in each frequency band.",
+     "id": "c"
+    },
+    {
+     "text": "A single word.",
+     "feedback": "A frame is a short slice of sound, far shorter than a word. It is a column of energy values.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "c",
+   "edition": "2026-10-20-v4",
+   "priority": 1.356456
+  },
+  {
+   "id": "ling285-l19-mcq-021",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "In the third training example, why is the colour the biggest error?",
+   "answer": "No clue in the words, the sound or the earlier patches said the third puppy would be dark.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "topic": "Colour error",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "The earlier patches were hidden from the model.",
+     "feedback": "The earlier patches were available. They gave the colours of the first two puppies, not the third.",
+     "id": "a"
+    },
+    {
+     "text": "No clue in the words, the sound or the earlier patches said the third puppy would be dark.",
+     "feedback": "No clue in the words, the sound or the earlier patches said the third puppy would be dark.",
+     "id": "b"
+    },
+    {
+     "text": "The words said the third puppy is light.",
+     "feedback": "The words say “three cute puppies.” They say nothing about colour.",
+     "id": "c"
+    },
+    {
+     "text": "The model cannot predict colour at all.",
+     "feedback": "The model did predict a colour, the average of the first two puppies. It was wrong because no clue gave the true colour.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "b",
+   "edition": "2026-10-20-v4",
+   "priority": 1.542258
+  },
+  {
+   "id": "ling285-l19-mcq-022",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What does the word “three” tell the model about the hidden patch?",
+   "answer": "A third puppy must appear, because only two have been drawn so far.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "topic": "Word clue",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "A third puppy must appear, because only two have been drawn so far.",
+     "feedback": "A third puppy must appear, because only two have been drawn so far.",
+     "id": "a"
+    },
+    {
+     "text": "The third puppy is dark.",
+     "feedback": "No clue gives the colour. “Three” only says that another puppy must appear.",
+     "id": "b"
+    },
+    {
+     "text": "The image has three patches.",
+     "feedback": "The image has 18 patches. “Three” is the number of puppies.",
+     "id": "c"
+    },
+    {
+     "text": "The patch should be background.",
+     "feedback": "Background comes from the earlier patches above. “Three” says one more puppy is coming.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.331436
+  },
+  {
+   "id": "ling285-l19-mcq-023",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What does a clue from the same sense as the hidden piece mostly say?",
+   "answer": "How the signal continues, while the other senses say what the thing is.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 18
+    }
+   ],
+   "topic": "Same sense",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "What the thing is, while the other senses say how the signal continues.",
+     "feedback": "That is reversed. The same sense says how the signal continues, and the other senses say what the thing is.",
+     "id": "a"
+    },
+    {
+     "text": "The colour of the third puppy.",
+     "feedback": "No clue gave that colour, which is why it was the biggest error.",
+     "id": "b"
+    },
+    {
+     "text": "Nothing, because only the other senses help.",
+     "feedback": "The same sense helps a great deal. Grammar, smooth formants, and fur and background all come from the same sense.",
+     "id": "c"
+    },
+    {
+     "text": "How the signal continues, while the other senses say what the thing is.",
+     "feedback": "How the signal continues, while the other senses say what the thing is.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "d",
+   "edition": "2026-10-20-v4",
+   "priority": 1.612138
+  },
+  {
+   "id": "ling285-l19-mcq-024",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "For a hidden sound frame, which clue comes from the same sense?",
+   "answer": "The voice and the formants carry on.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 18
+    }
+   ],
+   "topic": "Hidden frame",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "“Three cute” calls for a plural noun.",
+     "feedback": "That is a clue from the words for a hidden word.",
+     "id": "a"
+    },
+    {
+     "text": "The voice and the formants carry on.",
+     "feedback": "The voice and the formants carry on.",
+     "id": "b"
+    },
+    {
+     "text": "The image contains puppies.",
+     "feedback": "That is a clue from the image, which is a different sense from sound.",
+     "id": "c"
+    },
+    {
+     "text": "The fur and the background carry on.",
+     "feedback": "That is the same-sense clue for a hidden image patch.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "b",
+   "edition": "2026-10-20-v4",
+   "priority": 1.324393
+  },
+  {
+   "id": "ling285-l19-mcq-025",
+   "type": "mcq",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "How does the model produce speech?",
+   "answer": "Sound is compressed into codes, the model predicts the next code like the next word, and a decoder turns the codes back into sound.",
+   "rubric": [
+    "Identify the source-supported relationship.",
+    "Distinguish it from the stated alternative explanations."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 19
+    }
+   ],
+   "topic": "Talking back",
+   "pattern": "procedure",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "options": [
+    {
+     "text": "Sound is compressed into codes, the model predicts the next code like the next word, and a decoder turns the codes back into sound.",
+     "feedback": "Sound is compressed into codes, the model predicts the next code like the next word, and a decoder turns the codes back into sound.",
+     "id": "a"
+    },
+    {
+     "text": "A decoder turns the image patches into sound.",
+     "feedback": "The decoder turns sound codes back into a sound wave. It does not use image patches.",
+     "id": "b"
+    },
+    {
+     "text": "The model predicts air pressure directly, with no codes.",
+     "feedback": "Sound is first compressed into discrete codes, and the model predicts those codes.",
+     "id": "c"
+    },
+    {
+     "text": "The model replays the speech it heard during training.",
+     "feedback": "The model predicts new codes one at a time, in the same way it predicts the next word.",
+     "id": "d"
+    }
+   ],
+   "correctOption": "a",
+   "edition": "2026-10-20-v4",
+   "priority": 1.173607
+  },
+  {
+   "id": "ling285-l19-written-001",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Explain how an LLM learns from the sentence “The chef cracks the ?”.",
+   "answer": "The LLM learns by guessing the hidden last word and then changing its weights. Each earlier word gives a clue about the hidden word, so the model bets most on “egg” and less on “nut” and “code.” When the true word is revealed, the weights are nudged so the right word gets a bigger bet next time.",
+   "rubric": [
+    "State that the model guesses the hidden word from the earlier words.",
+    "State that the weights are nudged so the right word gets a bigger bet."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    }
+   ],
+   "topic": "Learning from a hidden word",
+   "pattern": "procedure",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.17441
+  },
+  {
+   "id": "ling285-l19-written-002",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why does the model bet on “egg,” “nut” and “code” instead of giving one answer?",
+   "answer": "The model spreads its bets because it does not know the hidden word. All three words could follow “The chef cracks the.” The earlier words make “egg” the most likely, so “egg” gets the largest bet, “nut” gets a smaller one and “code” gets the smallest.",
+   "rubric": [
+    "Explain that the model does not know the answer.",
+    "Explain that the earlier words make some words more likely than others."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    }
+   ],
+   "topic": "Bets",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.542815
+  },
+  {
+   "id": "ling285-l19-written-003",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Compare the forms in which text, speech and an image arrive before conversion.",
+   "answer": "Text is already a row of pieces, such as “Now,” “crack,” “the” and “egg.” Speech is air pressure changing in time, and an image is a grid of light. Speech and images contain no words, so they are not yet in a form the LLM can read.",
+   "rubric": [
+    "Describe text as a row of pieces.",
+    "Describe speech as air pressure in time and an image as a grid of light."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 10
+    }
+   ],
+   "topic": "Three forms",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.558734
+  },
+  {
+   "id": "ling285-l19-written-004",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why do speech and images have to be converted before an LLM can use them?",
+   "answer": "Speech and images have to be converted because a row of vectors is all the LLM can read. Speech is air pressure changing in time, and an image is a grid of light, so neither one is a row of vectors. Once they are converted, the model can read them in one row together with text.",
+   "rubric": [
+    "State that the LLM reads only rows of vectors.",
+    "State that speech and images do not arrive as rows of vectors."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 10
+    }
+   ],
+   "topic": "Conversion",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.576935
+  },
+  {
+   "id": "ling285-l19-written-005",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Describe how speech is turned into a row of vectors.",
+   "answer": "Speech is turned into vectors by slicing it in time. First the sound is cut into short slices called frames, each about 20 milliseconds long. Then the slices go through a speech encoder, which is a network trained on a large amount of audio. One vector comes out for each slice, and the vectors stay in time order.",
+   "rubric": [
+    "Describe slicing into frames of about 20 milliseconds.",
+    "Describe the speech encoder giving one vector per slice in time order."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 11
+    }
+   ],
+   "topic": "Speech to vectors",
+   "pattern": "procedure",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.124192
+  },
+  {
+   "id": "ling285-l19-written-006",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why does one second of speech become 50 vectors?",
+   "answer": "One second of speech becomes 50 vectors because each slice gets one vector. Each slice is about 20 milliseconds long, and 50 slices of that length fill one second. The speech encoder gives one vector per slice, so one second gives 50 vectors.",
+   "rubric": [
+    "Link the count to slices of about 20 milliseconds.",
+    "State that each slice gives one vector."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 11
+    }
+   ],
+   "topic": "Fifty vectors",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.533881
+  },
+  {
+   "id": "ling285-l19-written-007",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Describe how an image is turned into a row of vectors.",
+   "answer": "An image is turned into vectors by cutting it into patches. First a grid cuts the image into small squares called patches, 16 of them in the egg example. Then the patches are laid out in a row in reading order, so the image becomes a sequence. A vision encoder then gives one vector for each patch.",
+   "rubric": [
+    "Describe cutting into patches and laying them out in reading order.",
+    "Describe the vision encoder giving one vector per patch."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "topic": "Image to vectors",
+   "pattern": "procedure",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.136055
+  },
+  {
+   "id": "ling285-l19-written-008",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Give one similarity and one difference between converting speech and converting an image.",
+   "answer": "The similarity is that both are cut into small pieces, and an encoder gives one vector for each piece, in order. The difference is what is cut. Speech is cut in time into frames of about 20 milliseconds. An image is cut in space into square patches, which are then placed in reading order.",
+   "rubric": [
+    "Give the shared steps of cutting into pieces and encoding one vector per piece.",
+    "Contrast cutting in time into frames with cutting in space into patches."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "topic": "Speech and image conversion",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.682531
+  },
+  {
+   "id": "ling285-l19-written-009",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is a cross-modal dependency? Give an example from “Now crack the ?”.",
+   "answer": "A cross-modal dependency is a link in which a piece from one sense helps predict a piece from another sense. In “Now crack the ?”, an image patch containing an egg helps predict the hidden word. The sound of cracking helps too. These clues come from the image and the sound, not from the earlier words.",
+   "rubric": [
+    "Define the link as running between different senses.",
+    "Give the egg patch or the cracking sound as a clue for the hidden word."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 13
+    }
+   ],
+   "topic": "Cross-modal dependency",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.323581
+  },
+  {
+   "id": "ling285-l19-written-010",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "When the row holds three senses, what is the same as with text alone, and what is different?",
+   "answer": "The game is the same. The model still guesses the hidden piece from the pieces it can read, and the earlier words still give clues. The difference is where the clues come from. With three senses in the row, some clues come from image patches and speech frames.",
+   "rubric": [
+    "State that the guessing game and the word clues stay the same.",
+    "State that some clues now come from other senses."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 13
+    }
+   ],
+   "topic": "Same and different",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.542624
+  },
+  {
+   "id": "ling285-l19-written-011",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Explain how to read the spectrogram of “three cute puppies.”",
+   "answer": "In the spectrogram, time runs from left to right, so “three” comes first and “puppies” comes last. A higher position means a higher frequency. A darker area means more energy. Each thin column is one frame.",
+   "rubric": [
+    "Give time as left to right and frequency as height.",
+    "Give darkness as energy."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 14
+    }
+   ],
+   "topic": "Reading a spectrogram",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.376454
+  },
+  {
+   "id": "ling285-l19-written-012",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What does “three views of one event” mean for “three cute puppies”?",
+   "answer": "The image, the spoken phrase and the written words all describe the same thing, which is three cute puppies. The image gives it as patches, the speech gives it as frames, and the text gives it as words. In training, all three go into one row, and the model guesses a hidden piece of that row.",
+   "rubric": [
+    "Identify the three forms as the image, the speech and the words.",
+    "State that training puts all three into one row."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 14
+    }
+   ],
+   "topic": "Three views",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.346044
+  },
+  {
+   "id": "ling285-l19-written-013",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Compare the model’s bets with text alone and with the image and sound added.",
+   "answer": "With text alone, the bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit “three cute.” With the image and the sound, the bet piles up on “puppies.” This is because the image contains puppies and the sound contains the spoken word “puppies.”",
+   "rubric": [
+    "Describe spread-out bets with text alone.",
+    "Explain that the image and the sound move the bet onto “puppies.”"
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    }
+   ],
+   "topic": "Adding the other senses",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.524278
+  },
+  {
+   "id": "ling285-l19-written-014",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "The model bet 0.85 on “puppies.” Why is the nudge to the weights small?",
+   "answer": "The nudge is small because the error is small. The model is graded on how much it bet on the true word. It bet 0.85 on “puppies,” which is a lot, so there is little to correct and the weights move only a little.",
+   "rubric": [
+    "Link the high bet on the truth to a small error.",
+    "Link the small error to a small change in the weights."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    }
+   ],
+   "topic": "Small nudge",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.559045
+  },
+  {
+   "id": "ling285-l19-written-015",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What would happen to the nudge if the model had bet only a little on “puppies”?",
+   "answer": "The nudge would be larger. A small bet on the true word means a large error. A larger error moves the weights more, so that next time the true word gets a bigger bet.",
+   "rubric": [
+    "State that the error would be larger.",
+    "State that the weights would move more."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    }
+   ],
+   "topic": "Low bet",
+   "pattern": "prediction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.308247
+  },
+  {
+   "id": "ling285-l19-written-016",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Name the three clues the model uses to predict a hidden sound frame, and say what each one gives.",
+   "answer": "The earlier frames help because the voice and the formants change smoothly, so the last few frames say a lot about the next one. The words say which sound should come next, which here is the vowel in “pup.” The image contains puppies, so it backs up the words, but it is a weaker clue here.",
+   "rubric": [
+    "Explain the earlier frames through smooth change in voice and formants.",
+    "Explain what the words and the image add."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 16
+    }
+   ],
+   "topic": "Clues for a frame",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.375062
+  },
+  {
+   "id": "ling285-l19-written-017",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is the error when the model guesses a sound frame?",
+   "answer": "A frame is a column of numbers, and each number is how much energy there is in one frequency band. The model’s guess is another column of numbers. The error is how far apart each number in the guess is from the matching number in the true frame. That error nudges the weights.",
+   "rubric": [
+    "Describe a frame as energy values across frequency bands.",
+    "Describe the error as the difference between guess and truth, number by number."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 16
+    }
+   ],
+   "topic": "Frame error",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.367351
+  },
+  {
+   "id": "ling285-l19-written-018",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Explain what each clue gives the model when it predicts the hidden image patch.",
+   "answer": "The earlier patches give background above and two puppies to the left, so the model has seen what a puppy in this image looks like. The word “three” says a third puppy must appear, and “puppies” says to expect dog ears. The sound carries the same words, so it backs up the text.",
+   "rubric": [
+    "Explain what the earlier patches give.",
+    "Explain what “three” and “puppies” give, with the sound as a backup."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "topic": "Clues for a patch",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.330644
+  },
+  {
+   "id": "ling285-l19-written-019",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why is the colour the biggest error when the model guesses the hidden patch?",
+   "answer": "The colour is the biggest error because no clue gave the colour of the third puppy. The model guessed a puppy ear in the average colour of the first two puppies. The true puppy is dark, and nothing in the words, the sound or the earlier patches said so.",
+   "rubric": [
+    "State that no clue gave the third puppy’s colour.",
+    "State that the guess used the average colour of the first two puppies."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "topic": "Colour error",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.551808
+  },
+  {
+   "id": "ling285-l19-written-020",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Which systems are trained to predict image patches, and which usually are not?",
+   "answer": "Only systems that also produce images are trained to predict image patches. Systems that only read images usually skip this step. Predicting a patch is like teaching the model to draw what it was told, so it matters only when the system has to draw.",
+   "rubric": [
+    "Identify systems that produce images.",
+    "State that systems that only read images usually skip this step."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "topic": "Which systems",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.567044
+  },
+  {
+   "id": "ling285-l19-written-021",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What is the difference between a clue from the same sense and a clue from another sense?",
+   "answer": "A clue from the same sense mostly says how the signal continues. Grammar does this for a hidden word, smooth formants do it for a hidden frame, and fur and background do it for a hidden patch. Clues from the other senses mostly say what the thing is, which here is puppies, three of them.",
+   "rubric": [
+    "State that same-sense clues say how the signal continues.",
+    "State that other-sense clues say what the thing is."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 18
+    }
+   ],
+   "topic": "Two kinds of clue",
+   "pattern": "distinction",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.551593
+  },
+  {
+   "id": "ling285-l19-written-022",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Why does training on words, sound and images together help?",
+   "answer": "Training on all three senses together helps because each sense fills gaps the others leave. A clue from the same sense says how the signal continues. Clues from the other senses say what the thing is. With all three, the model has both kinds of clue for every hidden piece.",
+   "rubric": [
+    "State that each sense fills gaps the others leave.",
+    "Refer to the two kinds of clue."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 18
+    }
+   ],
+   "topic": "All three senses",
+   "pattern": "cause-effect",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.55191
+  },
+  {
+   "id": "ling285-l19-written-023",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "Explain how the model talks back.",
+   "answer": "The model talks back by predicting sound codes. First, sound is compressed into discrete codes, and each code works like a new word in the vocabulary. Then the model predicts the next code exactly as it predicts the next word. Last, a decoder turns the codes back into a sound wave.",
+   "rubric": [
+    "Describe sound compressed into codes that act like new words.",
+    "Describe predicting the next code and decoding back into sound."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 19
+    }
+   ],
+   "topic": "Talking back",
+   "pattern": "procedure",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.159461
+  },
+  {
+   "id": "ling285-l19-written-024",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What three things are new when an LLM is trained on words, sounds and images?",
+   "answer": "The first new thing is a shared currency, in which everything becomes vectors in one row. The second is data where the senses appear together. The third is a schedule that protects what was already learned.",
+   "rubric": [
+    "Give the shared currency of vectors in one row.",
+    "Give data with the senses together and the protective schedule."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 19
+    }
+   ],
+   "topic": "What is new",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.409986
+  },
+  {
+   "id": "ling285-l19-written-025",
+   "type": "written",
+   "moduleId": "module3",
+   "lectureId": "lecture19",
+   "prompt": "What stays the same when the signal holds words, sounds and images?",
+   "answer": "The learning rule stays the same. The model still finds the dependencies in the signal by guessing a hidden piece and nudging its weights. The signal has become wider, because it now holds words, sounds and images.",
+   "rubric": [
+    "State that the model still finds dependencies in the signal.",
+    "State that only the content of the signal has widened."
+   ],
+   "sources": [
+    {
+     "collection": "lecture19",
+     "page": 19
+    }
+   ],
+   "topic": "What stays the same",
+   "pattern": "interpretation",
+   "examKeyRefs": [],
+   "examReviewRefs": [],
+   "edition": "2026-10-20-v4",
+   "priority": 1.417668
+  }
+ ],
+ "guide": [
+  {
+   "title": "Turn speech and images into rows of vectors",
+   "explanation": "Explain why text is already a row of pieces while speech and images are not. Describe how speech is sliced into frames of about 20 milliseconds and how an image is cut into patches in reading order, with an encoder giving one vector for each piece.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 10
+    },
+    {
+     "collection": "lecture19",
+     "page": 11
+    },
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "kind": "readiness",
+   "moduleIds": [
+    "module3"
+   ]
+  },
+  {
+   "title": "Use clues from other senses",
+   "explanation": "Explain what a cross-modal dependency is and why the guessing game stays the same when image patches, speech frames and words share one row.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    },
+    {
+     "collection": "lecture19",
+     "page": 13
+    },
+    {
+     "collection": "lecture19",
+     "page": 14
+    }
+   ],
+   "kind": "readiness",
+   "moduleIds": [
+    "module3"
+   ]
+  },
+  {
+   "title": "Follow the three training examples",
+   "explanation": "For a hidden word, a hidden sound frame and a hidden image patch, say which clues each sense gives, what the guess was, how large the error was and how the error changes the weights.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    },
+    {
+     "collection": "lecture19",
+     "page": 16
+    },
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "kind": "readiness",
+   "moduleIds": [
+    "module3"
+   ]
+  },
+  {
+   "title": "Compare same-sense and other-sense clues",
+   "explanation": "Explain why clues from the same sense say how the signal continues while clues from the other senses say what the thing is, then explain how sound codes and a decoder let the model talk back.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 18
+    },
+    {
+     "collection": "lecture19",
+     "page": 19
+    }
+   ],
+   "kind": "readiness",
+   "moduleIds": [
+    "module3"
+   ]
+  }
+ ]
+}

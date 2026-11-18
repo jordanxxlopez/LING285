@@ -1,0 +1,26 @@
+{
+ "lecture19": {
+  "key": "lecture19",
+  "original": "Ling285_F26_L19.pptx",
+  "file": "sources/lecture19.pptx",
+  "sha256": "13778dc2068c6113deabc62a25470c7385253c3164e050bea38ec3545c30cf23",
+  "bytes": 1191306,
+  "role": "lecture",
+  "slides": 19,
+  "pages": 19,
+  "rendered_pdf": "sources/lecture19.pdf",
+  "pdfSha256": "3c5edae8900cb553634690d4eaaa4f8f44b1e1f359aee0e6f61e6fc90de387e7",
+  "lectureDate": "2026-11-17",
+  "repeats": {
+   "lecture18": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  }
+ }
+}

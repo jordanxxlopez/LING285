@@ -102,7 +102,8 @@ def build(module_dir, out_path=None):
     exam = json.load(open(module_dir / "exam.json"))
     media_for = make_lookup()
     problems = []
-    pages = {(c["id"], s["page"]) for c in json.load(open(ROOT / "data.json"))["collections"] for s in c["sections"]}
+    from studio_data import load  # data.json plus the Module III layer
+    pages = {(c["id"], s["page"]) for c in load()["collections"] for s in c["sections"]}
 
     for t in topics:
         for b in t.get("blocks", []) + t.get("more", []):

@@ -1,0 +1,1680 @@
+{
+  "lectureId": "lecture19",
+  "questions": [
+    {
+      "id": "v2-l19-mcq-001",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How does the model respond to the hidden last word in “The chef cracks the ?”",
+      "answer": "It spreads its bets, giving “egg” the largest probability and “nut” and “code” smaller ones.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 9
+        }
+      ],
+      "topic": "Spreading bets",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It leaves the slot empty until the true word is revealed.",
+          "feedback": "The model always makes a guess. It gives each possible word a probability before the truth is revealed.",
+          "id": "a"
+        },
+        {
+          "text": "It gives “egg,” “nut” and “code” exactly equal probabilities.",
+          "feedback": "The bets are unequal. The earlier words make “egg” the most likely, so it gets the largest bet.",
+          "id": "b"
+        },
+        {
+          "text": "It picks one word and gives every other word a probability of zero.",
+          "feedback": "The model spreads its bets over several words. “Nut” and “code” still receive smaller bets.",
+          "id": "c"
+        },
+        {
+          "text": "It spreads its bets, giving “egg” the largest probability and “nut” and “code” smaller ones.",
+          "feedback": "It spreads its bets, giving “egg” the largest probability and “nut” and “code” smaller ones.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l19-mcq-002",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Which part of the model changes when it learns from a hidden word?",
+      "answer": "The weights are nudged, so the right word gets a bigger bet next time.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 9
+        }
+      ],
+      "topic": "Learning",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The earlier words are removed one at a time.",
+          "feedback": "The earlier words stay because they are the clues. Learning changes the weights.",
+          "id": "a"
+        },
+        {
+          "text": "The weights are nudged, so the right word gets a bigger bet next time.",
+          "feedback": "The weights are nudged, so the right word gets a bigger bet next time.",
+          "id": "b"
+        },
+        {
+          "text": "The sentence is rewritten so the hidden word is easier.",
+          "feedback": "The training sentence stays the same. The weights are what change.",
+          "id": "c"
+        },
+        {
+          "text": "The hidden word is replaced with the model’s own guess.",
+          "feedback": "The true word is revealed and kept. The model changes its weights to bet more on that true word.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l19-mcq-003",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Why is every earlier word linked to the hidden word?",
+      "answer": "Each earlier word gives a clue about the hidden word.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 9
+        }
+      ],
+      "topic": "Interdependencies",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Each earlier word is copied into the hidden slot.",
+          "feedback": "The words are not copied. Each one helps predict which word comes next.",
+          "id": "a"
+        },
+        {
+          "text": "Each earlier word gives a clue about the hidden word.",
+          "feedback": "Each earlier word gives a clue about the hidden word.",
+          "id": "b"
+        },
+        {
+          "text": "Only the word right before the slot matters.",
+          "feedback": "All four earlier words are linked to the slot, so each one gives a clue.",
+          "id": "c"
+        },
+        {
+          "text": "The hidden word changes the earlier words.",
+          "feedback": "The clues run from the earlier words to the hidden word, because the model reads the earlier words first.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l19-mcq-004",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Why does text need less conversion than speech or an image?",
+      "answer": "Text already comes as a row of pieces, and each piece can become a vector.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 10
+        }
+      ],
+      "topic": "Text",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Text does not have to become vectors at all.",
+          "feedback": "Text still becomes vectors. It is easy because each piece is already separate and in order.",
+          "id": "a"
+        },
+        {
+          "text": "Text already comes as a row of pieces, and each piece can become a vector.",
+          "feedback": "Text already comes as a row of pieces, and each piece can become a vector.",
+          "id": "b"
+        },
+        {
+          "text": "Text is a grid of light.",
+          "feedback": "A grid of light describes an image. Text is a row of pieces.",
+          "id": "c"
+        },
+        {
+          "text": "Text contains more information than speech or an image.",
+          "feedback": "The amount of information is not the reason. Text is easy because it is already a row of pieces.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l19-mcq-005",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "In what form does speech reach the system before conversion?",
+      "answer": "Air pressure changing in time, with no words in it.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 10
+        }
+      ],
+      "topic": "Speech",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Air pressure changing in time, with no words in it.",
+          "feedback": "Air pressure changing in time, with no words in it.",
+          "id": "a"
+        },
+        {
+          "text": "A row of vectors that the LLM can already read.",
+          "feedback": "Speech becomes a row of vectors only after it is sliced and passed through a speech encoder.",
+          "id": "b"
+        },
+        {
+          "text": "A grid of light.",
+          "feedback": "A grid of light describes an image. Speech is air pressure changing in time.",
+          "id": "c"
+        },
+        {
+          "text": "A row of separate words with gaps between them.",
+          "feedback": "The sound has no marked words. It is air pressure going up and down in time.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-mcq-006",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What length of sound does one frame hold?",
+      "answer": "About 20 milliseconds.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 11
+        }
+      ],
+      "topic": "Frames",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "About 50 milliseconds.",
+          "feedback": "The number 50 is how many vectors one second gives. Each slice is about 20 milliseconds.",
+          "id": "a"
+        },
+        {
+          "text": "About one second.",
+          "feedback": "One second holds about 50 slices. Each slice is about 20 milliseconds.",
+          "id": "b"
+        },
+        {
+          "text": "About 20 milliseconds.",
+          "feedback": "About 20 milliseconds.",
+          "id": "c"
+        },
+        {
+          "text": "One whole word.",
+          "feedback": "The slices are cut by time, not by words. Each one is about 20 milliseconds.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l19-mcq-007",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "After the speech encoder, how many vectors stand for one second of speech?",
+      "answer": "50 vectors, in time order.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 11
+        }
+      ],
+      "topic": "Vectors per second",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "16 vectors.",
+          "feedback": "The number 16 belongs to the image example, which has 16 patches. One second of speech gives 50 vectors.",
+          "id": "a"
+        },
+        {
+          "text": "One vector.",
+          "feedback": "Each slice gets its own vector, and one second holds about 50 slices.",
+          "id": "b"
+        },
+        {
+          "text": "20 vectors.",
+          "feedback": "The number 20 is the length of a slice in milliseconds. One second gives 50 vectors.",
+          "id": "c"
+        },
+        {
+          "text": "50 vectors, in time order.",
+          "feedback": "50 vectors, in time order.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l19-mcq-008",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Suppose the frames were made longer. How would the number of vectors per second change?",
+      "answer": "It would go down, because fewer slices fit in one second.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 11
+        }
+      ],
+      "topic": "Longer slices",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It would go down, because fewer slices fit in one second.",
+          "feedback": "It would go down, because fewer slices fit in one second.",
+          "id": "a"
+        },
+        {
+          "text": "It would go up, because longer slices hold more sound.",
+          "feedback": "Each slice still gives one vector. Longer slices mean fewer slices in a second, so fewer vectors.",
+          "id": "b"
+        },
+        {
+          "text": "It would drop to zero, because the encoder needs 20 milliseconds exactly.",
+          "feedback": "Nothing says the encoder stops working. There would be fewer slices, so fewer vectors.",
+          "id": "c"
+        },
+        {
+          "text": "It would stay at 50, because the encoder always gives 50.",
+          "feedback": "The 50 comes from how many slices of about 20 milliseconds fit in one second. Longer slices change that count.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-mcq-009",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What does the grid cut the image into?",
+      "answer": "One small square of the image.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 12
+        }
+      ],
+      "topic": "Patches",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "One word of a sentence.",
+          "feedback": "A word is a piece of text. A patch is a small square of an image.",
+          "id": "a"
+        },
+        {
+          "text": "One small square of the image.",
+          "feedback": "One small square of the image.",
+          "id": "b"
+        },
+        {
+          "text": "One slice of sound about 20 milliseconds long.",
+          "feedback": "That describes a frame of speech. A patch is a small square of an image.",
+          "id": "c"
+        },
+        {
+          "text": "The whole image turned into a single vector.",
+          "feedback": "The image is cut into many patches, and each patch gets its own vector.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l19-mcq-010",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What does putting the patches in reading order do to the image?",
+      "answer": "It turns the image into a sequence with a fixed order, like a sentence.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 12
+        }
+      ],
+      "topic": "Reading order",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "It sorts the patches from darkest to lightest.",
+          "feedback": "The order follows position in the image, left to right and then down, not brightness.",
+          "id": "a"
+        },
+        {
+          "text": "It makes the image smaller.",
+          "feedback": "The image keeps all its patches. Reading order arranges them as a row.",
+          "id": "b"
+        },
+        {
+          "text": "It turns the image into a sequence with a fixed order, like a sentence.",
+          "feedback": "It turns the image into a sequence with a fixed order, like a sentence.",
+          "id": "c"
+        },
+        {
+          "text": "It removes the background patches.",
+          "feedback": "No patch is removed. All 16 patches are placed in the row.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l19-mcq-011",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "The example grid gives 16 vectors. Why do real systems get hundreds from one image?",
+      "answer": "Real systems use small patches of 14 to 16 pixels, so one image is cut into many more patches.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 12
+        }
+      ],
+      "topic": "Real systems",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Real systems use larger patches than the example.",
+          "feedback": "Larger patches would give fewer vectors. Real systems use small patches of 14 to 16 pixels.",
+          "id": "a"
+        },
+        {
+          "text": "Real systems give each patch hundreds of vectors.",
+          "feedback": "Each patch still gives one vector. There are more vectors because there are more patches.",
+          "id": "b"
+        },
+        {
+          "text": "Real systems read each image hundreds of times.",
+          "feedback": "The image is read once. It is cut into many small patches.",
+          "id": "c"
+        },
+        {
+          "text": "Real systems use small patches of 14 to 16 pixels, so one image is cut into many more patches.",
+          "feedback": "Real systems use small patches of 14 to 16 pixels, so one image is cut into many more patches.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l19-mcq-012",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Which of these is a cross-modal dependency?",
+      "answer": "A link in which a piece from one sense, such as an image patch containing an egg, helps predict a piece from another sense, such as a word.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 13
+        }
+      ],
+      "topic": "Cross-modal dependencies",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A rule that keeps images and words in separate rows.",
+          "feedback": "The image patches, speech frames and words are placed in one row, which is what lets one sense help predict another.",
+          "id": "a"
+        },
+        {
+          "text": "A link between two words in the same sentence.",
+          "feedback": "A link between two words stays inside one sense. Cross-modal means the clue comes from a different sense.",
+          "id": "b"
+        },
+        {
+          "text": "A link in which a piece from one sense, such as an image patch containing an egg, helps predict a piece from another sense, such as a word.",
+          "feedback": "A link in which a piece from one sense, such as an image patch containing an egg, helps predict a piece from another sense, such as a word.",
+          "id": "c"
+        },
+        {
+          "text": "A link between two layers of the model.",
+          "feedback": "Layers are parts of the model. A cross-modal dependency is a link between pieces of the signal from different senses.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l19-mcq-013",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What does not change when the row holds three senses instead of text alone?",
+      "answer": "The game stays the same. The model still guesses the hidden piece from the other pieces.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 13
+        }
+      ],
+      "topic": "Same game",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The row holds only words, as before.",
+          "feedback": "The row now also holds image patches and speech frames. The guessing game is what stays the same.",
+          "id": "a"
+        },
+        {
+          "text": "Every clue still comes from a word.",
+          "feedback": "Some clues now come from image patches and speech frames.",
+          "id": "b"
+        },
+        {
+          "text": "The model stops using the earlier words.",
+          "feedback": "The earlier words still give clues. The other senses add more clues.",
+          "id": "c"
+        },
+        {
+          "text": "The game stays the same. The model still guesses the hidden piece from the other pieces.",
+          "feedback": "The game stays the same. The model still guesses the hidden piece from the other pieces.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l19-mcq-014",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How is energy displayed in the spectrogram?",
+      "answer": "More energy at that time and frequency.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 14
+        }
+      ],
+      "topic": "Spectrogram",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "More energy at that time and frequency.",
+          "feedback": "More energy at that time and frequency.",
+          "id": "a"
+        },
+        {
+          "text": "A higher frequency.",
+          "feedback": "Frequency is given by height. Darkness gives the amount of energy.",
+          "id": "b"
+        },
+        {
+          "text": "A later time.",
+          "feedback": "Time runs from left to right. Darkness gives the amount of energy.",
+          "id": "c"
+        },
+        {
+          "text": "A silent stretch.",
+          "feedback": "A silent stretch has little energy, so it is light, not dark.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-mcq-015",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "The puppy image is cut by a grid with 3 rows of 6. How many patches is that?",
+      "answer": "18 patches.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 14
+        }
+      ],
+      "topic": "Patch count",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "3 patches, one for each puppy.",
+          "feedback": "The grid does not follow the puppies. It cuts the image into 3 rows of 6 squares.",
+          "id": "a"
+        },
+        {
+          "text": "50 patches.",
+          "feedback": "The number 50 is the count of speech vectors in one second. The puppy image has 18 patches.",
+          "id": "b"
+        },
+        {
+          "text": "16 patches.",
+          "feedback": "The egg image has 16 patches. The puppy image has 3 rows of 6, which is 18.",
+          "id": "c"
+        },
+        {
+          "text": "18 patches.",
+          "feedback": "18 patches.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l19-mcq-016",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What do the bets look like when the model has the text alone?",
+      "answer": "The bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 15
+        }
+      ],
+      "topic": "Text alone",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The whole bet is on “kittens.”",
+          "feedback": "“Kittens” is only slightly ahead. “Puppies” and “babies” get similar bets.",
+          "id": "a"
+        },
+        {
+          "text": "The bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit.",
+          "feedback": "The bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit.",
+          "id": "b"
+        },
+        {
+          "text": "Almost the whole bet is on “puppies.”",
+          "feedback": "That happens only after the image and the sound are added. With text alone the bets are spread out.",
+          "id": "c"
+        },
+        {
+          "text": "The model cannot bet without the image.",
+          "feedback": "The model can bet from the words alone. The bets are just spread over several endings.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l19-mcq-017",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "The true word is “puppies.” Why do the weights move only a little?",
+      "answer": "The model bet 0.85 on the true word, so the error is small.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 15
+        }
+      ],
+      "topic": "Small nudge",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The image and the sound were ignored.",
+          "feedback": "The image and the sound are the reason the bet piled up on “puppies.”",
+          "id": "a"
+        },
+        {
+          "text": "The weights never change when the hidden piece is a word.",
+          "feedback": "The weights do change. They change only a little here because the error is small.",
+          "id": "b"
+        },
+        {
+          "text": "The model bet 0.85 on the true word, so the error is small.",
+          "feedback": "The model bet 0.85 on the true word, so the error is small.",
+          "id": "c"
+        },
+        {
+          "text": "The model bet 0.85 on the wrong word.",
+          "feedback": "The 0.85 was on “puppies,” which is the true word. That is why the error is small.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l19-mcq-018",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Suppose the bet on the true word were small. What would happen to the error and the nudge?",
+      "answer": "The error would be larger, so the nudge to the weights would be larger.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 15
+        }
+      ],
+      "topic": "Low bet",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The error would be larger, so the nudge to the weights would be larger.",
+          "feedback": "The error would be larger, so the nudge to the weights would be larger.",
+          "id": "a"
+        },
+        {
+          "text": "The nudge would be smaller, because the bet was smaller.",
+          "feedback": "A small bet on the truth is a large error. A larger error moves the weights more.",
+          "id": "b"
+        },
+        {
+          "text": "There would be no nudge, because the model was wrong.",
+          "feedback": "Being wrong is when the weights most need to change. The larger error gives a larger nudge.",
+          "id": "c"
+        },
+        {
+          "text": "The nudge would stay the same, because the truth is still “puppies.”",
+          "feedback": "The nudge depends on how much the model bet on the truth. A smaller bet gives a larger error.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-mcq-019",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Why are the earlier frames a strong clue for a hidden sound frame?",
+      "answer": "The speaker’s voice and the formants change smoothly from one frame to the next.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 16
+        }
+      ],
+      "topic": "Earlier frames",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The earlier frames come from the image.",
+          "feedback": "The earlier frames are sound. The image is a separate and weaker clue here.",
+          "id": "a"
+        },
+        {
+          "text": "The earlier frames contain the written words.",
+          "feedback": "The written words are a separate clue. The earlier frames help because the sound changes smoothly.",
+          "id": "b"
+        },
+        {
+          "text": "Every frame of speech is identical.",
+          "feedback": "The frames differ. They change smoothly, which is why recent frames predict the next one well.",
+          "id": "c"
+        },
+        {
+          "text": "The speaker’s voice and the formants change smoothly from one frame to the next.",
+          "feedback": "The speaker’s voice and the formants change smoothly from one frame to the next.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "d"
+    },
+    {
+      "id": "v2-l19-mcq-020",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What does the model compare when it checks its guess for a frame?",
+      "answer": "A column of numbers giving how much energy is in each frequency band.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 16
+        }
+      ],
+      "topic": "Frame as numbers",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "A column of numbers giving how much energy is in each frequency band.",
+          "feedback": "A column of numbers giving how much energy is in each frequency band.",
+          "id": "a"
+        },
+        {
+          "text": "A small square of the image.",
+          "feedback": "That is a patch. A frame is a column of numbers for the energy in each frequency band.",
+          "id": "b"
+        },
+        {
+          "text": "A single word.",
+          "feedback": "A frame is a short slice of sound, far shorter than a word. It is a column of energy values.",
+          "id": "c"
+        },
+        {
+          "text": "One probability for each word in the vocabulary.",
+          "feedback": "That describes a guess for a hidden word. A frame is a column of energy values, one per frequency band.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-mcq-021",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Why does the model get the colour of the third puppy wrong?",
+      "answer": "No clue in the words, the sound or the earlier patches said the third puppy would be dark.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 17
+        }
+      ],
+      "topic": "Colour error",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The model cannot predict colour at all.",
+          "feedback": "The model did predict a colour, the average of the first two puppies. It was wrong because no clue gave the true colour.",
+          "id": "a"
+        },
+        {
+          "text": "The earlier patches were hidden from the model.",
+          "feedback": "The earlier patches were available. They gave the colours of the first two puppies, not the third.",
+          "id": "b"
+        },
+        {
+          "text": "No clue in the words, the sound or the earlier patches said the third puppy would be dark.",
+          "feedback": "No clue in the words, the sound or the earlier patches said the third puppy would be dark.",
+          "id": "c"
+        },
+        {
+          "text": "The words said the third puppy is light.",
+          "feedback": "The words say “three cute puppies.” They say nothing about colour.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l19-mcq-022",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How does “three” help when only two puppies have been drawn?",
+      "answer": "A third puppy must appear, because only two have been drawn so far.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 17
+        }
+      ],
+      "topic": "Word clue",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The image has three patches.",
+          "feedback": "The image has 18 patches. “Three” is the number of puppies.",
+          "id": "a"
+        },
+        {
+          "text": "A third puppy must appear, because only two have been drawn so far.",
+          "feedback": "A third puppy must appear, because only two have been drawn so far.",
+          "id": "b"
+        },
+        {
+          "text": "The third puppy is dark.",
+          "feedback": "No clue gives the colour. “Three” only says that another puppy must appear.",
+          "id": "c"
+        },
+        {
+          "text": "The patch should be background.",
+          "feedback": "Background comes from the earlier patches above. “Three” says one more puppy is coming.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "b"
+    },
+    {
+      "id": "v2-l19-mcq-023",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Compare a same-sense clue with a clue from another sense. What does the same-sense clue give?",
+      "answer": "How the signal continues, while the other senses say what the thing is.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 18
+        }
+      ],
+      "topic": "Same sense",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Nothing, because only the other senses help.",
+          "feedback": "The same sense helps a great deal. Grammar, smooth formants, and fur and background all come from the same sense.",
+          "id": "a"
+        },
+        {
+          "text": "What the thing is, while the other senses say how the signal continues.",
+          "feedback": "That is reversed. The same sense says how the signal continues, and the other senses say what the thing is.",
+          "id": "b"
+        },
+        {
+          "text": "How the signal continues, while the other senses say what the thing is.",
+          "feedback": "How the signal continues, while the other senses say what the thing is.",
+          "id": "c"
+        },
+        {
+          "text": "The colour of the third puppy.",
+          "feedback": "No clue gave that colour, which is why it was the biggest error.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "c"
+    },
+    {
+      "id": "v2-l19-mcq-024",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Which clue for a hidden frame comes from the sound itself?",
+      "answer": "The voice and the formants carry on.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 18
+        }
+      ],
+      "topic": "Hidden frame",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "The voice and the formants carry on.",
+          "feedback": "The voice and the formants carry on.",
+          "id": "a"
+        },
+        {
+          "text": "The fur and the background carry on.",
+          "feedback": "That is the same-sense clue for a hidden image patch.",
+          "id": "b"
+        },
+        {
+          "text": "“Three cute” calls for a plural noun.",
+          "feedback": "That is a clue from the words for a hidden word.",
+          "id": "c"
+        },
+        {
+          "text": "The image contains puppies.",
+          "feedback": "That is a clue from the image, which is a different sense from sound.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-mcq-025",
+      "type": "mcq",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Which sequence describes how the model talks back?",
+      "answer": "Sound is compressed into codes, the model predicts the next code like the next word, and a decoder turns the codes back into sound.",
+      "rubric": [
+        "Identify the source-supported relationship.",
+        "Distinguish it from the stated alternative explanations."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 19
+        }
+      ],
+      "topic": "Talking back",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": [],
+      "options": [
+        {
+          "text": "Sound is compressed into codes, the model predicts the next code like the next word, and a decoder turns the codes back into sound.",
+          "feedback": "Sound is compressed into codes, the model predicts the next code like the next word, and a decoder turns the codes back into sound.",
+          "id": "a"
+        },
+        {
+          "text": "The model predicts air pressure directly, with no codes.",
+          "feedback": "Sound is first compressed into discrete codes, and the model predicts those codes.",
+          "id": "b"
+        },
+        {
+          "text": "A decoder turns the image patches into sound.",
+          "feedback": "The decoder turns sound codes back into a sound wave. It does not use image patches.",
+          "id": "c"
+        },
+        {
+          "text": "The model replays the speech it heard during training.",
+          "feedback": "The model predicts new codes one at a time, in the same way it predicts the next word.",
+          "id": "d"
+        }
+      ],
+      "correctOption": "a"
+    },
+    {
+      "id": "v2-l19-written-001",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Describe what happens, step by step, when an LLM trains on “The chef cracks the ?”.",
+      "answer": "The LLM learns by guessing the hidden last word and then changing its weights. Each earlier word gives a clue about the hidden word, so the model bets most on “egg” and less on “nut” and “code.” When the true word is revealed, the weights are nudged so the right word gets a bigger bet next time.",
+      "rubric": [
+        "State that the model guesses the hidden word from the earlier words.",
+        "State that the weights are nudged so the right word gets a bigger bet."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 9
+        }
+      ],
+      "topic": "Learning from a hidden word",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-002",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "The model gives three words different bets. Explain why.",
+      "answer": "The model spreads its bets because it does not know the hidden word. All three words could follow “The chef cracks the.” The earlier words make “egg” the most likely, so “egg” gets the largest bet, “nut” gets a smaller one and “code” gets the smallest.",
+      "rubric": [
+        "Explain that the model does not know the answer.",
+        "Explain that the earlier words make some words more likely than others."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 9
+        }
+      ],
+      "topic": "Bets",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-003",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How do text, speech and an image differ before they are turned into vectors?",
+      "answer": "Text is already a row of pieces, such as “Now,” “crack,” “the” and “egg.” Speech is air pressure changing in time, and an image is a grid of light. Speech and images contain no words, so they are not yet in a form the LLM can read.",
+      "rubric": [
+        "Describe text as a row of pieces.",
+        "Describe speech as air pressure in time and an image as a grid of light."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 10
+        }
+      ],
+      "topic": "Three forms",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-004",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain why the first job with speech and images is a conversion.",
+      "answer": "Speech and images have to be converted because a row of vectors is all the LLM can read. Speech is air pressure changing in time, and an image is a grid of light, so neither one is a row of vectors. Once they are converted, the model can read them in one row together with text.",
+      "rubric": [
+        "State that the LLM reads only rows of vectors.",
+        "State that speech and images do not arrive as rows of vectors."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 10
+        }
+      ],
+      "topic": "Conversion",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-005",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain the steps that turn a stretch of speech into vectors an LLM can read.",
+      "answer": "Speech is turned into vectors by slicing it in time. First the sound is cut into short slices called frames, each about 20 milliseconds long. Then the slices go through a speech encoder, which is a network trained on a large amount of audio. One vector comes out for each slice, and the vectors stay in time order.",
+      "rubric": [
+        "Describe slicing into frames of about 20 milliseconds.",
+        "Describe the speech encoder giving one vector per slice in time order."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 11
+        }
+      ],
+      "topic": "Speech to vectors",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-006",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain where the 50 vectors for one second of speech come from.",
+      "answer": "One second of speech becomes 50 vectors because each slice gets one vector. Each slice is about 20 milliseconds long, and 50 slices of that length fill one second. The speech encoder gives one vector per slice, so one second gives 50 vectors.",
+      "rubric": [
+        "Link the count to slices of about 20 milliseconds.",
+        "State that each slice gives one vector."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 11
+        }
+      ],
+      "topic": "Fifty vectors",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-007",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain the steps that turn the image of an egg in a pan into vectors.",
+      "answer": "An image is turned into vectors by cutting it into patches. First a grid cuts the image into small squares called patches, 16 of them in the egg example. Then the patches are laid out in a row in reading order, so the image becomes a sequence. A vision encoder then gives one vector for each patch.",
+      "rubric": [
+        "Describe cutting into patches and laying them out in reading order.",
+        "Describe the vision encoder giving one vector per patch."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 12
+        }
+      ],
+      "topic": "Image to vectors",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-008",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How is turning speech into vectors like turning an image into vectors, and how is it different?",
+      "answer": "The similarity is that both are cut into small pieces, and an encoder gives one vector for each piece, in order. The difference is what is cut. Speech is cut in time into frames of about 20 milliseconds. An image is cut in space into square patches, which are then placed in reading order.",
+      "rubric": [
+        "Give the shared steps of cutting into pieces and encoding one vector per piece.",
+        "Contrast cutting in time into frames with cutting in space into patches."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 12
+        }
+      ],
+      "topic": "Speech and image conversion",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-009",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain cross-modal dependencies using the row with image patches, speech frames and words.",
+      "answer": "A cross-modal dependency is a link in which a piece from one sense helps predict a piece from another sense. In “Now crack the ?”, an image patch containing an egg helps predict the hidden word. The sound of cracking helps too. These clues come from the image and the sound, not from the earlier words.",
+      "rubric": [
+        "Define the link as running between different senses.",
+        "Give the egg patch or the cracking sound as a clue for the hidden word."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 13
+        }
+      ],
+      "topic": "Cross-modal dependency",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-010",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Compare guessing a hidden word in a text-only row with guessing it in a row that also holds image patches and speech frames.",
+      "answer": "The game is the same. The model still guesses the hidden piece from the pieces it can read, and the earlier words still give clues. The difference is where the clues come from. With three senses in the row, some clues come from image patches and speech frames.",
+      "rubric": [
+        "State that the guessing game and the word clues stay the same.",
+        "State that some clues now come from other senses."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 13
+        }
+      ],
+      "topic": "Same and different",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-011",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "What do left to right, height and darkness mean in the spectrogram?",
+      "answer": "In the spectrogram, time runs from left to right, so “three” comes first and “puppies” comes last. A higher position means a higher frequency. A darker area means more energy. Each thin column is one frame.",
+      "rubric": [
+        "Give time as left to right and frequency as height.",
+        "Give darkness as energy."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 14
+        }
+      ],
+      "topic": "Reading a spectrogram",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-012",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain why the image, the spectrogram and the words are called three views of one event.",
+      "answer": "The image, the spoken phrase and the written words all describe the same thing, which is three cute puppies. The image gives it as patches, the speech gives it as frames, and the text gives it as words. In training, all three go into one row, and the model guesses a hidden piece of that row.",
+      "rubric": [
+        "Identify the three forms as the image, the speech and the words.",
+        "State that training puts all three into one row."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 14
+        }
+      ],
+      "topic": "Three views",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-013",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How do the bets on the next word change when the image and the sound are added to “three cute”?",
+      "answer": "With text alone, the bets are spread out over “kittens,” “puppies” and “babies,” because many endings fit “three cute.” With the image and the sound, the bet piles up on “puppies.” This is because the image contains puppies and the sound contains the spoken word “puppies.”",
+      "rubric": [
+        "Describe spread-out bets with text alone.",
+        "Explain that the image and the sound move the bet onto “puppies.”"
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 15
+        }
+      ],
+      "topic": "Adding the other senses",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-014",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain why the weights move only a little after the first training example.",
+      "answer": "The nudge is small because the error is small. The model is graded on how much it bet on the true word. It bet 0.85 on “puppies,” which is a lot, so there is little to correct and the weights move only a little.",
+      "rubric": [
+        "Link the high bet on the truth to a small error.",
+        "Link the small error to a small change in the weights."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 15
+        }
+      ],
+      "topic": "Small nudge",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-015",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Predict how the error and the nudge would change if the bet on the true word were small.",
+      "answer": "The nudge would be larger. A small bet on the true word means a large error. A larger error moves the weights more, so that next time the true word gets a bigger bet.",
+      "rubric": [
+        "State that the error would be larger.",
+        "State that the weights would move more."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 15
+        }
+      ],
+      "topic": "Low bet",
+      "pattern": "prediction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-016",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain how the earlier frames, the words and the image each help predict the next sound frame.",
+      "answer": "The earlier frames help because the voice and the formants change smoothly, so the last few frames say a lot about the next one. The words say which sound should come next, which here is the vowel in “pup.” The image contains puppies, so it backs up the words, but it is a weaker clue here.",
+      "rubric": [
+        "Explain the earlier frames through smooth change in voice and formants.",
+        "Explain what the words and the image add."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 16
+        }
+      ],
+      "topic": "Clues for a frame",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-017",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain how the model’s guess for a frame is compared with the truth.",
+      "answer": "A frame is a column of numbers, and each number is how much energy there is in one frequency band. The model’s guess is another column of numbers. The error is how far apart each number in the guess is from the matching number in the true frame. That error nudges the weights.",
+      "rubric": [
+        "Describe a frame as energy values across frequency bands.",
+        "Describe the error as the difference between guess and truth, number by number."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 16
+        }
+      ],
+      "topic": "Frame error",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-018",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "How do the earlier patches, the words and the sound help predict the hidden patch?",
+      "answer": "The earlier patches give background above and two puppies to the left, so the model has seen what a puppy in this image looks like. The word “three” says a third puppy must appear, and “puppies” says to expect dog ears. The sound carries the same words, so it backs up the text.",
+      "rubric": [
+        "Explain what the earlier patches give.",
+        "Explain what “three” and “puppies” give, with the sound as a backup."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 17
+        }
+      ],
+      "topic": "Clues for a patch",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-019",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "The model guesses a light brown ear, but the true patch is dark. Explain why.",
+      "answer": "The colour is the biggest error because no clue gave the colour of the third puppy. The model guessed a puppy ear in the average colour of the first two puppies. The true puppy is dark, and nothing in the words, the sound or the earlier patches said so.",
+      "rubric": [
+        "State that no clue gave the third puppy’s colour.",
+        "State that the guess used the average colour of the first two puppies."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 17
+        }
+      ],
+      "topic": "Colour error",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-020",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Is every system trained to predict a hidden image patch? Explain.",
+      "answer": "Only systems that also produce images are trained to predict image patches. Systems that only read images usually skip this step. Predicting a patch is like teaching the model to draw what it was told, so it matters only when the system has to draw.",
+      "rubric": [
+        "Identify systems that produce images.",
+        "State that systems that only read images usually skip this step."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 17
+        }
+      ],
+      "topic": "Which systems",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-021",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Compare what same-sense clues and other-sense clues tell the model about a hidden piece.",
+      "answer": "A clue from the same sense mostly says how the signal continues. Grammar does this for a hidden word, smooth formants do it for a hidden frame, and fur and background do it for a hidden patch. Clues from the other senses mostly say what the thing is, which here is puppies, three of them.",
+      "rubric": [
+        "State that same-sense clues say how the signal continues.",
+        "State that other-sense clues say what the thing is."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 18
+        }
+      ],
+      "topic": "Two kinds of clue",
+      "pattern": "distinction",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-022",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Explain why the model learns better from all three senses in one row.",
+      "answer": "Training on all three senses together helps because each sense fills gaps the others leave. A clue from the same sense says how the signal continues. Clues from the other senses say what the thing is. With all three, the model has both kinds of clue for every hidden piece.",
+      "rubric": [
+        "State that each sense fills gaps the others leave.",
+        "Refer to the two kinds of clue."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 18
+        }
+      ],
+      "topic": "All three senses",
+      "pattern": "cause-effect",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-023",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "Describe the steps that let the model produce speech.",
+      "answer": "The model talks back by predicting sound codes. First, sound is compressed into discrete codes, and each code works like a new word in the vocabulary. Then the model predicts the next code exactly as it predicts the next word. Last, a decoder turns the codes back into a sound wave.",
+      "rubric": [
+        "Describe sound compressed into codes that act like new words.",
+        "Describe predicting the next code and decoding back into sound."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 19
+        }
+      ],
+      "topic": "Talking back",
+      "pattern": "procedure",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-024",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "List the three new requirements for training on three senses.",
+      "answer": "The first new thing is a shared currency, in which everything becomes vectors in one row. The second is data where the senses appear together. The third is a schedule that protects what was already learned.",
+      "rubric": [
+        "Give the shared currency of vectors in one row.",
+        "Give data with the senses together and the protective schedule."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 19
+        }
+      ],
+      "topic": "What is new",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    },
+    {
+      "id": "v2-l19-written-025",
+      "type": "written",
+      "moduleId": "module3",
+      "lectureId": "lecture19",
+      "prompt": "When sounds and images are added to the signal, what does not change?",
+      "answer": "The learning rule stays the same. The model still finds the dependencies in the signal by guessing a hidden piece and nudging its weights. The signal has become wider, because it now holds words, sounds and images.",
+      "rubric": [
+        "State that the model still finds dependencies in the signal.",
+        "State that only the content of the signal has widened."
+      ],
+      "sources": [
+        {
+          "collection": "lecture19",
+          "page": 19
+        }
+      ],
+      "topic": "What stays the same",
+      "pattern": "interpretation",
+      "examKeyRefs": [],
+      "examReviewRefs": []
+    }
+  ]
+}

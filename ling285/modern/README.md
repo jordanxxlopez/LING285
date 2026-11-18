@@ -105,3 +105,6 @@ work the same way in Module I.
 
 The twelve notes editions (Version 7 to Version 10.1) cover Lectures 01–10 as well as 11–18. Their Module I authoring lives in `authoring/notes-v9.1`, `notes-v9`, `notes-v10`, `notes-v7-v2-module1`, the derived folders written by `authoring/module1_notes_derive.py`, and the user's own lecture-note PDFs read by `authoring/notes_v7_module1.py`. The dropdown reads each payload's `availableModules`, so a notes edition is offered in every module it covers. See the "Module I notes editions" section of `ling285/README.md` for the build steps.
 
+## Module III
+
+Module III (Lecture 19 onward) uses the same study template: `authoring/module3/make_module3.py` writes the template inputs and `module_template.py` builds `modern/module3.js`. The lecture's pages, teaching versions and questions come from the separate layer in `ling285/module3/`, which `module3/overlay.js` merges at load time so the locked Lecture 01 to 18 files stay unchanged. Authoring tools read the merged course through `authoring/studio_data.py`. See `authoring/module3/README.md`.

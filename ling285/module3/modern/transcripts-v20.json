@@ -1,0 +1,341 @@
+{
+ "id": "v20",
+ "collections": {
+  "lecture19": {
+   "title": "Neuron, Neural Networks, LLMs and Agents",
+   "sections": [
+    {
+     "id": "lecture19-p001",
+     "page": 1,
+     "title": "Neuron, neural networks, LLMs and agents",
+     "kind": "title",
+     "teaching": []
+    },
+    {
+     "id": "lecture19-p002",
+     "page": 2,
+     "title": "From a neuron to agents that communicate",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**More complex organization can be built around the same basic numerical operations**. Neurons contribute to networks, sequence models use context, and agentic systems connect models through tasks and messages.",
+       "children": [
+        "An agentic system connects models through messages and assigned tasks. Its graph of interactions sits outside the hidden processing layers of an individual model."
+       ]
+      },
+      {
+       "text": "Shared numerical operations can remain useful as the organization becomes more complex. Adding a higher level does not make the lower-level operations disappear.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p003",
+     "page": 3,
+     "title": "Parallel heads and successive layers",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Several relationships can be processed in parallel before a representation moves to the next layer**. Attention heads contribute alongside one another, while depth supplies successive transformations of their combined information.",
+       "children": [
+        "A layer combines information from its heads before passing representations onward. The next layer can then operate on information that already incorporates those relationships."
+       ]
+      },
+      {
+       "text": "The expert analogy describes specialized computational contributions rather than separate people or guaranteed interpretable skills. Multiple heads in one layer are not the same as multiple complete agents exchanging messages.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p004",
+     "page": 4,
+     "title": "A dynamical rule across time and depth",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**A state can be understood by following the rule that transforms it**. Physical time steps and network layers both provide a sequence of transformations, even though their rules and materials differ.",
+       "children": [
+        "Following one value through the layers makes the changing representation visible. Different layers can have different learned weights, so the analogy concerns repeated transformation rather than identical numerical rules at every layer."
+       ]
+      },
+      {
+       "text": "An output can become the input to another processing step in both cases. The comparison links physical change and learned computation without requiring an LLM layer to be a physical spring.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p005",
+     "page": 5,
+     "title": "One prediction task for different sequences",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Prediction can be organized around the same question across different kinds of data**. Once the sequence is represented as vectors, the model uses the available context to assign support to possible continuations.",
+       "children": [
+        "The model uses the available context to assign probabilities to possible continuations. Learning improves those probabilities when the actual continuation supplies feedback."
+       ]
+      },
+      {
+       "text": "A token’s position in the sequence and its context help determine what should come next. The prediction task stays recognizable even when the represented material changes from words to another kind of signal.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p006",
+     "page": 6,
+     "title": "Which sequences can be English words?",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A language restricts which sound sequences fit particular syllable positions**. A combination allowed across a syllable break can still be excluded from the beginning of a single syllable.",
+       "children": [
+        "An onset occurs before a syllable’s vowel, and a coda occurs after it. A cluster that works across a syllable boundary does not necessarily work at the beginning of a syllable."
+       ]
+      },
+      {
+       "text": "The spelling examples provide clues to these restrictions, but letters and speech sounds are different units. The beginning of knee, for example, contains written k even though its ordinary pronunciation does not begin with /k/.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p007",
+     "page": 7,
+     "title": "Guessing the next letter reveals phonotactic knowledge",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A short word beginning already carries information about what can follow**. Learning its likely completions requires capturing those restrictions rather than choosing every next letter equally.",
+       "children": [
+        "Some beginnings permit many continuations while others sharply restrict the possibilities. A probability distribution can express that difference by spreading probability broadly or concentrating it on fewer choices."
+       ]
+      },
+      {
+       "text": "Learning from many such completions can capture regularities without receiving a separate verbal rule for each one. The spelling exercise probes useful language knowledge while remaining distinct from a complete description of English phonology.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p008",
+     "page": 8,
+     "title": "Design an agentic system for English syllables",
+     "kind": "prompt",
+     "teaching": [
+      {
+       "text": "**A computational task can be organized through explicit instructions, learned parameters or communication among models**. The three software categories separate those roles while allowing them to be combined in one working system.",
+       "children": [
+        "An explicitly written program specifies operations in a language such as Python. A trained network instead stores useful input-to-output relationships in its weights, while an agentic arrangement can ask models to draft, check and revise the result."
+       ]
+      },
+      {
+       "text": "These forms can work together in one system rather than replacing every earlier operation. Natural-language instructions can organize agents that still rely on trained parameters and executable software.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p009",
+     "page": 9,
+     "title": "What an LLM learns",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**A hidden word turns a sentence into a guessing task**. Every word before the gap is a clue, so the model can bet more on “egg” than on “nut” or “code.”",
+       "children": [
+        "The model gives a probability to each possible next word, with the most on “egg,” less on “nut” and the least on “code.” After the true word is revealed, the weights are nudged so that the right word receives a larger probability next time."
+       ]
+      },
+      {
+       "text": "The same procedure applies when the signal contains sounds and images as well as words. The content of the signal changes, while guessing a hidden piece and adjusting the weights stays the same.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p010",
+     "page": 10,
+     "title": "Text, speech and images in three different forms",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Only text comes ready for the model**. Speech is a continuous change in air pressure and an image is a grid of light, so both need a conversion into rows of vectors.",
+       "children": [
+        "An LLM reads a row of vectors. Each piece of text can become one vector directly, while speech and images contain no words and no separate pieces, so they have to be converted into rows of vectors first."
+       ]
+      },
+      {
+       "text": "The conversion comes before any learning from speech or images. Once all three forms are rows of vectors, one model can read them together.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p011",
+     "page": 11,
+     "title": "Speech becomes a row of frame vectors",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Cutting speech into frames gives it pieces**. Each frame lasts about 20 milliseconds, and the speech encoder changes each frame into one vector.",
+       "children": [
+        "The speech encoder is a neural network trained on a large amount of audio. Each slice of sound goes in and one vector comes out, and slices with different sounds give vectors with different numbers."
+       ]
+      },
+      {
+       "text": "One second of speech becomes 50 vectors in time order. The speech is then a row, just like a sentence, so the model can read it one vector after another.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p012",
+     "page": 12,
+     "title": "Images become a row of patch vectors",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Cutting an image into patches gives it pieces**. Reading order arranges the patches as a row, and the vision encoder changes each patch into one vector.",
+       "children": [
+        "Reading order gives the patches a first piece and a last piece, so the image becomes a sequence like a sentence. The 16 patches of the egg image become 16 vectors in the same order."
+       ]
+      },
+      {
+       "text": "Real systems use much smaller patches of 14 to 16 pixels. Smaller patches mean more patches for the same image, so one image gives hundreds of vectors.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p013",
+     "page": 13,
+     "title": "One row with three senses",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Clues can cross from one sense to another**. An image patch containing an egg and the sound of cracking both point to the hidden word after “Now crack the.”",
+       "children": [
+        "A patch containing an egg and the sound of cracking both help predict the hidden word. A link between two different kinds of signal is a cross-modal dependency."
+       ]
+      },
+      {
+       "text": "The game is the same as with text alone. The model guesses the hidden piece from the pieces it can read, and the only change is that some clues come from other senses.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p014",
+     "page": 14,
+     "title": "Three cute puppies as an image, speech and words",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**One event can be seen, heard and read**. The image, the spectrogram of the spoken phrase and the three written words are three views of “three cute puppies.”",
+       "children": [
+        "The image is cut into 18 patches. The spoken phrase is a spectrogram in which time runs from left to right, a higher position means a higher frequency and a darker area means more energy, and each thin column is one frame."
+       ]
+      },
+      {
+       "text": "Because the three forms describe the same event, a piece hidden in one form can be guessed with help from the other two. The speech in the example was made with a speech synthesizer.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p015",
+     "page": 15,
+     "title": "Training example 1 predicts the next word",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**Words alone leave the model unsure, and the other senses settle the guess**. After “three cute,” the image and the sound move almost the whole bet onto “puppies.”",
+       "children": [
+        "With the words alone, the bets are spread over “kittens,” “puppies” and “babies.” The image contains puppies and the sound contains the spoken word, so with those clues the bet piles up on “puppies.”"
+       ]
+      },
+      {
+       "text": "The model bet 0.85 on the true word, so the error is small and the weights move only a little. A smaller bet on the true word would be a larger error and would move the weights more.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p016",
+     "page": 16,
+     "title": "Training example 2 predicts a sound frame",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**The sound heard so far is the strongest clue for the next frame**. The voice and the formants change smoothly, while the words and the image say which sound to expect.",
+       "children": [
+        "The earlier frames help because the voice and the formants change smoothly. The words say the next sound is the vowel in “pup,” and the image backs up the words as a weaker clue."
+       ]
+      },
+      {
+       "text": "A frame is a column of numbers for the energy in each frequency band. The guess is close but not exact, and the difference between the guess and the truth is the error that nudges the weights.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p017",
+     "page": 17,
+     "title": "Training example 3 predicts an image patch",
+     "kind": "mechanism",
+     "teaching": [
+      {
+       "text": "**The clues give the content of the patch but not its colour**. Two puppies are already drawn and “three” calls for one more, yet no clue says the third puppy is dark.",
+       "children": [
+        "The earlier patches give background above and two puppies to the left. “Three” says a third puppy must appear, “puppies” says to expect dog ears, and the sound carries the same words as a backup."
+       ]
+      },
+      {
+       "text": "The guess is a puppy ear in the average colour of the first two puppies, but the true puppy is dark. The colour is the biggest error because no clue gave it. Only systems that also produce images are trained this way.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p018",
+     "page": 18,
+     "title": "Every piece can be the hidden one",
+     "kind": "comparison",
+     "teaching": [
+      {
+       "text": "**Clues from the same sense and clues from other senses do different jobs**. The same sense says how the signal continues, and the other senses say what the thing is.",
+       "children": [
+        "A clue from the same sense says how the signal continues, as grammar does for a hidden word, smooth formants do for a hidden frame, and fur and background do for a hidden patch. Clues from the other senses say what the thing is."
+       ]
+      },
+      {
+       "text": "Training on all three senses together helps because each sense fills gaps the others leave. A model with one sense alone would have only the clues about how the signal continues.",
+       "children": []
+      }
+     ]
+    },
+    {
+     "id": "lecture19-p019",
+     "page": 19,
+     "title": "Talking back, and what is new",
+     "kind": "concept",
+     "teaching": [
+      {
+       "text": "**Speaking is the same guessing game played on sound codes**. Each code works like a new word, and a decoder changes the predicted codes back into a sound wave.",
+       "children": [
+        "The model predicts the next code exactly as it predicts the next word. The decoder then takes the row of codes and produces a sound wave."
+       ]
+      },
+      {
+       "text": "Three things are new, which are a shared currency of vectors in one row, data where the senses appear together, and a schedule that protects what was already learned. What stays the same is finding the dependencies in the signal.",
+       "children": []
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

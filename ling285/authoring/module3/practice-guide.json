@@ -1,0 +1,98 @@
+{
+ "guide": [
+  {
+   "title": "Turn speech and images into rows of vectors",
+   "explanation": "Explain why text is already a row of pieces while speech and images are not. Describe how speech is sliced into frames of about 20 milliseconds and how an image is cut into patches in reading order, with an encoder giving one vector for each piece.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 10
+    },
+    {
+     "collection": "lecture19",
+     "page": 11
+    },
+    {
+     "collection": "lecture19",
+     "page": 12
+    }
+   ],
+   "kind": "readiness"
+  },
+  {
+   "title": "Use clues from other senses",
+   "explanation": "Explain what a cross-modal dependency is and why the guessing game stays the same when image patches, speech frames and words share one row.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 9
+    },
+    {
+     "collection": "lecture19",
+     "page": 13
+    },
+    {
+     "collection": "lecture19",
+     "page": 14
+    }
+   ],
+   "kind": "readiness"
+  },
+  {
+   "title": "Follow the three training examples",
+   "explanation": "For a hidden word, a hidden sound frame and a hidden image patch, say which clues each sense gives, what the guess was, how large the error was and how the error changes the weights.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 15
+    },
+    {
+     "collection": "lecture19",
+     "page": 16
+    },
+    {
+     "collection": "lecture19",
+     "page": 17
+    }
+   ],
+   "kind": "readiness"
+  },
+  {
+   "title": "Compare same-sense and other-sense clues",
+   "explanation": "Explain why clues from the same sense say how the signal continues while clues from the other senses say what the thing is, then explain how sound codes and a decoder let the model talk back.",
+   "refs": [
+    {
+     "collection": "lecture19",
+     "page": 18
+    },
+    {
+     "collection": "lecture19",
+     "page": 19
+    }
+   ],
+   "kind": "readiness"
+  }
+ ],
+ "coreReview": [
+  {
+   "collection": "lecture19",
+   "page": 13,
+   "reason": "Explain cross-modal dependencies and why the guessing game is unchanged when three senses share one row."
+  },
+  {
+   "collection": "lecture19",
+   "page": 15,
+   "reason": "Compare the bets from text alone with the bets after the image and sound are added, and link the bet on the truth to the size of the nudge."
+  },
+  {
+   "collection": "lecture19",
+   "page": 18,
+   "reason": "Distinguish clues from the same sense from clues from the other senses for each kind of hidden piece."
+  },
+  {
+   "collection": "lecture19",
+   "page": 19,
+   "reason": "Explain how sound codes and a decoder let the model speak, and state what is new and what stays the same."
+  }
+ ]
+}

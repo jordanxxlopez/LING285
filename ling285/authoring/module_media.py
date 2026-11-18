@@ -20,7 +20,8 @@ FRAMES = ROOT / "assets" / "frames"
 
 
 def _collections():
-    d = json.load(open(ROOT / "data.json"))
+    from studio_data import load  # data.json plus the Module III layer
+    d = load()
     by_number = {}
     for c in d["collections"]:
         if c.get("role") == "lecture" and c.get("number"):

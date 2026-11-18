@@ -1,0 +1,376 @@
+{
+  "lecture19": {
+    "title": "Neuron, Neural Networks, LLMs and Agents",
+    "sections": [
+      {
+        "page": 1,
+        "title": "Neuron, neural networks, LLMs and agents",
+        "kind": "title",
+        "teaching": [],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 2,
+        "title": "From a neuron to agents that communicate",
+        "kind": "concept",
+        "teaching": [
+          "A **single neuron** multiplies its inputs by weights and adds the products into one number. A **neural network** combines these operations into layers, turning one input vector into a decision vector.",
+          "An **LLM** processes fifteen vectors through successive layers and predicts a sixteenth vector, a probability distribution over the next token. An **agentic system** joins whole LLMs into a graph that outlines, writes, criticizes, revises and finalizes the response.",
+          "The critic and reviser form a loop so a revised draft can be evaluated again. The agents communicate in English and can work in other human languages and computer languages.",
+          "**Inference uses inner products**, while learning uses **SGD and dynamic programming**. Inference processes current inputs with learned weights, while learning changes the weights to reduce error."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 3,
+        "title": "Parallel heads and successive layers",
+        "kind": "concept",
+        "teaching": [
+          "**Predicting the next word is difficult**, so an LLM uses many layers to develop its input representations. Each layer transforms the vectors produced by the preceding layer.",
+          "Within a layer, **heads work in parallel as different experts**. Their contributions are combined into new representations, and the next layer repeats the process with those representations. Heads contribute within one stage, while layers provide successive stages."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 4,
+        "title": "A dynamical rule across time and depth",
+        "kind": "mechanism",
+        "teaching": [
+          "A **dynamical system** applies a rule to its state and feeds the resulting state back in. In the oscillator, position is updated using the old velocity, then velocity is updated using that new position. Repeating the rule produces oscillation.",
+          "In **Jordan’s recurrent network**, plan and state units feed a hidden layer, output returns to state units, and self-connections preserve a fading trace. The weights are reused over time, so recent outputs affect the next output.",
+          "An **LLM** transforms vectors through successive layers, so depth plays the role of time. Following one number through the layers gives a changing curve. Each layer has its own weights, unlike the same rule reused across time in the oscillator and recurrent network.",
+          "The small stock-return graph traces Small, Medium and Large series fluctuating over the same period, another example of quantities changing over time."
+        ],
+        "issues": [
+          "This deck dates the Jordan network to 1986, while Lecture17 used 1985. The notes prioritize the mechanism and retain the source discrepancy here.",
+          "An embedded Small/Medium/Large stock-return graph appears near the oscillator. It is described only as time-varying trajectories, because the deck supplies no market mechanism or numerical argument."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 5,
+        "title": "One prediction task for different sequences",
+        "kind": "concept",
+        "teaching": [
+          "An **LLM** receives fifteen vectors and predicts the following one. The vectors can represent words in a sentence, frames of a spectrogram, patches of a picture, or amino acids in the **insulin B chain**.",
+          "The picture is divided into sixteen patches, with fifteen given and the bottom-right patch left to predict. In the protein example the next residue is Y. The original materials differ, but all are represented as **sequences of vectors**."
+        ],
+        "issues": [
+          "The N beside the folded protein marks its amino end, not an answer in the missing slot. The speaker notes identify the next residue as Y."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 6,
+        "title": "Which sequences can be English words?",
+        "kind": "concept",
+        "teaching": [
+          "One-syllable words like Don, mat and fish follow a **consonant, vowel, consonant** pattern. Clusters are allowed **before and after the vowel** only in certain orders, so split, flat, desk and help are words while *sblit, *lfat, *desb and *hepl are impossible, with the order mirroring around the vowel.",
+          "A **long word is a chain of syllables**, each obeying the same rules. t·l is fine across a break in At·lan·tic, but **tl cannot start a syllable**, so *tlantic is impossible, and ng can end a syllable but never start one."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 7,
+        "title": "Guessing the next letter reveals phonotactic knowledge",
+        "kind": "concept",
+        "teaching": [
+          "Guessing the **next letter** of a word start shows **phonotactic knowledge**. After a vowel, as in **ra_**, almost anything can follow. At the start of a word the choices narrow, to **l, r or a vowel** after sp_, b_ and f_, and to **only a vowel** after skr_ and m_.",
+          "Each item also has an impossible continuation, such as *spn, *kt, *skrl or *mb. **Guessing the next letter is predicting x₁₆**, so a **GPT** trained only on this game learns English sounds and spelling, with a broad distribution after ra_ and a sharply peaked one after skr_."
+        ],
+        "issues": [
+          "The visible example is ra_ but the speaker notes discuss fa_. Both illustrate the source’s broad post-vowel choices."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 8,
+        "title": "Design an agentic system for English syllables",
+        "kind": "prompt",
+        "teaching": [],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.",
+          "limitations": [
+            "No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."
+          ]
+        }
+      },
+      {
+        "page": 9,
+        "title": "What an LLM learns",
+        "kind": "concept",
+        "teaching": [
+          "An LLM learns by guessing a **hidden word**. In “The chef cracks the,” each earlier word gives a clue about the last word, and these links are **interdependencies**. The model spreads its bets over “egg,” “nut” and “code,” with the largest bet on “egg.”",
+          "**Learning is nudging the weights** so the right word gets a bigger bet next time. The same idea holds when the signal contains words, sounds and images."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 10,
+        "title": "Text, speech and images in three different forms",
+        "kind": "concept",
+        "teaching": [
+          "Text is **already a row of pieces**, so each piece can become a vector. Speech is **air pressure changing in time**, and an image is **a grid of light**. Neither one contains words.",
+          "An LLM can only read a row of vectors. Speech and images therefore have to be **converted into rows of vectors** before the model can read them with text."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 11,
+        "title": "Speech becomes a row of frame vectors",
+        "kind": "mechanism",
+        "teaching": [
+          "Speech is cut into short slices called **frames**, each about 20 milliseconds long. A **speech encoder**, a network trained on a large amount of audio, turns each slice into a vector.",
+          "One second of speech becomes **50 vectors in time order**. The speech is then a row, just like a sentence."
+        ],
+        "issues": [
+          "The slide draws ten slices and ten vectors as a sample. The 50 vectors per second come from the slide text, not from counting the drawn slices."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 12,
+        "title": "Images become a row of patch vectors",
+        "kind": "mechanism",
+        "teaching": [
+          "An image is cut into small squares called **patches**. The 16 patches of the egg image are laid out in a row in reading order, so the image becomes a sequence.",
+          "A **vision encoder** gives one vector per patch. Real systems use patches of 14 to 16 pixels, so one image gives hundreds of vectors."
+        ],
+        "issues": [
+          "The slide and speaker notes call the image “the picture.” The teaching uses image and image patch for the model’s visual input, following the course wording rule."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 13,
+        "title": "One row with three senses",
+        "kind": "concept",
+        "teaching": [
+          "Image patches, speech frames and words go into **one row**, with the last word hidden. The earlier words still give clues about the hidden word.",
+          "A patch containing an egg and the sound of cracking also help. These links between senses are **cross-modal dependencies**. The game is the same, and some clues now come from other senses."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 14,
+        "title": "Three cute puppies as an image, speech and words",
+        "kind": "concept",
+        "teaching": [
+          "“Three cute puppies” is given as an image cut into **18 patches**, as a **spectrogram** of the spoken phrase, and as three written words. In the spectrogram, time runs left to right, higher means higher frequency and darker means more energy.",
+          "These are **three views of one event**. Training puts all three into one row and hides one piece for the model to guess."
+        ],
+        "issues": [
+          "The speaker notes state that the speech was made with a speech synthesizer (an MBROLA diphone voice). It is not a recording of a person."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 15,
+        "title": "Training example 1 predicts the next word",
+        "kind": "mechanism",
+        "teaching": [
+          "The row holds the image, the sound and the words “three cute,” and the last word is hidden. With the words alone, the bets are spread over “kittens,” “puppies” and “babies.”",
+          "With the image and the sound, the bet piles up on **“puppies.”** The model bet 0.85 on the true word, so the error is small and **the nudge to the weights is small**."
+        ],
+        "issues": [
+          "The bar lengths are read from the slide. Only the 0.85 bet on “puppies” is printed as a number."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 16,
+        "title": "Training example 2 predicts a sound frame",
+        "kind": "mechanism",
+        "teaching": [
+          "The hidden piece is a **sound frame**, and the row holds the image, the words and the sound heard so far. The earlier frames help because the voice and the formants change smoothly. The words say the next sound is the vowel in “pup,” and the image backs up the words.",
+          "A frame is a column of numbers giving the energy in each frequency band. The guess is close but not exact, and **the error nudges the weights**."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 17,
+        "title": "Training example 3 predicts an image patch",
+        "kind": "mechanism",
+        "teaching": [
+          "The hidden piece is an **image patch**, and the row holds the words, the sound and the patches drawn so far. The earlier patches give background and two puppies. “Three” says one more puppy must appear, and “puppies” says to expect dog ears.",
+          "The guess is a blurry ear in the average colour of the first two puppies, while the true puppy is dark. **The biggest error is the colour**, because no clue said the third puppy is dark."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 18,
+        "title": "Every piece can be the hidden one",
+        "kind": "comparison",
+        "teaching": [
+          "A hidden word, a hidden frame or a hidden patch each receives clues from the words, the sound and the image. For a hidden word, “three cute” calls for a plural noun, the word was just spoken, and the image contains puppies.",
+          "A clue from **the same sense** says how the signal continues. Clues from **the other senses** say what the thing is. Each sense fills gaps the others leave."
+        ],
+        "issues": [],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      },
+      {
+        "page": 19,
+        "title": "Talking back, and what is new",
+        "kind": "concept",
+        "teaching": [
+          "To speak, sound is compressed into **discrete codes** that work like new words in the vocabulary. The model predicts the next code like the next word, and a **decoder** turns the codes back into sound.",
+          "Three things are new, which are a shared currency of vectors in one row, data where the senses appear together, and a schedule that protects what was already learned. What stays the same is **finding the dependencies in the signal**."
+        ],
+        "issues": [
+          "The slide lists “a schedule that protects what was already learned” without explaining the schedule. The teaching repeats the item and adds no outside explanation."
+        ],
+        "review": {
+          "pageInspected": true,
+          "assetsInspected": true,
+          "method": "Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.",
+          "limitations": [
+            "No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.",
+            "The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."
+          ]
+        }
+      }
+    ]
+  }
+}

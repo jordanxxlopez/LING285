@@ -7,6 +7,8 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 A = ROOT / 'authoring'
 LECTURES = [f'lecture{n}' for n in range(11,19)]
+# Module III lectures join only while the Module III layer is generated (data.json then lists them).
+LECTURES += [c['id'] for c in json.loads((ROOT / 'data.json').read_text())['collections'] if c.get('moduleId') == 'module3']
 
 def read(path):
     return json.loads(path.read_text())

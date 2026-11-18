@@ -15,6 +15,7 @@ import importlib,json,sys
 A=Path(__file__).resolve().parent
 sys.path.insert(0,str(A))
 REVIEW={
+ 19:{"method":"Reviewed native slide text and speaker notes, every embedded raster asset, all nineteen rendered source pages and the click-state exports of pages 9 to 19. Pages 2 to 8 were matched to Lecture 18 by identical slide XML and identical rendered pixels. No Lecture 19 classroom transcript is available.","limitations":["No Lecture 19 classroom recording or transcript was supplied; the notes are authored from the deck and its speaker notes.","The speech in the puppies example is synthesized (MBROLA diphone voice, per the speaker notes) and has no audio file in the deck; only its spectrogram image is present."]},
  18:{"method":"Reviewed native slide text and speaker notes, original raster assets, all eight rendered source pages, source timing/reveal exports and the source inventory. No Lecture18 classroom transcript is available. Relevant prior class transcripts inform teaching style only.","limitations":["No Lecture18 classroom recording or transcript was supplied; notes are authored from the deck and its speaker notes. Source-state exports are static and are not recordings of a live presentation."]},
  16:{'method':'Reviewed every original page at 1600px, the six embedded raster assets (all shared with Lecture 15), native text, chart data and speaker notes. Twelve pages were matched to Lecture 15 slide XML and rendered pixels. Page 8 uses the deck’s own raster ink fallbacks. Scatter and accuracy values were read from the native chart series.','limitations':[]},
  17:{'method':'Reviewed every original page at 1600px, all embedded raster assets, native text and speaker notes. Every click state of pages 4–7 was exported from the original shapes and timing and inspected, because the static export overlaps the page 5 reveals.','limitations':['The small spectrogram frames and image patches on page 5 are pieces of one figure and are reviewed through the source-state exports rather than as separate figures.']},
@@ -27,13 +28,14 @@ def build(n):
  pages=json.loads((A/'source-manifest.json').read_text())[key]['pages']
  earlier={}
  for v,name in [(1,'teaching-{}.json'),(2,'teaching-v2-{}.json'),(3,'teaching-v3-{}.json'),(4,'teaching-v4-{}.json')]:
-  earlier[v]={k:read(name.format(k)) for k in {f'lecture{m}' for m in [15]}}
+  earlier[v]={k:read(name.format(k)) for k in {'lecture15'}|{r[0] for r in notes.REUSE.values() if isinstance(r,tuple)}}
  out={v:{'title':notes.TITLE,'sections':[]} for v in (1,2,3,4)}
  for page in range(1,pages+1):
   if page in notes.REUSE:
-   ref=notes.REUSE[page]
+   ref=notes.REUSE[page];deck='lecture15'
+   if isinstance(ref,tuple):deck,ref=ref
    for v in (1,2,3,4):
-    source=earlier[v]['lecture15']['lecture15']['sections'][ref-1]
+    source=earlier[v][deck][deck]['sections'][ref-1]
     assert source['page']==ref
     out[v]['sections'].append(dict(source,page=page))
    continue

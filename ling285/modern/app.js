@@ -3,7 +3,7 @@
 const KEY = 'ling285-modern-studio-v1';
 const FOLLOWING_SLIDE_VERSIONS={v23:'v22',v24:'v24'};
 const MODULE2_COLLECTIONS=new Set(['lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18']);
-const VERSIONED_COLLECTIONS=new Set(['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10','lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18']);
+const VERSIONED_COLLECTIONS=new Set(['lecture01','lecture02','lecture03','lecture04','lecture05-06','lecture07','lecture08','lecture09','lecture10','lecture11','lecture12','lecture13','lecture14','lecture15','lecture16','lecture17','lecture18','lecture19']);
 const $ = selector => document.querySelector(selector);
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeURL = value => {
@@ -1406,7 +1406,7 @@ function installModern() {
  const ESS=window.LING285_ESSENTIALS || {versions:{},labs:[]};
  for(const v of Object.values(ESS.versions))v.moduleId='module2';
  // Other modules plug their versions into the same dropdowns (built by authoring/module_template.py).
- for(const [id,data] of Object.entries({module1:window.LING285_MODULE1})){
+ for(const [id,data] of Object.entries({module1:window.LING285_MODULE1,module3:window.LING285_MODULE3})){
   if(!data)continue;MODS[id]=data;
   for(const [k,v] of Object.entries(data.versions || {})){v.moduleId=id;ESS.versions[k]=v;}
   MODULE_LABELS[id]={essentials:data.study.title,bytopic:data.bytopic.title,review:data.review.title};

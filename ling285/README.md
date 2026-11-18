@@ -213,3 +213,15 @@ Every existing teaching edition covers the new lecture in its established style,
 Both practice editions add a complete 50-question Lecture 18 quiz, with 25 multiple-choice and 25 written questions and distinct saved IDs. The current Module II test remains 100 questions, equally split by format, sampled across all eight available lectures. Existing attempts remain available; a new full attempt includes the added lecture. Four guide entries and four selected core pages extend the review tools.
 
 Rebuild using `build_weekly_teaching.py 18`, `lecture18_practice.py`, `refresh_inventory.py`, `build_studio.py`, the v2/v3/v4 transcript builders, `build_transcripts_notes.py`, `build_transcripts_iskarous.py`, and `build_practice_v2.py`. `tests/lecture18.test.cjs` checks source order, all editions, complete banks and preservation against the pre-addition Git baseline. Raw board objections and final reviews remain in the Lecture 18 authoring reports.
+
+
+## Lecture 19 and Module III
+
+Lecture 19 (`Ling285_F26_L19.pptx`, November 17, 2026) is the first lecture after Exam 2 and opens Module III. Its 19 pages stay in source order. Pages 2 to 8 are the Lecture 18 slides unchanged and reuse each version's Lecture 18 teaching. Pages 9 to 19 are new and are written from the slides and speaker notes, because no class transcript was supplied.
+
+The files for Lectures 01 to 18 are locked by hash, so Module III is published as a separate layer in `ling285/module3/` that `module3/overlay.js` merges when the app loads. Every teaching version in both workspaces covers the lecture, and it has a 50-question quiz, guide entries and core pages. The modern workspace also has Study this first · Module III, Notes by topic · Lecture 19 and a review guide. See `authoring/module3/README.md` for the layout, the source of each version's text and the rebuild command, and `authoring/module3/board.md` for the board report.
+
+```sh
+python3 ling285/authoring/module3/build_layer.py
+node --test ling285/tests/module3.test.cjs
+```

@@ -68,7 +68,9 @@
     if (course==='psyc301' && window.PsycCourseFocus) {
       clearPending();window.PsycCourseFocus.open(id==='overview'?window.PsycCourseFocus.active():Number(id));install();return;
     }
-    if (id === '3') {
+    // LING285 has real Module III material once its study data lists a third module.
+    const realThird = ling && id === '3' && document.querySelector('#moduleNav [data-module="module3"]');
+    if (id === '3' && !realThird) {
       pending = true;
       const url = new URL(location.href); url.searchParams.set('pendingModule','3'); history.replaceState(null,'',url);
       install(); empty.focus(); return;

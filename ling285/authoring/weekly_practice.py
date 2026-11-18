@@ -9,7 +9,7 @@ import json,random
 from pathlib import Path
 A=Path(__file__).resolve().parent
 
-def build(n,M,W):
+def build(n,M,W,module='module2'):
  assert len(M)==25 and len(W)==25,(n,len(M),len(W))
  key=f'lecture{n}'
  for version in [1,2]:
@@ -22,13 +22,13 @@ def build(n,M,W):
    for label,opt in zip('abcd',options):
     opt['id']=label
     if opt['text']==correct:answer_id=label
-   qs.append({'id':f'{prefix}-mcq-{i:03}','type':'mcq','moduleId':'module2','lectureId':key,'prompt':p1 if version==1 else p2,'answer':correct,
+   qs.append({'id':f'{prefix}-mcq-{i:03}','type':'mcq','moduleId':module,'lectureId':key,'prompt':p1 if version==1 else p2,'answer':correct,
     'rubric':['Identify the source-supported relationship.','Distinguish it from the stated alternative explanations.'],'sources':[{'collection':key,'page':page}],
     'topic':topic,'pattern':pattern,'examKeyRefs':[],'examReviewRefs':[],'options':options,'correctOption':answer_id})
   for i,(page,topic,pattern,p1,p2,answer,rubric) in enumerate(W,1):
    assert len(rubric)>=2,(n,i)
-   qs.append({'id':f'{prefix}-written-{i:03}','type':'written','moduleId':'module2','lectureId':key,'prompt':p1 if version==1 else p2,'answer':answer,
+   qs.append({'id':f'{prefix}-written-{i:03}','type':'written','moduleId':module,'lectureId':key,'prompt':p1 if version==1 else p2,'answer':answer,
     'rubric':rubric,'sources':[{'collection':key,'page':page}],'topic':topic,'pattern':pattern,'examKeyRefs':[],'examReviewRefs':[]})
-  name=f'practice-v2-{key}.json' if version==2 else f'module2-{key}-practice.json'
+  name=f'practice-v2-{key}.json' if version==2 else f'{module}-{key}-practice.json'
   (A/name).write_text(json.dumps({'lectureId':key,'questions':qs},ensure_ascii=False,indent=2)+'\n')
  print(key,'practice written',len(M)+len(W),'questions per edition')
